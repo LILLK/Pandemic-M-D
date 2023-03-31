@@ -1,0 +1,48 @@
+//Mehdi Tahrat && David hola
+
+public class Jugador {
+
+	static String usuario;
+	static boolean logged;
+
+	////////////////////////////////////
+	/////////// constructores //////////
+	////////////////////////////////////
+	public Jugador() {
+
+	}
+
+	////////////////////////////////////
+	////////////// metodos /////////////
+	////////////////////////////////////
+
+	/*
+	 * 
+	 */
+	/////////////////////////////////////
+	///////////// Funciones ////////////
+	////////////////////////////////////
+	/*
+	 * 
+	 */
+	////////////////////////////////////
+	/////////// setters&getters//////////
+	////////////////////////////////////
+
+	public static String getNombre() {
+		return usuario;
+	}
+
+	public static void setNombre(String nombre) {
+		Jugador.usuario = nombre;
+	}
+
+	public static boolean isLogged() {
+		return logged;
+	}
+
+	public static void setLogged(boolean logged) {
+		Jugador.logged = logged;
+	}
+
+}

@@ -1,0 +1,236 @@
+La ciudad San Franciscoesta en las coordenadas( 235,315) sus ciudades colindantes son:
+Chicagoque esta a una distancia de 73
+Los Angelesque esta a una distancia de 56
+Manilaque esta a una distancia de 970
+Tokioque esta a una distancia de 1045
+La ciudad Chicagoesta en las coordenadas( 300,280) sus ciudades colindantes son:
+San Franciscoque esta a una distancia de 73
+Montrealque esta a una distancia de 50
+Atlantaque esta a una distancia de 44
+Mexico DFque esta a una distancia de 105
+Los Angelesque esta a una distancia de 79
+La ciudad Atlantaesta en las coordenadas( 320,320) sus ciudades colindantes son:
+Chicagoque esta a una distancia de 44
+Miamique esta a una distancia de 72
+Washingtonque esta a una distancia de 41
+La ciudad Montrealesta en las coordenadas( 350,280) sus ciudades colindantes son:
+Chicagoque esta a una distancia de 50
+Nueva Yorkque esta a una distancia de 31
+Washingtonque esta a una distancia de 50
+La ciudad Nueva Yorkesta en las coordenadas( 380,290) sus ciudades colindantes son:
+Montrealque esta a una distancia de 31
+Washingtonque esta a una distancia de 44
+Londresque esta a una distancia de 325
+Madridque esta a una distancia de 307
+La ciudad Washingtonesta en las coordenadas( 360,330) sus ciudades colindantes son:
+Montrealque esta a una distancia de 50
+Nueva Yorkque esta a una distancia de 44
+Atlantaque esta a una distancia de 41
+Miamique esta a una distancia de 36
+La ciudad Londresesta en las coordenadas( 700,230) sus ciudades colindantes son:
+Nueva Yorkque esta a una distancia de 325
+Madridque esta a una distancia de 61
+Parisque esta a una distancia de 33
+Essenque esta a una distancia de 68
+La ciudad Madridesta en las coordenadas( 687,290) sus ciudades colindantes son:
+Nueva Yorkque esta a una distancia de 307
+Londresque esta a una distancia de 61
+Parisque esta a una distancia de 56
+Sao Pauloque esta a una distancia de 326
+Argelque esta a una distancia de 58
+La ciudad Parisesta en las coordenadas( 727,250) sus ciudades colindantes son:
+Madridque esta a una distancia de 56
+Londresque esta a una distancia de 33
+Essenque esta a una distancia de 66
+Argelque esta a una distancia de 80
+Milanque esta a una distancia de 31
+La ciudad Essenesta en las coordenadas( 755,190) sus ciudades colindantes son:
+Londresque esta a una distancia de 68
+Parisque esta a una distancia de 66
+San Petersburgoque esta a una distancia de 63
+Milanque esta a una distancia de 45
+La ciudad Milanesta en las coordenadas( 755,235) sus ciudades colindantes son:
+Essenque esta a una distancia de 45
+Parisque esta a una distancia de 31
+Singapurque esta a una distancia de 95
+La ciudad San Petersburgoesta en las coordenadas( 815,210) sus ciudades colindantes son:
+Essenque esta a una distancia de 63
+Singapurque esta a una distancia de 85
+Moscuque esta a una distancia de 77
+La ciudad Los Angelesesta en las coordenadas( 275,355) sus ciudades colindantes son:
+San Franciscoque esta a una distancia de 56
+Mexico DFque esta a una distancia de 39
+Chicagoque esta a una distancia de 79
+Sidneyque esta a una distancia de 1084
+La ciudad Miamiesta en las coordenadas( 380,360) sus ciudades colindantes son:
+Washingtonque esta a una distancia de 36
+Atlantaque esta a una distancia de 72
+Mexico DFque esta a una distancia de 83
+Bogotaque esta a una distancia de 101
+La ciudad Mexico DFesta en las coordenadas( 300,385) sus ciudades colindantes son:
+Los Angelesque esta a una distancia de 39
+Miamique esta a una distancia de 83
+Chicagoque esta a una distancia de 105
+Bogotaque esta a una distancia de 125
+Limaque esta a una distancia de 165
+La ciudad Bogotaesta en las coordenadas( 400,460) sus ciudades colindantes son:
+Miamique esta a una distancia de 101
+Mexico DFque esta a una distancia de 125
+Limaque esta a una distancia de 60
+Sao Pauloque esta a una distancia de 162
+Buenos Airesque esta a una distancia de 216
+La ciudad Limaesta en las coordenadas( 395,520) sus ciudades colindantes son:
+Mexico DFque esta a una distancia de 165
+Bogotaque esta a una distancia de 60
+Santiago de Chileque esta a una distancia de 105
+La ciudad Santiago de Chileesta en las coordenadas( 430,620) sus ciudades colindantes son:
+Limaque esta a una distancia de 105
+La ciudad Buenos Airesesta en las coordenadas( 453,670) sus ciudades colindantes son:
+Sao Pauloque esta a una distancia de 120
+Bogotaque esta a una distancia de 216
+La ciudad Sao Pauloesta en las coordenadas( 520,570) sus ciudades colindantes son:
+Bogotaque esta a una distancia de 162
+Buenos Airesque esta a una distancia de 120
+Lagosque esta a una distancia de 224
+Madridque esta a una distancia de 326
+La ciudad Lagosesta en las coordenadas( 710,450) sus ciudades colindantes son:
+Sao Pauloque esta a una distancia de 224
+Kinsasaque esta a una distancia de 108
+Jartumque esta a una distancia de 105
+La ciudad Kinsasaesta en las coordenadas( 770,540) sus ciudades colindantes son:
+Lagosque esta a una distancia de 108
+Jartumque esta a una distancia de 100
+Johannesburgoque esta a una distancia de 100
+La ciudad Jartumesta en las coordenadas( 815,450) sus ciudades colindantes son:
+El Cairoque esta a una distancia de 100
+Lagosque esta a una distancia de 105
+Kinsasaque esta a una distancia de 100
+Johannesburgoque esta a una distancia de 180
+La ciudad Johannesburgoesta en las coordenadas( 815,630) sus ciudades colindantes son:
+Kinsasaque esta a una distancia de 100
+Jartumque esta a una distancia de 180
+La ciudad Argelesta en las coordenadas( 730,330) sus ciudades colindantes son:
+Madridque esta a una distancia de 58
+Parisque esta a una distancia de 80
+Singapurque esta a una distancia de 106
+El Cairoque esta a una distancia de 92
+La ciudad El Cairoesta en las coordenadas( 820,350) sus ciudades colindantes son:
+Argelque esta a una distancia de 92
+Singapurque esta a una distancia de 56
+Bagdadque esta a una distancia de 67
+Jartumque esta a una distancia de 100
+Riadque esta a una distancia de 82
+La ciudad Riadesta en las coordenadas( 895,385) sus ciudades colindantes son:
+El Cairoque esta a una distancia de 82
+Bagdadque esta a una distancia de 66
+Karachique esta a una distancia de 90
+La ciudad Singapuresta en las coordenadas( 830,294) sus ciudades colindantes son:
+Argelque esta a una distancia de 106
+El Cairoque esta a una distancia de 56
+Bagdadque esta a una distancia de 56
+Moscuque esta a una distancia de 87
+Riadque esta a una distancia de 111
+La ciudad Bagdadesta en las coordenadas( 880,320) sus ciudades colindantes son:
+Singapurque esta a una distancia de 56
+Karachique esta a una distancia de 105
+Riadque esta a una distancia de 66
+El Cairoque esta a una distancia de 67
+La ciudad Moscuesta en las coordenadas( 890,230) sus ciudades colindantes son:
+Teheranque esta a una distancia de 85
+Singapurque esta a una distancia de 87
+San Petersburgoque esta a una distancia de 77
+La ciudad Teheranesta en las coordenadas( 920,310) sus ciudades colindantes son:
+Moscuque esta a una distancia de 85
+Bagdadque esta a una distancia de 41
+Karachique esta a una distancia de 75
+Nueva Delhique esta a una distancia de 106
+La ciudad Karachiesta en las coordenadas( 980,355) sus ciudades colindantes son:
+Teheranque esta a una distancia de 75
+Bagdadque esta a una distancia de 105
+Nueva Delhique esta a una distancia de 51
+Riadque esta a una distancia de 90
+Bombayque esta a una distancia de 47
+La ciudad Bombayesta en las coordenadas( 1005,395) sus ciudades colindantes son:
+Karachique esta a una distancia de 47
+Nueva Delhique esta a una distancia de 68
+Madrasque esta a una distancia de 33
+La ciudad Nueva Delhiesta en las coordenadas( 1025,330) sus ciudades colindantes son:
+Teheranque esta a una distancia de 106
+Karachique esta a una distancia de 51
+Bombayque esta a una distancia de 68
+Madrasque esta a una distancia de 80
+Calcutaque esta a una distancia de 60
+La ciudad Calcutaesta en las coordenadas( 1070,370) sus ciudades colindantes son:
+Nueva Delhique esta a una distancia de 60
+Hong Kongque esta a una distancia de 95
+Madrasque esta a una distancia de 53
+Bangkokque esta a una distancia de 67
+La ciudad Madrasesta en las coordenadas( 1035,410) sus ciudades colindantes son:
+Bombayque esta a una distancia de 33
+Nueva Delhique esta a una distancia de 80
+Calcutaque esta a una distancia de 53
+Bangkokque esta a una distancia de 85
+Yakartaque esta a una distancia de 162
+La ciudad EudalCityesta en las coordenadas( 1105,495) sus ciudades colindantes son:
+Madrasque esta a una distancia de 110
+Hong Kongque esta a una distancia de 138
+Yakartaque esta a una distancia de 54
+La ciudad Yakartaesta en las coordenadas( 1150,525) sus ciudades colindantes son:
+Madrasque esta a una distancia de 162
+Bangkokque esta a una distancia de 114
+Ho Chi Minhque esta a una distancia de 96
+Sidneyque esta a una distancia de 208
+La ciudad Bangkokesta en las coordenadas( 1120,415) sus ciudades colindantes son:
+Yakartaque esta a una distancia de 114
+Calcutaque esta a una distancia de 67
+Madrasque esta a una distancia de 85
+Ho Chi Minhque esta a una distancia de 31
+Hong Kongque esta a una distancia de 63
+La ciudad Hong Kongesta en las coordenadas( 1165,370) sus ciudades colindantes son:
+Bangkokque esta a una distancia de 63
+Ho Chi Minhque esta a una distancia de 61
+Taipeique esta a una distancia de 40
+Manilaque esta a una distancia de 61
+Shanghaique esta a una distancia de 33
+La ciudad Shanghaiesta en las coordenadas( 1195,355) sus ciudades colindantes son:
+Pekinque esta a una distancia de 58
+Hong Kongque esta a una distancia de 33
+Seulque esta a una distancia de 65
+Tokioque esta a una distancia de 107
+Taipeique esta a una distancia de 22
+La ciudad Pekinesta en las coordenadas( 1175,300) sus ciudades colindantes son:
+Seulque esta a una distancia de 50
+Shanghaique esta a una distancia de 58
+EudalCityque esta a una distancia de 207
+La ciudad Seulesta en las coordenadas( 1225,297) sus ciudades colindantes son:
+Pekinque esta a una distancia de 50
+Tokioque esta a una distancia de 55
+EudalCityque esta a una distancia de 231
+La ciudad Tokioesta en las coordenadas( 1280,290) sus ciudades colindantes son:
+San Franciscoque esta a una distancia de 1045
+Seulque esta a una distancia de 55
+Osakaque esta a una distancia de 39
+La ciudad Osakaesta en las coordenadas( 1255,320) sus ciudades colindantes son:
+Tokioque esta a una distancia de 39
+Taipeique esta a una distancia de 74
+EudalCityque esta a una distancia de 230
+La ciudad Taipeiesta en las coordenadas( 1205,375) sus ciudades colindantes son:
+Osakaque esta a una distancia de 74
+Shanghaique esta a una distancia de 22
+Hong Kongque esta a una distancia de 40
+Manilaque esta a una distancia de 45
+La ciudad Ho Chi Minhesta en las coordenadas( 1148,429) sus ciudades colindantes son:
+Yakartaque esta a una distancia de 96
+Bangkokque esta a una distancia de 31
+Hong Kongque esta a una distancia de 61
+Manilaque esta a una distancia de 52
+La ciudad Manilaesta en las coordenadas( 1200,420) sus ciudades colindantes son:
+San Franciscoque esta a una distancia de 970
+Ho Chi Minhque esta a una distancia de 52
+Taipeique esta a una distancia de 45
+Hong Kongque esta a una distancia de 61
+Sidneyque esta a una distancia de 255
+La ciudad Sidneyesta en las coordenadas( 1320,645) sus ciudades colindantes son:
+Los Angelesque esta a una distancia de 1084
+Manilaque esta a una distancia de 255
+Yakartaque esta a una distancia de 208
