@@ -20,45 +20,53 @@ import org.xml.sax.SAXException;
 public class test {
 
 	public static void main(String[] args) {
-		ArrayList<String> rolev = new ArrayList<String>();
-
-		saveToXML("parametros.xml");
-		readXML("parametros.xml",rolev);
-		System.out.println(rolev);
-		
-
+		//parametros {brotesTotal, infeccionRonda , porcentajeCura}
+		escribirParametros(10, 2, 15);
+		ArrayList<Integer> parametros = leerParametros();
+		System.out.println(parametros);
 	}
 
-	public static boolean readXML(String xml,ArrayList<String> rolev) {
+	
+	
+	public static ArrayList<Integer> escribirParametros( int brotesTotal, int infeccionRonda, int porcentajeCura) {
+		ArrayList<Integer> parametros = new ArrayList<Integer>();
+		escribirXML("parametros.xml",brotesTotal, infeccionRonda,porcentajeCura);
+		//parametros (brotesTotal, infeccionRonda , porcentajeCura)
+		return parametros;
+	}
+
+
+	public static String getTextValue(Element doc, String tag) {
+		String value = null;
+		NodeList nl;
+		nl = doc.getElementsByTagName(tag);
+		if (nl.getLength() > 0 && nl.item(0).hasChildNodes()) {
+			value = nl.item(0).getFirstChild().getNodeValue();
+		}
+		return value;
+	}
+
+	public static boolean leerXML(String xml, ArrayList<Integer> parametros) {
+		Integer aux = null;
 		Document dom;
-		// Make an instance of the DocumentBuilderFactory
 		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 		try {
-			// use the factory to take an instance of the document builder
 			DocumentBuilder db = dbf.newDocumentBuilder();
-			// parse using the builder to get the DOM mapping of the
-			// XML file
 			dom = db.parse(xml);
 			Element doc = dom.getDocumentElement();
-			String role1=" ";
-			role1 = getTextValue(doc, "brotesTotal");
-			if (role1 != null) {
-				if (!role1.isEmpty())
-					rolev.add(role1);
+			aux = Integer.parseInt(getTextValue(doc, "brotesTotal"));
+			if (aux != null) {
+					parametros.add(aux);
 			}
-			role1 = getTextValue(doc, "infeccionRonda");
-			if (role1 != null) {
-				if (!role1.isEmpty())
-					rolev.add(role1);
+			aux = Integer.parseInt(getTextValue(doc, "infeccionRonda"));
+			if (aux != null) {
+					parametros.add(aux);
 			}
-			role1 = getTextValue(doc, "porcentajeCura");
-			if (role1 != null) {
-				if (!role1.isEmpty())
-					rolev.add(role1);
+			aux = Integer.parseInt(getTextValue(doc, "porcentajeCura"));
+			if (aux != null) {
+					parametros.add(aux);
 			}
-			
 			return true;
-
 		} catch (ParserConfigurationException pce) {
 			System.out.println(pce.getMessage());
 		} catch (SAXException se) {
@@ -66,56 +74,46 @@ public class test {
 		} catch (IOException ioe) {
 			System.err.println(ioe.getMessage());
 		}
-		System.out.println(rolev);
 		return false;
 	}
-
-
-	public static void saveToXML(String xml) {
+	
+	// - escribirXML	
+	// Escribe en xml los parametros en el archivo parametros.xml
+	public static void escribirXML(String xml, int brotesTotal, int infeccionRonda, int porcentajeCura) {
 		Document dom;
 		Element e = null;
-
-		String role1 = "priemro";
-		String role2 = "segu";
-		String role3 = "ter";
-		String role4 = "cuar";
-
 		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 		try {
 			// creamos el documento donde se va a escribir el xml
 			DocumentBuilder db = dbf.newDocumentBuilder();
 			dom = db.newDocument();
-
 			Element rootEle = dom.createElement("parametros");
-			// creamos un elemento nuevo en la instacia de documento creada.
-
+			// creamos un elemento padre nuevo en la instacia de documento creada.
 			e = dom.createElement("brotesTotal");
-			e.appendChild(dom.createTextNode(role1));
+			e.appendChild(dom.createTextNode(Integer.toString(brotesTotal)));
 			rootEle.appendChild(e);
-
+			//dentro de este creamos los elementos hijos 
 			e = dom.createElement("infeccionRonda");
-			e.appendChild(dom.createTextNode(role2));
+			e.appendChild(dom.createTextNode(Integer.toString(infeccionRonda)));
 			rootEle.appendChild(e);
-
 			e = dom.createElement("porcentajeCura");
-			e.appendChild(dom.createTextNode(role3));
+			e.appendChild(dom.createTextNode(Integer.toString(porcentajeCura)));
 			rootEle.appendChild(e);
-
 			dom.appendChild(rootEle);
 			try {
+				//generamos la cabezera del documento xml
 				Transformer tr = TransformerFactory.newInstance().newTransformer();
 				tr.setOutputProperty(OutputKeys.INDENT, "yes");
 				tr.setOutputProperty(OutputKeys.METHOD, "xml");
 				tr.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
 				tr.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "4");
-				// send DOM to file
+				//Transofrmamos el documento virtual creado a un documento en el sistema. "parametros.xml" 
 				tr.transform(new DOMSource(dom), new StreamResult(new FileOutputStream(xml)));
 			} catch (TransformerException te) {
 				System.out.println(te.getMessage());
 			} catch (IOException ioe) {
 				System.out.println(ioe.getMessage());
 			}
-
 		} catch (ParserConfigurationException pce) {
 			System.out.println("UsersXML: Error trying to instantiate DocumentBuilder " + pce);
 		}

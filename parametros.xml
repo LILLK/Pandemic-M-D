@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <parametros>
-    <brotesTotal>priemro</brotesTotal>
-    <infeccionRonda>segu</infeccionRonda>
-    <porcentajeCura>ter</porcentajeCura>
+    <brotesTotal>10</brotesTotal>
+    <infeccionRonda>2</infeccionRonda>
+    <porcentajeCura>15</porcentajeCura>
 </parametros>

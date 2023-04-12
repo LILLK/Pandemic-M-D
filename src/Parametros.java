@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Parametros {
@@ -25,16 +26,27 @@ public class Parametros {
 	/////////////////////////////////////
 	///////////// Funciones ////////////
 	////////////////////////////////////
-	public static void editar() {
+
+	public static void cambiarParametros() {
+		int brotesTotal,infeccionRonda,porcentajeCura;
 		Scanner teclado = new Scanner(System.in);
 		System.out.println("brotesTotal");
-		Parametros.brotesTotal = teclado.nextInt();
+		brotesTotal = teclado.nextInt();
 		System.out.println("infeccionRonda");
-		Parametros.infeccionRonda = teclado.nextInt();
+		infeccionRonda = teclado.nextInt();
 		System.out.println("porcentajeCura");
-		Parametros.porcentajeCura = teclado.nextInt();
+		porcentajeCura = teclado.nextInt();
 		teclado.close();
+		test.escribirParametros(brotesTotal, infeccionRonda, porcentajeCura);
+		establecerParametros();
 	}
+	public static void establecerParametros() {
+		ArrayList<Integer> parametros = test.leerParametros();
+		Parametros.brotesTotal = parametros.get(0);
+		Parametros.infeccionRonda =parametros.get(1);
+		Parametros.porcentajeCura = parametros.get(2);
+	}
+	
 	////////////////////////////////////
 	/////////// setters&getters//////////
 	////////////////////////////////////
