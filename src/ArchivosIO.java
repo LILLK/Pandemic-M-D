@@ -4,6 +4,12 @@ import java.util.ArrayList;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.OutputKeys;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -12,9 +18,8 @@ import org.xml.sax.SAXException;
 
 //Mehdi Tahrat&&David Hola
 
+//Esta classe es la que se encargara de alojar todas las funciones en nuestro programa que entran o sacan datos del programa
 
- //Esta classe es la que se encargara de alojar todas las funciones en nuestro programa que entran o sacan datos del programa
- 
 public class ArchivosIO {
 	//////////////////////////////////////////////////////////////////////////////////////
 	// - leerTamanioMapa
@@ -94,12 +99,11 @@ public class ArchivosIO {
 		ArrayList<Integer> parametros = new ArrayList<Integer>();
 		leerXML("parametros.xml", parametros);
 		return parametros;
-
 	}
 
 	/////////////////////////////////////////////////////////////////////
 	// - leerXML
-	// lee en xml 
+	// lee en xml
 	///////////////////////////////////////////////////////////////////////
 	public static boolean leerXML(String xml, ArrayList<Integer> parametros) {
 		Integer aux = null;
@@ -111,15 +115,19 @@ public class ArchivosIO {
 			Element doc = dom.getDocumentElement();
 			aux = Integer.parseInt(getTextValue(doc, "brotesTotal"));
 			if (aux != null) {
-					parametros.add(aux);
+				parametros.add(aux);
 			}
 			aux = Integer.parseInt(getTextValue(doc, "infeccionRonda"));
 			if (aux != null) {
-					parametros.add(aux);
+				parametros.add(aux);
 			}
 			aux = Integer.parseInt(getTextValue(doc, "porcentajeCura"));
 			if (aux != null) {
-					parametros.add(aux);
+				parametros.add(aux);
+			}
+			aux = Integer.parseInt(getTextValue(doc, "acciones"));
+			if (aux != null) {
+				parametros.add(aux);
 			}
 			return true;
 		} catch (ParserConfigurationException pce) {
@@ -131,11 +139,10 @@ public class ArchivosIO {
 		}
 		return false;
 	}
-	
 
 	/////////////////////////////////////////////////////////////////////
 	// - getTextValue
-	// lee los datos que hay en el elemento deseado  
+	// lee los datos que hay en el elemento deseado
 	///////////////////////////////////////////////////////////////////////
 	public static String getTextValue(Element doc, String tag) {
 		String value = null;
@@ -146,7 +153,6 @@ public class ArchivosIO {
 		}
 		return value;
 	}
-
 
 	/////////////////////////////////////////////////////////////////////
 	// - leerRanking
@@ -237,22 +243,63 @@ public class ArchivosIO {
 	}
 
 	/////////////////////////////////////////////////////////////////////
-	// - escribirParametros
-	// Guarda los parametros en parametros.bin
+	// - escribirXML
+	// Escribe en xml los parametros en el archivo parametros.xml
 	///////////////////////////////////////////////////////////////////////
-	public static void escribirParametros(Parametros parametro) {
-
+	public static void escribirXML(String xml, int brotesTotal, int infeccionRonda, int porcentajeCura, int acciones) {
+		Document dom;
+		Element e = null;
+		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 		try {
-			DataOutputStream escribeFichero = new DataOutputStream(new FileOutputStream("parametros.xml"));
-			escribeFichero.writeInt(parametro.brotesTotal);
-			escribeFichero.writeInt(parametro.infeccionRonda);
-			escribeFichero.writeInt(parametro.porcentajeCura);
-
-			escribeFichero.close();
-		} catch (IOException e) {
-			System.out.println("Error E/S");
-
+			// creamos el documento donde se va a escribir el xml
+			DocumentBuilder db = dbf.newDocumentBuilder();
+			dom = db.newDocument();
+			Element rootEle = dom.createElement("parametros");
+			// creamos un elemento padre nuevo en la instacia de documento creada.
+			e = dom.createElement("brotesTotal");
+			e.appendChild(dom.createTextNode(Integer.toString(brotesTotal)));
+			rootEle.appendChild(e);
+			// dentro de este creamos los elementos hijos
+			e = dom.createElement("infeccionRonda");
+			e.appendChild(dom.createTextNode(Integer.toString(infeccionRonda)));
+			rootEle.appendChild(e);
+			e = dom.createElement("porcentajeCura");
+			e.appendChild(dom.createTextNode(Integer.toString(porcentajeCura)));
+			rootEle.appendChild(e);
+			e = dom.createElement("acciones");
+			e.appendChild(dom.createTextNode(Integer.toString(acciones)));
+			rootEle.appendChild(e);
+			dom.appendChild(rootEle);
+			try {
+				// generamos la cabezera del documento xml
+				Transformer tr = TransformerFactory.newInstance().newTransformer();
+				tr.setOutputProperty(OutputKeys.INDENT, "yes");
+				tr.setOutputProperty(OutputKeys.METHOD, "xml");
+				tr.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
+				tr.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "4");
+				// Transofrmamos el documento virtual creado a un documento en el sistema.
+				// "parametros.xml"
+				tr.transform(new DOMSource(dom), new StreamResult(new FileOutputStream(xml)));
+			} catch (TransformerException te) {
+				System.out.println(te.getMessage());
+			} catch (IOException ioe) {
+				System.out.println(ioe.getMessage());
+			}
+		} catch (ParserConfigurationException pce) {
+			System.out.println("UsersXML: Error trying to instantiate DocumentBuilder " + pce);
 		}
+	}
+
+	/////////////////////////////////////////////////////////////////////
+	// - escribirParametros
+	// guarda en parametros.xml los parametros del programa
+	///////////////////////////////////////////////////////////////////////
+	public static ArrayList<Integer> escribirParametros(int brotesTotal, int infeccionRonda, int porcentajeCura,
+			int acciones) {
+		ArrayList<Integer> parametros = new ArrayList<Integer>();
+		escribirXML("parametros.xml", brotesTotal, infeccionRonda, porcentajeCura, acciones);
+		// parametros (brotesTotal, infeccionRonda , porcentajeCura,acciones)
+		return parametros;
 	}
 
 	/////////////////////////////////////////////////////////////////////

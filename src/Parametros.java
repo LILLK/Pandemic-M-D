@@ -9,6 +9,9 @@ public class Parametros {
 	static int infeccionRonda;
 	//determina el porcentaje que se aumenta para obtener la cura
 	static int porcentajeCura;
+	//determina el numero de acciones que puede hacer el jugador 
+	static int acciones;
+
 
 	////////////////////////////////////
 	/////////// constructores //////////
@@ -28,23 +31,27 @@ public class Parametros {
 	////////////////////////////////////
 
 	public static void cambiarParametros() {
-		int brotesTotal,infeccionRonda,porcentajeCura;
+		int brotesTotal,infeccionRonda,porcentajeCura,acciones;
 		Scanner teclado = new Scanner(System.in);
-		System.out.println("brotesTotal");
+		System.out.println("Cambiar brotesTotal");
 		brotesTotal = teclado.nextInt();
-		System.out.println("infeccionRonda");
+		System.out.println("Cambiar infeccionRonda");
 		infeccionRonda = teclado.nextInt();
-		System.out.println("porcentajeCura");
+		System.out.println("Cambiar porcentajeCura");
 		porcentajeCura = teclado.nextInt();
+		System.out.println("Cambiar acciones");
+		acciones = teclado.nextInt();
 		teclado.close();
-		test.escribirParametros(brotesTotal, infeccionRonda, porcentajeCura);
+		ArchivosIO.escribirParametros(brotesTotal, infeccionRonda, porcentajeCura,acciones);
 		establecerParametros();
 	}
 	public static void establecerParametros() {
-		ArrayList<Integer> parametros = test.leerParametros();
+		ArrayList<Integer> parametros = ArchivosIO.leerParametros();
 		Parametros.brotesTotal = parametros.get(0);
 		Parametros.infeccionRonda =parametros.get(1);
 		Parametros.porcentajeCura = parametros.get(2);
+		Parametros.acciones = parametros.get(3);
+
 	}
 	
 	////////////////////////////////////
@@ -73,5 +80,14 @@ public class Parametros {
 	public void setPorcentajeCura(int porcentajeCura) {
 		Parametros.porcentajeCura = porcentajeCura;
 	}
+
+	public static int getAcciones() {
+		return acciones;
+	}
+
+	public static void setAcciones(int acciones) {
+		Parametros.acciones = acciones;
+	}
+	
 
 }

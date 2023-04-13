@@ -2,5 +2,6 @@
 <parametros>
     <brotesTotal>10</brotesTotal>
     <infeccionRonda>2</infeccionRonda>
-    <porcentajeCura>15</porcentajeCura>
+    <porcentajeCura>14</porcentajeCura>
+    <acciones>4</acciones>
 </parametros>

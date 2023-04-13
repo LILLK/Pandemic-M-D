@@ -1,9 +1,18 @@
+import java.util.ArrayList;
+
 //Mehdi Tahrat&&David Hola
 
 public class main {
 
-	public static void main(String[] args) {
 
+	public static void main(String[] args) {
+		// parametros {brotesTotal, infeccionRonda , porcentajeCura, acciones}
+		ArrayList<Integer> parametros = ArchivosIO.leerParametros();
+		System.out.println(parametros);
+		Parametros.cambiarParametros();
+		parametros.clear();
+		parametros.addAll(ArchivosIO.leerParametros());
+		System.out.println(parametros);
 	}
 	
 	
