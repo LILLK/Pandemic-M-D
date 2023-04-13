@@ -3,12 +3,16 @@ import java.awt.event.ActionListener;
 
 import javax.swing.BoxLayout;
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 
 //Mehdi Tahrat&&David Hola
 
 public class JF_Menu extends JFrame implements ActionListener{
 		menuB lamina;
+		JPanel PanelInformacion;
+		JPanel PanelAutores;
+		JPanel PanelVersion;
 	
 	JF_Menu(){
 		
@@ -39,11 +43,29 @@ public class JF_Menu extends JFrame implements ActionListener{
 	String titulo = this.getTitle();
 		
 		if (e.getSource() == lamina.Infromacion) {
-		JFrame PanelInfo = (JFrame)SwingUtilities.getWindowAncestor(this);	
-		PanelInfo.remove(this);
+		JFrame PanelInfo = (JFrame)SwingUtilities.getWindowAncestor(lamina);	
+		PanelInfo.remove(lamina);
 		PanelInfo.add(new PanelInfo());
 		PanelInfo.setVisible(true);
 		
+		}
+		if (e.getSource() == lamina.Autores) {
+			JFrame PanelAuto = (JFrame)SwingUtilities.getWindowAncestor(lamina);	
+			PanelAuto.remove(lamina);
+			PanelAuto.add(PanelAutores=new JPanel());
+			PanelAuto.setVisible(true);
+			
+		}
+		if (e.getSource() == lamina.Version) {
+			JFrame PanelVer = (JFrame)SwingUtilities.getWindowAncestor(lamina);	
+			PanelVer.remove(lamina);
+			PanelVer.add(PanelVersion=new JPanel());
+			PanelVer.setVisible(true);
+			
+		}
+		if (e.getSource() == lamina.Salir) {
+			
+			dispose();
 		}
 	}
 	

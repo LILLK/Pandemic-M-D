@@ -1,4 +1,4 @@
-import java.awt.*;
+ import java.awt.*;
 import javax.swing.*;
 
 //Mehdi Tahrat&&David Hola
@@ -36,6 +36,7 @@ public class menuB extends JPanel {
 		add(Autores);
 		add(Version);
 		add(Salir);
+		
 	}
 
 }
