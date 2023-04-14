@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<parametros>
+    <brotesTotal>2</brotesTotal>
+    <infeccionRonda>4</infeccionRonda>
+    <porcentajeCura>8</porcentajeCura>
+    <brotesInicio>5</brotesInicio>
+    <nEnfermedades>3</nEnfermedades>
+</parametros>
