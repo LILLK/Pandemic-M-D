@@ -91,10 +91,10 @@ public class ArchivosIO {
 
 	}
 
-	/////////////////////////////////////////////////////////////////////
+	//////////////////////////////////////////////////////////////////////////////////////
 	// - leerParametros
-	// lee el archivo "parametros.bin" y lo guarda en los atributos del objeto
-	///////////////////////////////////////////////////////////////////////
+	// lee el archivo "parametros.xml" y devuelve una lista con los componentes de este
+	/////////////////////////////////////////////////////////////////////////////////////
 	public static ArrayList<Integer> leerParametros() {
 		ArrayList<Integer> parametros = new ArrayList<Integer>();
 		leerXML("parametros.xml", parametros);
@@ -103,9 +103,9 @@ public class ArchivosIO {
 
 	/////////////////////////////////////////////////////////////////////
 	// - leerXML
-	// lee en xml
+	// Lee los datos de "parametros.xml" 
 	///////////////////////////////////////////////////////////////////////
-	public static boolean leerXML(String xml, ArrayList<Integer> parametros) {
+	public static void leerXML(String xml, ArrayList<Integer> parametros) {
 		Integer aux = null;
 		Document dom;
 		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
@@ -125,11 +125,15 @@ public class ArchivosIO {
 			if (aux != null) {
 				parametros.add(aux);
 			}
-			aux = Integer.parseInt(getTextValue(doc, "acciones"));
+			
+			aux = Integer.parseInt(getTextValue(doc, "brotesInicio"));
 			if (aux != null) {
 				parametros.add(aux);
 			}
-			return true;
+			aux = Integer.parseInt(getTextValue(doc, "nEnfermedades"));
+			if (aux != null) {
+				parametros.add(aux);
+			}
 		} catch (ParserConfigurationException pce) {
 			System.out.println(pce.getMessage());
 		} catch (SAXException se) {
@@ -137,7 +141,6 @@ public class ArchivosIO {
 		} catch (IOException ioe) {
 			System.err.println(ioe.getMessage());
 		}
-		return false;
 	}
 
 	/////////////////////////////////////////////////////////////////////
@@ -244,9 +247,9 @@ public class ArchivosIO {
 
 	/////////////////////////////////////////////////////////////////////
 	// - escribirXML
-	// Escribe en xml los parametros en el archivo parametros.xml
+	// Escribe en xml los parametros en el archivo "parametros.xml"
 	///////////////////////////////////////////////////////////////////////
-	public static void escribirXML(String xml, int brotesTotal, int infeccionRonda, int porcentajeCura, int acciones) {
+	public static void escribirXML(String xml, int brotesTotal, int infeccionRonda, int porcentajeCura, int brotesInicio, int nEnfermedades) {
 		Document dom;
 		Element e = null;
 		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
@@ -266,8 +269,11 @@ public class ArchivosIO {
 			e = dom.createElement("porcentajeCura");
 			e.appendChild(dom.createTextNode(Integer.toString(porcentajeCura)));
 			rootEle.appendChild(e);
-			e = dom.createElement("acciones");
-			e.appendChild(dom.createTextNode(Integer.toString(acciones)));
+			e = dom.createElement("brotesInicio");
+			e.appendChild(dom.createTextNode(Integer.toString(brotesInicio)));
+			rootEle.appendChild(e);
+			e = dom.createElement("nEnfermedades");
+			e.appendChild(dom.createTextNode(Integer.toString(nEnfermedades)));
 			rootEle.appendChild(e);
 			dom.appendChild(rootEle);
 			try {
@@ -295,10 +301,10 @@ public class ArchivosIO {
 	// guarda en parametros.xml los parametros del programa
 	///////////////////////////////////////////////////////////////////////
 	public static ArrayList<Integer> escribirParametros(int brotesTotal, int infeccionRonda, int porcentajeCura,
-			int acciones) {
+			int brotesInicio,int nEnfermedades) {
 		ArrayList<Integer> parametros = new ArrayList<Integer>();
-		escribirXML("parametros.xml", brotesTotal, infeccionRonda, porcentajeCura, acciones);
-		// parametros (brotesTotal, infeccionRonda , porcentajeCura,acciones)
+		escribirXML("parametros.xml", brotesTotal, infeccionRonda, porcentajeCura, brotesInicio,nEnfermedades);
+		// parametros (brotesTotal, infeccionRonda , porcentajeCura,brotesInicio,nEnfermedades)
 		return parametros;
 	}
 

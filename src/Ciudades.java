@@ -8,7 +8,7 @@ public class Ciudades {
 	boolean infectado;
 	int[] posicion = new int [2];
 	int idVirus;
-	int nBrotes;
+	int nEnfermedades;
 	ArrayList<String> colindantes;
 
 	////////////////////////////////////
@@ -19,7 +19,7 @@ public class Ciudades {
 		this.infectado = infectado;
 		this.posicion = posicion;
 		this.idVirus = idVirus;
-		this.nBrotes = 0;
+		this.nEnfermedades = 0;
 		colindantes = new ArrayList<String>();
 	}
 	////////////////////////////////////
@@ -27,7 +27,7 @@ public class Ciudades {
 	////////////////////////////////////
 
 	public  void infectar() {
-		this.nBrotes++;
+		this.nEnfermedades++;
 	}
 	/////////////////////////////////////
 	///////////// Funciones ////////////
@@ -74,10 +74,10 @@ public class Ciudades {
 	}
 	
 	public int getnBrotes() {
-		return nBrotes;
+		return nEnfermedades;
 	}
 	
 	public void setnBrotes(int nBrotes) {
-		this.nBrotes = nBrotes;
+		this.nEnfermedades = nBrotes;
 	}
 }
