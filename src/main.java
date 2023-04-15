@@ -4,7 +4,7 @@ public class main {
 
 	public static void main(String[] args) {
 		
-		JF_Menu menu = new JF_Menu();
+		JF_Marco marcoP = new JF_Marco();
 
 	}
 	

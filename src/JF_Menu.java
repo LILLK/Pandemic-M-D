@@ -36,6 +36,7 @@ public class JF_Menu extends JFrame implements ActionListener{
 		
 
 	}
+	
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -43,10 +44,10 @@ public class JF_Menu extends JFrame implements ActionListener{
 	String titulo = this.getTitle();
 		
 		if (e.getSource() == lamina.Infromacion) {
-		JFrame PanelInfo = (JFrame)SwingUtilities.getWindowAncestor(lamina);	
-		PanelInfo.remove(lamina);
-		PanelInfo.add(new PanelInfo());
-		PanelInfo.setVisible(true);
+		JFrame menu = (JFrame)SwingUtilities.getWindowAncestor(this);	
+		menu.remove(this);
+		
+		menu.setVisible(true);
 		
 		}
 		if (e.getSource() == lamina.Autores) {
