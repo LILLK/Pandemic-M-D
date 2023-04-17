@@ -6,7 +6,18 @@ public class main {
 
 
 	public static void main(String[] args) {
-		
+		Partida.brotes=0;
+		Parametros.brotesInicio = 4;
+		Partida.ciudades = new ArrayList<Ciudades>();
+		Ciudades.generarCiudades();
+		//System.out.println(Partida.ciudades);
+		for (Ciudades ciudad : Partida.ciudades) {
+			System.out.println("----------------");
+			System.out.println(ciudad.nombre);
+			System.out.println(ciudad.idVirus);
+			System.out.println(ciudad.nEnfermedades);
+			System.out.println("----------------");
+		}
 	
 	}
 	

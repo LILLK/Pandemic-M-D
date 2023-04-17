@@ -71,47 +71,26 @@ public class ArchivosIO {
 	// - leerCiudades
 	// lee el archivo ciudades.txt y lo guarda en el ArrayList ciudades
 	///////////////////////////////////////////////////////////////////////
-	public static void leerCiudades(ArrayList<String> ciudades) {
-
+	public static ArrayList<String> leerCiudades() {
+		ArrayList<String> ciudades = new ArrayList<>();
 		try {
 
 			BufferedReader leer = new BufferedReader(new FileReader("Ciudadestesteo.txt"));
 			String ln=" ";
-			int posicion[] = new int [2];
 			// Leemos el archivo linea a linea y guardamos cada linia en la siuiente
 			// posicion del ArrayList ciudades
 			while ((ln = leer.readLine()) != null) {
-				posicion[0] = Integer.parseInt(ln.split(";")[2].split(",")[0]);
-				posicion[1] = Integer.parseInt(ln.split(";")[2].split(",")[1]);
-
-				Ciudades ciudad = new Ciudades( ln.split(";")[0], false, posicion, 0);
-				ciudad.colindantes = Ciudades.generarColindantes();
-				Partida.ciudades.add(ciudad);
-				System.out.println();
-				
+				ciudades.add(ln);
 			}
-
 		} catch (EOFException e) {
 			System.out.println("fin del archiovo");
 		} catch (IOException e) {
-			System.out.println("Error I/O");
+			System.out.println("Error I/O-Ciudadestesteo.txt-leerCiudades");
 		}
+		return ciudades;
 
 	}
 
-	/////////////////////////////////////////////////////////////////////
-	// - nCiudades
-	// devuelve el numero de ciudades que hay
-	///////////////////////////////////////////////////////////////////////
-	  public static int nCiudades() {
-	      int lineas = 0;
-	      try (BufferedReader reader = new BufferedReader(new FileReader("Ciudadestesteo.txt"))) {
-	          while (reader.readLine() != null) lineas++;
-	      } catch (IOException e) {
-	          e.printStackTrace();
-	      }
-	      return lineas;
-	  }
 
 	//////////////////////////////////////////////////////////////////////////////////////
 	// - leerParametros
@@ -350,4 +329,17 @@ public class ArchivosIO {
 
 	}
 
+	/////////////////////////////////////////////////////////////////////
+	// - nCiudades
+	// devuelve el numero de ciudades que hay
+	///////////////////////////////////////////////////////////////////////
+	public static int nCiudades() {
+		int lineas = 0;
+		try (BufferedReader reader = new BufferedReader(new FileReader("Ciudadestesteo.txt"))) {
+			while (reader.readLine() != null) lineas++;
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return lineas;
+	}
 }

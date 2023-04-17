@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Partida {
 
 	static int Puntuacion;
+	static int brotes;
 	static int PosiscionPJ;
 	int brotesTotal = Parametros.brotesTotal;
 	int infeccionRonda = Parametros.infeccionRonda;
@@ -17,7 +18,7 @@ public class Partida {
 	////////////////////////////////////
 
 	public Partida() {
-		
+	 	
 	}
 	
 
