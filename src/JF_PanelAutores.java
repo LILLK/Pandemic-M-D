@@ -34,14 +34,22 @@ public class JF_PanelAutores extends JPanel implements ActionListener {
 		BufferedImage imgDavid;
 		try {
 			imgDavid = ImageIO.read(new File("imagenes/fotoDavid.png"));
-			//Image scaledInstance = imgDavid.getScaledInstance(2, 1, Image.SCALE_SMOOTH);
-			//jLabel2.setIcon(new ImageIcon(scaledInstance));
 			JLabel imagenDavid = new JLabel(tamaño(new ImageIcon(imgDavid),300,200));
-			//imagenDavid
 			Dimension sizeImgDavid = imagenDavid.getPreferredSize();
-			imagenDavid.setBounds( 200,200, sizeImgDavid.width,sizeImgDavid.height);
+			imagenDavid.setBounds( 100,200, sizeImgDavid.width,sizeImgDavid.height);
 			add(imagenDavid);
-			//imagenDavid.setLocation(50,500);
+
+		} catch (IOException e) {
+			System.out.print("ds");
+		}
+		BufferedImage imgMehdi;
+		try {
+			imgMehdi = ImageIO.read(new File("imagenes/imagenMehdi.png"));
+			JLabel imagenMehdi = new JLabel(tamaño(new ImageIcon(imgMehdi),300,200));
+			Dimension sizeImgMehdi = imagenMehdi.getPreferredSize();
+			imagenMehdi.setBounds(screenSize.width-400,200, sizeImgMehdi.width,sizeImgMehdi.height);
+			add(imagenMehdi);
+
 		} catch (IOException e) {
 			System.out.print("ds");
 		}
