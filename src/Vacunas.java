@@ -1,31 +1,53 @@
+import java.util.ArrayList;
+
 //Mehdi Tahrat && David hola
 
-
 public class Vacunas {
-	
+
+	String nombre;
+	String color;
+	int desarollo;
+
 	////////////////////////////////////
 	/////////// constructores //////////
 	////////////////////////////////////
-	public Vacunas() {
-	
+	public Vacunas(int id) {
+		ArrayList<String> datos = new ArrayList<>();
+		ArchivosIO.leerCCP(datos, null, false);
+		switch (id) {
+		case 1: {
+			datos.get(id);
+			
+		}
+		case 2: {
+
+		}
+		case 3: {
+			System.out.println();
+		}
+		case 4: {
+
+		}
+		default:
+			throw new IllegalArgumentException("Unexpected value: " + id);
+		}
 	}
-	
+
 	////////////////////////////////////
 	////////////// metodos /////////////
 	////////////////////////////////////
-	
-		/*
-		* 
-		*/
+
+	/*
+	* 
+	*/
 	/////////////////////////////////////
 	///////////// Funciones ////////////
 	////////////////////////////////////
-		/*
-		* 
-		*/
+	/*
+	* 
+	*/
 	////////////////////////////////////
 	/////////// setters&getters//////////
 	////////////////////////////////////
-
 
 }

@@ -6,6 +6,7 @@ public class main {
 
 
 	public static void main(String[] args) {
+		Vacunas vacunas = new Vacunas(0);
 		Partida.brotes=0;
 		Parametros.brotesInicio = 4;
 		Partida.ciudades = new ArrayList<Ciudades>();
