@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 
 //Mehdi Tahrat && David hola
@@ -38,6 +39,21 @@ public class Ciudades {
 	///////////// Funciones ////////////
 	////////////////////////////////////
 
+	
+	//////////////////////////////////////////////////////////////////////////////////////
+	// - getIdXnombre
+	// devuelve la posicion en la lista segun el nombre 
+	/////////////////////////////////////////////////////////////////////////////////////
+	public static int getIdXnombre(String nombre) {
+		int aux=0;
+		//recorre todas las ciudades
+		for (int i = 0; i<Partida.ciudades.size() ;i++) {
+			//si encuentra el nombre con la ciudad enviada
+			if (Partida.ciudades.get(i).nombre.equals(nombre))
+				aux =i;
+		}
+		return aux;//devuelve la su posicion en la lista
+	}
 	//////////////////////////////////////////////////////////////////////////////////////
 	// - generarCiudades
 	// rellena la lista de Partida.ciudades

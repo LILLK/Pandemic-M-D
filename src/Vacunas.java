@@ -11,25 +11,13 @@ public class Vacunas {
 	////////////////////////////////////
 	/////////// constructores //////////
 	////////////////////////////////////
-	public Vacunas(int id) {
+	public Vacunas(int idVirus) {
 		ArrayList<String> datos = new ArrayList<>();
-		ArchivosIO.leerCCP(null, null, false);
-		switch (id) {
-		case 1: {
-			datos.get(id);
-			
-		}
-		case 2: {
-
-		}
-		case 3: {
-			System.out.println();
-		}
-		case 4: {
-
-		}
-	
-		}
+		ArchivosIO.leerCCP(datos, null, false);
+		// datos = "id nombre color"
+		this.nombre = datos.get(idVirus).split(" ")[2];
+		this.color = datos.get(idVirus).split(" ")[1];
+		this.desarollo = 0;
 	}
 
 	////////////////////////////////////

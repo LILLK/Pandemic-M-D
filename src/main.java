@@ -8,7 +8,9 @@ public class main {
 	public static void main(String[] args) {
 		Vacunas vacunas = new Vacunas(0);
 		Partida.brotes=0;
-		Parametros.brotesInicio = 4;
+		Parametros.brotesInicio = 24;
+		
+		
 		Partida.ciudades = new ArrayList<Ciudades>();
 		Ciudades.generarCiudades();
 		//System.out.println(Partida.ciudades);
@@ -17,6 +19,7 @@ public class main {
 			System.out.println(ciudad.nombre);
 			System.out.println(ciudad.idVirus);
 			System.out.println(ciudad.nEnfermedades);
+			System.out.println(ciudad.infectado);
 			System.out.println("----------------");
 		}
 	
