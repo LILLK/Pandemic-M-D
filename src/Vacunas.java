@@ -28,8 +28,7 @@ public class Vacunas {
 		case 4: {
 
 		}
-		default:
-			throw new IllegalArgumentException("Unexpected value: " + id);
+	
 		}
 	}
 

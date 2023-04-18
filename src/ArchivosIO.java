@@ -39,9 +39,11 @@ public class ArchivosIO {
 	public static void leerCCP(ArrayList<String> viruses_op, int[] tamañoMapa_op, boolean imprimir) {
 		
 		//Esta declaracion nos permitira ejecutar esta funcion teniendo parametros nullos
-		Optional<ArrayList<String> > op_p = Optional.ofNullable(viruses_op);
-		Optional<Integer> op_nv = Optional.ofNullable(numeroVictorias);
-		int punt = op_p.isPresent() ? op_p.get() : 0;
+		Optional<ArrayList<String> > op_v = Optional.ofNullable(viruses_op);
+		ArrayList<String>  viruses = op_v.isPresent() ? op_v.get() : new ArrayList<String>();
+		
+		Optional<int[]> op_p = Optional.ofNullable(tamañoMapa_op);
+		int[]  tamañoMapa = op_p.isPresent() ? op_p.get() : new int[2];
 		
 		
 		String linea = "";
