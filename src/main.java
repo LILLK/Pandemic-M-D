@@ -10,9 +10,11 @@ public class main {
 		Partida.brotes=0;
 		Parametros.brotesInicio = 24;
 		
-		
+		Partida.viruses = new ArrayList<Viruses>();
+		Partida.vacunas = new ArrayList<Vacunas>();
 		Partida.ciudades = new ArrayList<Ciudades>();
 		Ciudades.generarCiudades();
+		Viruses.generarVirus();
 		//System.out.println(Partida.ciudades);
 		for (Ciudades ciudad : Partida.ciudades) {
 			System.out.println("----------------");
@@ -21,6 +23,13 @@ public class main {
 			System.out.println(ciudad.nEnfermedades);
 			System.out.println(ciudad.infectado);
 			System.out.println("----------------");
+		}
+		for (Vacunas string : Partida.vacunas) {
+			System.out.println(string.nombre);
+		}
+		for (Viruses string : Partida.viruses) {
+			System.out.println(string.nombre);
+
 		}
 	
 	}
