@@ -1,5 +1,6 @@
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Optional;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -35,8 +36,14 @@ public class ArchivosIO {
 	// - leerCCP
 	// lee el archivo CCP.bin , y si el ultimo parametro es verdadero imprime el
 	////////////////////////////////////////////////////////////////////////////////////// archivo
-	/////////////////////////////////////////////////////////////////////////////////////
-	public static void leerCCP(ArrayList<String> viruses, int[] tamañoMapa, boolean imprimir) {
+	public static void leerCCP(ArrayList<String> viruses_op, int[] tamañoMapa_op, boolean imprimir) {
+		
+		//Esta declaracion nos permitira ejecutar esta funcion teniendo parametros nullos
+		Optional<ArrayList<String> > op_p = Optional.ofNullable(viruses_op);
+		Optional<Integer> op_nv = Optional.ofNullable(numeroVictorias);
+		int punt = op_p.isPresent() ? op_p.get() : 0;
+		
+		
 		String linea = "";
 		try {
 			DataInputStream leeCCP = new DataInputStream(new FileInputStream("CCP.bin"));
@@ -131,7 +138,7 @@ public class ArchivosIO {
 			if (aux != null) {
 				parametros.add(aux);
 			}
-			aux = Integer.parseInt(getTextValue(doc, "nEnfermedades"));
+			aux = Integer.parseInt(getTextValue(doc, "enfermedadesTotal"));
 			if (aux != null) {
 				parametros.add(aux);
 			}
@@ -250,7 +257,7 @@ public class ArchivosIO {
 	// - escribirXML
 	// Escribe en xml los parametros en el archivo "parametros.xml"
 	///////////////////////////////////////////////////////////////////////
-	public static void escribirXML(String xml, int brotesTotal, int infeccionRonda, int porcentajeCura, int brotesInicio, int nEnfermedades) {
+	public static void escribirXML(String xml, int brotesTotal, int infeccionRonda, int porcentajeCura, int brotesInicio, int enfermedadesTotal) {
 		Document dom;
 		Element e = null;
 		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
@@ -273,8 +280,8 @@ public class ArchivosIO {
 			e = dom.createElement("brotesInicio");
 			e.appendChild(dom.createTextNode(Integer.toString(brotesInicio)));
 			rootEle.appendChild(e);
-			e = dom.createElement("nEnfermedades");
-			e.appendChild(dom.createTextNode(Integer.toString(nEnfermedades)));
+			e = dom.createElement("enfermedadesTotal");
+			e.appendChild(dom.createTextNode(Integer.toString(enfermedadesTotal)));
 			rootEle.appendChild(e);
 			dom.appendChild(rootEle);
 			try {
@@ -302,10 +309,10 @@ public class ArchivosIO {
 	// guarda en parametros.xml los parametros del programa
 	///////////////////////////////////////////////////////////////////////
 	public static ArrayList<Integer> escribirParametros(int brotesTotal, int infeccionRonda, int porcentajeCura,
-			int brotesInicio,int nEnfermedades) {
+			int brotesInicio,int enfermedadesTotal) {
 		ArrayList<Integer> parametros = new ArrayList<Integer>();
-		escribirXML("parametros.xml", brotesTotal, infeccionRonda, porcentajeCura, brotesInicio,nEnfermedades);
-		// parametros (brotesTotal, infeccionRonda , porcentajeCura,brotesInicio,nEnfermedades)
+		escribirXML("parametros.xml", brotesTotal, infeccionRonda, porcentajeCura, brotesInicio,enfermedadesTotal);
+		// parametros (brotesTotal, infeccionRonda , porcentajeCura,brotesInicio,enfermedadesTotal)
 		return parametros;
 	}
 

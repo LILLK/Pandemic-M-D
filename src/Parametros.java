@@ -12,7 +12,7 @@ public class Parametros {
 	// determina el numero de brotes al empezar la partida Inicio
 	static int brotesInicio;
 	// determina el numero de enfermedades necesarias para perder
-	static int nEnfermedades;
+	static int enfermedadesTotal;
 
 
 	////////////////////////////////////
@@ -37,7 +37,7 @@ public class Parametros {
 	// Permite cambiar los parametros desde la consola
 	///////////////////////////////////////////////////////////////////////
 	public static void cambiarParametrosSyso() {
-		int brotesTotal, infeccionRonda, porcentajeCura, brotesInicio,nEnfermedades;
+		int brotesTotal, infeccionRonda, porcentajeCura, brotesInicio,enfermedadesTotal;
 		Scanner teclado = new Scanner(System.in);
 		System.out.println("Cambiar brotes totales:");
 		brotesTotal = teclado.nextInt();
@@ -48,10 +48,10 @@ public class Parametros {
 		System.out.println("Cambiar brotes inicio:");
 		brotesInicio = teclado.nextInt();
 		System.out.println("Cambiar numero de Enfermedades para perder:");
-		nEnfermedades = teclado.nextInt();
+		enfermedadesTotal = teclado.nextInt();
 		teclado.close();
 		//guarda los nuevos datos en el archivo 
-		ArchivosIO.escribirParametros(brotesTotal, infeccionRonda, porcentajeCura, brotesInicio,nEnfermedades);
+		ArchivosIO.escribirParametros(brotesTotal, infeccionRonda, porcentajeCura, brotesInicio,enfermedadesTotal);
 		// y en el programa
 		establecerParametros();
 	}
@@ -66,7 +66,7 @@ public class Parametros {
 		Parametros.infeccionRonda = parametros.get(1);
 		Parametros.porcentajeCura = parametros.get(2);
 		Parametros.brotesInicio = parametros.get(3);
-		Parametros.nEnfermedades = parametros.get(4);
+		Parametros.enfermedadesTotal = parametros.get(4);
 	}
 
 	////////////////////////////////////

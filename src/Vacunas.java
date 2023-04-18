@@ -13,7 +13,7 @@ public class Vacunas {
 	////////////////////////////////////
 	public Vacunas(int id) {
 		ArrayList<String> datos = new ArrayList<>();
-		ArchivosIO.leerCCP(datos, null, false);
+		ArchivosIO.leerCCP(null, null, false);
 		switch (id) {
 		case 1: {
 			datos.get(id);
