@@ -3,6 +3,8 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
+import javax.naming.spi.DirStateFactory.Result;
+
 //Mehdi Tahrat && David hola
 
 public class Ciudades {
@@ -43,6 +45,21 @@ public class Ciudades {
 	///////////// Funciones ////////////
 	////////////////////////////////////
 
+
+	//////////////////////////////////////////////////////////////////////////////////////
+	// - nEnfermedadesPartida
+	// recorre la lista de ciudades y cuenta cuantas enfermedades hay 
+	/////////////////////////////////////////////////////////////////////////////////////
+	public static int nEnfermedadesPartida() {
+		int resultado = 0;
+		for (Ciudades city : Partida.ciudades) {
+			resultado += city.nEnfermedades;
+		}
+		return resultado;
+		
+		
+	}
+	
 	
 	//////////////////////////////////////////////////////////////////////////////////////
 	// - getIdXnombre

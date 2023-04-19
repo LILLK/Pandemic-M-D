@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 //Mehdi Tahrat && David hola
 
 public class Jugador {
@@ -22,9 +24,32 @@ public class Jugador {
 	/////////////////////////////////////
 	///////////// Funciones ////////////
 	////////////////////////////////////
-	/*
-	 * 
-	 */
+	
+	////////////////////////////////////
+	//-
+	//
+	////////////////////////////////////
+	public static void acciones(int a) {
+		Scanner scn = Scanner(System.in);
+		String ciudad = null;
+		String vacuna;
+		int id;
+		switch (a) {
+		case 1:
+			System.out.println("curar");
+			System.out.println("ciudad a curar: ");
+			ciudad  = scn.nextLine();
+			 id = Ciudades.getIdXnombre(ciudad);
+			Partida.ciudades.get(id).nEnfermedades = - 1 ;
+			break;
+		case 2:
+			System.out.println("desarollar");
+			System.out.println("vacuna a curar: ");
+			
+			break;
+		}
+	}
+	
 	////////////////////////////////////
 	/////////// setters&getters//////////
 	////////////////////////////////////

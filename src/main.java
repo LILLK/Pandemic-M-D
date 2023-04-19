@@ -5,15 +5,9 @@ import java.util.ArrayList;
 public class main {
 
 	public static void main(String[] args) {
-		Vacunas vacunas = new Vacunas(0);
-		Partida.brotes = 0;
-		Parametros.brotesInicio = 24;
-
-		Partida.viruses = new ArrayList<Viruses>();
-		Partida.vacunas = new ArrayList<Vacunas>();
-		Partida.ciudades = new ArrayList<Ciudades>();
-		Ciudades.generarCiudades();
-		Viruses.generarVirus();
+		Partida.nuevaPartida();
+		
+		
 		// System.out.println(Partida.ciudades);
 		for (Ciudades ciudad : Partida.ciudades) {
 			System.out.println("----------------");
@@ -23,20 +17,22 @@ public class main {
 			System.out.println(ciudad.infectado);
 			System.out.println("----------------");
 		}
-		System.out.println("----------------");
 
 		for (Vacunas string : Partida.vacunas) {
 			System.out.println(string.nombre);
 			System.out.println(string.color);
 			System.out.println(string.desarollo + "%");
+			System.out.println("----------------");
 		}
-		System.out.println("----------------");
 
 		for (Viruses string : Partida.viruses) {
 			System.out.println(string.id);
 			System.out.println(string.nombre);
 			System.out.println(string.color);
+			System.out.println("----------------");
 		}
+		
+		System.out.println(Ciudades.nEnfermedadesPartida());
 
 	}
 

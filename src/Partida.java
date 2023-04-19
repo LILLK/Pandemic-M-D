@@ -1,14 +1,13 @@
 
 //Mehdi Tahrat && David hola
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Partida {
 
 	static int Puntuacion;
 	static int brotes;
-	static int PosiscionPJ;
-	int brotesTotal = Parametros.brotesTotal;
-	int infeccionRonda = Parametros.infeccionRonda;
+	static int enfermedades;
 	static ArrayList<Ciudades> ciudades;
 	static ArrayList<Vacunas> vacunas;
 	static ArrayList<Viruses> viruses;
@@ -18,67 +17,108 @@ public class Partida {
 	////////////////////////////////////
 
 	public Partida() {
-	 	
+
 	}
-	
 
 	////////////////////////////////////
 	////////////// metodos /////////////
 	////////////////////////////////////
 
-	
-	//////////////////////////////////////////////////////////////////////////////////////
-	// - genrarVacunas
-	// rellena la lista de vacunas
-	/////////////////////////////////////////////////////////////////////////////////////
-	public void genrarVacunas() {
+	/*
+	 * 
+	 */
 
-	}
-	//////////////////////////////////////////////////////////////////////////////////////
-	// - genrarViruses
-	// rellena la lista de viruses
-	/////////////////////////////////////////////////////////////////////////////////////
-	public void genrarViruses() {
-
-	}
-	
 	////////////////////////////////////
 	///////////// Funciones ////////////
 	////////////////////////////////////
-	
-	
+
 	//////////////////////////////////////////////////////////////////////////////////////
-	// - genrarViruses
-	// rellena la lista de viruses
+	// -nuevaPartida
+	//
 	/////////////////////////////////////////////////////////////////////////////////////
-	public static void partida() {
+	public static void nuevaPartida() {
+		iniciarNuevaPartida();
+		while (!fin()) {
+			ronda();
+		}
+	}
+	//////////////////////////////////////////////////////////////////////////////////////
+	// -ronda
+	//
+	/////////////////////////////////////////////////////////////////////////////////////
+	public static void ronda() {
+		Scanner scn = new Scanner(System.in);
+		System.out.println("1 curar - 2 desarollar");
+		Jugador.acciones(scn.nextInt());
+		
+		
+		
 		
 	}
-	
+	//////////////////////////////////////////////////////////////////////////////////////
+	// -fin
+	// determina si la partida a acabado por victoria o derrota
+	/////////////////////////////////////////////////////////////////////////////////////
+	public static boolean fin() {
+		
+		boolean aux=false ;
+		//si se llega al numero de brotes necesrio para perder
+		if (Partida.brotes >= Parametros.brotesTotal) {
+			return true;
+			// si se llega al numero de enfermedades necesrio para perder
+		} else if (Partida.enfermedades >= Parametros.enfermedadesTotal) {
+			return true;
+			//si todas las ciudades han sidio limpiadas
+		} else if ( Ciudades.nEnfermedadesPartida() == 0) {
+			return true;
+		}
+		// si han sido todas las vacunas descubiertas
+		else if (Vacunas.vacunasDescubiertas()) {
+			return true;
+		}
+		return aux;
+	}
+
+
+	//////////////////////////////////////////////////////////////////////////////////////
+	// -iniciarNuevaPartida
+	// - rellena y inicializa las variables, listas y objetos necesarios
+	/////////////////////////////////////////////////////////////////////////////////////
+	public static void iniciarNuevaPartida() {
+		Partida.brotes = 0;
+		Partida.Puntuacion = 0;
+		Parametros.establecerParametros();
+		Partida.viruses = new ArrayList<Viruses>();
+		Partida.vacunas = new ArrayList<Vacunas>();
+		Partida.ciudades = new ArrayList<Ciudades>();
+		Ciudades.generarCiudades();
+		Viruses.generarVirus();
+	}
+
 	//////////////////////////////////////////////////////////////////////////////////////
 	// - genrarViruses
 	// rellena la lista de viruses
 	/////////////////////////////////////////////////////////////////////////////////////
 	public static void cargarPartida() {
-		
+
 	}
-	
+
 	//////////////////////////////////////////////////////////////////////////////////////
 	// - genrarViruses
 	// rellena la lista de viruses
 	/////////////////////////////////////////////////////////////////////////////////////
 	public static void guardarPartida() {
-		
-		
+
 	}
+
 	//////////////////////////////////////////////////////////////////////////////////////
 	// - genrarViruses
 	// rellena la lista de viruses
 	/////////////////////////////////////////////////////////////////////////////////////
 	public static void registrarParametros() {
-		
+
 	}
-	
+
 	//////////////////////////////////////////////////////////////////////////////////////
 	// - acciones
 	// Seran las acciones que el jugador podra hacer en la partida
@@ -86,20 +126,15 @@ public class Partida {
 	public static void accionesPartida() {
 		Jugador jugador = new Jugador();
 	}
-	
-	
+
 	//////////////////////////////////////////////////////////////////////////////////////
 	// - distanciaEntre2Puntos
 	// Calcula la distancia que hay entre dos ciudades
 	/////////////////////////////////////////////////////////////////////////////////////
-	public static int distanciaEntre2Puntos(int[]xy1,int[]xy2) {
+	public static int distanciaEntre2Puntos(int[] xy1, int[] xy2) {
 		return (int) Math.sqrt((Math.pow((xy2[0] - xy1[0]), 2) + (Math.pow((xy2[1] - xy1[1]), 2))));
 	}
-	
-	
-	
-	
-	
+
 	////////////////////////////////////
 	/////////// setters&getters//////////
 	////////////////////////////////////
@@ -112,28 +147,20 @@ public class Partida {
 		Partida.Puntuacion = puntuacion;
 	}
 
-	public static int getPosiscionPJ() {
-		return PosiscionPJ;
+	public static int getBrotes() {
+		return brotes;
 	}
 
-	public static void setPosiscionPJ(int posiscionPJ) {
-		Partida.PosiscionPJ = posiscionPJ;
+	public static void setBrotes(int brotes) {
+		Partida.brotes = brotes;
 	}
 
-	public int getBrotesTotal() {
-		return brotesTotal;
+	public static int enfermedades() {
+		return enfermedades;
 	}
 
-	public void setBrotesTotal(int brotesTotal) {
-		this.brotesTotal = brotesTotal;
-	}
-
-	public int getInfeccionRonda() {
-		return infeccionRonda;
-	}
-
-	public void setInfeccionRonda(int infeccionRonda) {
-		this.infeccionRonda = infeccionRonda;
+	public static void enfermedades(int enfermedades) {
+		Partida.enfermedades = enfermedades;
 	}
 
 }
