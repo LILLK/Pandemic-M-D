@@ -47,7 +47,7 @@ public class JF_PanelAutores extends JPanel implements ActionListener {
 			imgMehdi = ImageIO.read(new File("imagenes/imagenMehdi.png"));
 			JLabel imagenMehdi = new JLabel(tamaño(new ImageIcon(imgMehdi),300,200));
 			Dimension sizeImgMehdi = imagenMehdi.getPreferredSize();
-			imagenMehdi.setBounds(screenSize.width-400,200, sizeImgMehdi.width,sizeImgMehdi.height);
+			imagenMehdi.setBounds(this.screenSize.width-400,200, sizeImgMehdi.width,sizeImgMehdi.height);
 			add(imagenMehdi);
 
 		} catch (IOException e) {
@@ -55,8 +55,7 @@ public class JF_PanelAutores extends JPanel implements ActionListener {
 		}
 		
 	
-		int x = screenSize.height-300;
-		Atras.setBounds(0,screenSize.height-60,screenSize.width,20);
+		Atras.setBounds(0,this.screenSize.height-60,this.screenSize.width,20);
 		add(this.Atras);
 		this.Atras.addActionListener(this);
 	}

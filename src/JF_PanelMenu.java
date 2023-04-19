@@ -1,4 +1,5 @@
 import java.awt.*;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
@@ -7,6 +8,8 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
+
+import Botones.BotonNuevaPartida;
 
 public class JF_PanelMenu extends JPanel implements ActionListener{
 	
@@ -18,11 +21,13 @@ public class JF_PanelMenu extends JPanel implements ActionListener{
 	JButton Version;
 	JButton Salir;
 	JFrame marcoP;
-	
+	Dimension screenSize;
 	
 	JF_PanelMenu(){
 		
-		setLayout(new FlowLayout());
+		this.screenSize=Toolkit.getDefaultToolkit().getScreenSize();
+		
+		setLayout(null);
 		this.NuevaPartida = new JButton("NuevaPartida");
 		this.CargarPartida = new JButton("CargarPartida");
 		this.Infromacion = new JButton("Infromacion");
@@ -31,9 +36,17 @@ public class JF_PanelMenu extends JPanel implements ActionListener{
 		this.Version = new JButton("Version");
 		this.Salir = new JButton("Salir");
 		
+		this.NuevaPartida.setBounds(((this.screenSize.width/2)-100),200,200,50);
+		this.CargarPartida.setBounds(((this.screenSize.width/2)-100),260,200,50);
+		this.Infromacion.setBounds(((this.screenSize.width/2)-100),320,200,50);
+		this.ResumenPuntuaciones.setBounds(((this.screenSize.width/2)-100),380,200,50);
+		this.Autores.setBounds(((this.screenSize.width/2)-100),440,200,50);
+		this.Version.setBounds(((this.screenSize.width/2)-100),500,200,50);
+		this.Salir.setBounds(((this.screenSize.width/2)-100),560,200,50);
 		
-		add(NuevaPartida);
-		add(CargarPartida);
+		
+		add(this.NuevaPartida);
+		add(this.CargarPartida);
 		add(this.Infromacion);
 		add(this.ResumenPuntuaciones);
 		add(this.Autores);
@@ -86,15 +99,13 @@ public class JF_PanelMenu extends JPanel implements ActionListener{
 		BufferedImage imgFondo;
 		try {
 			Dimension size =getSize();
-			imgFondo = ImageIO.read(new File("imagenes/fondoMenu.png"));
+			imgFondo = ImageIO.read(new File("imagenes/imagenPandemic.png"));
 			g.drawImage(imgFondo, 0, 0, size.width, size.height,null);
 			setOpaque(false);
 			super.paint(g);
 		} catch (IOException e) {
 			System.out.print("ds");
 		}
-		
-		
 		
 		
 	}

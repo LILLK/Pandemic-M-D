@@ -1,5 +1,7 @@
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -11,18 +13,20 @@ import javax.swing.SwingUtilities;
 
 public class JF_PanelVersion extends JPanel implements ActionListener {
 	JButton Atras;
-	JLabel Version;
+
+	Dimension screenSize;
 	
 	JF_PanelVersion() {
 	
-		setLayout(new BorderLayout());
+		setLayout(null);
+		this.screenSize=Toolkit.getDefaultToolkit().getScreenSize();
 		
 		this.Atras = new JButton("Atras");
-		this.Version = new JLabel("Version 1.0");
+		JLabel Version = new JLabel("Version 1.0");
 		
-		
-		add(this.Atras, BorderLayout.SOUTH);
-		add(this.Version, BorderLayout.CENTER);
+		this.Atras.setBounds(0,this.screenSize.height-60,this.screenSize.width,20);
+		add(this.Atras);
+		add(Version);
 		this.Atras.addActionListener(this);
 	}
 
