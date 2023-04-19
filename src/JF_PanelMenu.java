@@ -9,7 +9,7 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 
-import Botones.BotonNuevaPartida;
+import Botones.*;
 
 public class JF_PanelMenu extends JPanel implements ActionListener{
 	
