@@ -14,8 +14,8 @@ public class Viruses {
 		ArchivosIO.leerCCP(datos, null, false);
 		// datos = "id nombre color"
 		this.id = idVirus;
-		this.nombre = datos.get(idVirus).split(" ")[2];
-		this.color = datos.get(idVirus).split(" ")[1];
+		this.nombre = datos.get(idVirus).split(" ")[1];
+		this.color = datos.get(idVirus).split(" ")[2];
 	}
 	
 	////////////////////////////////////

@@ -15,8 +15,8 @@ public class Vacunas {
 		ArrayList<String> datos = new ArrayList<>();
 		ArchivosIO.leerCCP(datos, null, false);
 		// datos = "id nombre color"
-		this.nombre = datos.get(idVirus).split(" ")[2];
-		this.color = datos.get(idVirus).split(" ")[1];
+		this.nombre = datos.get(idVirus).split(" ")[1];
+		this.color = datos.get(idVirus).split(" ")[2];
 		this.desarollo = 0;
 	}
 

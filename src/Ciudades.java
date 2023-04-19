@@ -27,12 +27,16 @@ public class Ciudades {
 	////////////// metodos /////////////
 	////////////////////////////////////
 
+
+	////////////////////////////////////
+	//-Infectar
+	//
+	////////////////////////////////////
 	public void infectar() {
 		if (this.nEnfermedades < 3)// no se puede infectar mas de 3
 			this.nEnfermedades++;
 		else
-			System.out.println("nEnfermedades no puede ser mayor que 3 ");
-
+			System.out.println("ya tengo un brote!");
 	}
 
 	/////////////////////////////////////
@@ -83,9 +87,7 @@ public class Ciudades {
 					generarBrote(ciudad);
 			}
 		}
-		
 	}
-
 	//////////////////////////////////////////////////////////////////////////////////////
 	// - generarColindantes
 	// devuelve una lista con las colindandtes
@@ -101,7 +103,6 @@ public class Ciudades {
 		}
 		return colindantes;
 	}
-
 	//////////////////////////////////////////////////////////////////////////////////////
 	// - generarBrotes
 	// infeca las ciudades dependiendo de los parametros y genera los brotes necesarias
@@ -129,48 +130,36 @@ public class Ciudades {
 		else
 			return false;
 	}
-
-
 	////////////////////////////////////
 	/////////// setters&getters//////////
 	////////////////////////////////////
-
 	public String getNombre() {
 		return nombre;
 	}
-
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-
 	public boolean isInfectado() {
 		return infectado;
 	}
-
 	public void setInfectado(boolean infectado) {
 		this.infectado = infectado;
 	}
-
 	public int[] getPosicion() {
 		return posicion;
 	}
-
 	public void setPosicion(int[] posicion) {
 		this.posicion = posicion;
 	}
-
 	public int getIdVirus() {
 		return idVirus;
 	}
-
 	public void setIdVirus(int idVirus) {
 		this.idVirus = idVirus;
 	}
-
 	public int getnBrotes() {
 		return nEnfermedades;
 	}
-
 	public void setnBrotes(int nBrotes) {
 		this.nEnfermedades = nBrotes;
 	}
