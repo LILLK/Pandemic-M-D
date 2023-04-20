@@ -8,13 +8,13 @@ public class main {
 		Partida.nuevaPartida();
 		
 		
-		// System.out.println(Partida.ciudades);
+	
 		for (Ciudades ciudad : Partida.ciudades) {
 			System.out.println("----------------");
 			System.out.println(ciudad.nombre);
 			System.out.println(ciudad.idVirus);
 			System.out.println(ciudad.nEnfermedades);
-			System.out.println(ciudad.infectado);
+			System.out.println(ciudad.brote);
 			System.out.println("----------------");
 		}
 

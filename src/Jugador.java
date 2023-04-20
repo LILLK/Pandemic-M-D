@@ -24,32 +24,66 @@ public class Jugador {
 	/////////////////////////////////////
 	///////////// Funciones ////////////
 	////////////////////////////////////
-	
+
 	////////////////////////////////////
-	//-
+	// -
 	//
 	////////////////////////////////////
 	public static void acciones(int a) {
-		Scanner scn = Scanner(System.in);
-		String ciudad = null;
-		String vacuna;
-		int id;
+
 		switch (a) {
 		case 1:
 			System.out.println("curar");
-			System.out.println("ciudad a curar: ");
-			ciudad  = scn.nextLine();
-			 id = Ciudades.getIdXnombre(ciudad);
-			Partida.ciudades.get(id).nEnfermedades = - 1 ;
+			curar();
 			break;
 		case 2:
 			System.out.println("desarollar");
-			System.out.println("vacuna a curar: ");
-			
+			desarollar();
 			break;
 		}
 	}
-	
+
+////////////////////////////////////
+// -curar
+// resta 1 enefrmedad a la ciudad elejida
+////////////////////////////////////
+	public static void curar() {
+		Scanner scn = new Scanner(System.in);
+		String ciudad = null;
+		int id;
+		do {
+			System.out.println("ciudad a curar: ");
+			ciudad = scn.nextLine();
+			//recogemos el id de la ciudad a currar
+			id = Ciudades.getIdXnombre(ciudad);
+			//si tenen 0 o menos enfermedades no se podra curar
+			if (Partida.ciudades.get(id).nEnfermedades <= 0) {
+				System.out.println("no se puede curar esta ciudad ");
+			}
+		} while (Partida.ciudades.get(id).nEnfermedades <= 0);
+		Partida.ciudades.get(id).nEnfermedades = -1;
+		scn.close();
+	}
+
+	////////////////////////////////////
+	// -desarollar
+	// aumenta el desarollo de la cura
+	////////////////////////////////////
+	public static void desarollar() {
+		Scanner scn = new Scanner(System.in);
+		int id;
+		do {
+			System.out.println("vacuna a desarollar (0-3): ");
+			id = scn.nextInt();
+			if (Partida.vacunas.get(id).desarollo >= 100) {
+				System.out.println("ya a sido desarollada ");
+			}
+		} while (Partida.vacunas.get(id).desarollo >= 100);
+
+		Partida.vacunas.get(id).desarollo += Parametros.porcentajeCura;
+		scn.close();
+	}
+
 	////////////////////////////////////
 	/////////// setters&getters//////////
 	////////////////////////////////////

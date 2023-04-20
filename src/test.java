@@ -21,42 +21,10 @@ public class test {
 
 	public static void mai2n(String[] args) {
 		
-		
-		ArrayList<ArrayList> listas = new ArrayList<ArrayList>();
-
-		ArrayList<String> listaCompra = new ArrayList<String>();
-		ArrayList<String> listaCoches = new ArrayList<String>();
-		ArrayList<String> listaCasas = new ArrayList<String>();
-
-
-		
-		listaCompra.add("manzana");
-		listaCompra.add("pera");
-		listaCompra.add("leceh");
-		listaCompra.add("pan");
-		listaCoches.add("coche 1");
-		listaCasas.add("casa 1");
-		
-		listas.add(listaCoches);
-		listas.add(listaCasas);
-		listas.add(listaCompra);
-		
-		System.out.println(listaCompra);
-		System.out.println(listaCompra.contains("pera"));
-		System.out.println(listaCompra.set(1, "naranja"));
-		System.out.println(listaCompra);
-		System.out.println(listaCompra.contains("pera"));
-
-		
-		
-		System.out.println(listas.get(0).get(0));
-		
-		
-		
-		for (ArrayList aux : listas) {
+		while (true) {
 			
 			
-			System.out.println(aux.get(0));
+			
 		}
 		
 		

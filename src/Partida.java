@@ -40,8 +40,12 @@ public class Partida {
 		iniciarNuevaPartida();
 		while (!fin()) {
 			ronda();
+			if (!fin()) {
+
+			}
 		}
 	}
+
 	//////////////////////////////////////////////////////////////////////////////////////
 	// -ronda
 	//
@@ -50,26 +54,41 @@ public class Partida {
 		Scanner scn = new Scanner(System.in);
 		System.out.println("1 curar - 2 desarollar");
 		Jugador.acciones(scn.nextInt());
-		
-		
-		
-		
 	}
+
+	//////////////////////////////////////////////////////////////////////////////////////
+	// -infectar
+	//
+	/////////////////////////////////////////////////////////////////////////////////////
+	public static void infectar() {
+		for (Ciudades ciudad : Partida.ciudades) {
+			if (ciudad.nEnfermedades != 0 && !ciudad.brote) {// si la ciudad a sido infectada y no tiene un brote
+				ciudad.infectar();
+			} else if (ciudad.nEnfermedades != 0 && ciudad.brote) {// si la ciudad a sido infectada y tiene un brote
+
+			} else if (ciudad.nEnfermedades == 0 && ciudad.brote) {// si la ciudad no a sido infectada y tiene un brote
+
+			} else if (ciudad.nEnfermedades == 3 && !ciudad.brote) {// si la ciudad no a sido infectada y no tiene un brote
+
+			}
+		}
+	}
+
 	//////////////////////////////////////////////////////////////////////////////////////
 	// -fin
 	// determina si la partida a acabado por victoria o derrota
 	/////////////////////////////////////////////////////////////////////////////////////
 	public static boolean fin() {
-		
-		boolean aux=false ;
-		//si se llega al numero de brotes necesrio para perder
+
+		boolean aux = false;
+		// si se llega al numero de brotes necesrio para perder
 		if (Partida.brotes >= Parametros.brotesTotal) {
 			return true;
 			// si se llega al numero de enfermedades necesrio para perder
 		} else if (Partida.enfermedades >= Parametros.enfermedadesTotal) {
 			return true;
-			//si todas las ciudades han sidio limpiadas
-		} else if ( Ciudades.nEnfermedadesPartida() == 0) {
+			// si todas las ciudades han sidio limpiadas
+		} else if (Ciudades.nEnfermedadesPartida() == 0) {
 			return true;
 		}
 		// si han sido todas las vacunas descubiertas
@@ -78,7 +97,6 @@ public class Partida {
 		}
 		return aux;
 	}
-
 
 	//////////////////////////////////////////////////////////////////////////////////////
 	// -iniciarNuevaPartida

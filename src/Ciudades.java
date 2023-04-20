@@ -12,7 +12,7 @@ public class Ciudades {
 	int idVirus;
 	int[] posicion = new int[2];
 	ArrayList<String> colindantes;
-	boolean infectado;
+	boolean brote;
 	int nEnfermedades;
 
 	////////////////////////////////////
@@ -24,31 +24,33 @@ public class Ciudades {
 		this.idVirus = idVirus;
 		colindantes = new ArrayList<String>();
 		this.nEnfermedades = 0;
+		this.brote = false;
 	}
 	////////////////////////////////////
 	////////////// metodos /////////////
 	////////////////////////////////////
 
-
 	////////////////////////////////////
-	//-Infectar
+	// -Infectar
 	//
 	////////////////////////////////////
 	public void infectar() {
-		if (this.nEnfermedades < 3)// no se puede infectar mas de 3
+		if (this.nEnfermedades < 3) {// si es mas pequeño de 3
+			this.brote = true;
 			this.nEnfermedades++;
-		else
-			System.out.println("ya tengo un brote!");
+			// si se infecta, tiene 3 enfermedades y no tiene un brote, se generara uno
+		} else if (this.nEnfermedades == 3 && !this.brote) {
+			Partida.brotes++;
+		}
 	}
 
 	/////////////////////////////////////
 	///////////// Funciones ////////////
 	////////////////////////////////////
 
-
 	//////////////////////////////////////////////////////////////////////////////////////
 	// - nEnfermedadesPartida
-	// recorre la lista de ciudades y cuenta cuantas enfermedades hay 
+	// recorre la lista de ciudades y cuenta cuantas enfermedades hay
 	/////////////////////////////////////////////////////////////////////////////////////
 	public static int nEnfermedadesPartida() {
 		int resultado = 0;
@@ -56,25 +58,24 @@ public class Ciudades {
 			resultado += city.nEnfermedades;
 		}
 		return resultado;
-		
-		
+
 	}
-	
-	
+
 	//////////////////////////////////////////////////////////////////////////////////////
 	// - getIdXnombre
-	// devuelve la posicion en la lista segun el nombre 
+	// devuelve la posicion en la lista segun el nombre
 	/////////////////////////////////////////////////////////////////////////////////////
 	public static int getIdXnombre(String nombre) {
-		int aux=0;
-		//recorre todas las ciudades
-		for (int i = 0; i<Partida.ciudades.size() ;i++) {
-			//si encuentra el nombre con la ciudad enviada
+		int aux = 0;
+		// recorre todas las ciudades
+		for (int i = 0; i < Partida.ciudades.size(); i++) {
+			// si encuentra el nombre con la ciudad enviada
 			if (Partida.ciudades.get(i).nombre.equals(nombre))
-				aux =i;
+				aux = i;
 		}
-		return aux;//devuelve la su posicion en la lista
+		return aux;// devuelve la su posicion en la lista
 	}
+
 	//////////////////////////////////////////////////////////////////////////////////////
 	// - generarCiudades
 	// rellena la lista de Partida.ciudades
@@ -88,23 +89,24 @@ public class Ciudades {
 		// ciudades
 		for (String lin : listaCiudades) {
 			// lin = " nombre;idVirus;pos1,pos2;colindante1,colindante2...; "
-			//extraer los datos de la String 
+			// extraer los datos de la String
 			nombre = lin.split(";")[0];
 			idVirus = Integer.parseInt(lin.split(";")[1]);
 			posicion[0] = Integer.parseInt(lin.split(";")[2].split(",")[0]);
 			posicion[1] = Integer.parseInt(lin.split(";")[2].split(",")[1]);
 			Ciudades ciudad = new Ciudades(nombre, posicion, idVirus);
 			ciudad.colindantes = generarColindantes(ciudad.nombre);
-			generarBrote(ciudad);
+			generarBrotes(ciudad);
 			Partida.ciudades.add(ciudad);
 		}
-		while (Partida.brotes < Parametros.brotesInicio ) {
+		while (Partida.brotes < Parametros.brotesInicio) {
 			for (Ciudades ciudad : Partida.ciudades) {
-				if (!ciudad.infectado)
-					generarBrote(ciudad);
+				if (!ciudad.brote)
+					generarBrotes(ciudad);
 			}
 		}
 	}
+
 	//////////////////////////////////////////////////////////////////////////////////////
 	// - generarColindantes
 	// devuelve una lista con las colindandtes
@@ -120,23 +122,26 @@ public class Ciudades {
 		}
 		return colindantes;
 	}
+
 	//////////////////////////////////////////////////////////////////////////////////////
 	// - generarBrotes
-	// infeca las ciudades dependiendo de los parametros y genera los brotes necesarias
+	// infeca las ciudades dependiendo de los parametros y genera los brotes
+	////////////////////////////////////////////////////////////////////////////////////// necesarias
 	/////////////////////////////////////////////////////////////////////////////////////
-	public static void generarBrote(Ciudades ciudad) {
-		if (validarInfectar()) {//si se puede y le toca esta ciudad se infectara
+	public static void generarBrotes(Ciudades ciudad) {
+		if (validarInfectar()) {// si se puede y le toca esta ciudad se infectara
 			for (int i = 0; i < 3; i++) {
 				ciudad.infectar();
 			}
-			ciudad.setInfectado(true);
 			Partida.brotes++;
-		} else
-			ciudad.setInfectado(false);
+			ciudad.brote = true;
+		}
 	}
+
 	//////////////////////////////////////////////////////////////////////////////////////
 	// - infectar
-	// al generar la ciudad revisa si se tiene que infectar al principio de la partida
+	// al generar la ciudad revisa si se tiene que infectar al principio de la
+	////////////////////////////////////////////////////////////////////////////////////// partida
 	/////////////////////////////////////////////////////////////////////////////////////
 	public static boolean validarInfectar() {
 		int random = (int) (Math.random() * 100);
@@ -147,36 +152,46 @@ public class Ciudades {
 		else
 			return false;
 	}
+
 	////////////////////////////////////
 	/////////// setters&getters//////////
 	////////////////////////////////////
 	public String getNombre() {
 		return nombre;
 	}
+
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	public boolean isInfectado() {
-		return infectado;
+
+	public boolean isBrote() {
+		return brote;
 	}
-	public void setInfectado(boolean infectado) {
-		this.infectado = infectado;
+
+	public void setBrote(boolean brote) {
+		this.brote = brote;
 	}
+
 	public int[] getPosicion() {
 		return posicion;
 	}
+
 	public void setPosicion(int[] posicion) {
 		this.posicion = posicion;
 	}
+
 	public int getIdVirus() {
 		return idVirus;
 	}
+
 	public void setIdVirus(int idVirus) {
 		this.idVirus = idVirus;
 	}
+
 	public int getnBrotes() {
 		return nEnfermedades;
 	}
+
 	public void setnBrotes(int nBrotes) {
 		this.nEnfermedades = nBrotes;
 	}
