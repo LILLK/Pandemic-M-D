@@ -1,4 +1,3 @@
-package Pandemic;
 //Mehdi Tahrat && David hola
 
 public class Jugador {

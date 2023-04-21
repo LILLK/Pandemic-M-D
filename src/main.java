@@ -1,11 +1,10 @@
-package Pandemic;
 //Mehdi Tahrat&&David Hola
 
 public class main {
 
 	public static void main(String[] args) {
 		
-		JF_Marco marcoP = new JF_Marco();
+		JF_Menu menu = new JF_Menu();
 
 	}
 	

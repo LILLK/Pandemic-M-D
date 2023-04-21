@@ -1,4 +1,3 @@
-package Pandemic;
 import java.util.ArrayList;
 
 //Mehdi Tahrat && David hola
