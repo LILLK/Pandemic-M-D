@@ -78,13 +78,13 @@ public class ArchivosIO {
 
 	/////////////////////////////////////////////////////////////////////
 	// - leerCiudades
-	// lee el archivo ciudades.txt y lo guarda en el ArrayList ciudades
+	// lee el archivo Ciudadestesteo.txt y lo guarda en el ArrayList ciudades
 	///////////////////////////////////////////////////////////////////////
 	public static ArrayList<String> leerCiudades() {
 		ArrayList<String> ciudades = new ArrayList<>();
 		try {
 
-			BufferedReader leer = new BufferedReader(new FileReader("Ciudades.txt"));
+			BufferedReader leer = new BufferedReader(new FileReader("Ciudadestesteo.txt"));
 			String ln=" ";
 			// Leemos el archivo linea a linea y guardamos cada linia en la siuiente
 			// posicion del ArrayList ciudades
@@ -94,7 +94,7 @@ public class ArchivosIO {
 		} catch (EOFException e) {
 			System.out.println("fin del archiovo");
 		} catch (IOException e) {
-			System.out.println("Error I/O-Ciudades.txt-leerCiudades");
+			System.out.println("Error I/O-Ciudadestesteo.txt-leerCiudades");
 		}
 		return ciudades;
 
@@ -344,7 +344,7 @@ public class ArchivosIO {
 	///////////////////////////////////////////////////////////////////////
 	public static int nCiudades() {
 		int lineas = 0;
-		try (BufferedReader reader = new BufferedReader(new FileReader("Ciudades.txt"))) {
+		try (BufferedReader reader = new BufferedReader(new FileReader("Ciudadestesteo.txt"))) {
 			while (reader.readLine() != null) lineas++;
 		} catch (IOException e) {
 			e.printStackTrace();

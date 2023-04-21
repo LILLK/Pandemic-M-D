@@ -6,33 +6,6 @@ public class main {
 
 	public static void main(String[] args) {
 		Partida.nuevaPartida();
-		
-		
-	
-		for (Ciudades ciudad : Partida.ciudades) {
-			System.out.println("----------------");
-			System.out.println(ciudad.nombre);
-			System.out.println(ciudad.idVirus);
-			System.out.println(ciudad.nEnfermedades);
-			System.out.println(ciudad.brote);
-			System.out.println("----------------");
-		}
-
-		for (Vacunas string : Partida.vacunas) {
-			System.out.println(string.nombre);
-			System.out.println(string.color);
-			System.out.println(string.desarollo + "%");
-			System.out.println("----------------");
-		}
-
-		for (Viruses string : Partida.viruses) {
-			System.out.println(string.id);
-			System.out.println(string.nombre);
-			System.out.println(string.color);
-			System.out.println("----------------");
-		}
-		
-		System.out.println(Ciudades.nEnfermedadesPartida());
 
 	}
 

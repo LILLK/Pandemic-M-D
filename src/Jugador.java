@@ -54,14 +54,18 @@ public class Jugador {
 		do {
 			System.out.println("ciudad a curar: ");
 			ciudad = scn.nextLine();
-			//recogemos el id de la ciudad a currar
+			// recogemos el id de la ciudad a currar
 			id = Ciudades.getIdXnombre(ciudad);
-			//si tenen 0 o menos enfermedades no se podra curar
+			// si tenen 0 o menos enfermedades no se podra curar
 			if (Partida.ciudades.get(id).nEnfermedades <= 0) {
 				System.out.println("no se puede curar esta ciudad ");
 			}
 		} while (Partida.ciudades.get(id).nEnfermedades <= 0);
+		// curar ciudad elejida
 		Partida.ciudades.get(id).nEnfermedades = -1;
+		// si teiene estado de brote se quita
+		if (Partida.ciudades.get(id).brote)
+			Partida.ciudades.get(id).setBrote(false);
 		scn.close();
 	}
 

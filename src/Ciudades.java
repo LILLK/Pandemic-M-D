@@ -25,10 +25,27 @@ public class Ciudades {
 		colindantes = new ArrayList<String>();
 		this.nEnfermedades = 0;
 		this.brote = false;
+		this.colindantes = generarColindantes(this.nombre);
 	}
 	////////////////////////////////////
 	////////////// metodos /////////////
 	////////////////////////////////////
+	
+	
+	//////////////////////////////////////////////////////////////////////////////////////
+	// - generarBrotes
+	// infeca las ciudades dependiendo de los parametros y genera los brotes
+	////////////////////////////////////////////////////////////////////////////////////// necesarias
+	/////////////////////////////////////////////////////////////////////////////////////
+	public  void generarBrotes() {
+		if (validarInfectar()) {// si se puede y le toca , se creara un brote
+			for (int i = 0; i < 4; i++) {
+				this.infectar();
+			}
+			Partida.brotes++;
+			this.brote = true;
+		}
+	}
 
 	////////////////////////////////////
 	// -Infectar
@@ -38,9 +55,22 @@ public class Ciudades {
 		if (this.nEnfermedades < 3) {// si es mas pequeño de 3
 			this.brote = true;
 			this.nEnfermedades++;
-			// si se infecta, tiene 3 enfermedades y no tiene un brote, se generara uno
+			// si tiene 3 enfermedades y no tiene un brote, se generara uno
 		} else if (this.nEnfermedades == 3 && !this.brote) {
 			Partida.brotes++;
+			//recorremos las ciudades colindantes a esta
+			for (String ciudadColindante : this.colindantes) {
+				//y por cada una de ellas ejecutamos este metodo
+				Partida.ciudades.get(getIdXnombre(ciudadColindante)).infectar();
+			}
+		}
+		// si esta ciudad estado en estado de brote 
+		else if (this.brote) {
+			//recorremos las ciudades colindantes a esta
+			for (String ciudadColindante : this.colindantes) {
+				//y por cada una de ellas ejecutamos este metodo
+				Partida.ciudades.get(getIdXnombre(ciudadColindante)).infectar();
+			}
 		}
 	}
 
@@ -94,15 +124,19 @@ public class Ciudades {
 			idVirus = Integer.parseInt(lin.split(";")[1]);
 			posicion[0] = Integer.parseInt(lin.split(";")[2].split(",")[0]);
 			posicion[1] = Integer.parseInt(lin.split(";")[2].split(",")[1]);
+			//Construccion de todas las ciudades 
 			Ciudades ciudad = new Ciudades(nombre, posicion, idVirus);
-			ciudad.colindantes = generarColindantes(ciudad.nombre);
-			generarBrotes(ciudad);
+			ciudad.generarBrotes();
+			//Se añade en la lista global Partida.ciudades
 			Partida.ciudades.add(ciudad);
 		}
+		//Mientras haya mienos brotes de los necesarios al empezar la partida
 		while (Partida.brotes < Parametros.brotesInicio) {
+			//por cada ciudad porobar de generar brote
 			for (Ciudades ciudad : Partida.ciudades) {
+				//si no tiene brote la ciudad
 				if (!ciudad.brote)
-					generarBrotes(ciudad);
+					ciudad.generarBrotes();
 			}
 		}
 	}
@@ -123,25 +157,12 @@ public class Ciudades {
 		return colindantes;
 	}
 
-	//////////////////////////////////////////////////////////////////////////////////////
-	// - generarBrotes
-	// infeca las ciudades dependiendo de los parametros y genera los brotes
-	////////////////////////////////////////////////////////////////////////////////////// necesarias
-	/////////////////////////////////////////////////////////////////////////////////////
-	public static void generarBrotes(Ciudades ciudad) {
-		if (validarInfectar()) {// si se puede y le toca esta ciudad se infectara
-			for (int i = 0; i < 3; i++) {
-				ciudad.infectar();
-			}
-			Partida.brotes++;
-			ciudad.brote = true;
-		}
-	}
+
 
 	//////////////////////////////////////////////////////////////////////////////////////
-	// - infectar
-	// al generar la ciudad revisa si se tiene que infectar al principio de la
-	////////////////////////////////////////////////////////////////////////////////////// partida
+	// - validarInfectar
+	// al generar la ciudad valida si se tiene que infectarla con un brote
+	////////////////////////////////////////////////////////////////////////////////////// 
 	/////////////////////////////////////////////////////////////////////////////////////
 	public static boolean validarInfectar() {
 		int random = (int) (Math.random() * 100);
@@ -152,6 +173,10 @@ public class Ciudades {
 		else
 			return false;
 	}
+	
+	
+	
+	
 
 	////////////////////////////////////
 	/////////// setters&getters//////////

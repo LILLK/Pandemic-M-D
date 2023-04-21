@@ -37,12 +37,18 @@ public class Partida {
 	//
 	/////////////////////////////////////////////////////////////////////////////////////
 	public static void nuevaPartida() {
+		
 		iniciarNuevaPartida();
+		
 		while (!fin()) {
-			ronda();
+			
+			//ronda();
+			updateEnfermedades();
 			if (!fin()) {
-
+				infectar();
 			}
+			updateEnfermedades();
+
 		}
 	}
 
@@ -50,27 +56,43 @@ public class Partida {
 	// -ronda
 	//
 	/////////////////////////////////////////////////////////////////////////////////////
-	public static void ronda() {
+	/*public static void ronda() {
 		Scanner scn = new Scanner(System.in);
+		int intput ;
 		System.out.println("1 curar - 2 desarollar");
-		Jugador.acciones(scn.nextInt());
-	}
+		intput=scn.nextInt();
+		Jugador.acciones(intput);
+		for (Ciudades ciudad : Partida.ciudades) {
+			System.out.print(ciudad.nombre);
+			System.out.print("| |");
+			System.out.print(ciudad.idVirus);
+			System.out.print("| |");
 
+			System.out.print(ciudad.nEnfermedades);
+			System.out.print("| |");
+
+			System.out.print(ciudad.brote);
+			System.out.print("|---|");
+
+		}
+		System.out.println();
+		System.out.println("----------------");
+
+		for (Vacunas string : Partida.vacunas) {
+			System.out.println(string.nombre);
+			System.out.println(string.color);
+			System.out.println(string.desarollo + "%");
+			System.out.println("----------------");
+		}
+	}
+*/
 	//////////////////////////////////////////////////////////////////////////////////////
 	// -infectar
 	//
 	/////////////////////////////////////////////////////////////////////////////////////
 	public static void infectar() {
 		for (Ciudades ciudad : Partida.ciudades) {
-			if (ciudad.nEnfermedades != 0 && !ciudad.brote) {// si la ciudad a sido infectada y no tiene un brote
-				ciudad.infectar();
-			} else if (ciudad.nEnfermedades != 0 && ciudad.brote) {// si la ciudad a sido infectada y tiene un brote
-
-			} else if (ciudad.nEnfermedades == 0 && ciudad.brote) {// si la ciudad no a sido infectada y tiene un brote
-
-			} else if (ciudad.nEnfermedades == 3 && !ciudad.brote) {// si la ciudad no a sido infectada y no tiene un brote
-
-			}
+			ciudad.infectar();
 		}
 	}
 
@@ -105,6 +127,8 @@ public class Partida {
 	public static void iniciarNuevaPartida() {
 		Partida.brotes = 0;
 		Partida.Puntuacion = 0;
+		Partida.enfermedades = 0;
+
 		Parametros.establecerParametros();
 		Partida.viruses = new ArrayList<Viruses>();
 		Partida.vacunas = new ArrayList<Vacunas>();
@@ -138,14 +162,6 @@ public class Partida {
 	}
 
 	//////////////////////////////////////////////////////////////////////////////////////
-	// - acciones
-	// Seran las acciones que el jugador podra hacer en la partida
-	/////////////////////////////////////////////////////////////////////////////////////
-	public static void accionesPartida() {
-		Jugador jugador = new Jugador();
-	}
-
-	//////////////////////////////////////////////////////////////////////////////////////
 	// - distanciaEntre2Puntos
 	// Calcula la distancia que hay entre dos ciudades
 	/////////////////////////////////////////////////////////////////////////////////////
@@ -175,6 +191,17 @@ public class Partida {
 
 	public static int enfermedades() {
 		return enfermedades;
+	}
+
+	//////////////////////////////////////////////////////////////////////////////////////
+	// - updateEnfermedades
+	// actualiza las enfermedades en el juego
+	/////////////////////////////////////////////////////////////////////////////////////
+	public static void updateEnfermedades() {
+		Partida.enfermedades = 0;
+		for (Ciudades ciudad : Partida.ciudades) {
+			Partida.enfermedades += ciudad.nEnfermedades;
+		}
 	}
 
 	public static void enfermedades(int enfermedades) {
