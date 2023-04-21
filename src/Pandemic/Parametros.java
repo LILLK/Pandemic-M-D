@@ -1,3 +1,4 @@
+package Pandemic;
 import java.util.Scanner;
 
 public class Parametros {
