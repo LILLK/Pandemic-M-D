@@ -1,5 +1,6 @@
 package Botones;
 import javax.swing.JLabel;
+import Pandemic.*;
 
 public class BotonNuevaPartida extends JLabel {
 	
