@@ -14,7 +14,7 @@ import Botones.*;
 
 public class JF_PanelMenu extends JPanel implements ActionListener{
 	
-	JButton NuevaPartida;
+	BotonNuevaPartida NuevaPartida;
 	JButton CargarPartida;
 	JButton Infromacion;
 	JButton ResumenPuntuaciones;
@@ -29,7 +29,7 @@ public class JF_PanelMenu extends JPanel implements ActionListener{
 		this.screenSize=Toolkit.getDefaultToolkit().getScreenSize();
 		
 		setLayout(null);
-		this.NuevaPartida = new JButton("NuevaPartida");
+		this.NuevaPartida = new BotonNuevaPartida();
 		this.CargarPartida = new JButton("CargarPartida");
 		this.Infromacion = new JButton("Infromacion");
 		this.ResumenPuntuaciones = new JButton("ResumenPuntuaciones");
@@ -54,7 +54,7 @@ public class JF_PanelMenu extends JPanel implements ActionListener{
 		add(this.Version);
 		add(this.Salir);
 		
-		this.NuevaPartida.addActionListener(this);
+		//this.NuevaPartida.addActionListener(this);
 		this.CargarPartida.addActionListener(this);
 		this.Infromacion.addActionListener(this);
 		this.ResumenPuntuaciones.addActionListener(this);
