@@ -68,6 +68,8 @@ public class ArchivosIO {
 				tamañoMapa[0] = leeCCP.readInt();
 				tamañoMapa[1] = leeCCP.readInt();
 			}
+			
+			leeCCP.close();
 
 		} catch (EOFException e) {
 			System.out.println("fin del archiovo");

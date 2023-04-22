@@ -66,7 +66,7 @@ public class Jugador {
 		// si teiene estado de brote se quita
 		if (Partida.ciudades.get(id).brote)
 			Partida.ciudades.get(id).setBrote(false);
-		scn.close();
+		//scn.close();
 	}
 
 	////////////////////////////////////
@@ -85,7 +85,7 @@ public class Jugador {
 		} while (Partida.vacunas.get(id).desarollo >= 100);
 
 		Partida.vacunas.get(id).desarollo += Parametros.porcentajeCura;
-		scn.close();
+		//scn.close();
 	}
 
 	////////////////////////////////////

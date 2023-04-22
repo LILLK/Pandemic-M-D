@@ -1,9 +1,5 @@
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Iterator;
-import java.util.List;
-
-import javax.naming.spi.DirStateFactory.Result;
 
 //Mehdi Tahrat && David hola
 
@@ -64,14 +60,14 @@ public class Ciudades {
 				Partida.ciudades.get(getIdXnombre(ciudadColindante)).infectar();
 			}
 		}
-		// si esta ciudad estado en estado de brote 
-		else if (this.brote) {
+		// si esta ciudad esta en estado de brote 
+		/*else if (this.brote) {
 			//recorremos las ciudades colindantes a esta
 			for (String ciudadColindante : this.colindantes) {
 				//y por cada una de ellas ejecutamos este metodo
 				Partida.ciudades.get(getIdXnombre(ciudadColindante)).infectar();
 			}
-		}
+		}*/
 	}
 
 	/////////////////////////////////////

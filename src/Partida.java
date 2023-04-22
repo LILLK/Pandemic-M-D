@@ -42,7 +42,7 @@ public class Partida {
 		
 		while (!fin()) {
 			
-			//ronda();
+			ronda();
 			updateEnfermedades();
 			if (!fin()) {
 				infectar();
@@ -56,36 +56,16 @@ public class Partida {
 	// -ronda
 	//
 	/////////////////////////////////////////////////////////////////////////////////////
-	/*public static void ronda() {
+	public static void ronda() {
 		Scanner scn = new Scanner(System.in);
 		int intput ;
 		System.out.println("1 curar - 2 desarollar");
 		intput=scn.nextInt();
 		Jugador.acciones(intput);
-		for (Ciudades ciudad : Partida.ciudades) {
-			System.out.print(ciudad.nombre);
-			System.out.print("| |");
-			System.out.print(ciudad.idVirus);
-			System.out.print("| |");
-
-			System.out.print(ciudad.nEnfermedades);
-			System.out.print("| |");
-
-			System.out.print(ciudad.brote);
-			System.out.print("|---|");
-
-		}
-		System.out.println();
-		System.out.println("----------------");
-
-		for (Vacunas string : Partida.vacunas) {
-			System.out.println(string.nombre);
-			System.out.println(string.color);
-			System.out.println(string.desarollo + "%");
-			System.out.println("----------------");
-		}
+		//scn.close();
+		
 	}
-*/
+
 	//////////////////////////////////////////////////////////////////////////////////////
 	// -infectar
 	//
