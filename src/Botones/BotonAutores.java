@@ -2,6 +2,7 @@ package Botones;
 
 import java.awt.event.*;
 
+import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import Pandemic.*;
@@ -10,7 +11,8 @@ public class BotonAutores extends JLabel {
 	
 	
 	public BotonAutores(JF_PanelMenu JF_PanelMenu) {
-		
+			
+
 		setIcon(new ImageIcon("botones/bottonAutores-1.png"));
 		
 		addMouseListener(new MouseListener() {	
@@ -33,4 +35,6 @@ public class BotonAutores extends JLabel {
 			}
 		});
 	}
+
+
 }

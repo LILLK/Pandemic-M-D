@@ -37,13 +37,13 @@ public class JF_PanelMenu extends JPanel {
 		this.Version = new BotonVersion(this);
 		this.Salir = new BotonSalir();
 		
-		this.NuevaPartida.setBounds(((this.screenSize.width/2)-100),200,200,50);
-		this.CargarPartida.setBounds(((this.screenSize.width/2)-100),260,200,50);
-		this.Infromacion.setBounds(((this.screenSize.width/2)-100),320,200,50);
-		this.ResumenPuntuaciones.setBounds(((this.screenSize.width/2)-100),380,200,50);
-		this.Autores.setBounds(((this.screenSize.width/2)-100),440,200,50);
-		this.Version.setBounds(((this.screenSize.width/2)-100),500,200,50);
-		this.Salir.setBounds(((this.screenSize.width/2)-100),560,200,50);
+		this.NuevaPartida.setBounds(((this.screenSize.width/2)-100),200,400,100);
+		this.CargarPartida.setBounds(((this.screenSize.width/2)-100),260,400,100);
+		this.Infromacion.setBounds(((this.screenSize.width/2)-100),320,400,100);
+		this.ResumenPuntuaciones.setBounds(((this.screenSize.width/2)-100),380,400,100);
+		this.Autores.setBounds(((this.screenSize.width/2)-100),440,400,100);
+		this.Version.setBounds(((this.screenSize.width/2)-100),500,400,100);
+		this.Salir.setBounds(((this.screenSize.width/2)-100),560,400,100);
 		
 		
 		add(this.NuevaPartida);

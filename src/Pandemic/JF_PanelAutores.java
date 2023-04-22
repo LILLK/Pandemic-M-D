@@ -24,7 +24,7 @@ import javax.swing.SwingUtilities;
 public class JF_PanelAutores extends JPanel implements ActionListener {
 	JButton Atras;
 	Dimension screenSize;
-	JF_PanelAutores()  {
+	public JF_PanelAutores()  {
 	
 		setLayout(null);
 
