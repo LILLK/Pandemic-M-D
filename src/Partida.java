@@ -37,18 +37,13 @@ public class Partida {
 	//
 	/////////////////////////////////////////////////////////////////////////////////////
 	public static void nuevaPartida() {
-		
 		iniciarNuevaPartida();
-		
 		while (!fin()) {
-			
+			ejecutar.imprimir();
 			ronda();
-			updateEnfermedades();
 			if (!fin()) {
 				infectar();
 			}
-			updateEnfermedades();
-
 		}
 	}
 
@@ -62,7 +57,7 @@ public class Partida {
 		System.out.println("1 curar - 2 desarollar");
 		intput=scn.nextInt();
 		Jugador.acciones(intput);
-		//scn.close();
+		scn.close();
 		
 	}
 
@@ -71,8 +66,11 @@ public class Partida {
 	//
 	/////////////////////////////////////////////////////////////////////////////////////
 	public static void infectar() {
-		for (Ciudades ciudad : Partida.ciudades) {
-			ciudad.infectar();
+		int i = 0;
+		while( i < Parametros.infeccionRonda) {
+			int random = (int) (Math.random() * Partida.ciudades.size() );
+			Partida.ciudades.get(random).infectar();
+			i++;
 		}
 	}
 
@@ -81,13 +79,9 @@ public class Partida {
 	// determina si la partida a acabado por victoria o derrota
 	/////////////////////////////////////////////////////////////////////////////////////
 	public static boolean fin() {
-
 		boolean aux = false;
 		// si se llega al numero de brotes necesrio para perder
 		if (Partida.brotes >= Parametros.brotesTotal) {
-			return true;
-			// si se llega al numero de enfermedades necesrio para perder
-		} else if (Partida.enfermedades >= Parametros.enfermedadesTotal) {
 			return true;
 			// si todas las ciudades han sidio limpiadas
 		} else if (Ciudades.nEnfermedadesPartida() == 0) {

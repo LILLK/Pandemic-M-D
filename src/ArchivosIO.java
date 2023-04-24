@@ -40,6 +40,12 @@ public class ArchivosIO {
 		
 		//Esta declaracion nos permitira ejecutar esta funcion teniendo parametros nullos
 		Optional<ArrayList<String> > op_v = Optional.ofNullable(viruses_op);
+		
+		
+		
+		
+		
+		
 		ArrayList<String>  viruses = op_v.isPresent() ? op_v.get() : new ArrayList<String>();
 		
 		Optional<int[]> op_p = Optional.ofNullable(tamañoMapa_op);
@@ -142,10 +148,7 @@ public class ArchivosIO {
 			if (aux != null) {
 				parametros.add(aux);
 			}
-			aux = Integer.parseInt(getTextValue(doc, "enfermedadesTotal"));
-			if (aux != null) {
-				parametros.add(aux);
-			}
+			
 		} catch (ParserConfigurationException pce) {
 			System.out.println(pce.getMessage());
 		} catch (SAXException se) {
@@ -261,7 +264,7 @@ public class ArchivosIO {
 	// - escribirXML
 	// Escribe en xml los parametros en el archivo "parametros.xml"
 	///////////////////////////////////////////////////////////////////////
-	public static void escribirXML(String xml, int brotesTotal, int infeccionRonda, int porcentajeCura, int brotesInicio, int enfermedadesTotal) {
+	public static void escribirXML(String xml, int brotesTotal, int infeccionRonda, int porcentajeCura, int brotesInicio ) {
 		Document dom;
 		Element e = null;
 		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
@@ -283,9 +286,6 @@ public class ArchivosIO {
 			rootEle.appendChild(e);
 			e = dom.createElement("brotesInicio");
 			e.appendChild(dom.createTextNode(Integer.toString(brotesInicio)));
-			rootEle.appendChild(e);
-			e = dom.createElement("enfermedadesTotal");
-			e.appendChild(dom.createTextNode(Integer.toString(enfermedadesTotal)));
 			rootEle.appendChild(e);
 			dom.appendChild(rootEle);
 			try {
@@ -313,10 +313,10 @@ public class ArchivosIO {
 	// guarda en parametros.xml los parametros del programa
 	///////////////////////////////////////////////////////////////////////
 	public static ArrayList<Integer> escribirParametros(int brotesTotal, int infeccionRonda, int porcentajeCura,
-			int brotesInicio,int enfermedadesTotal) {
+			int brotesInicio) {
 		ArrayList<Integer> parametros = new ArrayList<Integer>();
-		escribirXML("parametros.xml", brotesTotal, infeccionRonda, porcentajeCura, brotesInicio,enfermedadesTotal);
-		// parametros (brotesTotal, infeccionRonda , porcentajeCura,brotesInicio,enfermedadesTotal)
+		escribirXML("parametros.xml", brotesTotal, infeccionRonda, porcentajeCura, brotesInicio);
+		// parametros (brotesTotal, infeccionRonda , porcentajeCura,brotesInicio)
 		return parametros;
 	}
 

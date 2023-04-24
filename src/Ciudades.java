@@ -49,10 +49,10 @@ public class Ciudades {
 	////////////////////////////////////
 	public void infectar() {
 		if (this.nEnfermedades < 3) {// si es mas pequeño de 3
-			this.brote = true;
 			this.nEnfermedades++;
 			// si tiene 3 enfermedades y no tiene un brote, se generara uno
 		} else if (this.nEnfermedades == 3 && !this.brote) {
+			this.brote = true;
 			Partida.brotes++;
 			//recorremos las ciudades colindantes a esta
 			for (String ciudadColindante : this.colindantes) {
@@ -61,19 +61,27 @@ public class Ciudades {
 			}
 		}
 		// si esta ciudad esta en estado de brote 
-		/*else if (this.brote) {
+		else if (this.brote) {
 			//recorremos las ciudades colindantes a esta
 			for (String ciudadColindante : this.colindantes) {
 				//y por cada una de ellas ejecutamos este metodo
 				Partida.ciudades.get(getIdXnombre(ciudadColindante)).infectar();
 			}
-		}*/
+		}
 	}
 
 	/////////////////////////////////////
 	///////////// Funciones ////////////
 	////////////////////////////////////
 
+	//////////////////////////////////////////////////////////////////////////////////////
+	// - nEnfermedadesPartida
+	// recorre la lista de ciudades y cuenta cuantas enfermedades hay
+	/////////////////////////////////////////////////////////////////////////////////////
+	public static void infectarColindantes() {
+		
+	}
+	
 	//////////////////////////////////////////////////////////////////////////////////////
 	// - nEnfermedadesPartida
 	// recorre la lista de ciudades y cuenta cuantas enfermedades hay
@@ -96,7 +104,7 @@ public class Ciudades {
 		// recorre todas las ciudades
 		for (int i = 0; i < Partida.ciudades.size(); i++) {
 			// si encuentra el nombre con la ciudad enviada
-			if (Partida.ciudades.get(i).nombre.equals(nombre))
+			if (Partida.ciudades.get(i).nombre.contains(nombre))
 				aux = i;
 		}
 		return aux;// devuelve la su posicion en la lista
@@ -126,15 +134,7 @@ public class Ciudades {
 			//Se añade en la lista global Partida.ciudades
 			Partida.ciudades.add(ciudad);
 		}
-		//Mientras haya mienos brotes de los necesarios al empezar la partida
-		while (Partida.brotes < Parametros.brotesInicio) {
-			//por cada ciudad porobar de generar brote
-			for (Ciudades ciudad : Partida.ciudades) {
-				//si no tiene brote la ciudad
-				if (!ciudad.brote)
-					ciudad.generarBrotes();
-			}
-		}
+		
 	}
 
 	//////////////////////////////////////////////////////////////////////////////////////

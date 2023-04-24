@@ -62,7 +62,7 @@ public class Jugador {
 			}
 		} while (Partida.ciudades.get(id).nEnfermedades <= 0);
 		// curar ciudad elejida
-		Partida.ciudades.get(id).nEnfermedades = -1;
+		Partida.ciudades.get(id).nEnfermedades -= 1;
 		// si teiene estado de brote se quita
 		if (Partida.ciudades.get(id).brote)
 			Partida.ciudades.get(id).setBrote(false);

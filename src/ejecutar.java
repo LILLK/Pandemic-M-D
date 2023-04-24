@@ -2,19 +2,7 @@
 public class ejecutar {
 
 	public static void main(String[] args) {
-		
-		Partida.iniciarNuevaPartida();
-		imprimir();
-		while (!Partida.fin()) {
-			Partida.ronda();
-			Partida.updateEnfermedades();
-			if (!Partida.fin()) {
-				Partida.infectar();
-			}
-			imprimir();
-			Partida.updateEnfermedades();
-
-		}
+		Partida.nuevaPartida();
 	}
 	
 	
@@ -39,9 +27,6 @@ public class ejecutar {
 		}
 		
 		System.out.println(Partida.brotes + " / "+ Parametros.brotesTotal);
-		System.out.println(Partida.enfermedades + " / "+ Parametros.enfermedadesTotal);
-
-		
 	}
 
 }
