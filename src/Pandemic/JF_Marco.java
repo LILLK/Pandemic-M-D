@@ -7,7 +7,7 @@ import javax.swing.JFrame;
 
 public class JF_Marco extends JFrame{
 	
-	JF_PanelMenu laminaMenu;
+	JF_PanelMenu JF_PanelMenu;
 	//Dimension screenSize;
 	
 	JF_Marco(){
@@ -24,8 +24,8 @@ public class JF_Marco extends JFrame{
 		
 		setTitle("Pandemic");
 		
-		this.laminaMenu = new JF_PanelMenu();
-		add(this.laminaMenu);
+		this.JF_PanelMenu = new JF_PanelMenu();
+		add(this.JF_PanelMenu);
 		setVisible(true);
 		
 	}

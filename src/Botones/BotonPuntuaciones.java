@@ -10,17 +10,20 @@ public class BotonPuntuaciones extends JLabel {
 	
 	public BotonPuntuaciones(JF_PanelMenu JF_PanelMenu) {
 		
-		setIcon(new ImageIcon("botones/bottonPuntuaciones-1.png"));
+		cambiarImg img = new cambiarImg();
+
+		
+		setIcon(img.tamaño(new ImageIcon("botones/bottonPuntuaciones-1.png"), 300, 75));
 		addMouseListener(new MouseListener() {	
 			public void mouseEntered(MouseEvent e) {
-				setIcon(new ImageIcon("botones/bottonPuntuaciones-2.png"));
+				setIcon(img.tamaño(new ImageIcon("botones/bottonPuntuaciones-2.png"), 300, 75));
 			}
 			public void mouseExited(MouseEvent a) {
-				setIcon(new ImageIcon("botones/bottonPuntuaciones-1.png"));
+				setIcon(img.tamaño(new ImageIcon("botones/bottonPuntuaciones-1.png"), 300, 75));
 			}
 
 			public void mousePressed(MouseEvent i) {
-				setIcon(new ImageIcon("botones/bottonPuntuaciones-3.png"));
+				setIcon(img.tamaño(new ImageIcon("botones/bottonPuntuaciones-3.png"), 300, 75));
 			}
 			public void mouseClicked(MouseEvent e) {
 			}

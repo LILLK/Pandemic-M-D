@@ -1,5 +1,7 @@
 package Botones;
 
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.awt.event.*;
 
 import javax.swing.Icon;
@@ -9,22 +11,25 @@ import Pandemic.*;
 
 public class BotonAutores extends JLabel {
 	
-	
-	public BotonAutores(JF_PanelMenu JF_PanelMenu) {
-			
 
-		setIcon(new ImageIcon("botones/bottonAutores-1.png"));
+
+	public BotonAutores(JF_PanelMenu JF_PanelMenu) {
+		
+		cambiarImg img = new cambiarImg();
+
+		
+		setIcon(img.tamaño(new ImageIcon("botones/bottonAutores-1.png"), 300, 75) );
 		
 		addMouseListener(new MouseListener() {	
 			public void mouseEntered(MouseEvent e) {
-				setIcon(new ImageIcon("botones/bottonAutores-2.png"));
+				setIcon(img.tamaño(new ImageIcon("botones/bottonAutores-2.png"), 300, 75) );
 			}
 			public void mouseExited(MouseEvent a) {
-				setIcon(new ImageIcon("botones/bottonAutores-1.png"));
+				setIcon(img.tamaño(new ImageIcon("botones/bottonAutores-1.png"), 300, 75) );
 			}
 
 			public void mousePressed(MouseEvent i) {
-				setIcon(new ImageIcon("botones/bottonAutores-3.png"));
+				setIcon(img.tamaño(new ImageIcon("botones/bottonAutores-3.png"), 300, 75) );
 			}
 			public void mouseClicked(MouseEvent e) {
 				JF_PanelMenu.irPanelAutores();

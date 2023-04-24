@@ -21,70 +21,56 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 
-public class JF_PanelAutores extends JPanel implements ActionListener {
-	JButton Atras;
+import Botones.BotonAtras;
+
+public class JF_PanelAutores extends JPanel  {
+	BotonAtras Atras;
+	JLabel imagenDavid;
 	Dimension screenSize;
+	JF_PanelMenu JF_PanelMenu;
+	
 	public JF_PanelAutores()  {
 	
 		setLayout(null);
 
 		this.screenSize=Toolkit.getDefaultToolkit().getScreenSize();
+		cambiarImg img = new cambiarImg();
 		
-		this.Atras = new JButton("Atras");
+		this.Atras = new BotonAtras(this);
 		
-		BufferedImage imgDavid;
-		try {
-			imgDavid = ImageIO.read(new File("imagenes/fotoDavid.png"));
-			JLabel imagenDavid = new JLabel(tamaño(new ImageIcon(imgDavid),300,200));
-			Dimension sizeImgDavid = imagenDavid.getPreferredSize();
-			imagenDavid.setBounds( 100,200, sizeImgDavid.width,sizeImgDavid.height);
-			add(imagenDavid);
+		JLabel imagenDavid = new JLabel();
+		JLabel imgDavidDesc = new JLabel();
+		JLabel imagenMehdi = new JLabel();
+		JLabel imgMehdiDesc = new JLabel();
 
-		} catch (IOException e) {
-			System.out.print("ds");
-		}
-		BufferedImage imgMehdi;
-		try {
-			imgMehdi = ImageIO.read(new File("imagenes/imagenMehdi.png"));
-			JLabel imagenMehdi = new JLabel(tamaño(new ImageIcon(imgMehdi),300,200));
-			Dimension sizeImgMehdi = imagenMehdi.getPreferredSize();
-			imagenMehdi.setBounds(this.screenSize.width-400,200, sizeImgMehdi.width,sizeImgMehdi.height);
-			add(imagenMehdi);
-
-		} catch (IOException e) {
-			System.out.print("ds");
-		}
 		
-	
-		Atras.setBounds(0,this.screenSize.height-60,this.screenSize.width,20);
+		
+		imagenDavid.setIcon(img.tamaño(new ImageIcon("imagenes/fotoDavid.png"),300,200));
+		imgDavidDesc.setIcon(img.tamaño(new ImageIcon("imagenes/imgDavidDesc.png"),300,400));
+		imagenMehdi.setIcon(img.tamaño(new ImageIcon("imagenes/imagenMehdi.png"), 300, 200));
+		imgMehdiDesc.setIcon(img.tamaño(new ImageIcon("imagenes/imgDavidDesc.png"), 300, 400));
+		
+		imagenDavid.setBounds( 250,50, 300,200);
+		imgDavidDesc.setBounds( 250,250, 300,400);
+		imagenMehdi.setBounds(this.screenSize.width-550,50, 300,200);
+		imgMehdiDesc.setBounds(this.screenSize.width-550,250,300,400);
+		Atras.setBounds(0,(this.screenSize.height-((screenSize.width/20)+6)),this.screenSize.width,(screenSize.width/25));
+		
+		
+		add(imgDavidDesc);
+		add(imagenDavid);
+		add(imagenMehdi);
+		add(imgMehdiDesc);
 		add(this.Atras);
-		this.Atras.addActionListener(this);
+		
 	}
-	
-	
-	
-	
-	public static ImageIcon tamaño(ImageIcon im, int w, int h) {
-		BufferedImage bi = new BufferedImage(w,h, BufferedImage.TRANSLUCENT);
-		Graphics2D gd=(Graphics2D)bi.createGraphics();
-		gd.addRenderingHints(new RenderingHints(RenderingHints.KEY_RENDERING,RenderingHints.VALUE_RENDER_QUALITY));
-		gd.drawImage(im.getImage(),0,0,w,h,null);
-		gd.dispose();
-		return new ImageIcon(bi);
+	public void irMenu() {
+		JFrame marcoP = (JFrame)SwingUtilities.getWindowAncestor(this);	
+		marcoP.remove(this);
+		marcoP.add(new JF_PanelMenu());
+		marcoP.setVisible(true);
 	}
 	
 
 
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		
-		if(e.getSource() == this.Atras) {
-			
-			JFrame marcoP = (JFrame)SwingUtilities.getWindowAncestor(this);	
-			marcoP.remove(this);
-			marcoP.add(new JF_PanelMenu());
-			marcoP.setVisible(true);
-		}
-		
-	}
 }

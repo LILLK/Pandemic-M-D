@@ -37,13 +37,13 @@ public class JF_PanelMenu extends JPanel {
 		this.Version = new BotonVersion(this);
 		this.Salir = new BotonSalir();
 		
-		this.NuevaPartida.setBounds(((this.screenSize.width/2)-100),200,400,100);
-		this.CargarPartida.setBounds(((this.screenSize.width/2)-100),260,400,100);
-		this.Infromacion.setBounds(((this.screenSize.width/2)-100),320,400,100);
-		this.ResumenPuntuaciones.setBounds(((this.screenSize.width/2)-100),380,400,100);
-		this.Autores.setBounds(((this.screenSize.width/2)-100),440,400,100);
-		this.Version.setBounds(((this.screenSize.width/2)-100),500,400,100);
-		this.Salir.setBounds(((this.screenSize.width/2)-100),560,400,100);
+		this.NuevaPartida.setBounds(((this.screenSize.width/2)-150),50,300,75);
+		this.CargarPartida.setBounds(((this.screenSize.width/2)-150),145,300,75);
+		this.Infromacion.setBounds(((this.screenSize.width/2)-150),240,300,75);
+		this.ResumenPuntuaciones.setBounds(((this.screenSize.width/2)-150),335,300,75);
+		this.Autores.setBounds(((this.screenSize.width/2)-150),430,300,75);
+		this.Version.setBounds(((this.screenSize.width/2)-150),525,300,75);
+		this.Salir.setBounds(((this.screenSize.width/2)-150),620,300,75);
 		
 		
 		add(this.NuevaPartida);
@@ -66,12 +66,11 @@ public class JF_PanelMenu extends JPanel {
 			setOpaque(false);
 			super.paint(g);
 		} catch (IOException e) {
-			System.out.print("ds");
+			System.out.print("Error IMGfondo JF_PanelMenuMenu");
 		}
 		
 		
-	}
-	
+	} 
 	public void irPanelAutores() {
 		JFrame marcoP = (JFrame)SwingUtilities.getWindowAncestor(this);	
 		marcoP.remove(this);
@@ -90,6 +89,13 @@ public class JF_PanelMenu extends JPanel {
 		marcoP.add(new JF_PanelVersion());
 		marcoP.setVisible(true);
 	}
+	/*
+	public void irMenu(JPanel JPanel) {
+		JFrame marcoP = (JFrame)SwingUtilities.getWindowAncestor(JPanel);	
+		marcoP.remove(JPanel);
+		marcoP.add(this);
+		marcoP.setVisible(true);
+	}*/
 
 	
 
