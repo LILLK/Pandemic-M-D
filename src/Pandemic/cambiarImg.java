@@ -1,15 +1,23 @@
 package Pandemic;
 
+import java.awt.Dimension;
+import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
+import java.awt.Toolkit;
 import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
+import javax.swing.JPanel;
 
 public class cambiarImg {
 	
+	Dimension screenSize;
 	public cambiarImg() {
-		
+		this.screenSize=Toolkit.getDefaultToolkit().getScreenSize();
 	}
 	public static ImageIcon tamaño(ImageIcon im, int w, int h) {
 		BufferedImage bi = new BufferedImage(w,h, BufferedImage.TRANSLUCENT);
@@ -19,5 +27,6 @@ public class cambiarImg {
 		gd.dispose();
 		return new ImageIcon(bi);
 	}
+	
 
 }
