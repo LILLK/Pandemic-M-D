@@ -4,11 +4,11 @@ import java.util.Scanner;
 public class Parametros {
 
 	// determina la cantidad de brotes necesarios para perder
-	static int brotesTotal;
+	public static int brotesTotal;
 	// determina cuantas ciudades se infectan en una ronda
-	static int infeccionRonda;
+	public static int infeccionRonda;
 	// determina el porcentaje que se aumenta para obtener la cura
-	static int porcentajeCura;
+	public static int porcentajeCura;
 	// determina el numero de brotes al empezar la partida Inicio
 	static int brotesInicio;
 

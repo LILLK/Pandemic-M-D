@@ -2,18 +2,7 @@
 public class ejecutar {
 	
 	public static void main(String[] args) {
-		
-		int aux=1;
-		System.out.println("1 jugar, 2 cargar");
-		switch (aux) {
-		case 1: {
-			Partida.nuevaPartida();
-		}
-		case 2: {
-			Partida.cargarPartida();
-		}
-		
-		}
+		Partida.nuevaPartida();
 	}
 	
 	

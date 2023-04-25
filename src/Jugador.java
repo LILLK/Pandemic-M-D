@@ -4,8 +4,8 @@ import java.util.Scanner;
 
 public class Jugador {
 
-	static String usuario;
-	static boolean logged;
+	public static String usuario;
+	public static boolean logged;
 
 	////////////////////////////////////
 	/////////// constructores //////////

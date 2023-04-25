@@ -46,15 +46,16 @@ public class Partida {
 	// es dode se ejecuta la partida 
 	////////////////////////////////////////
 	public static void jugarPartida() {
+		updatePartida();
 		while (!fin()) {
 			Partida.ronda++;
+			ejecutar.imprimir();
 			ronda();
 			updatePartida();
 			if (!fin()) {
 				infectar();
 				updatePartida();
 			}
-			ejecutar.imprimir();
 		}
 	}
 	//////////////////////////////////////////////////////////////////////////////////////
@@ -68,7 +69,6 @@ public class Partida {
 		System.out.println("1 curar - 2 desarollar");
 		intput = scn.nextInt();
 		Jugador.acciones(intput);
-		scn.close();
 	}
 	//////////////////////////////////////////////////////////////////////////////////////
 	// -infectar
@@ -90,9 +90,10 @@ public class Partida {
 	////////////////////////////////////////
 	public static void nuevaPartida() {
 		// Incicializa las variables necesarias para empezar partida
-		iniciarNuevaPartida();
 		// empieza la partida
+		iniciarNuevaPartida();
 		Partida.jugarPartida();
+
 		
 	}
 
@@ -109,7 +110,7 @@ public class Partida {
 			System.out.println("llega al numero de brotes necesrio ");
 			return true;
 			// si todas las ciudades han sidio limpiadas
-		} else if (Ciudades.nEnfermedadesPartida() == 0) {
+		} else if (Partida.enfermedades == 0) {
 			System.out.println();
 			return true;
 		}
