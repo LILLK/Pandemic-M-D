@@ -37,13 +37,13 @@ public class JF_PanelMenu extends JPanel {
 		this.Version = new BotonVersion(this);
 		this.Salir = new BotonSalir();
 		
-		this.NuevaPartida.setBounds(((this.screenSize.width/2)-150),50,300,75);
-		this.CargarPartida.setBounds(((this.screenSize.width/2)-150),145,300,75);
-		this.Infromacion.setBounds(((this.screenSize.width/2)-150),240,300,75);
-		this.ResumenPuntuaciones.setBounds(((this.screenSize.width/2)-150),335,300,75);
-		this.Autores.setBounds(((this.screenSize.width/2)-150),430,300,75);
-		this.Version.setBounds(((this.screenSize.width/2)-150),525,300,75);
-		this.Salir.setBounds(((this.screenSize.width/2)-150),620,300,75);
+		this.NuevaPartida.setBounds(((this.screenSize.width/2)-150),200,300,75);
+		this.CargarPartida.setBounds(((this.screenSize.width/2)-150),295,300,75);
+		this.Infromacion.setBounds(((this.screenSize.width/2)-150),390,300,75);
+		this.ResumenPuntuaciones.setBounds(((this.screenSize.width/2)-150),485,300,75);
+		this.Autores.setBounds(((this.screenSize.width/2)-150),580,300,75);
+		this.Version.setBounds(((this.screenSize.width/2)-150),675,300,75);
+		this.Salir.setBounds(((this.screenSize.width/2)-150),770,300,75);
 		
 		
 		add(this.NuevaPartida);
@@ -61,7 +61,7 @@ public class JF_PanelMenu extends JPanel {
 		BufferedImage imgFondo;
 		try {
 			Dimension size =getSize();
-			imgFondo = ImageIO.read(new File("imagenes/imagenPandemic.png"));
+			imgFondo = ImageIO.read(new File("imagenes/imagenPandemic6.png"));
 			g.drawImage(imgFondo, 0, 0, size.width, size.height,null);
 			setOpaque(false);
 			super.paint(g);

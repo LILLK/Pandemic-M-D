@@ -46,16 +46,16 @@ public class JF_PanelAutores extends JPanel  {
 
 		
 		
-		imagenDavid.setIcon(img.tamaño(new ImageIcon("imagenes/fotoDavid.png"),300,200));
-		imgDavidDesc.setIcon(img.tamaño(new ImageIcon("imagenes/imgDavidDesc.png"),300,400));
-		imagenMehdi.setIcon(img.tamaño(new ImageIcon("imagenes/imagenMehdi.png"), 300, 200));
-		imgMehdiDesc.setIcon(img.tamaño(new ImageIcon("imagenes/imgMehdiDesc.png"), 300, 400));
+		imagenDavid.setIcon(img.tamaño(new ImageIcon("imagenes/fotoDavid.png"),375,300));
+		imgDavidDesc.setIcon(img.tamaño(new ImageIcon("imagenes/imgDavidDesc.png"),375,375));
+		imagenMehdi.setIcon(img.tamaño(new ImageIcon("imagenes/imagenMehdi.png"), 375, 300));
+		imgMehdiDesc.setIcon(img.tamaño(new ImageIcon("imagenes/imgMehdiDesc.png"), 375, 375));
 		
-		imagenDavid.setBounds( 250,50, 300,200);
-		imgDavidDesc.setBounds( 250,250, 300,400);
-		imagenMehdi.setBounds(this.screenSize.width-550,50, 300,200);
-		imgMehdiDesc.setBounds(this.screenSize.width-550,250,300,400);
-		Atras.setBounds(0,(this.screenSize.height-((screenSize.width/20)+4)),this.screenSize.width,(screenSize.width/25));
+		imagenDavid.setBounds( (this.screenSize.width/2)-545,150, 375,300);
+		imgDavidDesc.setBounds( (this.screenSize.width/2)-545,450, 375,375);
+		imagenMehdi.setBounds((this.screenSize.width/2)+160,150, 375,300);
+		imgMehdiDesc.setBounds((this.screenSize.width/2)+160,450,375,375);
+		Atras.setBounds(0,(this.screenSize.height-((screenSize.width/20)-3)),this.screenSize.width,(screenSize.width/25));
 		
 		
 		add(imgDavidDesc);
@@ -75,7 +75,7 @@ public class JF_PanelAutores extends JPanel  {
 		BufferedImage imgFondo;
 		try {
 			Dimension size =getSize();
-			imgFondo = ImageIO.read(new File("imagenes/imagenPandemic.png"));
+			imgFondo = ImageIO.read(new File("imagenes/imagenPandemic6.png"));
 			g.drawImage(imgFondo, 0, 0, size.width, size.height,null);
 			setOpaque(false);
 			super.paint(g);
