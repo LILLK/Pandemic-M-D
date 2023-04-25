@@ -26,6 +26,7 @@ public class BotonPuntuaciones extends JLabel {
 				setIcon(img.tamaño(new ImageIcon("botones/bottonPuntuaciones-3.png"), ((int)(JF_PanelMenu.screenSize.getWidth()/5)), ((int)(JF_PanelMenu.screenSize.getWidth()/20))));
 			}
 			public void mouseClicked(MouseEvent e) {
+				JF_PanelMenu.irPanelPuntuacion();
 			}
 			public void mouseReleased(MouseEvent e) {
 				// TODO Apéndice de método generado automáticamente

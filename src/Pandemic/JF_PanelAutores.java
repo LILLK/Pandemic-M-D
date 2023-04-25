@@ -50,18 +50,18 @@ public class JF_PanelAutores extends JPanel  {
 
 		
 		
-		imagenDavid.setIcon(img.tamaño(new ImageIcon("imagenes/fotoDavid.png"),375,300));
-		imgDavidDesc.setIcon(img.tamaño(new ImageIcon("imagenes/imgDavidDesc.png"),375,375));
-		imagenMehdi.setIcon(img.tamaño(new ImageIcon("imagenes/imagenMehdi.png"), 375, 300));
-		imgMehdiDesc.setIcon(img.tamaño(new ImageIcon("imagenes/imgMehdiDesc.png"), 375, 375));
+		imagenDavid.setIcon(img.tamaño(new ImageIcon("imagenes/fotoDavid.png"),(this.screenSize.height/3),(this.screenSize.height/4)));
+		imgDavidDesc.setIcon(img.tamaño(new ImageIcon("imagenes/imgDavidDesc.png"),(this.screenSize.height/3),(this.screenSize.height/3)));
+		imagenMehdi.setIcon(img.tamaño(new ImageIcon("imagenes/imagenMehdi.png"), (this.screenSize.height/3), (this.screenSize.height/4)));
+		imgMehdiDesc.setIcon(img.tamaño(new ImageIcon("imagenes/imgMehdiDesc.png"), (this.screenSize.height/3), (this.screenSize.height/3)));
 		
 		imagenMehdi.setBorder(borde);
 		imagenDavid.setBorder(borde);
 		
-		imagenDavid.setBounds( (this.screenSize.width/2)-545,150, 375,300);
-		imgDavidDesc.setBounds( (this.screenSize.width/2)-545,450, 375,375);
-		imagenMehdi.setBounds((this.screenSize.width/2)+160,150, 375,300);
-		imgMehdiDesc.setBounds((this.screenSize.width/2)+160,450,375,375);
+		imagenDavid.setBounds	((this.screenSize.width/2)-(this.screenSize.height/4)-(this.screenSize.height/3),(this.screenSize.height/8), (this.screenSize.height/3),(this.screenSize.height/4));
+		imgDavidDesc.setBounds	((this.screenSize.width/2)-(this.screenSize.height/4)-(this.screenSize.height/3),(this.screenSize.height/8)+(this.screenSize.height/4), (this.screenSize.height/3),(this.screenSize.height/3));
+		imagenMehdi.setBounds	((this.screenSize.width/2)+(this.screenSize.height/4),(this.screenSize.height/8), (this.screenSize.height/3),(this.screenSize.height/4));
+		imgMehdiDesc.setBounds	((this.screenSize.width/2)+(this.screenSize.height/4),(this.screenSize.height/8)+(this.screenSize.height/4),(this.screenSize.height/3),(this.screenSize.height/3));
 		Atras.setBounds(0,(this.screenSize.height-((screenSize.width/20)-3)),this.screenSize.width,(screenSize.width/25));
 		
 		

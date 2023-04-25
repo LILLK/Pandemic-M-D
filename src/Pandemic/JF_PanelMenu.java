@@ -32,10 +32,10 @@ public class JF_PanelMenu extends JPanel {
 		setLayout(null);
 		this.NuevaPartida = new BotonNuevaPartida(this);
 		this.CargarPartida = new BotonCargarPartida(this);
-		this.Infromacion = new BotonInformacion(this);
-		this.ResumenPuntuaciones = new BotonPuntuaciones(this);
-		this.Autores = new BotonAutores(this);
-		this.Version = new BotonVersion(this);
+		this.Infromacion = 	new BotonInformacion(this);
+		this.ResumenPuntuaciones = 	new BotonPuntuaciones(this);
+		this.Autores =new BotonAutores(this);
+		this.Version = 	new BotonVersion(this);
 		this.Salir = new BotonSalir();
 		
 		this.NuevaPartida.setBounds			(((this.screenSize.width/2)-(this.screenSize.width/10)),(this.screenSize.height/6),(this.screenSize.width/5),(this.screenSize.width/20));
@@ -89,6 +89,12 @@ public class JF_PanelMenu extends JPanel {
 		marcoP.remove(this);
 		marcoP.add(new JF_PanelVersion());
 		marcoP.setVisible(true);
+	}
+	public void irPanelPuntuacion() {
+		JFrame marcoP = (JFrame)SwingUtilities.getWindowAncestor(this);	
+		marcoP.remove(this);
+		marcoP.add(new JF_PanelPuntuaciones());
+		marcoP.setVisible(true); 
 	}
 	/*
 	public void irMenu(JPanel JPanel) {
