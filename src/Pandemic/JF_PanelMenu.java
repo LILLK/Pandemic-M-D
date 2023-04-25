@@ -22,14 +22,15 @@ public class JF_PanelMenu extends JPanel {
 	BotonVersion Version;
 	BotonSalir Salir;
 	JFrame marcoP;
-	Dimension screenSize;
+	public final static Dimension screenSize = new Dimension(Toolkit.getDefaultToolkit().getScreenSize());
+	public final static int alejandor = 9;
 	
 	JF_PanelMenu(){
 		
-		this.screenSize=Toolkit.getDefaultToolkit().getScreenSize();
+		 
 		
 		setLayout(null);
-		this.NuevaPartida = new BotonNuevaPartida();
+		this.NuevaPartida = new BotonNuevaPartida(this);
 		this.CargarPartida = new BotonCargarPartida(this);
 		this.Infromacion = new BotonInformacion(this);
 		this.ResumenPuntuaciones = new BotonPuntuaciones(this);
@@ -37,13 +38,13 @@ public class JF_PanelMenu extends JPanel {
 		this.Version = new BotonVersion(this);
 		this.Salir = new BotonSalir();
 		
-		this.NuevaPartida.setBounds(((this.screenSize.width/2)-150),200,300,75);
-		this.CargarPartida.setBounds(((this.screenSize.width/2)-150),295,300,75);
-		this.Infromacion.setBounds(((this.screenSize.width/2)-150),390,300,75);
-		this.ResumenPuntuaciones.setBounds(((this.screenSize.width/2)-150),485,300,75);
-		this.Autores.setBounds(((this.screenSize.width/2)-150),580,300,75);
-		this.Version.setBounds(((this.screenSize.width/2)-150),675,300,75);
-		this.Salir.setBounds(((this.screenSize.width/2)-150),770,300,75);
+		this.NuevaPartida.setBounds			(((this.screenSize.width/2)-(this.screenSize.width/10)),(this.screenSize.height/6),(this.screenSize.width/5),(this.screenSize.width/20));
+		this.CargarPartida.setBounds		(((this.screenSize.width/2)-(this.screenSize.width/10)),((this.screenSize.height/6)+(this.screenSize.width/18)),(this.screenSize.width/5),(this.screenSize.width/20));
+		this.Infromacion.setBounds			(((this.screenSize.width/2)-(this.screenSize.width/10)),(this.screenSize.height/6+((this.screenSize.width/18)*2)),(this.screenSize.width/5),(this.screenSize.width/20));
+		this.ResumenPuntuaciones.setBounds	(((this.screenSize.width/2)-(this.screenSize.width/10)),(this.screenSize.height/6+((this.screenSize.width/18)*3)),(this.screenSize.width/5),(this.screenSize.width/20));
+		this.Autores.setBounds				(((this.screenSize.width/2)-(this.screenSize.width/10)),(this.screenSize.height/6+((this.screenSize.width/18)*4)),(this.screenSize.width/5),(this.screenSize.width/20));
+		this.Version.setBounds				(((this.screenSize.width/2)-(this.screenSize.width/10)),(this.screenSize.height/6+((this.screenSize.width/18)*5)),(this.screenSize.width/5),(this.screenSize.width/20));
+		this.Salir.setBounds				(((this.screenSize.width/2)-(this.screenSize.width/10)),(this.screenSize.height/6+((this.screenSize.width/18)*6)),(this.screenSize.width/5),(this.screenSize.width/20));
 		
 		
 		add(this.NuevaPartida);

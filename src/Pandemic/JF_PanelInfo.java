@@ -21,23 +21,23 @@ public class JF_PanelInfo extends JPanel {
 	
 		setLayout(null);
 		this.screenSize=Toolkit.getDefaultToolkit().getScreenSize();
-		String s ="<html><center>Hace 48 días conseguimos hacer mutar el virus T, pero nada salió como teníamos planeado. El<p>"
-				+ "<html><center>virus tras mutar genero cuatro nuevas variantes de esté, y se dividieron por todo el mundo de<p>"
-				+ "<html><center>forma homogénea infectando ciudad a ciudad y tu objetivo es salvar el mundo de esta<p>"
-				+ "<html><center>pandemia.<p>"
-				+ "<html><center>Para ello tendrás que moverte de ciudad en ciudad para desinfectar todas las ciudades o<p>"
-				+ "<html><center>desarrollar las vacunas de los cuatro virus. Por la contraparte si una ciudad se infecta y se le<p>"
-				+ "<html><center>acumulan con un total de 3 enfermedades, las ciudades colindantes se les añadirá una<p>"
-				+ "<html><center>enfermedad y se genera 1 brote. Así que ten cuidado, porque al llegar a cierto número de<p>"
-				+ "<html><center>brotes o que todas las ciudades se hayan infectado, significara el fin del mundo y de la partida.<p>"
-				+ "<html><center>Por cada ronda tendrás 4 puntos de acción y estas son las acciones que puedes hacer<p>"
-				+ "<html><center>Moverte: -1pa (“dev; No sé qué limites hay para moverse ni como se moverá”)<p>"
-				+ "<html><center>Desarrollar vacuna: -1pa (Depende de la ciudad donde estés, desarrollaras un porcentaje de la<p>"
-				+ "<html><center>vacuna)<p>"
-				+ "<html><center>Quitar enfermedad: -1pa (Si tienes una ciudad colindante a ti infectada puedes bajar en 1 sus<p>"
-				+ "<html><center>enfermedades)<p>"
-				+ "<html><center>Habrá un sistema de puntuación que conistira en (“dev: falta por decidir”). Y tranquilo, el<p>"
-				+ "<html><center>mundo puede esperar por ti “nombre del usuario”, por eso podrás guardar tus avances<p>"
+		String s ="<html><center>Hace 48 días conseguimos hacer mutar el virus T, pero nada salió como teníamos planeado. El"
+				+ "<html><center>virus tras mutar genero cuatro nuevas variantes de esté, y se dividieron por todo el mundo de"
+				+ "<html><center>forma homogénea infectando ciudad a ciudad y tu objetivo es salvar el mundo de esta"
+				+ "<html><center>pandemia."
+				+ "<html><center>Para ello tendrás que moverte de ciudad en ciudad para desinfectar todas las ciudades o"
+				+ "<html><center>desarrollar las vacunas de los cuatro virus. Por la contraparte si una ciudad se infecta y se le"
+				+ "<html><center>acumulan con un total de 3 enfermedades, las ciudades colindantes se les añadirá una"
+				+ "<html><center>enfermedad y se genera 1 brote. Así que ten cuidado, porque al llegar a cierto número de"
+				+ "<html><center>brotes o que todas las ciudades se hayan infectado, significara el fin del mundo y de la partida."
+				+ "<html><center>Por cada ronda tendrás 4 puntos de acción y estas son las acciones que puedes hacer"
+				+ "<html><center>Moverte: -1pa (“dev; No sé qué limites hay para moverse ni como se moverá”)"
+				+ "<html><center>Desarrollar vacuna: -1pa (Depende de la ciudad donde estés, desarrollaras un porcentaje de la"
+				+ "<html><center>vacuna)"
+				+ "<html><center>Quitar enfermedad: -1pa (Si tienes una ciudad colindante a ti infectada puedes bajar en 1 sus"
+				+ "<html><center>enfermedades)"
+				+ "<html><center>Habrá un sistema de puntuación que conistira en (“dev: falta por decidir”). Y tranquilo, el"
+				+ "<html><center>mundo puede esperar por ti “nombre del usuario”, por eso podrás guardar tus avances"
 				+ "<html><center>salvando el mundo y volver en cualquier momento.";
 		this.Atras = new BotonAtras(this);
 		JLabel Info = new JLabel();
@@ -45,21 +45,21 @@ public class JF_PanelInfo extends JPanel {
 		Color color =new Color(70, 160, 196);
 		JLabel TInfo = new JLabel();
 		
-		TInfo.setBounds(((this.screenSize.width/2)-400),180,800,100);
-		TInfo.setText("Informacion del Juego");
+		TInfo.setBounds(((this.screenSize.width/2)-(this.screenSize.width/6)),(this.screenSize.height/7),(this.screenSize.width/3),(this.screenSize.height/5));
+		TInfo.setText("<html><center>Informacion del Juego");
 		TInfo.setForeground(Color.BLACK);
-		TInfo.setFont(new Font("Stika Text",Font.BOLD,73));
+		TInfo.setFont(new Font("Stika Text",Font.BOLD,(this.screenSize.height/15)));
 		TInfo.setBackground(color);
 		TInfo.setBorder(borde);
 		
-		Info.setBounds(((this.screenSize.width/2)-275),300,550,600);
+		Info.setBounds(((this.screenSize.width/2)-(this.screenSize.width/4)),((this.screenSize.height/7)+(this.screenSize.height/5)),((this.screenSize.width/2)),((this.screenSize.height/2)));
 		Info.setText(s);
 		Info.setForeground(Color.BLACK);
-		Info.setFont(new Font("Stika Text",Font.BOLD,12));
+		Info.setFont(new Font("Stika Text",Font.BOLD,15));
 		Info.setBackground(color);
 		Info.setBorder(borde);
 		
-		Atras.setBounds(0,(this.screenSize.height-((screenSize.width/20)-3)),this.screenSize.width,(screenSize.width/25));
+		Atras.setBounds(0,(this.screenSize.height-((this.screenSize.width/19))),this.screenSize.width,(screenSize.width/25));
 	   // Info.setHorizontalAlignment(Info.CENTER);
 	    //Info.setHorizontalAlignment(Info.LEFT);
 	

@@ -1,4 +1,6 @@
 package Botones;
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.awt.event.*;
 
 import javax.swing.ImageIcon;
@@ -7,23 +9,28 @@ import Pandemic.*;
 
 public class BotonNuevaPartida extends JLabel {
 	
-	
-	public BotonNuevaPartida() {
+	//public final Dimension screenSize;
+	public BotonNuevaPartida(JF_PanelMenu JF_PanelMenu) {
 		
 		cambiarImg img = new cambiarImg();
-
-		setIcon(img.tamaño(new ImageIcon("botones/bottonNuevaPartida-1.png"), 300, 75));
+		
+		//JF_PanelMenu.screenSize.getWidth();
+		//screenSize=Toolkit.getDefaultToolkit().getScreenSize();
+		
+		setIcon(img.tamaño(new ImageIcon("botones/bottonNuevaPartida-1.png"), ((int)(JF_PanelMenu.screenSize.getWidth()/5)), ((int)(JF_PanelMenu.screenSize.getWidth()/20))));
 		
 		addMouseListener(new MouseListener() {	
+			
+			
 			public void mouseEntered(MouseEvent e) {
-				setIcon(img.tamaño(new ImageIcon("botones/bottonNuevaPartida-2.png"), 300, 75));
+				setIcon(img.tamaño(new ImageIcon("botones/bottonNuevaPartida-2.png"),((int)(JF_PanelMenu.screenSize.getWidth()/5)) , ((int)(JF_PanelMenu.screenSize.getWidth()/20))));
 			}
 			public void mouseExited(MouseEvent a) {
-				setIcon(img.tamaño(new ImageIcon("botones/bottonNuevaPartida-1.png"), 300, 75));
+				setIcon(img.tamaño(new ImageIcon("botones/bottonNuevaPartida-1.png"),((int)(JF_PanelMenu.screenSize.getWidth()/5)), ((int)(JF_PanelMenu.screenSize.getWidth()/20))));
 			}
 
 			public void mousePressed(MouseEvent i) {
-				setIcon(img.tamaño(new ImageIcon("botones/bottonNuevaPartida-3.png"), 300, 75));
+				setIcon(img.tamaño(new ImageIcon("botones/bottonNuevaPartida-3.png"),((int)(JF_PanelMenu.screenSize.getWidth()/5)), ((int)(JF_PanelMenu.screenSize.getWidth()/20))));
 			}
 			public void mouseClicked(MouseEvent e) {
 				
