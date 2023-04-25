@@ -40,15 +40,19 @@ public class JF_PanelInfo extends JPanel {
 				+ "mundo puede esperar por ti “nombre del usuario”, por eso podrás guardar tus avances\r\n"
 				+ "salvando el mundo y volver en cualquier momento.";
 		this.Atras = new BotonAtras(this);
-		JLabel Info = new JLabel(s,SwingConstants.CENTER);
+		JTextField Info = new JTextField(s);
 		Border borde = BorderFactory.createLineBorder(Color.BLACK);
 		Info.setBounds(100,100,800,600);
 		Atras.setBounds(0,(this.screenSize.height-((screenSize.width/20)+4)),this.screenSize.width,(screenSize.width/25));
 		Info.setForeground(Color.GRAY);
 		Info.setBackground(Color.BLACK);
 		Info.setBorder(borde);
-	    Info.setHorizontalAlignment(SwingConstants.CENTER);
+	   // Info.setHorizontalAlignment(Info.CENTER);
+	    //Info.setHorizontalAlignment(Info.LEFT);
+	
+	    Info.setHorizontalAlignment(Info.LEFT);
 		Info.setVisible(true);
+		Info.setOpaque(true);
 		add(this.Atras);
 		add(Info);
 		

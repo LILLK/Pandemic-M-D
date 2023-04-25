@@ -49,7 +49,7 @@ public class JF_PanelAutores extends JPanel  {
 		imagenDavid.setIcon(img.tamaño(new ImageIcon("imagenes/fotoDavid.png"),300,200));
 		imgDavidDesc.setIcon(img.tamaño(new ImageIcon("imagenes/imgDavidDesc.png"),300,400));
 		imagenMehdi.setIcon(img.tamaño(new ImageIcon("imagenes/imagenMehdi.png"), 300, 200));
-		imgMehdiDesc.setIcon(img.tamaño(new ImageIcon("imagenes/imgDavidDesc.png"), 300, 400));
+		imgMehdiDesc.setIcon(img.tamaño(new ImageIcon("imagenes/imgMehdiDesc.png"), 300, 400));
 		
 		imagenDavid.setBounds( 250,50, 300,200);
 		imgDavidDesc.setBounds( 250,250, 300,400);

@@ -75,8 +75,7 @@ import Pandemic.cambiarImg;
 					setIcon(img.tamaño(new ImageIcon("botones/bottonAtras-3.png"), screenSize.width, (screenSize.width/30)) );
 				}
 				public void mouseClicked(MouseEvent e) {
-					
-					JF_PanelInfo.irMenu();
+					JF_PanelInfo.irMenu();					
 				}
 				public void mouseReleased(MouseEvent e) {
 					// TODO Apéndice de método generado automáticamente
