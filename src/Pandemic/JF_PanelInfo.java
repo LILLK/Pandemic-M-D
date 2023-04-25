@@ -42,7 +42,7 @@ public class JF_PanelInfo extends JPanel {
 		this.Atras = new BotonAtras(this);
 		JLabel Info = new JLabel();
 		Border borde = BorderFactory.createLineBorder(Color.BLACK,8);
-		Color color =new Color(63, 98, 152);
+		Color color =new Color(70, 160, 196);
 		JLabel TInfo = new JLabel();
 		
 		TInfo.setBounds(((this.screenSize.width/2)-400),180,800,100);

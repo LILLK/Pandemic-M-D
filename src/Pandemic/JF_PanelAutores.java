@@ -1,5 +1,6 @@
 package Pandemic;
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Graphics;
@@ -14,6 +15,7 @@ import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
+import javax.swing.BorderFactory;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -21,6 +23,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
+import javax.swing.border.Border;
 
 import Botones.BotonAtras;
 
@@ -43,6 +46,7 @@ public class JF_PanelAutores extends JPanel  {
 		JLabel imgDavidDesc = new JLabel();
 		JLabel imagenMehdi = new JLabel();
 		JLabel imgMehdiDesc = new JLabel();
+		Border borde = BorderFactory.createLineBorder(Color.BLACK,8);
 
 		
 		
@@ -50,6 +54,9 @@ public class JF_PanelAutores extends JPanel  {
 		imgDavidDesc.setIcon(img.tamaño(new ImageIcon("imagenes/imgDavidDesc.png"),375,375));
 		imagenMehdi.setIcon(img.tamaño(new ImageIcon("imagenes/imagenMehdi.png"), 375, 300));
 		imgMehdiDesc.setIcon(img.tamaño(new ImageIcon("imagenes/imgMehdiDesc.png"), 375, 375));
+		
+		imagenMehdi.setBorder(borde);
+		imagenDavid.setBorder(borde);
 		
 		imagenDavid.setBounds( (this.screenSize.width/2)-545,150, 375,300);
 		imgDavidDesc.setBounds( (this.screenSize.width/2)-545,450, 375,375);
