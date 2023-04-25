@@ -29,14 +29,12 @@ public class Jugador {
 	// -
 	//
 	////////////////////////////////////
-	public static void acciones(int a) {
+	public static void acciones(int tipoAcccion  ) {
 
-		switch (a) {
+		switch (tipoAcccion) {
 		case 1:
 			System.out.println("curar");
-			for (int i = 0; i < 4; i++) {
 				curar();
-			}
 			break;
 		case 2:
 			System.out.println("desarollar");
@@ -92,7 +90,6 @@ public class Jugador {
 		} while (Partida.vacunas.get(id).desarollo >= 100);
 
 		Partida.vacunas.get(id).desarollo += Parametros.porcentajeCura;
-		// scn.close();
 	}
 
 	////////////////////////////////////

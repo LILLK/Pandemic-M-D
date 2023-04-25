@@ -1,6 +1,7 @@
 
 //Mehdi Tahrat && David hola
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Scanner;
 
 public class Partida {
@@ -47,15 +48,14 @@ public class Partida {
 	////////////////////////////////////////
 	public static void jugarPartida() {
 		updatePartida();
+		ejecutar.imprimir();
 		while (!fin()) {
 			Partida.ronda++;
-			ejecutar.imprimir();
 			ronda();
-			updatePartida();
 			if (!fin()) {
 				infectar();
-				updatePartida();
 			}
+			ejecutar.imprimir();
 		}
 	}
 	//////////////////////////////////////////////////////////////////////////////////////
@@ -66,9 +66,13 @@ public class Partida {
 		Scanner scn = new Scanner(System.in);
 		int intput;
 		System.out.println("Ronda: " + Partida.ronda);
-		System.out.println("1 curar - 2 desarollar");
-		intput = scn.nextInt();
-		Jugador.acciones(intput);
+		for (int i = 1; i < 5; i++) {
+			System.out.println("Acciones restantes: "+(5-i));
+			System.out.println("1 curar - 2 desarollar");
+			intput = scn.nextInt();
+			Jugador.acciones(intput);
+			updatePartida();
+		}
 	}
 	//////////////////////////////////////////////////////////////////////////////////////
 	// -infectar
@@ -78,10 +82,13 @@ public class Partida {
 		for (int i = 0; i < Parametros.infeccionRonda; i++) {
 			int random = (int) (Math.random() * Partida.ciudades.size());
 			Partida.ciudades.get(random).infectar();
+			System.out.println("se a infectado la ciudad: "+ Partida.ciudades.get(random).nombre);
 		}
 		Ciudades.setInfeccionRondaFalse();
 		// esto impide que las ciudades se infecten infinitamente proibiendo infectarse
 		// 2 o mas por ronda
+		updatePartida();
+
 	}
 	
 	/////////////////////////////////////////
