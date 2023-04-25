@@ -36,7 +36,7 @@ public class JF_PanelVersion extends JPanel {
 		this.Atras = new BotonAtras(this);
 		JLabel Version = new JLabel();
 		Border borde = BorderFactory.createLineBorder(Color.BLACK,8);
-		Color color =new Color(63, 98, 152);
+		Color color =new Color(70, 160, 196);
 		String s= "Version 1.0";
 		Version.setBounds(((this.screenSize.width/2)-276),50,552,100);
 		Version.setText(s);
