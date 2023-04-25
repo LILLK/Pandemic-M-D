@@ -2,10 +2,7 @@
 public class ejecutar {
 
 	public static void main(String[] args) {
-		Partida.iniciarNuevaPartida();
-		imprimir();
-		Partida.updateBrotes();
-		System.out.println(Partida.brotes);
+		Partida.nuevaPartida();
 	}
 	
 	

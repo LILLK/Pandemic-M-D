@@ -10,6 +10,8 @@ public class Ciudades {
 	ArrayList<String> colindantes;
 	boolean brote;
 	int nEnfermedades;
+	//cuando se tiene que infectar a las ciudades, se marca esta flag para no infectarla otra vez
+	boolean infeccionRonda;
 
 	////////////////////////////////////
 	/////////// constructores //////////
@@ -22,6 +24,7 @@ public class Ciudades {
 		this.nEnfermedades = 0;
 		this.brote = false;
 		this.colindantes = generarColindantes(this.nombre);
+		this.infeccionRonda = false;
 	}
 	////////////////////////////////////
 	////////////// metodos /////////////
@@ -32,31 +35,33 @@ public class Ciudades {
 	//
 	////////////////////////////////////
 	public void infectar() {
+		this.infeccionRonda = true;
+		/*
 		System.out.println("////////////////////////////////////");
 		System.out.println("infecto:  " + this.nombre);
 		for (String string : colindantes) {
 			System.out.println("colindante: " + string);
 		}
 		System.out.println("////////////////////////////////////");
-
+		 */
 		if (this.nEnfermedades < 3) {// si es mas pequeño de 3
-			System.out.println("no tiene brote");
 			this.nEnfermedades++;
 			// si tiene 3 enfermedades y no tiene un brote, se generara uno
+
 		} else if (this.nEnfermedades == 3 && !this.brote) {
-			System.out.println("brote:" + Partida.brotes);
 			this.brote = true;
 			Partida.brotes++;
 			// recorremos las ciudades colindantes a esta
 			for (String ciudadColindante : this.colindantes) {
-				System.out.println("ciudad: " + ciudadColindante);
-				// y por cada una de ellas ejecutamos este metodo
-				Partida.ciudades.get(getIdXnombre(ciudadColindante)).infectar();
+				if (!Partida.ciudades.get(getIdXnombre(ciudadColindante)).infeccionRonda)
+					// y por cada una de ellas ejecutamos este metodo
+					Partida.ciudades.get(getIdXnombre(ciudadColindante)).infectar();
 			}
 		} else if (this.brote) {
 			for (String ciudadColindante : this.colindantes) {
 				// y por cada una de ellas ejecutamos este metodo
-				Partida.ciudades.get(getIdXnombre(ciudadColindante)).infectar();
+				if (!Partida.ciudades.get(getIdXnombre(ciudadColindante)).infeccionRonda)
+					Partida.ciudades.get(getIdXnombre(ciudadColindante)).infectar();
 			}
 		}
 	}
@@ -127,10 +132,16 @@ public class Ciudades {
 
 		// Mientras haya menos brotes que los necesarios para empezar
 		while (Partida.brotes < Parametros.brotesInicio) {
-			// busca una ciudad aleatoria y la infecta 4 veces para generar un brote
+			// busca una ciudad aleatoria y la infecta 3 veces para generar un brote
 			int random = (int) (Math.random() * Partida.ciudades.size());
-			for (int i = 0; i < 4; i++) {
-				Partida.ciudades.get(random).infectar();
+			//si no a tenido bruto la ciudad elejida random
+			if (!Partida.ciudades.get(random).brote) {
+				//se genera un brote
+				for (int i = 0; i < 3; i++) {
+					Partida.ciudades.get(random).nEnfermedades++;
+				}
+				Partida.ciudades.get(random).setBrote(true);
+				Partida.brotes++;
 			}
 
 		}
@@ -194,5 +205,27 @@ public class Ciudades {
 
 	public void setnBrotes(int nBrotes) {
 		this.nEnfermedades = nBrotes;
+	}
+	
+	public int getnEnfermedades() {
+		return nEnfermedades;
+	}
+
+	public void setnEnfermedades(int nEnfermedades) {
+		this.nEnfermedades = nEnfermedades;
+	}
+
+	public boolean isInfeccionRonda() {
+		return infeccionRonda;
+	}
+
+	public void setInfeccionRonda(boolean infeccionRonda) {
+		this.infeccionRonda = infeccionRonda;
+	}
+
+	public static void setInfeccionRondaFalse() {
+		for (Ciudades ciudad : Partida.ciudades) {
+			ciudad.setInfeccionRonda(false);
+		}
 	}
 }

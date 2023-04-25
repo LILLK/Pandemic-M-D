@@ -37,13 +37,17 @@ public class Partida {
 	//
 	/////////////////////////////////////////////////////////////////////////////////////
 	public static void nuevaPartida() {
+		int ronda = 0;
 		iniciarNuevaPartida();
 		while (!fin()) {
+			ronda++;
 			ejecutar.imprimir();
-			// ronda();
+			ronda(ronda);
 			if (!fin()) {
-				// infectar();
+				infectar();
 			}
+			updateBrotes();
+			ejecutar.imprimir();
 		}
 	}
 
@@ -51,9 +55,10 @@ public class Partida {
 	// -ronda
 	//
 	/////////////////////////////////////////////////////////////////////////////////////
-	public static void ronda() {
+	public static void ronda(int ronda) {
 		Scanner scn = new Scanner(System.in);
 		int intput;
+		System.out.println("Ronda: " + ronda);
 		System.out.println("1 curar - 2 desarollar");
 		intput = scn.nextInt();
 		Jugador.acciones(intput);
@@ -72,6 +77,9 @@ public class Partida {
 			Partida.ciudades.get(random).infectar();
 			i++;
 		}
+		Ciudades.setInfeccionRondaFalse();
+		// esto impide que las ciudades se infecten infinitamente proibiendo infectarse
+		// 2 o mas por ronda
 	}
 
 	//////////////////////////////////////////////////////////////////////////////////////
@@ -185,7 +193,8 @@ public class Partida {
 	public static void updateBrotes() {
 		Partida.brotes = 0;
 		for (Ciudades ciudad : Partida.ciudades) {
-			if(ciudad.nEnfermedades>=3) {
+			if (ciudad.nEnfermedades == 3) {
+				System.out.println(ciudad.nombre + ciudad.nEnfermedades);
 				Partida.brotes++;
 			}
 		}
