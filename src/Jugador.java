@@ -34,7 +34,9 @@ public class Jugador {
 		switch (a) {
 		case 1:
 			System.out.println("curar");
-			curar();
+			for (int i = 0; i < 4; i++) {
+				curar();
+			}
 			break;
 		case 2:
 			System.out.println("desarollar");
@@ -61,12 +63,17 @@ public class Jugador {
 				System.out.println("no se puede curar esta ciudad ");
 			}
 		} while (Partida.ciudades.get(id).nEnfermedades <= 0);
-		// curar ciudad elejida
-		Partida.ciudades.get(id).nEnfermedades -= 1;
+		//si el id de virus de la ciudad que queremos,  hemos desarollado su vacuna 
+		if (Partida.vacunas.get(Partida.ciudades.get(id).idVirus).desarollo >= 100)
+			// curar ciudad elejida 
+			Partida.ciudades.get(id).nEnfermedades = 0;
+		else
+			//sino se restara una enfermedad
+			Partida.ciudades.get(id).nEnfermedades -= 1;
 		// si teiene estado de brote se quita
 		if (Partida.ciudades.get(id).brote)
 			Partida.ciudades.get(id).setBrote(false);
-		//scn.close();
+		// scn.close();
 	}
 
 	////////////////////////////////////
@@ -85,7 +92,7 @@ public class Jugador {
 		} while (Partida.vacunas.get(id).desarollo >= 100);
 
 		Partida.vacunas.get(id).desarollo += Parametros.porcentajeCura;
-		//scn.close();
+		// scn.close();
 	}
 
 	////////////////////////////////////

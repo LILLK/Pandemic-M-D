@@ -5,12 +5,20 @@ import java.util.Scanner;
 
 public class Partida {
 
-	static int Puntuacion;
-	static int brotes;
-	static int enfermedades;
-	static ArrayList<Ciudades> ciudades;
-	static ArrayList<Vacunas> vacunas;
-	static ArrayList<Viruses> viruses;
+	// Puntuacion de la partida
+	public static int Puntuacion;
+	// Brotes de la partida
+	public static int brotes;
+	// Enfermedades en la partida
+	public static int enfermedades;
+	// rondas de la partida
+	public static int ronda;
+	// Lista de todas las ciudades con sus atributos
+	public static ArrayList<Ciudades> ciudades;
+	// Lista de todas las Vacunas con sus atributos
+	public static ArrayList<Vacunas> vacunas;
+	// Lista de todas las Viruses con sus atributos
+	public static ArrayList<Viruses> viruses;
 
 	////////////////////////////////////
 	/////////// constructores //////////
@@ -32,55 +40,63 @@ public class Partida {
 	///////////// Funciones ////////////
 	////////////////////////////////////
 
-	//////////////////////////////////////////////////////////////////////////////////////
-	// -nuevaPartida
-	//
-	/////////////////////////////////////////////////////////////////////////////////////
-	public static void nuevaPartida() {
-		int ronda = 0;
-		iniciarNuevaPartida();
+	
+	/////////////////////////////////////////
+	// -jugarPartida
+	// es dode se ejecuta la partida 
+	////////////////////////////////////////
+	public static void jugarPartida() {
 		while (!fin()) {
-			ronda++;
-			ejecutar.imprimir();
-			ronda(ronda);
+			Partida.ronda++;
+			ronda();
+			updatePartida();
 			if (!fin()) {
 				infectar();
+				updatePartida();
 			}
-			updateBrotes();
 			ejecutar.imprimir();
 		}
 	}
-
 	//////////////////////////////////////////////////////////////////////////////////////
 	// -ronda
-	//
+	// Las acciones del jugador en la ronda
 	/////////////////////////////////////////////////////////////////////////////////////
-	public static void ronda(int ronda) {
+	public static void ronda() {
 		Scanner scn = new Scanner(System.in);
 		int intput;
-		System.out.println("Ronda: " + ronda);
+		System.out.println("Ronda: " + Partida.ronda);
 		System.out.println("1 curar - 2 desarollar");
 		intput = scn.nextInt();
 		Jugador.acciones(intput);
 		scn.close();
-
 	}
-
 	//////////////////////////////////////////////////////////////////////////////////////
 	// -infectar
-	//
+	//Las acciones del programa despues de las del jugador 
 	/////////////////////////////////////////////////////////////////////////////////////
 	public static void infectar() {
-		int i = 0;
-		while (i < Parametros.infeccionRonda) {
+		for (int i = 0; i < Parametros.infeccionRonda; i++) {
 			int random = (int) (Math.random() * Partida.ciudades.size());
 			Partida.ciudades.get(random).infectar();
-			i++;
 		}
 		Ciudades.setInfeccionRondaFalse();
 		// esto impide que las ciudades se infecten infinitamente proibiendo infectarse
 		// 2 o mas por ronda
 	}
+	
+	/////////////////////////////////////////
+	// -nuevaPartida
+	// Empieza una nueva partida
+	////////////////////////////////////////
+	public static void nuevaPartida() {
+		// Incicializa las variables necesarias para empezar partida
+		iniciarNuevaPartida();
+		// empieza la partida
+		Partida.jugarPartida();
+		
+	}
+
+
 
 	//////////////////////////////////////////////////////////////////////////////////////
 	// -fin
@@ -89,10 +105,12 @@ public class Partida {
 	public static boolean fin() {
 		boolean aux = false;
 		// si se llega al numero de brotes necesrio para perder
-		if (Partida.brotes >= Parametros.brotesTotal) {
+		if (Partida.brotes > Parametros.brotesTotal) {
+			System.out.println("llega al numero de brotes necesrio ");
 			return true;
 			// si todas las ciudades han sidio limpiadas
 		} else if (Ciudades.nEnfermedadesPartida() == 0) {
+			System.out.println();
 			return true;
 		}
 		// si han sido todas las vacunas descubiertas
@@ -110,7 +128,7 @@ public class Partida {
 		Partida.brotes = 0;
 		Partida.Puntuacion = 0;
 		Partida.enfermedades = 0;
-
+		Partida.ronda = 0;
 		Parametros.establecerParametros();
 		Partida.viruses = new ArrayList<Viruses>();
 		Partida.vacunas = new ArrayList<Vacunas>();
@@ -186,22 +204,35 @@ public class Partida {
 		}
 	}
 
-//////////////////////////////////////////////////////////////////////////////////////
-// - updateEnfermedades
-// actualiza las enfermedades en el juego
-/////////////////////////////////////////////////////////////////////////////////////
+	//////////////////////////////////////////////////////////////////////////////////////
+	// - updateBrotes
+	// actualiza los brotes en el juego
+	/////////////////////////////////////////////////////////////////////////////////////
 	public static void updateBrotes() {
 		Partida.brotes = 0;
 		for (Ciudades ciudad : Partida.ciudades) {
 			if (ciudad.nEnfermedades == 3) {
-				System.out.println(ciudad.nombre + ciudad.nEnfermedades);
 				Partida.brotes++;
 			}
 		}
 	}
 
-	public static void enfermedades(int enfermedades) {
-		Partida.enfermedades = enfermedades;
+	/////////////////////////////////////////////
+	// - updatePuntuacion
+	// actualiza la puntuacion en el juego
+	////////////////////////////////////////////
+	public static void updatePuntuacion() {
+		Partida.Puntuacion = ((((Partida.ciudades.size() * 3) - Partida.enfermedades) * 73) / Partida.brotes
+				+ Partida.ronda);
+	}
+
+	/////////////////////////////////////////////
+	// - updatePartida
+	// actualiza los datos en la partida
+	////////////////////////////////////////////
+	public static void updatePartida() {
+		updateEnfermedades();
+		updatePuntuacion();
 	}
 
 }
