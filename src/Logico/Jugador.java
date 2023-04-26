@@ -5,11 +5,7 @@ import java.util.Scanner;
 
 public class Jugador {
 
-<<<<<<< HEAD:src/Logico/Jugador.java
-	
-=======
 	public static int id;
->>>>>>> 830fb87339dc66b19f64715bbc5e5b547dc64b93:src/Jugador.java
 	public static String usuario;
 	public static boolean logged;
 
