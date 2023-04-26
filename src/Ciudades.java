@@ -51,6 +51,10 @@ public class Ciudades {
 		} else if (this.nEnfermedades == 3 && !this.brote) {
 			this.brote = true;
 			Partida.brotes++;
+			System.out.println("////////////////");
+			System.out.println("brote en: "+this.nombre);
+			System.out.println("////////////////");
+			
 			// recorremos las ciudades colindantes a esta
 			for (String ciudadColindante : this.colindantes) {
 				if (!Partida.ciudades.get(getIdXnombre(ciudadColindante)).infeccionRonda)

@@ -230,8 +230,7 @@ public class Partida {
 	// actualiza la puntuacion en el juego
 	////////////////////////////////////////////
 	public static void updatePuntuacion() {
-		Partida.Puntuacion = ((((Partida.ciudades.size() * 3) - Partida.enfermedades) * 73) / Partida.brotes
-				+ Partida.ronda);
+		Partida.Puntuacion = (((((Partida.ciudades.size() * 3) - Partida.enfermedades)) / (Partida.brotes+ Partida.ronda))*Parametros.brotesTotal/Parametros.brotesInicio);
 	}
 
 	/////////////////////////////////////////////
