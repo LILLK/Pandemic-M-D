@@ -1,9 +1,11 @@
+package Logico;
 import java.util.Scanner;
 
 //Mehdi Tahrat && David hola
 
 public class Jugador {
 
+	
 	public static String usuario;
 	public static boolean logged;
 

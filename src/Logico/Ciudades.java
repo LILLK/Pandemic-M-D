@@ -1,4 +1,4 @@
-package Pandemic;
+package Logico;
 import java.util.ArrayList;
 import java.util.Arrays;
 

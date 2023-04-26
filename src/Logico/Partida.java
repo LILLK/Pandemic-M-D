@@ -1,4 +1,4 @@
-package Pandemic;
+package Logico;
 
 //Mehdi Tahrat && David hola
 import java.util.ArrayList;

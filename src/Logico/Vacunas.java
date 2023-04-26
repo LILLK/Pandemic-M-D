@@ -1,3 +1,4 @@
+package Logico;
 import java.util.ArrayList;
 
 //Mehdi Tahrat && David hola
