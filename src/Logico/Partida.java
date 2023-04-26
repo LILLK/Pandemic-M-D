@@ -82,7 +82,14 @@ public class Partida {
 	public static void infectar() {
 		for (int i = 0; i < Parametros.infeccionRonda; i++) {
 			int random = (int) (Math.random() * Partida.ciudades.size());
-			Partida.ciudades.get(random).infectar();
+			
+			Partida.ciudades.get(random)
+			
+			
+			
+			.infectar();
+			
+			
 			System.out.println("se a infectado la ciudad: "+ Partida.ciudades.get(random).nombre);
 		}
 		Ciudades.setInfeccionRondaFalse();
@@ -130,7 +137,7 @@ public class Partida {
 	}
 
 	//////////////////////////////////////////////////////////////////////////////////////
-	// -iniciarNuevaPartida
+	// -iniciarNuevaPartida 	
 	// - rellena y inicializa las variables, listas y objetos necesarios
 	/////////////////////////////////////////////////////////////////////////////////////
 	public static void iniciarNuevaPartida() {
@@ -151,7 +158,6 @@ public class Partida {
 	// rellena la lista de viruses
 	/////////////////////////////////////////////////////////////////////////////////////
 	public static void cargarPartida() {
-
 	}
 
 	//////////////////////////////////////////////////////////////////////////////////////
