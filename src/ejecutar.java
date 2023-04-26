@@ -2,6 +2,7 @@
 public class ejecutar {
 	
 	public static void main(String[] args) {
+
 		Partida.nuevaPartida();
 	}
 	

@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Jugador {
 
+	public static int id;
 	public static String usuario;
 	public static boolean logged;
 
