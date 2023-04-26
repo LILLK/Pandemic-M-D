@@ -70,7 +70,6 @@ public class JF_PanelVersion extends JPanel {
 			System.out.print("Error IMGfondo JF_PanelMenuMenu");
 		}
 		
-		
 	} 
 
 	
