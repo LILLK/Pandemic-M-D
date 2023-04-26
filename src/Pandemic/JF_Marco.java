@@ -10,7 +10,7 @@ public class JF_Marco extends JFrame{
 	JF_PanelMenu JF_PanelMenu;
 	//Dimension screenSize;
 	
-	JF_Marco(){
+	public JF_Marco(){
 		
 		//Dimension  screenSize = new Dimension();
 	
