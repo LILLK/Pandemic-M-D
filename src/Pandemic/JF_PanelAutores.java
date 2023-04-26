@@ -3,6 +3,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
@@ -51,17 +52,40 @@ public class JF_PanelAutores extends JPanel  {
 		
 		
 		imagenDavid.setIcon(img.tamaño(new ImageIcon("imagenes/fotoDavid.png"),(this.screenSize.height/3),(this.screenSize.height/4)));
-		imgDavidDesc.setIcon(img.tamaño(new ImageIcon("imagenes/imgDavidDesc.png"),(this.screenSize.height/3),(this.screenSize.height/3)));
+		//imgDavidDesc.setIcon(img.tamaño(new ImageIcon("imagenes/imgDavidDesc.png"),(this.screenSize.height/3),(this.screenSize.height/3)));
 		imagenMehdi.setIcon(img.tamaño(new ImageIcon("imagenes/imagenMehdi.png"), (this.screenSize.height/3), (this.screenSize.height/4)));
-		imgMehdiDesc.setIcon(img.tamaño(new ImageIcon("imagenes/imgMehdiDesc.png"), (this.screenSize.height/3), (this.screenSize.height/3)));
+		//imgMehdiDesc.setIcon(img.tamaño(new ImageIcon("imagenes/imgMehdiDesc.png"), (this.screenSize.height/3), (this.screenSize.height/3)));
+		
+		
+		imgDavidDesc.setText("<html><center>DAVID CALIN HOLA<p>Tengo 18 años y estudio programación web. Me apasiona todo lo relacionado con la tecnologia "
+				+ "							y la informática, especialmente los videojuegos. Me encanta aprender sobre nuevos lenguajes de programacion y "
+				+ "							diseñar mis propios juegos en mi tiempo libre. Espero poder seguir creciendo en esta carrera y convertirme en un"
+				+ "							desarrollador web exitoso.");
+		
+		
+		imgDavidDesc.setBackground(new Color(71,161,197));
+		imgDavidDesc.setForeground(Color.black);
+		imgDavidDesc.setOpaque(true);
+		imgDavidDesc.setFont(new Font("Stika Text",Font.BOLD,(this.screenSize.height/52)));
+		imgDavidDesc.setVisible(true);
+		
+		imgMehdiDesc.setText("<html><center>Mehdi Tharat<p>Soy un estudiante de 20 años apasionado por la informatica y la programcación. Me encanta trabajar"
+				+ "							con números y desentrañar problemas matemáticos complejos. Estoy en constante búsqueda de nuevas tecnologías y lenguajes "
+				+ "							programación que me permitan mejorar mia habitidades y conocimientos.Mi objetivo es convertirme en un experto en"
+				+ "							programación.");
+		imgMehdiDesc.setBackground(new Color(71,161,197));
+		imgMehdiDesc.setForeground(Color.black);
+		imgMehdiDesc.setFont(new Font("Stika Text",Font.BOLD,(this.screenSize.height/52)));
+		imgMehdiDesc.setOpaque(true);
+		imgMehdiDesc.setVisible(true);
 		
 		imagenMehdi.setBorder(borde);
 		imagenDavid.setBorder(borde);
 		
-		imagenDavid.setBounds	((this.screenSize.width/2)-(this.screenSize.height/4)-(this.screenSize.height/3),(this.screenSize.height/8), (this.screenSize.height/3),(this.screenSize.height/4));
-		imgDavidDesc.setBounds	((this.screenSize.width/2)-(this.screenSize.height/4)-(this.screenSize.height/3),(this.screenSize.height/8)+(this.screenSize.height/4), (this.screenSize.height/3),(this.screenSize.height/3));
-		imagenMehdi.setBounds	((this.screenSize.width/2)+(this.screenSize.height/4),(this.screenSize.height/8), (this.screenSize.height/3),(this.screenSize.height/4));
-		imgMehdiDesc.setBounds	((this.screenSize.width/2)+(this.screenSize.height/4),(this.screenSize.height/8)+(this.screenSize.height/4),(this.screenSize.height/3),(this.screenSize.height/3));
+		imagenDavid.setBounds	((this.screenSize.width/2)-(this.screenSize.height/5)-(this.screenSize.height/3),(this.screenSize.height/8), (this.screenSize.height/3),(this.screenSize.height/4));
+		imgDavidDesc.setBounds	((this.screenSize.width/2)-(this.screenSize.height/5)-(this.screenSize.height/3),(this.screenSize.height/8)+(this.screenSize.height/4), (this.screenSize.height/3),(this.screenSize.height/3));
+		imagenMehdi.setBounds	((this.screenSize.width/2)+(this.screenSize.height/5),(this.screenSize.height/8), (this.screenSize.height/3),(this.screenSize.height/4));
+		imgMehdiDesc.setBounds	((this.screenSize.width/2)+(this.screenSize.height/5),(this.screenSize.height/8)+(this.screenSize.height/4),(this.screenSize.height/3),(this.screenSize.height/3));
 		Atras.setBounds(0,(this.screenSize.height-((screenSize.width/20)-3)),this.screenSize.width,(screenSize.width/25));
 		
 		
