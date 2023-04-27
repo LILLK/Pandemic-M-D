@@ -23,10 +23,12 @@ public class JF_PanelMenu extends JPanel {
 	BotonSalir Salir;
 	JFrame marcoP;
 	public final static Dimension screenSize = new Dimension(Toolkit.getDefaultToolkit().getScreenSize());
-	public final static int alejandor = 9;
+
 	
 	JF_PanelMenu(){
 		
+		
+		 cambiarImg img = new cambiarImg();
 		 
 		
 		setLayout(null);
@@ -55,7 +57,7 @@ public class JF_PanelMenu extends JPanel {
 		add(this.Version);
 		add(this.Salir);
 
-	
+		
 	}
 
 	public void paint(Graphics g) {

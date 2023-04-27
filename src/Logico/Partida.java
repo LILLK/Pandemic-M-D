@@ -85,8 +85,6 @@ public class Partida {
 			
 			Partida.ciudades.get(random)
 			
-			
-			
 			.infectar();
 			
 			

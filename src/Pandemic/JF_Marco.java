@@ -12,12 +12,7 @@ public class JF_Marco extends JFrame{
 	
 	public JF_Marco(){
 		
-		//Dimension  screenSize = new Dimension();
-	
-		//setBounds (400, 200, 800, 800);
 		
-		//this.screenSize=Toolkit.getDefaultToolkit().getScreenSize();
-		//setSize(screenSize);
 		setExtendedState(JFrame.MAXIMIZED_BOTH); 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setResizable(false);

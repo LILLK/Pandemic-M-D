@@ -11,6 +11,8 @@ import java.awt.RenderingHints;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -30,19 +32,19 @@ import Botones.BotonAtras;
 
 public class JF_PanelAutores extends JPanel  {
 	BotonAtras Atras;
-	JLabel imagenDavid;
 	Dimension screenSize;
 	JF_PanelMenu JF_PanelMenu;
 	
 	public JF_PanelAutores()  {
 	
 		setLayout(null);
-
+		//Guardar tamaño de pantalla en screenSize
 		this.screenSize=Toolkit.getDefaultToolkit().getScreenSize();
-		cambiarImg img = new cambiarImg();
 		
+		
+		//Importar Objetos
 		this.Atras = new BotonAtras(this);
-		
+		cambiarImg img = new cambiarImg();
 		JLabel imagenDavid = new JLabel();
 		JLabel imgDavidDesc = new JLabel();
 		JLabel imagenMehdi = new JLabel();
@@ -50,45 +52,46 @@ public class JF_PanelAutores extends JPanel  {
 		Border borde = BorderFactory.createLineBorder(Color.BLACK,8);
 
 		
-		
+		//Contenido JLabels
+		//IMAGENES//
 		imagenDavid.setIcon(img.tamaño(new ImageIcon("imagenes/fotoDavid.png"),(this.screenSize.height/3),(this.screenSize.height/4)));
-		//imgDavidDesc.setIcon(img.tamaño(new ImageIcon("imagenes/imgDavidDesc.png"),(this.screenSize.height/3),(this.screenSize.height/3)));
 		imagenMehdi.setIcon(img.tamaño(new ImageIcon("imagenes/imagenMehdi.png"), (this.screenSize.height/3), (this.screenSize.height/4)));
-		//imgMehdiDesc.setIcon(img.tamaño(new ImageIcon("imagenes/imgMehdiDesc.png"), (this.screenSize.height/3), (this.screenSize.height/3)));
-		
-		
 		imgDavidDesc.setText("<html><center>DAVID CALIN HOLA<p>Tengo 18 años y estudio programación web. Me apasiona todo lo relacionado con la tecnologia "
 				+ "							y la informática, especialmente los videojuegos. Me encanta aprender sobre nuevos lenguajes de programacion y "
 				+ "							diseñar mis propios juegos en mi tiempo libre. Espero poder seguir creciendo en esta carrera y convertirme en un"
 				+ "							desarrollador web exitoso.");
-		
-		
-		imgDavidDesc.setBackground(new Color(71,161,197));
-		imgDavidDesc.setForeground(Color.black);
-		imgDavidDesc.setOpaque(true);
-		imgDavidDesc.setFont(new Font("Stika Text",Font.BOLD,(this.screenSize.height/52)));
-		imgDavidDesc.setVisible(true);
-		
+		//TEXTO//
 		imgMehdiDesc.setText("<html><center>Mehdi Tharat<p>Soy un estudiante de 20 años apasionado por la informatica y la programcación. Me encanta trabajar"
 				+ "							con números y desentrañar problemas matemáticos complejos. Estoy en constante búsqueda de nuevas tecnologías y lenguajes "
 				+ "							programación que me permitan mejorar mia habitidades y conocimientos.Mi objetivo es convertirme en un experto en"
 				+ "							programación.");
-		imgMehdiDesc.setBackground(new Color(71,161,197));
-		imgMehdiDesc.setForeground(Color.black);
-		imgMehdiDesc.setFont(new Font("Stika Text",Font.BOLD,(this.screenSize.height/52)));
+		
+		
+		//Atributos Descripcion David
+		imgDavidDesc.setBackground(new Color(71,161,197));//Color Fondo
+		imgDavidDesc.setForeground(Color.black);//Color Letras
+		imgDavidDesc.setFont(new Font("Stika Text",Font.BOLD,(this.screenSize.height/52)));//Fuente del texto
+		imgDavidDesc.setOpaque(true);
+		imgDavidDesc.setVisible(true);
+		
+		//Atributos Imagen Mehdi
+		imgMehdiDesc.setBackground(new Color(71,161,197));//Color Fondo
+		imgMehdiDesc.setForeground(Color.black);//Color Letras
+		imgMehdiDesc.setFont(new Font("Stika Text",Font.BOLD,(this.screenSize.height/52)));//Fuente Texto
 		imgMehdiDesc.setOpaque(true);
 		imgMehdiDesc.setVisible(true);
 		
 		imagenMehdi.setBorder(borde);
 		imagenDavid.setBorder(borde);
 		
+		//Tamaño Objetos//
 		imagenDavid.setBounds	((this.screenSize.width/2)-(this.screenSize.height/5)-(this.screenSize.height/3),(this.screenSize.height/8), (this.screenSize.height/3),(this.screenSize.height/4));
 		imgDavidDesc.setBounds	((this.screenSize.width/2)-(this.screenSize.height/5)-(this.screenSize.height/3),(this.screenSize.height/8)+(this.screenSize.height/4), (this.screenSize.height/3),(this.screenSize.height/3));
 		imagenMehdi.setBounds	((this.screenSize.width/2)+(this.screenSize.height/5),(this.screenSize.height/8), (this.screenSize.height/3),(this.screenSize.height/4));
 		imgMehdiDesc.setBounds	((this.screenSize.width/2)+(this.screenSize.height/5),(this.screenSize.height/8)+(this.screenSize.height/4),(this.screenSize.height/3),(this.screenSize.height/3));
 		Atras.setBounds(0,(this.screenSize.height-((screenSize.width/20)-3)),this.screenSize.width,(screenSize.width/25));
 		
-		
+		//Añadir Objetos
 		add(imgDavidDesc);
 		add(imagenDavid);
 		add(imagenMehdi);
@@ -102,6 +105,7 @@ public class JF_PanelAutores extends JPanel  {
 		marcoP.add(new JF_PanelMenu());
 		marcoP.setVisible(true);
 	}
+	
 	public void paint(Graphics g) {
 		BufferedImage imgFondo;
 		try {

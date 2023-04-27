@@ -27,6 +27,6 @@ public class cambiarImg {
 		gd.dispose();
 		return new ImageIcon(bi);
 	}
-	
+
 
 }
