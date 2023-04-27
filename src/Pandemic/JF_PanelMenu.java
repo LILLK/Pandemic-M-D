@@ -22,13 +22,14 @@ public class JF_PanelMenu extends JPanel {
 	BotonVersion Version;
 	BotonSalir Salir;
 	JFrame marcoP;
-	public final static Dimension screenSize = new Dimension(Toolkit.getDefaultToolkit().getScreenSize());
+	 Dimension screenSize;
 
 	
 	JF_PanelMenu(){
 		
 		
 		 cambiarImg img = new cambiarImg();
+		 this.screenSize = new Dimension(Toolkit.getDefaultToolkit().getScreenSize());
 		 
 		
 		setLayout(null);

@@ -83,9 +83,7 @@ public class Partida {
 		for (int i = 0; i < Parametros.infeccionRonda; i++) {
 			int random = (int) (Math.random() * Partida.ciudades.size());
 			
-			Partida.ciudades.get(random)
-			
-			.infectar();
+			Partida.ciudades.get(random).infectar();
 			
 			
 			System.out.println("se a infectado la ciudad: "+ Partida.ciudades.get(random).nombre);
