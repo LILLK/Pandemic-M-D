@@ -1,45 +1,24 @@
 package Logico;
-
 import java.sql.Connection;
+
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.sql.Struct;
+import java.util.Scanner;
 
-import Pandemic.JF_Marco;
+public class ConexionBD {
+	
 
-public class ejecutar {
 	private static final String USER = "DAW_PNDC22_23_DAME";
 	private static final String PWD = "DM123";
 	// Si estáis desde casa, la url será oracle.ilerna.com y no 192.168.3.26
 	private static final String URL = "jdbc:oracle:thin:@192.168.3.26:1521:xe";
-	
-	public static void main(String[] args) {
-
-		//Partida.nuevaPartida();
-		//JF_Marco marco = new JF_Marco();
-		ConexionBD ds= new ConexionBD();
-		
-		Connection con = conectarBaseDatos();
-		ds.crearUsuario(con, "Ddaddsdfdddsfsddswes", "dadcaho");
-	}
-	
-	
-	public static void imprimir() {
-		System.out.println("----------------");
-
-		for (Ciudades ciudad : Partida.ciudades) {
-			System.out.println(ciudad.nombre +"-" + ciudad.nEnfermedades);
-		}
-		System.out.println("----------------");
-
-		for (Vacunas string : Partida.vacunas) {
-			System.out.println(string.nombre + " " + string.desarollo + "%" );
-		}
-		System.out.println("----------------");
-		
-		System.out.println(Partida.Puntuacion);
-		System.out.println(Partida.brotes + " / "+ Parametros.brotesTotal);
+	public ConexionBD() {
 		
 	}
+	/*
 	private static Connection conectarBaseDatos() {
 		Connection con = null;
 
@@ -59,6 +38,18 @@ public class ejecutar {
 		//System.out.println("Conectados a la base de datos");
 
 		return con;
+	}*/
+	public static void crearUsuario(Connection con,String nomUsu,String passUsu) {
+		
+		String sql="INSERT INTO USUARIOS VALUES ( IDU_SEQU.NEXTVAL, '"+nomUsu+"', '"+passUsu+"')";
+		
+		try {
+			Statement st = con.createStatement();
+			st.execute(sql);
+			
+			System.out.println("Persona registrada correctamente");
+		} catch (SQLException e) {
+			System.out.println(e);
+		}
 	}
-
 }
