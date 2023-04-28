@@ -16,10 +16,13 @@ import Botones.*;
 
 public class JF_PanelInicioSesion extends JPanel {
 
+	BotonIniciarSesion BotonIniciarSesion;
+	BotonRegistrarse BotonRegistrarse;
 	BotonSalir Salir;
-
 	JFrame marcoP;
 	Dimension screenSize;
+	JTextField JTFUsuario;
+	JTextField JTFContraseña;
 
 	JF_PanelInicioSesion() {
 
@@ -27,25 +30,29 @@ public class JF_PanelInicioSesion extends JPanel {
 		Border borde = BorderFactory.createLineBorder(Color.BLACK,3);
 		screenSize = new Dimension(Toolkit.getDefaultToolkit().getScreenSize());
 		cambiarImg img = new cambiarImg();
-
 		setLayout(null);
 		
-		
-		JTextField JTFUsuario = new JTextField(1);
+		this.Salir = new BotonSalir();
+		this.Salir.setBounds(((this.screenSize.width / 2) - (this.screenSize.width / 10)),
+				(this.screenSize.height / 6 + ((this.screenSize.width / 18) * 6)), 
+				(this.screenSize.width / 5),
+				(this.screenSize.width / 20));
+		//text fields//
+		JTFUsuario = new JTextField(1);
 		JTFUsuario.setBounds((this.screenSize.width / 6),
 				(this.screenSize.height / 8),
 				(this.screenSize.width / 7),
 				(this.screenSize.width / 50));
 		JTFUsuario.setBorder(borde);
-
-
-		JTextField JTFContraseña = new JTextField(1);
+		
+		JTFContraseña = new JTextField(1);
 		JTFContraseña.setBounds((this.screenSize.width / 6),
 				(this.screenSize.height / 8 + (this.screenSize.height / 10)),
 				(this.screenSize.width / 7),
 				(this.screenSize.width / 50));
 		JTFContraseña.setBorder(borde);
-
+		
+		//labels//
 		JLabel JLUsuario = new  JLabel();
 		JLUsuario.setBounds(((this.screenSize.width / 6)),
 				(this.screenSize.height / 8 - (this.screenSize.width / 55)),
@@ -72,19 +79,40 @@ public class JF_PanelInicioSesion extends JPanel {
 		JLcontraseña.setOpaque(true);
 		
 		
+		//botones//
+		BotonIniciarSesion = new  BotonIniciarSesion(this);
+		BotonIniciarSesion.setBounds(((this.screenSize.width / 6)),
+				(this.screenSize.height / 8 - (this.screenSize.width / 55)+ (this.screenSize.height / 10)*2),
+				((this.screenSize.width / 7)/2),
+				(this.screenSize.width / 55));
+		BotonIniciarSesion.setOpaque(true);
 		
-		this.Salir = new BotonSalir();
-		this.Salir.setBounds(((this.screenSize.width / 2) - (this.screenSize.width / 10)),
-				(this.screenSize.height / 6 + ((this.screenSize.width / 18) * 6)), 
-				(this.screenSize.width / 5),
-				(this.screenSize.width / 20));
+		
+		BotonRegistrarse = new  BotonRegistrarse(this);
+		BotonRegistrarse.setBounds(((this.screenSize.width / 6)+(this.screenSize.width / 7)/2),
+				(this.screenSize.height / 8 - (this.screenSize.width / 55)+ (this.screenSize.height / 10)*2),
+				((this.screenSize.width / 7)/2),
+				(this.screenSize.width / 55));
+		BotonRegistrarse.setOpaque(true);
+		
+		
+		
+		add(BotonIniciarSesion);
+		add(BotonRegistrarse);
 		add(JLUsuario);
 		add(JTFUsuario);
 		add(JLcontraseña);
 		add(JTFContraseña);
 		add(this.Salir);
-
+		
 	}
+	public String getJTFUsuario() {
+		return JTFUsuario.getText();
+	}
+	public String getJTFContraseña() {
+		return JTFContraseña.getText();
+	}
+
 
 	public void paint(Graphics g) {
 		BufferedImage imgFondo;
