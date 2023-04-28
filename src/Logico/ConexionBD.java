@@ -48,6 +48,9 @@ public class ConexionBD {
 
 		return con;
 	}*/
+	public static void guardarPartida(Connection con, int idU) {
+		
+	}
 	public static void cargarPartida(Connection con, int idU,int idP) {
 		String sql="SELECT * FROM PARTIDAS P WHERE P.id_p = "+idP+"AND P.jugador = "+idU+";";
 		try {
@@ -56,11 +59,12 @@ public class ConexionBD {
 
 			if (rs.isBeforeFirst()) {
 				while (rs.next()) {
-					int d = rs.getInt("id_U");
+					int d = rs.getInt("id_P");
 					int idJ = rs.getInt("jugador");
-					Struct domicilio = (Struct) ((Array) rs.getObject(3)).getArray();
-					ArrayList<Ciudades> ciudades = (ArrayList<Ciudades>) ((Array) ((ResultSet) rs).getObject(3)).getArray();
-					
+					Struct domicilio = (Struct) ((Array) rs.getObject(49)).getArray();
+					ArrayList<Ciudades> ciudades = (ArrayList<Ciudades>) ((Array) ((ResultSet) rs).getObject(49)).getArray();
+					domicilio = (Struct) ((Array) rs.getObject(4)).getArray();
+					ArrayList<Viruses> viruses = (ArrayList<Viruses>)((Array) ((ResultSet) rs).getObject(4)).getArray();
 					String passw = rs.getString("passwd_J");
 					
 
@@ -76,7 +80,7 @@ public class ConexionBD {
 					Persona persona = new Persona(dni, nombre, direccion);*/
 					
 					//NuevaPersona persona = new NuevaPersona(dni, nombre, calle, ciudad, pais);
-
+					System.out.println(d);
 					System.out.println("Partu ENCONTRADA");
 
 				}
