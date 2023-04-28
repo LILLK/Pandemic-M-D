@@ -19,7 +19,7 @@ public class ejecutar {
 		ConexionBD ds= new ConexionBD();
 		
 		Connection con = conectarBaseDatos();
-		ds.crearUsuario(con, "Ddaddsddsssssssssssssssssssssssss", "dadcesdfdaho");
+		ds.existeUsuario(con, "ssssssssssssss", "daaaaaaho");
 	}
 	
 	
