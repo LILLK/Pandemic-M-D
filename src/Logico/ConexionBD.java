@@ -1,6 +1,7 @@
 package Logico;
 import java.sql.Connection;
 
+
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -49,7 +50,8 @@ public class ConexionBD {
 			
 			System.out.println("Persona registrada correctamente");
 		} catch (SQLException e) {
-			System.out.println(e);
+			System.out.println(e.getErrorCode());
+			
 		}
 	}
 }
