@@ -11,6 +11,8 @@ import java.sql.Struct;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import Pandemic.JF_PanelPuntuaciones;
+
 //import ConexionBD.NuevaPersona;
 
 //import ConexionBD.NuevaPersona;
@@ -49,6 +51,53 @@ public class ConexionBD {
 		return con;
 	}*/
 	public static void guardarPartida(Connection con, int idU) {
+		
+	}
+	public static void cargarRanking(Connection con,JF_PanelPuntuaciones JF_P) {
+		String sql ="SELECT p.brotes, p.ronda, p.puntuacion,p.dificultad,u.nom_us FROM PARTIDAS P, USUARIOS U WHERE p.jugador = u.id_u AND p.estado LIKE 'A'";
+		try {
+			Statement st = con.createStatement();
+			ResultSet rs = st.executeQuery(sql); 	 	
+
+			if (rs.isBeforeFirst()) {
+				while (rs.next()) {
+					
+					int i =0;
+					int brotes = rs.getInt("brotes");
+					int ronda =rs.getInt("ronda");
+					int puntuacion=rs.getInt("puntuacion");
+					int dificultad = rs.getInt("dificultad");
+					String nom_us = rs.getString("nom_us");
+					//JF_PanelPuntuaciones jf = new JF_PanelPuntuaciones();
+					ranking rank = new ranking(brotes,ronda,puntuacion,dificultad,nom_us);
+					JF_P.ranking.add(rank);
+
+/*
+					Struct domicilio = (Struct) rs.getObject("DOMICILIO");
+					Object[] valoresDireccion = domicilio.getAttributes();
+					String calle = (String) valoresDireccion[0];
+					String ciudad = (String) valoresDireccion[1];
+					String pais = (String) valoresDireccion[2];
+
+/*
+					Direccion direccion = new Direccion(calle,ciudad,pais);
+					Persona persona = new Persona(dni, nombre, direccion);*/
+					
+					//NuevaPersona persona = new NuevaPersona(dni, nombre, calle, ciudad, pais);
+					//System.out.println();
+					System.out.println("Partu ENCONTRADA");
+
+				}
+			} else {
+				System.out.println("No he encontrado nada");
+			}
+			
+			
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			System.out.println(e);
+		}
 		
 	}
 	public static void cargarPartida(Connection con, int idU,int idP) {
@@ -110,9 +159,9 @@ public class ConexionBD {
 			
 		}
 	}
-	public static void existeUsuario(Connection con,String nomUsu, String passUsu) {
+	public static boolean existeUsuario(Connection con,String nomUsu, String passUsu) {
 		String sql =" SELECT * FROM USUARIOS U WHERE u.nom_us LIKE '"+nomUsu+"' AND u.passwd_j LIKE '" +passUsu+"' ";
-
+		boolean existe = true;
 		try {
 			Statement st = con.createStatement();
 			ResultSet rs = st.executeQuery(sql); 	 	
@@ -138,18 +187,21 @@ public class ConexionBD {
 					//NuevaPersona persona = new NuevaPersona(dni, nombre, calle, ciudad, pais);
 
 					System.out.println("PERSONA ENCONTRADA");
-
+					existe = true;
 				}
 			} else {
 				System.out.println("No he encontrado nada");
+				existe = false;
 			}
 			
 			
 
 		} catch (SQLException e) {
+			existe = false;
 			// TODO Auto-generated catch block
-			System.out.println(e);
+			//System.out.println(e);
 		}
+		return existe;
 	
 }
 }
