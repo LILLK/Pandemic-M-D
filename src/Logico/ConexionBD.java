@@ -106,7 +106,7 @@ public class ConexionBD {
 			
 			System.out.println("Persona registrada correctamente");
 		} catch (SQLException e) {
-			System.out.println(e);
+			System.out.println(e.getErrorCode());
 			
 		}
 	}
