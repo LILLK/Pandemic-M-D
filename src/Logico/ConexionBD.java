@@ -56,7 +56,7 @@ public class ConexionBD {
 
 			if (rs.isBeforeFirst()) {
 				while (rs.next()) {
-					int dni = rs.getInt("id_U");
+					int d = rs.getInt("id_U");
 					int idJ = rs.getInt("jugador");
 					Struct domicilio = (Struct) ((Array) rs.getObject(3)).getArray();
 					ArrayList<Ciudades> ciudades = (ArrayList<Ciudades>) ((Array) ((ResultSet) rs).getObject(3)).getArray();
