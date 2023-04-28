@@ -14,7 +14,7 @@ import javax.swing.border.Border;
 
 import Botones.*;
 
-public class JF_PanelInicioSesion extends JPanel {
+public class JF_PanelRegistrarse extends JPanel {
 
 	BotonIniciarSesion BotonIniciarSesion;
 	BotonRegistrarse BotonRegistrarse;
@@ -24,7 +24,7 @@ public class JF_PanelInicioSesion extends JPanel {
 	JTextField JTFUsuario;
 	JTextField JTFContraseña;
 
-	JF_PanelInicioSesion() {
+	JF_PanelRegistrarse() {
 
 		Color color =new Color(71, 161, 197);
 		Border borde = BorderFactory.createLineBorder(Color.BLACK,3);
@@ -81,7 +81,7 @@ public class JF_PanelInicioSesion extends JPanel {
 		
 		//botones//
 		BotonIniciarSesion = new  BotonIniciarSesion(this);
-		BotonIniciarSesion.setBounds(((this.screenSize.width / 6)),
+		BotonIniciarSesion.setBounds(((this.screenSize.width / 6)+(this.screenSize.width / 7)/2),
 				(this.screenSize.height / 8 - (this.screenSize.width / 55)+ (this.screenSize.height / 10)*2),
 				((this.screenSize.width / 7)/2),
 				(this.screenSize.width / 55));
@@ -89,7 +89,7 @@ public class JF_PanelInicioSesion extends JPanel {
 		
 		
 		BotonRegistrarse = new  BotonRegistrarse(this);
-		BotonRegistrarse.setBounds(((this.screenSize.width / 6)+(this.screenSize.width / 7)/2),
+		BotonRegistrarse.setBounds(((this.screenSize.width / 6)),
 				(this.screenSize.height / 8 - (this.screenSize.width / 55)+ (this.screenSize.height / 10)*2),
 				((this.screenSize.width / 7)/2),
 				(this.screenSize.width / 55));
@@ -128,10 +128,10 @@ public class JF_PanelInicioSesion extends JPanel {
 
 	}
 
-	public void irPanelRegistrarse() {
+	public void irPanelIniciarSesion() {
 		JFrame marcoP = (JFrame) SwingUtilities.getWindowAncestor(this);
 		marcoP.remove(this);
-		marcoP.add(new JF_PanelRegistrarse());
+		marcoP.add(new JF_PanelInicioSesion());
 		marcoP.setVisible(true);
 	}
 	public void irMenu() {

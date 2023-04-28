@@ -14,6 +14,7 @@ import Botones.*;
 
 public class JF_PanelMenu extends JPanel {
 	
+	BotonLogOut BotonLogOut;
 	BotonNuevaPartida NuevaPartida;
 	BotonCargarPartida CargarPartida;
 	BotonInformacion Infromacion;
@@ -40,6 +41,7 @@ public class JF_PanelMenu extends JPanel {
 		this.Autores =new BotonAutores(this);
 		this.Version = 	new BotonVersion(this);
 		this.Salir = new BotonSalir();
+		this.BotonLogOut = new BotonLogOut(this);
 		
 		this.NuevaPartida.setBounds			(((this.screenSize.width/2)-(this.screenSize.width/10)),(this.screenSize.height/6),(this.screenSize.width/5),(this.screenSize.width/20));
 		this.CargarPartida.setBounds		(((this.screenSize.width/2)-(this.screenSize.width/10)),((this.screenSize.height/6)+(this.screenSize.width/18)),(this.screenSize.width/5),(this.screenSize.width/20));
@@ -48,8 +50,13 @@ public class JF_PanelMenu extends JPanel {
 		this.Autores.setBounds				(((this.screenSize.width/2)-(this.screenSize.width/10)),(this.screenSize.height/6+((this.screenSize.width/18)*4)),(this.screenSize.width/5),(this.screenSize.width/20));
 		this.Version.setBounds				(((this.screenSize.width/2)-(this.screenSize.width/10)),(this.screenSize.height/6+((this.screenSize.width/18)*5)),(this.screenSize.width/5),(this.screenSize.width/20));
 		this.Salir.setBounds				(((this.screenSize.width/2)-(this.screenSize.width/10)),(this.screenSize.height/6+((this.screenSize.width/18)*6)),(this.screenSize.width/5),(this.screenSize.width/20));
+		this.BotonLogOut.setBounds((this.screenSize.width/10)*9, (this.screenSize.height/10), this.screenSize.height/10, this.screenSize.width/14);
 		
 		
+		
+		
+		
+		add(this.BotonLogOut);
 		add(this.NuevaPartida);
 		add(this.CargarPartida);
 		add(this.Infromacion);
@@ -104,6 +111,12 @@ public class JF_PanelMenu extends JPanel {
 		marcoP.remove(this);
 		marcoP.add(new JF_PanelPartida());
 		marcoP.setVisible(true); 
+	}
+	public void irPanelIniciarSesion() {
+		JFrame marcoP = (JFrame) SwingUtilities.getWindowAncestor(this);
+		marcoP.remove(this);
+		marcoP.add(new JF_PanelInicioSesion());
+		marcoP.setVisible(true);
 	}
 	/*
 	public void irMenu(JPanel JPanel) {
