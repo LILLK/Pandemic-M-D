@@ -58,6 +58,7 @@ public class BotonRegistrarse extends JLabel {
 			public void mouseClicked(MouseEvent e) {
 				System.out.println(JF_PanelRegistrarse.getJTFUsuario());
 				System.out.println(JF_PanelRegistrarse.getJTFContraseña());
+				System.out.println(JF_PanelRegistrarse.getJTFRepContraseña());
 				JF_PanelRegistrarse.irMenu();
 
 			}

@@ -23,6 +23,8 @@ public class JF_PanelRegistrarse extends JPanel {
 	Dimension screenSize;
 	JTextField JTFUsuario;
 	JTextField JTFContraseña;
+	JTextField JTFRepContraseña;
+
 
 	JF_PanelRegistrarse() {
 
@@ -39,23 +41,30 @@ public class JF_PanelRegistrarse extends JPanel {
 				(this.screenSize.width / 20));
 		//text fields//
 		JTFUsuario = new JTextField(1);
-		JTFUsuario.setBounds((this.screenSize.width / 6),
-				(this.screenSize.height / 8),
+		JTFUsuario.setBounds(((this.screenSize.width / 7)*3),
+				((this.screenSize.height / 7)*2),
 				(this.screenSize.width / 7),
 				(this.screenSize.width / 50));
 		JTFUsuario.setBorder(borde);
 		
 		JTFContraseña = new JTextField(1);
-		JTFContraseña.setBounds((this.screenSize.width / 6),
-				(this.screenSize.height / 8 + (this.screenSize.height / 10)),
+		JTFContraseña.setBounds(((this.screenSize.width / 7)*3),
+				((this.screenSize.height / 7)*3),
 				(this.screenSize.width / 7),
 				(this.screenSize.width / 50));
 		JTFContraseña.setBorder(borde);
 		
+		JTFRepContraseña = new JTextField(1);
+		JTFRepContraseña.setBounds(((this.screenSize.width / 7)*3),
+				((this.screenSize.height / 7)*4),
+				(this.screenSize.width / 7),
+				(this.screenSize.width / 50));
+		JTFRepContraseña.setBorder(borde);
+		
 		//labels//
 		JLabel JLUsuario = new  JLabel();
-		JLUsuario.setBounds(((this.screenSize.width / 6)),
-				(this.screenSize.height / 8 - (this.screenSize.width / 55)),
+		JLUsuario.setBounds(((this.screenSize.width / 7)*3),
+				((this.screenSize.height / 7)*2 - (this.screenSize.width / 55)),
 				((this.screenSize.width / 7)/2),
 				(this.screenSize.width / 55));
 		JLUsuario.setText("<html><center>Usuario");
@@ -67,8 +76,8 @@ public class JF_PanelRegistrarse extends JPanel {
 		
 		
 		JLabel JLcontraseña = new  JLabel();
-		JLcontraseña.setBounds(((this.screenSize.width / 6)),
-				(this.screenSize.height / 8 - (this.screenSize.width / 55)+ (this.screenSize.height / 10)),
+		JLcontraseña.setBounds(((this.screenSize.width / 7)*3),
+				((this.screenSize.height / 7)*3 - (this.screenSize.width / 55)),
 				((this.screenSize.width / 7)/2),
 				(this.screenSize.width / 55));
 		JLcontraseña.setText("<html><center>Contraseña");
@@ -78,22 +87,35 @@ public class JF_PanelRegistrarse extends JPanel {
 		JLcontraseña.setBorder(borde);
 		JLcontraseña.setOpaque(true);
 		
+		JLabel JLRepContraseña = new  JLabel();
+		JLRepContraseña.setBounds(((this.screenSize.width / 7)*3),
+				((this.screenSize.height / 7)*4 - (this.screenSize.width / 55)),
+				((this.screenSize.width / 7)/2),
+				(this.screenSize.width / 55));
+		JLRepContraseña.setText("<html><center>Repetir Conrtraseña");
+		JLRepContraseña.setForeground(Color.BLACK);
+		JLRepContraseña.setFont(new Font("Stika Text",Font.BOLD,(this.screenSize.height/80)));
+		JLRepContraseña.setBackground(color);
+		JLRepContraseña.setBorder(borde);
+		JLRepContraseña.setOpaque(true);
 		
 		//botones//
 		BotonIniciarSesion = new  BotonIniciarSesion(this);
-		BotonIniciarSesion.setBounds(((this.screenSize.width / 6)+(this.screenSize.width / 7)/2),
-				(this.screenSize.height / 8 - (this.screenSize.width / 55)+ (this.screenSize.height / 10)*2),
+		BotonIniciarSesion.setBounds(((this.screenSize.width / 7)*3+(this.screenSize.width / 7)/2),
+				((this.screenSize.height / 7)*4 + (this.screenSize.width / 50)),
 				((this.screenSize.width / 7)/2),
 				(this.screenSize.width / 55));
 		BotonIniciarSesion.setOpaque(true);
+
 		
 		
 		BotonRegistrarse = new  BotonRegistrarse(this);
-		BotonRegistrarse.setBounds(((this.screenSize.width / 6)),
-				(this.screenSize.height / 8 - (this.screenSize.width / 55)+ (this.screenSize.height / 10)*2),
+		BotonRegistrarse.setBounds(((this.screenSize.width / 7)*3),
+				((this.screenSize.height / 7)*4 + (this.screenSize.width / 50)),
 				((this.screenSize.width / 7)/2),
 				(this.screenSize.width / 55));
 		BotonRegistrarse.setOpaque(true);
+
 		
 		
 		
@@ -103,14 +125,23 @@ public class JF_PanelRegistrarse extends JPanel {
 		add(JTFUsuario);
 		add(JLcontraseña);
 		add(JTFContraseña);
+		add(JLRepContraseña);
+		add(JTFRepContraseña);
 		add(this.Salir);
 		
 	}
+	//////////////////////////////////////////////////////////////////
+	//-getJTFUsuario-getJTFContraseña-getJTFRepContraseña
+	//devuelve el contenido del text field
+	/////////////////////////////////////////////////////////////////
 	public String getJTFUsuario() {
 		return JTFUsuario.getText();
 	}
 	public String getJTFContraseña() {
 		return JTFContraseña.getText();
+	}
+	public String getJTFRepContraseña() {
+		return JTFRepContraseña.getText();
 	}
 
 

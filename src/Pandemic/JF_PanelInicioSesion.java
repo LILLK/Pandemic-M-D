@@ -39,23 +39,23 @@ public class JF_PanelInicioSesion extends JPanel {
 				(this.screenSize.width / 20));
 		//text fields//
 		JTFUsuario = new JTextField(1);
-		JTFUsuario.setBounds((this.screenSize.width / 6),
-				(this.screenSize.height / 8),
+		JTFUsuario.setBounds(((this.screenSize.width / 7)*3),
+				((this.screenSize.height / 7)*2),
 				(this.screenSize.width / 7),
 				(this.screenSize.width / 50));
 		JTFUsuario.setBorder(borde);
 		
 		JTFContraseña = new JTextField(1);
-		JTFContraseña.setBounds((this.screenSize.width / 6),
-				(this.screenSize.height / 8 + (this.screenSize.height / 10)),
+		JTFContraseña.setBounds(((this.screenSize.width / 7)*3),
+				((this.screenSize.height / 7)*3),
 				(this.screenSize.width / 7),
 				(this.screenSize.width / 50));
 		JTFContraseña.setBorder(borde);
 		
 		//labels//
 		JLabel JLUsuario = new  JLabel();
-		JLUsuario.setBounds(((this.screenSize.width / 6)),
-				(this.screenSize.height / 8 - (this.screenSize.width / 55)),
+		JLUsuario.setBounds(((this.screenSize.width / 7)*3),
+				((this.screenSize.height / 7)*2 - (this.screenSize.width / 55)),
 				((this.screenSize.width / 7)/2),
 				(this.screenSize.width / 55));
 		JLUsuario.setText("<html><center>Usuario");
@@ -67,8 +67,8 @@ public class JF_PanelInicioSesion extends JPanel {
 		
 		
 		JLabel JLcontraseña = new  JLabel();
-		JLcontraseña.setBounds(((this.screenSize.width / 6)),
-				(this.screenSize.height / 8 - (this.screenSize.width / 55)+ (this.screenSize.height / 10)),
+		JLcontraseña.setBounds(((this.screenSize.width / 7)*3),
+				((this.screenSize.height / 7)*3 - (this.screenSize.width / 55)),
 				((this.screenSize.width / 7)/2),
 				(this.screenSize.width / 55));
 		JLcontraseña.setText("<html><center>Contraseña");
@@ -81,16 +81,16 @@ public class JF_PanelInicioSesion extends JPanel {
 		
 		//botones//
 		BotonIniciarSesion = new  BotonIniciarSesion(this);
-		BotonIniciarSesion.setBounds(((this.screenSize.width / 6)),
-				(this.screenSize.height / 8 - (this.screenSize.width / 55)+ (this.screenSize.height / 10)*2),
+		BotonIniciarSesion.setBounds(((this.screenSize.width / 7)*3),
+				((this.screenSize.height / 7)*4 + (this.screenSize.width / 50)),
 				((this.screenSize.width / 7)/2),
 				(this.screenSize.width / 55));
 		BotonIniciarSesion.setOpaque(true);
 		
 		
 		BotonRegistrarse = new  BotonRegistrarse(this);
-		BotonRegistrarse.setBounds(((this.screenSize.width / 6)+(this.screenSize.width / 7)/2),
-				(this.screenSize.height / 8 - (this.screenSize.width / 55)+ (this.screenSize.height / 10)*2),
+		BotonRegistrarse.setBounds(((this.screenSize.width / 7)*3+(this.screenSize.width / 7)/2),
+				((this.screenSize.height / 7)*4 + (this.screenSize.width / 50)),
 				((this.screenSize.width / 7)/2),
 				(this.screenSize.width / 55));
 		BotonRegistrarse.setOpaque(true);

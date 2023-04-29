@@ -18,12 +18,16 @@ public class BotonLogOut extends JLabel {
 		this.screenSize=Toolkit.getDefaultToolkit().getScreenSize();
 		
 
-		setIcon(img.tamaño(new ImageIcon("botones/log-out.png"),this.screenSize.height/10, this.screenSize.width/14));
+		setIcon(img.tamaño(new ImageIcon("botones/log-out.png"),screenSize.height/10, screenSize.width/14));
 		
 		addMouseListener((MouseListener) new MouseListener() {	
 			public void mouseEntered(MouseEvent e) {
+				setIcon(img.tamaño(new ImageIcon("botones/log-out-2.png"),screenSize.height/10, screenSize.width/14));
+
 			}
 			public void mouseExited(MouseEvent a) {
+				setIcon(img.tamaño(new ImageIcon("botones/log-out.png"),screenSize.height/10, screenSize.width/14));
+
 			}
 
 			public void mousePressed(MouseEvent i) {
