@@ -11,6 +11,11 @@ public class Ciudades {
 	ArrayList<String> colindantes;
 	boolean brote;
 	int nEnfermedades;
+	
+	
+	
+	
+	
 	//cuando se tiene que infectar a las ciudades, se marca esta flag para no infectarla otra vez
 	boolean infeccionRonda;
 
