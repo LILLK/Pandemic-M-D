@@ -127,7 +127,6 @@ public class JF_PanelRegistrarse extends JPanel {
 		add(JTFContraseña);
 		add(JLRepContraseña);
 		add(JTFRepContraseña);
-		add(this.Salir);
 		
 	}
 	//////////////////////////////////////////////////////////////////
@@ -149,7 +148,7 @@ public class JF_PanelRegistrarse extends JPanel {
 		BufferedImage imgFondo;
 		try {
 			Dimension size = getSize();
-			imgFondo = ImageIO.read(new File("imagenes/imagenPandemic6.png"));
+			imgFondo = ImageIO.read(new File("imagenes/imagenPandemic6_3.png"));
 			g.drawImage(imgFondo, 0, 0, size.width, size.height, null);
 			setOpaque(false);
 			super.paint(g);

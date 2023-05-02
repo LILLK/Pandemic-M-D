@@ -24,7 +24,7 @@ public class JF_PanelInicioSesion extends JPanel {
 	JTextField JTFUsuario;
 	JTextField JTFContraseña;
 
-	JF_PanelInicioSesion() {
+	public JF_PanelInicioSesion() {
 
 		Color color =new Color(71, 161, 197);
 		Border borde = BorderFactory.createLineBorder(Color.BLACK,3);
@@ -103,7 +103,6 @@ public class JF_PanelInicioSesion extends JPanel {
 		add(JTFUsuario);
 		add(JLcontraseña);
 		add(JTFContraseña);
-		add(this.Salir);
 		
 	}
 	public String getJTFUsuario() {
@@ -118,7 +117,7 @@ public class JF_PanelInicioSesion extends JPanel {
 		BufferedImage imgFondo;
 		try {
 			Dimension size = getSize();
-			imgFondo = ImageIO.read(new File("imagenes/imagenPandemic6.png"));
+			imgFondo = ImageIO.read(new File("imagenes/imagenPandemic6_3.png"));
 			g.drawImage(imgFondo, 0, 0, size.width, size.height, null);
 			setOpaque(false);
 			super.paint(g);
