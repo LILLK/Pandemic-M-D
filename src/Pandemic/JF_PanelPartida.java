@@ -42,7 +42,7 @@ public class JF_PanelPartida extends JPanel {
 		
 		JLabel mapa = new JLabel();
 		mapa.setIcon(img.tamaño(new ImageIcon("imagenes/mapa_2.png"), 1550, 850));
-		mapa.setBounds(this.screenSize.width/2-(1550/2),
+		mapa.setBounds(1,
 				1, 
 				1550, 
 				850);
@@ -51,43 +51,32 @@ public class JF_PanelPartida extends JPanel {
 		
 		
 		JLabel derecha = new  JLabel();
-		derecha.setBounds(this.screenSize.width/2+(1550/2),
+		derecha.setBounds(1551,
 				1, 
-				(this.screenSize.width-1550)/2, 
+				(this.screenSize.width-1550), 
 				this.screenSize.width);
 		derecha.setBackground(color);
 		derecha.setBorder(borde);
 		derecha.setOpaque(true);
 		
 		
-		
-		JLabel iquierda = new  JLabel();
-		iquierda.setBounds((1),
-				(1),
-				((this.screenSize.width-1550)/2),
-				(this.screenSize.width));
-		iquierda.setText("<html><center>Usuario");
-		iquierda.setBackground(color);
-		iquierda.setBorder(borde);
-		iquierda.setOpaque(true);
-		
-		
 		JLabel abajo = new  JLabel();
-		abajo.setBounds(this.screenSize.width/2-(1550/2),
+		abajo.setBounds(1,
 				(850),
 				(1550),
-				(850));
-		abajo.setText("<html><center>Usuario");
+				(this.screenSize.height-850));
 		abajo.setBackground(color);
 		abajo.setBorder(borde);
 		abajo.setOpaque(true);
+		
+
+		
 		
 	
 		
 		
 		
 		
-		add(iquierda);
 		add(derecha);
 		add(abajo);
 		add(mapa);
