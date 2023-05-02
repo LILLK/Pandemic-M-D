@@ -7,27 +7,32 @@ import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.border.Border;
 
 import Botones.*;
+import Logico.Ciudades;
+import Logico.Partida;
 
 public class JF_PanelPartida extends JPanel {
 
+	
 	BotonSalir Salir;
+	BotonCiudad BotonCiudad;
 	JFrame marcoP;
 	Dimension screenSize;
 	JTextField JTFUsuario;
 	JTextField JTFContraseña;
 
 	public JF_PanelPartida() {
+		cambiarImg img = new cambiarImg();
 
 		Color color =new Color(71, 161, 197);
 		Border borde = BorderFactory.createLineBorder(Color.BLACK,3);
 		screenSize = new Dimension(Toolkit.getDefaultToolkit().getScreenSize());
-		cambiarImg img = new cambiarImg();
 		setLayout(null);
 
 		
@@ -70,14 +75,22 @@ public class JF_PanelPartida extends JPanel {
 		abajo.setOpaque(true);
 		
 
-		
-		
-	
-		
-		
-		
-		
-		add(derecha);
+		ArrayList<BotonCiudad> BotonesCiudad = new ArrayList<BotonCiudad>();
+		for (Ciudades ciudad : Partida.ciudades) {
+			BotonCiudad BotonCiudad = new BotonCiudad(this,0);
+			BotonCiudad.setIcon(img.tamaño(new ImageIcon("imagenes/ciudad_amarillo_0_brote.png"), 60, 40));
+			BotonCiudad.setBounds(ciudad.posicionX,
+					ciudad.posicionY, 
+					60, 
+					40);
+			BotonCiudad.setVisible(true);
+			BotonCiudad.setOpaque(false);
+			BotonesCiudad.add(BotonCiudad);
+		}
+		for (BotonCiudad botonCiudad : BotonesCiudad) {
+			add(botonCiudad);
+		}
+ 		add(derecha);
 		add(abajo);
 		add(mapa);
 	;
@@ -116,6 +129,23 @@ public class JF_PanelPartida extends JPanel {
 		marcoP.remove(this);
 		marcoP.add(new JF_PanelMenu());
 		marcoP.setVisible(true);
+	}
+	
+	public ArrayList<BotonCiudad> generarBotonesCiudad() {
+		cambiarImg img = new cambiarImg();
+		ArrayList<BotonCiudad> BotonesCiudad = new ArrayList<BotonCiudad>();
+		for (Ciudades ciudad : Partida.ciudades) {
+			BotonCiudad BotonCiudad = new BotonCiudad(this,-1);
+			BotonCiudad.setIcon(img.tamaño(new ImageIcon("imagenes/ciudad_amarillo_0_brote.png"), 60, 40));
+			BotonCiudad.setBounds(ciudad.posicionX,
+					ciudad.posicionY, 
+					60, 
+					40);
+			BotonCiudad.setVisible(true);
+			BotonCiudad.setOpaque(true);
+			BotonesCiudad.add(BotonCiudad);
+		}
+	return BotonesCiudad;
 	}
 	
 
