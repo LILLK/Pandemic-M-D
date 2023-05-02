@@ -47,14 +47,14 @@ public class JF_PanelRegistrarse extends JPanel {
 				(this.screenSize.width / 50));
 		JTFUsuario.setBorder(borde);
 		
-		JTFContraseña = new JTextField(1);
+		JTFContraseña = new JPasswordField(1);
 		JTFContraseña.setBounds(((this.screenSize.width / 7)*3),
 				((this.screenSize.height / 7)*3),
 				(this.screenSize.width / 7),
 				(this.screenSize.width / 50));
 		JTFContraseña.setBorder(borde);
 		
-		JTFRepContraseña = new JTextField(1);
+		JTFRepContraseña = new JPasswordField(1);
 		JTFRepContraseña.setBounds(((this.screenSize.width / 7)*3),
 				((this.screenSize.height / 7)*4),
 				(this.screenSize.width / 7),
@@ -169,6 +169,12 @@ public class JF_PanelRegistrarse extends JPanel {
 		marcoP.remove(this);
 		marcoP.add(new JF_PanelMenu());
 		marcoP.setVisible(true);
+	}
+	public void errorImp() {
+		System.out.println("errorr usu");
+	}
+	public void errorCont() {
+		System.out.println("error contr");
 	}
 	
 

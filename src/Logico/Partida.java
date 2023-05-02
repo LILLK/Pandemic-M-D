@@ -6,7 +6,16 @@ import java.util.Iterator;
 import java.util.Scanner;
 
 public class Partida {
-
+	
+	//id de la Partida
+	public static int idP;
+	
+	
+	
+	
+	
+	
+	
 	// Puntuacion de la partida
 	public static int Puntuacion;
 	// Brotes de la partida
@@ -15,6 +24,8 @@ public class Partida {
 	public static int enfermedades;
 	// rondas de la partida
 	public static int ronda;
+	//Dificultad de la partida
+	public static int dificultad;
 	// Lista de todas las ciudades con sus atributos
 	public static ArrayList<Ciudades> ciudades;
 	// Lista de todas las Vacunas con sus atributos

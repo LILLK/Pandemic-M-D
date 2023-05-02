@@ -15,11 +15,11 @@ public class ejecutar {
 	public static void main(String[] args) {
 
 		//Partida.nuevaPartida();
-		//JF_Marco marco = new JF_Marco();
-		ConexionBD ds= new ConexionBD();
+		JF_Marco marco = new JF_Marco();
+		//onexionBD ds= new ConexionBD();
 		
-		Connection con = conectarBaseDatos();
-		ds.crearUsuario(con, "sssssssss", "daaaGEGaaaho");
+		//Connection con = conectarBaseDatos();
+		//ds.crearUsuario(con, "sssssssss", "daaaGEGaaaho");
 	}
 	
 	

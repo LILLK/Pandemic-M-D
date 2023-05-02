@@ -62,7 +62,7 @@ public class ConexionBD {
 			if (rs.isBeforeFirst()) {
 				while (rs.next()) {
 					
-					int i =0;
+					
 					int brotes = rs.getInt("brotes");
 					int ronda =rs.getInt("ronda");
 					int puntuacion=rs.getInt("puntuacion");
@@ -108,13 +108,17 @@ public class ConexionBD {
 
 			if (rs.isBeforeFirst()) {
 				while (rs.next()) {
-					int d = rs.getInt("id_P");
+					Partida.idP = rs.getInt("id_P");
 					int idJ = rs.getInt("jugador");
-					Struct domicilio = (Struct) ((Array) rs.getObject(49)).getArray();
-					ArrayList<Ciudades> ciudades = (ArrayList<Ciudades>) ((Array) ((ResultSet) rs).getObject(49)).getArray();
-					domicilio = (Struct) ((Array) rs.getObject(4)).getArray();
-					ArrayList<Viruses> viruses = (ArrayList<Viruses>)((Array) ((ResultSet) rs).getObject(4)).getArray();
-					String passw = rs.getString("passwd_J");
+					String estado = rs.getString("estado");
+					Struct domicilio = (Struct) ((Array) rs.getObject("VacunasPartida")).getArray();
+					Partida.vacunas = (ArrayList<Vacunas>)((Array) ((ResultSet) rs).getObject(4)).getArray();
+					Partida.brotes = rs.getInt("brotes");
+					domicilio = (Struct) ((Array) rs.getObject("CiudadesPartida")).getArray();
+					Partida.ciudades = (ArrayList<Ciudades>) ((Array) ((ResultSet) rs).getObject(49)).getArray();
+					Partida.ronda = rs.getInt("ronda");
+					Partida.Puntuacion = rs.getInt("puntuacion");
+					Partida.dificultad = rs.getInt("dificultad");
 					
 
 /*
@@ -145,19 +149,22 @@ public class ConexionBD {
 		}
 		
 	}
-	public static void crearUsuario(Connection con,String nomUsu,String passUsu) {
+	public static boolean crearUsuario(Connection con,String nomUsu,String passUsu) {
 		
 		String sql=" BEGIN crearUsuario ('"+nomUsu+"', '"+passUsu+"'); END;";
+		boolean usuCorr = true;
 		
 		try {
 			Statement st = con.createStatement();
 			st.execute(sql);
 			
 			System.out.println("Persona registrada correctamente");
+			usuCorr = true;
 		} catch (SQLException e) {
 			System.out.println(e.getErrorCode());
-			
+			usuCorr = false;
 		}
+		return usuCorr;
 	}
 	public static boolean existeUsuario(Connection con,String nomUsu, String passUsu) {
 		String sql =" SELECT * FROM USUARIOS U WHERE u.nom_us LIKE '"+nomUsu+"' AND u.passwd_j LIKE '" +passUsu+"' ";

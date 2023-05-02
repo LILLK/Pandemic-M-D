@@ -23,12 +23,13 @@ public class JF_PanelInicioSesion extends JPanel {
 	Dimension screenSize;
 	JTextField JTFUsuario;
 	JTextField JTFContraseña;
+	JLabel error;
 
 	public JF_PanelInicioSesion() {
 
 		Color color =new Color(71, 161, 197);
 		Border borde = BorderFactory.createLineBorder(Color.BLACK,3);
-		screenSize = new Dimension(Toolkit.getDefaultToolkit().getScreenSize());
+		screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 		cambiarImg img = new cambiarImg();
 		setLayout(null);
 		
@@ -45,7 +46,7 @@ public class JF_PanelInicioSesion extends JPanel {
 				(this.screenSize.width / 50));
 		JTFUsuario.setBorder(borde);
 		
-		JTFContraseña = new JTextField(1);
+		JTFContraseña = new JPasswordField(1);
 		JTFContraseña.setBounds(((this.screenSize.width / 7)*3),
 				((this.screenSize.height / 7)*3),
 				(this.screenSize.width / 7),
@@ -79,6 +80,18 @@ public class JF_PanelInicioSesion extends JPanel {
 		JLcontraseña.setOpaque(true);
 		
 		
+		error = new JLabel();
+		
+		error.setBounds(((this.screenSize.width / 7)*3),
+				((this.screenSize.height / 7)*3 + (this.screenSize.width / 55)),
+				((this.screenSize.width / 7)),
+				(this.screenSize.width / 55));
+	
+		//error.setBackground(color);
+		//error.setBorder(borde);
+		
+		
+		
 		//botones//
 		BotonIniciarSesion = new  BotonIniciarSesion(this);
 		BotonIniciarSesion.setBounds(((this.screenSize.width / 7)*3),
@@ -103,6 +116,7 @@ public class JF_PanelInicioSesion extends JPanel {
 		add(JTFUsuario);
 		add(JLcontraseña);
 		add(JTFContraseña);
+		add(error);
 		
 	}
 	public String getJTFUsuario() {
@@ -138,6 +152,17 @@ public class JF_PanelInicioSesion extends JPanel {
 		marcoP.remove(this);
 		marcoP.add(new JF_PanelMenu());
 		marcoP.setVisible(true);
+	}
+	public void usuContError() {
+		
+		error.setFont(new Font("Stika Text",Font.BOLD,(this.screenSize.height/80)));
+		
+		error.setText("Usuario/Contraseña erroneos");
+		error.setForeground(Color.RED);
+		error.setBackground(Color.cyan);
+		error.setOpaque(true);
+		error.setVisible(true);	
+	;
 	}
 	
 
