@@ -6,8 +6,8 @@ public class ejecutar {
 	
 	public static void main(String[] args) {
 
-		//Partida.nuevaPartida();
-		JF_Marco marco = new JF_Marco();
+		Partida.nuevaPartida();
+		//JF_Marco marco = new JF_Marco();
 	}
 	
 	
@@ -20,7 +20,7 @@ public class ejecutar {
 		System.out.println("----------------");
 
 		for (Vacunas string : Partida.vacunas) {
-			System.out.println(string.nombre + " " + string.desarollo + "%" );
+			System.out.println(string.nombre + " " + string.desarollo + "%"+" "+string.color );
 		}
 		System.out.println("----------------");
 		
