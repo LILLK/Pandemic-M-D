@@ -9,13 +9,6 @@ public class Partida {
 	
 	//id de la Partida
 	public static int idP;
-	
-	
-	
-	
-	
-	
-	
 	// Puntuacion de la partida
 	public static int Puntuacion;
 	// Brotes de la partida

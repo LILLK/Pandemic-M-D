@@ -133,7 +133,7 @@ public class ConexionBD {
 					Persona persona = new Persona(dni, nombre, direccion);*/
 					
 					//NuevaPersona persona = new NuevaPersona(dni, nombre, calle, ciudad, pais);
-					System.out.println(d);
+					System.out.println();
 					System.out.println("Partu ENCONTRADA");
 
 				}
