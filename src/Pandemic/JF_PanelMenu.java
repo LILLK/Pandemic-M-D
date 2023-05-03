@@ -29,7 +29,7 @@ public class JF_PanelMenu extends JPanel {
 	JF_PanelMenu(){
 		
 		
-		 cambiarImg img = new cambiarImg();
+		 //cambiarImg img = new cambiarImg();
 		 this.screenSize = new Dimension(Toolkit.getDefaultToolkit().getScreenSize());
 		 
 		
@@ -42,6 +42,8 @@ public class JF_PanelMenu extends JPanel {
 		this.Version = 	new BotonVersion(this);
 		this.Salir = new BotonSalir();
 		this.BotonLogOut = new BotonLogOut(this);
+		
+		
 		
 		this.NuevaPartida.setBounds			(((this.screenSize.width/2)-(this.screenSize.width/10)),(this.screenSize.height/6),(this.screenSize.width/5),(this.screenSize.width/20));
 		this.CargarPartida.setBounds		(((this.screenSize.width/2)-(this.screenSize.width/10)),((this.screenSize.height/6)+(this.screenSize.width/18)),(this.screenSize.width/5),(this.screenSize.width/20));

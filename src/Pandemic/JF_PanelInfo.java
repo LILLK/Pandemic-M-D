@@ -51,6 +51,8 @@ public class JF_PanelInfo extends JPanel {
 		TInfo.setFont(new Font("Stika Text",Font.BOLD,(this.screenSize.height/15)));
 		TInfo.setBackground(color);
 		TInfo.setBorder(borde);
+		TInfo.setVisible(true);
+		TInfo.setOpaque(true);
 		
 		Info.setBounds(((this.screenSize.width/2)-(this.screenSize.width/4)),((this.screenSize.height/7)+(this.screenSize.height/5)),((this.screenSize.width/2)),((this.screenSize.height/2)));
 		Info.setText(s);
@@ -58,16 +60,17 @@ public class JF_PanelInfo extends JPanel {
 		Info.setFont(new Font("Stika Text",Font.BOLD,this.screenSize.height/53));
 		Info.setBackground(color);
 		Info.setBorder(borde);
+		Info.setVisible(true);
+		Info.setOpaque(true);
 		
 		Atras.setBounds(0,(this.screenSize.height-((this.screenSize.width/19))),this.screenSize.width,(screenSize.width/25));
 	   // Info.setHorizontalAlignment(Info.CENTER);
 	    //Info.setHorizontalAlignment(Info.LEFT);
 	
 	    //Info.setHorizontalAlignment(Info.LEFT);
-		TInfo.setVisible(true);
-		Info.setVisible(true);
-		Info.setOpaque(true);
-		TInfo.setOpaque(true);
+		
+		
+		
 		add(this.Atras);
 		add(Info);
 		add(TInfo);

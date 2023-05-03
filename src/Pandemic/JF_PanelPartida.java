@@ -27,7 +27,7 @@ public class JF_PanelPartida extends JPanel {
 		Color color =new Color(71, 161, 197);
 		Border borde = BorderFactory.createLineBorder(Color.BLACK,3);
 		screenSize = new Dimension(Toolkit.getDefaultToolkit().getScreenSize());
-		cambiarImg img = new cambiarImg();
+		//cambiarImg img = new cambiarImg();
 		setLayout(null);
 
 		
@@ -41,7 +41,7 @@ public class JF_PanelPartida extends JPanel {
 		JLUsuario.setOpaque(true);
 		
 		JLabel mapa = new JLabel();
-		mapa.setIcon(img.tamaño(new ImageIcon("imagenes/mapa_2.png"), 1550, 850));
+		mapa.setIcon(cambiarImg.tamaño(new ImageIcon("imagenes/mapa_2.png"), 1550, 850));
 		mapa.setBounds(this.screenSize.width/2-(1550/2),
 				1, 
 				1550, 
