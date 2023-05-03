@@ -61,9 +61,9 @@ public class ConexionBD {
 			Statement STranking = con.createStatement();
 			ResultSet RSranking = STranking.executeQuery(sql); 	 	
 			System.out.println("hola");
-			if (rs.isBeforeFirst()) {
+			if (RSranking.isBeforeFirst()) {
 				while (RSranking.next()) {
-					System.out.println("tupadre");
+					//System.out.println("tupadre");
 					int brotes = RSranking.getInt("brotes");
 					int ronda =RSranking.getInt("ronda");
 					int puntuacion=RSranking.getInt("puntuacion");
@@ -72,9 +72,11 @@ public class ConexionBD {
 					//System.out.println(RSranking.getString("nom_us"));
 					//JF_PanelPuntuaciones jf = new JF_PanelPuntuaciones();
 					Rankings ranking = new Rankings(brotes,ronda,puntuacion,dificultad,nom_us);
+					//System.out.println(ranking.brotes+""+ranking.nomb_us);
 					JF_PanelPuntuaciones.rankings.add(ranking);
-
-
+					System.out.println(ranking.nomb_us);
+					
+					
 /*
 					Struct domicilio = (Struct) rs.getObject("DOMICILIO");
 					Object[] valoresDireccion = domicilio.getAttributes();
@@ -88,17 +90,16 @@ public class ConexionBD {
 					
 					//NuevaPersona persona = new NuevaPersona(dni, nombre, calle, ciudad, pais);
 
-					System.out.println("PERSONA ENCONTRADA");
-				}	
+					//System.out.println("PERSONA ENCONTRADA");
+				}
+				
+				for (Rankings ranking1 : JF_PanelPuntuaciones.rankings) {
+					System.out.println(ranking1.brotes+" "+ranking1.dificultad+ranking1.nomb_us);
+				}
+
 		} else {
 			System.out.println("No he encontrado nada");
-		}
-		
-				for (Rankings ranking : JF_PanelPuntuaciones.rankings) {
-					System.out.println(Rankings.brotes+" "+Rankings.dificultad+Rankings.nomb_us);
-				}
-			
-			
+		}	
 			
 
 		} catch (SQLException e) {

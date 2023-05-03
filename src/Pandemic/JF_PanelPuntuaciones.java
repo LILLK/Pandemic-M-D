@@ -1,10 +1,14 @@
 package Pandemic;
 
+import java.awt.Color;
 import java.awt.Dimension;
 
 
 import java.awt.Graphics;
+import java.awt.ScrollPane;
+import java.awt.Scrollbar;
 import java.awt.Toolkit;
+import java.awt.Window;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -14,10 +18,14 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
+import javax.swing.BorderFactory;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JViewport;
 import javax.swing.SwingUtilities;
+import javax.swing.border.Border;
 
 import Botones.BotonAtras;
 import Logico.ConexionBD;
@@ -40,23 +48,47 @@ public class JF_PanelPuntuaciones extends JPanel {
 		ConexionBD ds= new ConexionBD();
 		this.screenSize=Toolkit.getDefaultToolkit().getScreenSize();
 		Connection con = conectarBaseDatos();
+		Color color = new Color(71, 161, 197);
+		Border borde = BorderFactory.createLineBorder(Color.BLACK,6);
+		
 		//ranking rk = new ranking();
 		ds.cargarRanking(con);
-		JPanel p = new JPanel();
-		p.setBounds(100,100,800,500);
+		ScrollPane p = new ScrollPane();
+		JPanel panel = new JPanel();
+		panel.setPreferredSize(new Dimension(800,100));
+		int i =0;
+		for(Rankings ranking : JF_PanelPuntuaciones.rankings) {
+			JLabel label = new JLabel();
+			label.setBounds(0, 0+(100*i), 790,100 );
+			label.setBackground(color);
+			label.setBorder(borde);
+			label.setText(ranking.brotes+ranking.nomb_us);
+			
+			label.setVisible(true);
+			label.setOpaque(true);
+			p.add(label);
+			//p.updateUI();
+			i++;
+		}
 		p.setLayout(null);
+		//p.setViewportView(panel);
+		//p.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+		p.setBounds(100,100,800,500);
+		//Scene s = new Scene(p,800,300);
+		//p.setPreferredSize(new Dimension(800,1000));
+		Scrollbar sp = new Scrollbar(Scrollbar.VERTICAL);
+		//p.setViewport(new JViewport());
+		//sp.setViewportView(p);
+		
+		p.add(sp);
+		
+		//JF_ScrolRank rank = new JF_ScrolRank();
 		add(p);
 		int x = 0; 
 		int y = 0;
-		int i =0;
 		
-		for(Rankings ranking : JF_PanelPuntuaciones.rankings) {
-			JLabel label = new JLabel();
-			label.setBounds(0, 0, 800, 50*(i+1));
-			label.setText(ranking.brotes+ranking.nomb_us);
-			p.add(label);
-			i++;
-		}
+		
+		
 		
 		
 		
