@@ -4,6 +4,7 @@ import java.sql.Connection;
 
 
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -53,8 +54,58 @@ public class ConexionBD {
 	public static void guardarPartida(Connection con, int idU) {
 		
 	}
-	public static void cargarRanking(Connection con,JF_PanelPuntuaciones JF_P) {
-		String sql ="SELECT p.brotes, p.ronda, p.puntuacion,p.dificultad,u.nom_us FROM PARTIDAS P, USUARIOS U WHERE p.jugador = u.id_u AND p.estado LIKE 'A'";
+	public static void cargarRanking(Connection con) {
+		String sql ="select p.brotes, p.ronda, p.puntuacion,p.dificultad,u.nom_us FROM PARTIDAS P, USUARIOS U WHERE p.jugador = u.id_u AND p.estado LIKE 'A'";
+		System.out.println("carg-1");
+		try {
+			Statement STranking = con.createStatement();
+			ResultSet RSranking = STranking.executeQuery(sql); 	 	
+			System.out.println("hola");
+			if (rs.isBeforeFirst()) {
+				while (RSranking.next()) {
+					System.out.println("tupadre");
+					int brotes = RSranking.getInt("brotes");
+					int ronda =RSranking.getInt("ronda");
+					int puntuacion=RSranking.getInt("puntuacion");
+					int dificultad = RSranking.getInt("dificultad");
+					String nom_us = RSranking.getString("nom_us");
+					//System.out.println(RSranking.getString("nom_us"));
+					//JF_PanelPuntuaciones jf = new JF_PanelPuntuaciones();
+					Rankings ranking = new Rankings(brotes,ronda,puntuacion,dificultad,nom_us);
+					JF_PanelPuntuaciones.rankings.add(ranking);
+
+
+/*
+					Struct domicilio = (Struct) rs.getObject("DOMICILIO");
+					Object[] valoresDireccion = domicilio.getAttributes();
+					String calle = (String) valoresDireccion[0];
+					String ciudad = (String) valoresDireccion[1];
+					String pais = (String) valoresDireccion[2];
+
+/*
+					Direccion direccion = new Direccion(calle,ciudad,pais);
+					Persona persona = new Persona(dni, nombre, direccion);*/
+					
+					//NuevaPersona persona = new NuevaPersona(dni, nombre, calle, ciudad, pais);
+
+					System.out.println("PERSONA ENCONTRADA");
+				}	
+		} else {
+			System.out.println("No he encontrado nada");
+		}
+		
+				for (Rankings ranking : JF_PanelPuntuaciones.rankings) {
+					System.out.println(Rankings.brotes+" "+Rankings.dificultad+Rankings.nomb_us);
+				}
+			
+			
+			
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			//System.out.println(e);
+		}
+		/*
 		try {
 			Statement st = con.createStatement();
 			ResultSet rs = st.executeQuery(sql); 	 	
@@ -69,8 +120,9 @@ public class ConexionBD {
 					int dificultad = rs.getInt("dificultad");
 					String nom_us = rs.getString("nom_us");
 					//JF_PanelPuntuaciones jf = new JF_PanelPuntuaciones();
-					ranking rank = new ranking(brotes,ronda,puntuacion,dificultad,nom_us);
-					JF_P.ranking.add(rank);
+					Rankings ranking = new Rankings(brotes,ronda,puntuacion,dificultad,nom_us);
+					System.out.println(brotes+ronda+puntuacion+dificultad+nom_us);
+					JF_PanelPuntuaciones.rankings.add(ranking);
 
 /*
 					Struct domicilio = (Struct) rs.getObject("DOMICILIO");
@@ -85,21 +137,9 @@ public class ConexionBD {
 					
 					//NuevaPersona persona = new NuevaPersona(dni, nombre, calle, ciudad, pais);
 					//System.out.println();
-					System.out.println("Partu ENCONTRADA");
-
-				}
-			} else {
-				System.out.println("No he encontrado nada");
-			}
-			
-			
-
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			System.out.println(e);
-		}
-		
-	}
+					/*System.out.println("Partu ENCONTRADA-rank");*/
+					} 
+	
 	public static void cargarPartida(Connection con, int idU,int idP) {
 		String sql="SELECT * FROM PARTIDAS P WHERE P.id_p = "+idP+"AND P.jugador = "+idU+";";
 		try {

@@ -1,13 +1,13 @@
 package Logico;
 
-public class ranking {
+public class Rankings {
 	
 	public static int brotes;
 	public static int ronda;
 	public static int puntuacion;
 	public static int dificultad;
 	public static String nomb_us;
-	public ranking(int brotes, int ronda,  int puntuacion, int dificultad,String nomb_us) {
+	public Rankings(int brotes, int ronda,  int puntuacion, int dificultad,String nomb_us) {
 		this.brotes = brotes;
 		this.ronda = ronda;
 		this.puntuacion = puntuacion;

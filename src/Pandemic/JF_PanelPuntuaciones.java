@@ -2,6 +2,7 @@ package Pandemic;
 
 import java.awt.Dimension;
 
+
 import java.awt.Graphics;
 import java.awt.Toolkit;
 import java.awt.image.BufferedImage;
@@ -20,39 +21,45 @@ import javax.swing.SwingUtilities;
 
 import Botones.BotonAtras;
 import Logico.ConexionBD;
-import Logico.ranking;
+import Logico.Rankings;
+
 
 public class JF_PanelPuntuaciones extends JPanel {
 
 	BotonAtras Atras;
 	Dimension screenSize;
-	public static ArrayList<ranking> ranking;
+	public static ArrayList<Rankings> rankings;
 	private static final String USER = "DAW_PNDC22_23_DAME";
 	private static final String PWD = "DM123";
 	// Si estáis desde casa, la url será oracle.ilerna.com y no 192.168.3.26
 	private static final String URL = "jdbc:oracle:thin:@192.168.3.26:1521:xe";
 	public JF_PanelPuntuaciones() {
 		
+		JF_PanelPuntuaciones.rankings = new ArrayList<Rankings>();
+		setLayout(null);
 		ConexionBD ds= new ConexionBD();
-		
+		this.screenSize=Toolkit.getDefaultToolkit().getScreenSize();
 		Connection con = conectarBaseDatos();
 		//ranking rk = new ranking();
-		ds.cargarRanking(con,this);
+		ds.cargarRanking(con);
 		JPanel p = new JPanel();
-		p.setBounds(0,0,100,100);
+		p.setBounds(100,100,800,500);
+		p.setLayout(null);
+		add(p);
 		int x = 0; 
 		int y = 0;
-		for(int i =0 ; i< ranking.size();i++) {
+		int i =0;
+		
+		for(Rankings ranking : JF_PanelPuntuaciones.rankings) {
 			JLabel label = new JLabel();
-			label.setBounds(x,y,p.WIDTH,50);
+			label.setBounds(0, 0, 800, 50*(i+1));
+			label.setText(ranking.brotes+ranking.nomb_us);
 			p.add(label);
-			p.updateUI();
-			y = y+50;
-			
+			i++;
 		}
 		
-		setLayout(null);
-		this.screenSize=Toolkit.getDefaultToolkit().getScreenSize();
+		
+		
 		this.Atras = new BotonAtras(this);
 		Atras.setBounds(0,(this.screenSize.height-((screenSize.width/20)-3)),this.screenSize.width,(screenSize.width/25));
 		add(this.Atras);

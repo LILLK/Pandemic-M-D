@@ -1,10 +1,12 @@
 package Logico;
 
 import java.sql.Connection;
+
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
 import Pandemic.JF_Marco;
+import Pandemic.JF_PanelPuntuaciones;
 
 public class ejecutar {
 	private static final String USER = "DAW_PNDC22_23_DAME";
@@ -13,14 +15,16 @@ public class ejecutar {
 	private static final String URL = "jdbc:oracle:thin:@192.168.3.26:1521:xe";
 	
 	public static void main(String[] args) {
-
+		Connection con = conectarBaseDatos();
 		//Partida.nuevaPartida();
 		JF_Marco marco = new JF_Marco();
 		//onexionBD ds= new ConexionBD();
-		
+
+	
 		//Connection con = conectarBaseDatos();
 		//ds.crearUsuario(con, "sssssssss", "daaaGEGaaaho");
 	}
+	
 	
 	
 	public static void imprimir() {
