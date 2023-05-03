@@ -8,7 +8,7 @@ public class ejecutar {
 		Partida.iniciarNuevaPartida();
 		imprimir();
 		//Partida.nuevaPartida();
-		//JF_Marco marco = new JF_Marco();
+		JF_Marco marco = new JF_Marco();
 	}
 	
 	

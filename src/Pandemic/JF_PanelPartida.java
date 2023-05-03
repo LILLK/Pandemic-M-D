@@ -26,8 +26,13 @@ public class JF_PanelPartida extends JPanel {
 	Dimension screenSize;
 	JTextField JTFUsuario;
 	JTextField JTFContraseña;
+	
 
 	public JF_PanelPartida() {
+		
+		int tamañoX = 30;
+		int tamañoY = 20;
+
 		cambiarImg img = new cambiarImg();
 
 		Color color =new Color(71, 161, 197);
@@ -77,19 +82,19 @@ public class JF_PanelPartida extends JPanel {
 
 		ArrayList<BotonCiudad> BotonesCiudad = new ArrayList<BotonCiudad>();
 		for (Ciudades ciudad : Partida.ciudades) {
-			BotonCiudad BotonCiudad = new BotonCiudad(this,0);
-			BotonCiudad.setIcon(img.tamaño(new ImageIcon("imagenes/ciudad_amarillo_0_brote.png"), 60, 40));
-			BotonCiudad.setBounds(ciudad.posicionX,
-					ciudad.posicionY, 
-					60, 
-					40);
+			BotonCiudad BotonCiudad = new BotonCiudad(this,ciudad.idVirus);
+			BotonCiudad.setBounds(ciudad.posicionX-(tamañoX/2), ciudad.posicionY-(tamañoY/2),60,40);
 			BotonCiudad.setVisible(true);
 			BotonCiudad.setOpaque(false);
 			BotonesCiudad.add(BotonCiudad);
 		}
+		
+		
 		for (BotonCiudad botonCiudad : BotonesCiudad) {
 			add(botonCiudad);
 		}
+		
+		
  		add(derecha);
 		add(abajo);
 		add(mapa);
