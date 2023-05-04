@@ -48,15 +48,26 @@ public class Partida {
 	// es dode se ejecuta la partida 
 	////////////////////////////////////////
 	public static void jugarPartida() {
+		
+		
 		updatePartida();
-		ejecutar.imprimir();
+		//ejecutar.imprimir();
+		
+		
 		while (!fin()) {
 			Partida.ronda++;
+			
 			ronda();
+			
 			if (!fin()) {
 				infectar();
 			}
-			ejecutar.imprimir();
+			
+			
+			//ejecutar.imprimir();
+			
+			
+			
 		}
 	}
 	//////////////////////////////////////////////////////////////////////////////////////

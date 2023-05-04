@@ -12,7 +12,8 @@ import Logico.Partida;
 import Pandemic.*;
 
 public class BotonCiudad extends JLabel {
-
+	
+	String nombre;
 	Dimension screenSize;
 	cambiarImg img;
 

@@ -88,8 +88,6 @@ public class JF_PanelPartida extends JPanel {
 			BotonCiudad.setOpaque(false);
 			BotonesCiudad.add(BotonCiudad);
 		}
-		
-		
 		for (BotonCiudad botonCiudad : BotonesCiudad) {
 			add(botonCiudad);
 		}
@@ -98,6 +96,9 @@ public class JF_PanelPartida extends JPanel {
  		add(derecha);
 		add(abajo);
 		add(mapa);
+		
+		
+		
 	;
 		
 	}

@@ -25,7 +25,7 @@ Johannesburgo;3;900,690;Kinsasa,Jartum;
 Argel;2;790,480;Madrid,Paris,Singapur,El Cairo;
 El Cairo;2;910,500;Argel,Singapur,Bagdad,Jartum,Riad;
 Riad;2;985,510;El Cairo,Bagdad,Karachi;
-Singapur;2;1219,580;Argel,El Cairo,Bagdad,Moscu,Riad;
+Singapur;2;1222,584;Argel,El Cairo,Bagdad,Moscu,Riad;
 Bagdad;2;962,468;Singapur,Karachi,Riad,El Cairo,;
 Moscu;2;940,360;Teheran,Singapur,San Petersburgo;
 Teheran;2;1020,450;Moscu,Bagdad,Karachi,Nueva Delhi;
