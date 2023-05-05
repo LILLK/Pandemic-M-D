@@ -18,53 +18,33 @@ public class BotonCiudad extends JLabel {
 	cambiarImg img;
 
 
-	public BotonCiudad(JF_PanelPartida JF_PanelPartida, int virusID) {
+	public BotonCiudad(JF_PanelPartida JF_PanelPartida, int virusID, String nombre) {
 		
 		int tamañoX = 30;
 		int tamañoY = 20;
-		
+		this.nombre = nombre;
 		this.screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+		this.establecerIcono(virusID, tamañoX, tamañoY);
 
-		switch (virusID) {
-		case 0:
-			setIcon(img.tamaño(new ImageIcon("imagenes/ciudad_azul_0_sano.png"), tamañoX, tamañoY));
-
-			break;
-
-		case 1:
-			setIcon(img.tamaño(new ImageIcon("imagenes/ciudad_rojo_0_sano.png"), tamañoX, tamañoY));
-
-			break;
-		case 2:
-			setIcon(img.tamaño(new ImageIcon("imagenes/ciudad_verde_0_sano.png"), tamañoX, tamañoY));
-
-			break;
-		case 3:
-			setIcon(img.tamaño(new ImageIcon("imagenes/ciudad_amarillo_0_sano.png"), tamañoX, tamañoY));
-			break;
-
-		default:
-			break;
-		}
-
+		
 		addMouseListener((MouseListener) new MouseListener() {
 			public void mouseEntered(MouseEvent e) {
 				switch (virusID) {
 				case 0:
-					setIcon(img.tamaño(new ImageIcon("imagenes/ciudad_azul_0_sano_entered.png"), tamañoX, tamañoY));
+					setIcon(img.tamaño(new ImageIcon("botones/ciudad_azul_0_sano_entered.png"), tamañoX, tamañoY));
 
 					break;
 
 				case 1:
-					setIcon(img.tamaño(new ImageIcon("imagenes/ciudad_rojo_0_sano_entered.png"), tamañoX, tamañoY));
+					setIcon(img.tamaño(new ImageIcon("botones/ciudad_rojo_0_sano_entered.png"), tamañoX, tamañoY));
 
 					break;
 				case 2:
-					setIcon(img.tamaño(new ImageIcon("imagenes/ciudad_verde_0_sano_entered.png"), tamañoX, tamañoY));
+					setIcon(img.tamaño(new ImageIcon("botones/ciudad_verde_0_sano_entered.png"), tamañoX, tamañoY));
 
 					break;
 				case 3:
-					setIcon(img.tamaño(new ImageIcon("imagenes/ciudad_amarillo_0_sano_entered.png"), tamañoX, tamañoY));
+					setIcon(img.tamaño(new ImageIcon("botones/ciudad_amarillo_0_sano_entered.png"), tamañoX, tamañoY));
 					break;
 
 				default:
@@ -77,20 +57,20 @@ public class BotonCiudad extends JLabel {
 				
 				switch (virusID) {
 				case 0:
-					setIcon(img.tamaño(new ImageIcon("imagenes/ciudad_azul_0_sano.png"), tamañoX, tamañoY));
+					setIcon(img.tamaño(new ImageIcon("botones/ciudad_azul_0_sano.png"), tamañoX, tamañoY));
 
 					break;
 
 				case 1:
-					setIcon(img.tamaño(new ImageIcon("imagenes/ciudad_rojo_0_sano.png"), tamañoX, tamañoY));
+					setIcon(img.tamaño(new ImageIcon("botones/ciudad_rojo_0_sano.png"), tamañoX, tamañoY));
 
 					break;
 				case 2:
-					setIcon(img.tamaño(new ImageIcon("imagenes/ciudad_verde_0_sano.png"), tamañoX, tamañoY));
+					setIcon(img.tamaño(new ImageIcon("botones/ciudad_verde_0_sano.png"), tamañoX, tamañoY));
 
 					break;
 				case 3:
-					setIcon(img.tamaño(new ImageIcon("imagenes/ciudad_amarillo_0_sano.png"), tamañoX, tamañoY));
+					setIcon(img.tamaño(new ImageIcon("botones/ciudad_amarillo_0_sano.png"), tamañoX, tamañoY));
 					break;
 
 				default:
@@ -101,6 +81,8 @@ public class BotonCiudad extends JLabel {
 			}
 
 			public void mousePressed(MouseEvent i) {
+				
+				
 
 			}
 
@@ -115,5 +97,36 @@ public class BotonCiudad extends JLabel {
 		});
 
 	}
+	
+	
+	public  void establecerIcono(int virusID, int tamañoX , int tamañoY ) {
+		
+		switch (virusID) {
+		case 0:
+			setIcon(img.tamaño(new ImageIcon("botones/ciudad_azul_0_sano.png"), tamañoX, tamañoY));
+
+			break;
+
+		case 1:
+			setIcon(img.tamaño(new ImageIcon("botones/ciudad_rojo_0_sano.png"), tamañoX, tamañoY));
+
+			break;
+		case 2:
+			setIcon(img.tamaño(new ImageIcon("botones/ciudad_verde_0_sano.png"), tamañoX, tamañoY));
+
+			break;
+		case 3:
+			setIcon(img.tamaño(new ImageIcon("botones/ciudad_amarillo_0_sano.png"), tamañoX, tamañoY));
+			break;
+
+		default:
+			break;
+		}
+		
+	}
+	
+	
+	
+
 
 }

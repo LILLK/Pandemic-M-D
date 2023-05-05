@@ -26,9 +26,12 @@ public class JF_PanelPartida extends JPanel {
 	Dimension screenSize;
 	JTextField JTFUsuario;
 	JTextField JTFContraseña;
+	JF_PanelPartidaVacunas JF_PanelPartidaVacunas;
 	
 
 	public JF_PanelPartida() {
+		
+		
 		
 		int tamañoX = 30;
 		int tamañoY = 20;
@@ -42,13 +45,6 @@ public class JF_PanelPartida extends JPanel {
 
 		
 		//labels//
-		JLabel JLUsuario = new  JLabel();
-		JLUsuario.setBounds(((this.screenSize.width / 7)*3),
-				((this.screenSize.height / 7)*2 - (this.screenSize.width / 55)),
-				((this.screenSize.width / 7)/2),
-				(this.screenSize.width / 55));
-		JLUsuario.setBackground(color);
-		JLUsuario.setOpaque(true);
 		
 		JLabel mapa = new JLabel();
 		mapa.setIcon(img.tamaño(new ImageIcon("imagenes/mapa_2.png"), 1550, 850));
@@ -69,32 +65,19 @@ public class JF_PanelPartida extends JPanel {
 		derecha.setBorder(borde);
 		derecha.setOpaque(true);
 		
+		JF_PanelPartidaVacunas = new JF_PanelPartidaVacunas();
 		
-		JLabel abajo = new  JLabel();
-		abajo.setBounds(1,
-				(850),
-				(1550),
-				(this.screenSize.height-850));
-		abajo.setBackground(color);
-		abajo.setBorder(borde);
-		abajo.setOpaque(true);
 		
-
-		ArrayList<BotonCiudad> BotonesCiudad = new ArrayList<BotonCiudad>();
-		for (Ciudades ciudad : Partida.ciudades) {
-			BotonCiudad BotonCiudad = new BotonCiudad(this,ciudad.idVirus);
-			BotonCiudad.setBounds(ciudad.posicionX-(tamañoX/2), ciudad.posicionY-(tamañoY/2),60,40);
-			BotonCiudad.setVisible(true);
-			BotonCiudad.setOpaque(false);
-			BotonesCiudad.add(BotonCiudad);
+		
+		
+		
+		
+		
+		for (Ciudades Ciudad : Partida.ciudades) {
+			add(Ciudad.boton);
 		}
-		for (BotonCiudad botonCiudad : BotonesCiudad) {
-			add(botonCiudad);
-		}
-		
-		
  		add(derecha);
-		add(abajo);
+		add(JF_PanelPartidaVacunas);
 		add(mapa);
 		
 		
@@ -137,22 +120,7 @@ public class JF_PanelPartida extends JPanel {
 		marcoP.setVisible(true);
 	}
 	
-	public ArrayList<BotonCiudad> generarBotonesCiudad() {
-		cambiarImg img = new cambiarImg();
-		ArrayList<BotonCiudad> BotonesCiudad = new ArrayList<BotonCiudad>();
-		for (Ciudades ciudad : Partida.ciudades) {
-			BotonCiudad BotonCiudad = new BotonCiudad(this,-1);
-			BotonCiudad.setIcon(img.tamaño(new ImageIcon("imagenes/ciudad_amarillo_0_brote.png"), 60, 40));
-			BotonCiudad.setBounds(ciudad.posicionX,
-					ciudad.posicionY, 
-					60, 
-					40);
-			BotonCiudad.setVisible(true);
-			BotonCiudad.setOpaque(true);
-			BotonesCiudad.add(BotonCiudad);
-		}
-	return BotonesCiudad;
-	}
+
 	
 
 }

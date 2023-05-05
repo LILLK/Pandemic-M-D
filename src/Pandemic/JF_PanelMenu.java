@@ -107,6 +107,7 @@ public class JF_PanelMenu extends JPanel {
 		marcoP.setVisible(true); 
 	}
 	public void irPanelPartida() {
+		
 		JFrame marcoP = (JFrame)SwingUtilities.getWindowAncestor(this);	
 		marcoP.remove(this);
 		marcoP.add(new JF_PanelPartida());
