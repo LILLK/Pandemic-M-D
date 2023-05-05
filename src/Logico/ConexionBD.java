@@ -55,7 +55,7 @@ public class ConexionBD {
 		
 	}
 	public static void cargarRanking(Connection con) {
-		String sql ="select p.brotes, p.ronda, p.puntuacion,p.dificultad,u.nom_us FROM PARTIDAS P, USUARIOS U WHERE p.jugador = u.id_u AND p.estado LIKE 'A'";
+		String sql ="select p.brotes, p.ronda, p.puntuacion,p.dificultad,u.nom_us FROM PARTIDAS P, USUARIOS U WHERE p.jugador = u.id_u AND p.estado LIKE 'A' ORDER BY p.puntuacion DESC";
 		System.out.println("carg-1");
 		try {
 			Statement STranking = con.createStatement();
