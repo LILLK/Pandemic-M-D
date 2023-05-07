@@ -28,8 +28,7 @@ public class Ciudades {
 	/////////// constructores //////////
 	////////////////////////////////////
 	public Ciudades(String nombre, int posicionX, int posicionY, int idVirus) {
-		int tamañoX = 30;
-		int tamañoY = 20;
+		
 		this.nombre = nombre;
 		this.posicionX = posicionX;
 		this.posicionY = posicionY;
@@ -40,9 +39,8 @@ public class Ciudades {
 		this.colindantes = generarColindantes(this.nombre);
 		this.infeccionRonda = false;
 		this.boton = new BotonCiudad(new JF_PanelPartida() , this.idVirus, this.nombre);
-		this.boton.setBounds(this.posicionX-(tamañoX/2), this.posicionY-(tamañoY/2),60,40);
-		this.boton.setVisible(true);
-		this.boton.setOpaque(false);
+		
+
 	}
 	////////////////////////////////////
 	////////////// metodos /////////////
@@ -168,6 +166,8 @@ public class Ciudades {
 		}
 		return colindantes;
 	}
+	
+	
 
 	////////////////////////////////////
 	/////////// setters&getters//////////

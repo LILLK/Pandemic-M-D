@@ -27,15 +27,12 @@ public class JF_PanelPartida extends JPanel {
 	JTextField JTFUsuario;
 	JTextField JTFContraseña;
 	JF_PanelPartidaVacunas JF_PanelPartidaVacunas;
+
 	
 
 	public JF_PanelPartida() {
 		
 		
-		
-		int tamañoX = 30;
-		int tamañoY = 20;
-
 		cambiarImg img = new cambiarImg();
 
 		Color color =new Color(71, 161, 197);
@@ -56,14 +53,28 @@ public class JF_PanelPartida extends JPanel {
 		mapa.setOpaque(true);
 		
 		
-		JLabel derecha = new  JLabel();
-		derecha.setBounds(1551,
+
+		JLabel derechaAriba = new  JLabel();
+		derechaAriba.setBounds(1551,
 				1, 
 				(this.screenSize.width-1550), 
-				this.screenSize.width);
-		derecha.setBackground(color);
-		derecha.setBorder(borde);
-		derecha.setOpaque(true);
+				this.screenSize.height/2);
+		derechaAriba.setBackground(color);
+		derechaAriba.setBorder(borde);
+		derechaAriba.setOpaque(true);
+		
+		
+		
+		
+		
+		JLabel derechaAbajo = new  JLabel();
+		derechaAbajo.setBounds(1551,
+				this.screenSize.height/2+1, 
+				(this.screenSize.width-1550), 
+				(this.screenSize.height/2)-23);
+		derechaAbajo.setBackground(color);
+		derechaAbajo.setBorder(borde);
+		derechaAbajo.setOpaque(true);
 		
 		JF_PanelPartidaVacunas = new JF_PanelPartidaVacunas();
 		
@@ -72,11 +83,17 @@ public class JF_PanelPartida extends JPanel {
 		
 		
 		
-		
-		for (Ciudades Ciudad : Partida.ciudades) {
-			add(Ciudad.boton);
+		establecerBotonesCiudades();
+		for (Ciudades ciudad : Partida.ciudades) {
+			add(ciudad.boton.JLNombreCiudad);
 		}
- 		add(derecha);
+		for (Ciudades ciudad : Partida.ciudades) {
+			add(ciudad.boton);
+		}	
+		
+		
+ 		add(derechaAriba);
+		add(derechaAbajo);
 		add(JF_PanelPartidaVacunas);
 		add(mapa);
 		
@@ -118,6 +135,20 @@ public class JF_PanelPartida extends JPanel {
 		marcoP.remove(this);
 		marcoP.add(new JF_PanelMenu());
 		marcoP.setVisible(true);
+	}
+	/////////////////////////////////////////////////////////////////////////
+	///-establecerBotonesCiudades
+	///Coloca las ciudades en su lugar
+	////////////////////////////////////////////////////////////////////////
+	public static void establecerBotonesCiudades() {
+		int tamañoX = 30;
+		int tamañoY = 20;
+		for (Ciudades ciudad : Partida.ciudades) {
+			ciudad.boton.setBounds(ciudad.posicionX-(tamañoX/2), ciudad.posicionY-(tamañoY/2),tamañoX,tamañoY);
+			ciudad.boton.setVisible(true);
+			ciudad.boton.setOpaque(false);
+			ciudad.boton.JLNombreCiudad.setBounds(ciudad.posicionX-(50), ciudad.posicionY+(20), 100, 20);
+		}
 	}
 	
 
