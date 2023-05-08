@@ -19,13 +19,14 @@ import Logico.Partida;
 
 public class JF_PanelPartida extends JPanel {
 
-	BotonSalir Salir;
 	BotonCiudad BotonCiudad;
-	JFrame marcoP;
 	Dimension screenSize;
-	JTextField JTFUsuario;
-	JTextField JTFContraseña;
-	JF_PanelPartidaVacunas JF_PanelPartidaVacunas;
+	//Label debajo del mapa
+	JF_PanelPartidaVacunas panelVacunas;
+	//Label derecha arriba
+	JF_PanelPartidaPanel1 panelLabel1 ;
+	//Label derecha abajo
+	JF_PanelPartidaPanel2 panelLabel2 ;
 
 	public JF_PanelPartida() {
 
@@ -37,30 +38,14 @@ public class JF_PanelPartida extends JPanel {
 		setLayout(null);
 
 		// labels//
-		JF_PanelPartidaVacunas = new JF_PanelPartidaVacunas();
 		JLabel mapa = new JLabel();
-
+		panelLabel1 = new JF_PanelPartidaPanel1();
+		panelVacunas = new JF_PanelPartidaVacunas();
+		//JLabel puntuacion = new JLabel();
+		panelLabel2 = new JF_PanelPartidaPanel2();
+		
 		mapa.setIcon(img.tamaño(new ImageIcon("imagenes/mapa_2.png"), 1550, 850));
 		mapa.setBounds(1, 1, 1550, 850);
-
-		JLabel derechaAriba = new JLabel();
-		derechaAriba.setBounds(1551, 1, (this.screenSize.width - 1550), this.screenSize.height / 2);
-		derechaAriba.setBackground(color);
-		derechaAriba.setBorder(borde);
-		derechaAriba.setOpaque(true);
-		JLabel puntuacion = new JLabel();
-
-		
-		
-		JLabel derechaAbajo = new JLabel();
-		derechaAbajo.setBounds(1551, this.screenSize.height / 2 + 1, (this.screenSize.width - 1550),
-				(this.screenSize.height / 2) - 23);
-		derechaAbajo.setBackground(color);
-		derechaAbajo.setBorder(borde);
-		derechaAbajo.setOpaque(true);
-
-		
-		
 		establecerBotonesCiudades();
 		for (Ciudades ciudad : Partida.ciudades) {
 			add(ciudad.boton.JLNombreCiudad);
@@ -68,23 +53,16 @@ public class JF_PanelPartida extends JPanel {
 		for (Ciudades ciudad : Partida.ciudades) {
 			add(ciudad.boton);
 		}
-
-		add(derechaAriba);
-		add(derechaAbajo);
-		add(JF_PanelPartidaVacunas);
+		add(panelLabel2);
+		add(panelVacunas);
+		add(panelLabel1);
 		add(mapa);
 
 		;
 
 	}
 
-	public String getJTFUsuario() {
-		return JTFUsuario.getText();
-	}
 
-	public String getJTFContraseña() {
-		return JTFContraseña.getText();
-	}
 
 	public void paint(Graphics g) {
 		BufferedImage imgFondo;
