@@ -35,6 +35,9 @@ public class BotonCiudad extends JLabel {
 		this.JLNombreCiudad.setBackground(Color.WHITE);
 		this.JLNombreCiudad.setOpaque(true);
 
+		
+		
+		
 
 		
 		addMouseListener((MouseListener) new MouseListener() {

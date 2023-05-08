@@ -21,7 +21,7 @@ public class JF_PanelPartidaPanel2 extends JPanel {
 
 	
 	Dimension screenSize;
-
+	BotonGuardarPartida BotonGuardarPartida;
 	public JF_PanelPartidaPanel2() {
 
 		int tamañoX = 40;
@@ -36,6 +36,42 @@ public class JF_PanelPartidaPanel2 extends JPanel {
 		this.setBackground(color);
 		this.setBorder(borde);
 		this.setOpaque(true);
+		
+		
+		JLabel acciones = new JLabel();
+		JLabel log = new JLabel();
+		BotonGuardarPartida = new BotonGuardarPartida(this);
+
+
+		
+
+		acciones.setBounds((this.getWidth()/2)-((this.getWidth()/2)/2),
+				((this.getHeight()/16)),
+				this.getWidth()/2,
+				this.getHeight()/15);
+		acciones.setBackground(Color.orange);
+		acciones.setVisible(true);
+		acciones.setBorder(borde);
+		acciones.setOpaque(true);
+		acciones.setText("numero de acciones restantes");
+		
+		log.setBounds((this.getWidth()/2)-((this.getWidth()/2)/2),
+				((this.getHeight()/16)*2),
+				this.getWidth()/2,
+				this.getHeight()/2);
+		log.setBackground(Color.WHITE);
+		log.setVisible(true);
+		log.setBorder(borde);
+		log.setOpaque(true);
+		log.setText("has infectado....se a curado...");
+		
+		
+	
+		
+		add(BotonGuardarPartida);
+		add(acciones);
+		add(log);
+
 
 	}
 

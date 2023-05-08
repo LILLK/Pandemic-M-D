@@ -41,11 +41,13 @@ public class JF_PanelPartida extends JPanel {
 		JLabel mapa = new JLabel();
 		panelLabel1 = new JF_PanelPartidaPanel1();
 		panelVacunas = new JF_PanelPartidaVacunas();
-		JLabel puntuacion = new JLabel();
 		panelLabel2 = new JF_PanelPartidaPanel2();
 		
 		mapa.setIcon(img.tamaño(new ImageIcon("imagenes/mapa_2.png"), 1550, 850));
 		mapa.setBounds(1, 1, 1550, 850);
+		
+		
+		
 		establecerBotonesCiudades();
 		for (Ciudades ciudad : Partida.ciudades) {
 			add(ciudad.boton.JLNombreCiudad);
@@ -104,6 +106,7 @@ public class JF_PanelPartida extends JPanel {
 			ciudad.boton.setVisible(true);
 			ciudad.boton.setOpaque(false);
 			ciudad.boton.JLNombreCiudad.setBounds(ciudad.posicionX - (50), ciudad.posicionY + (20), 100, 20);
+			
 		}
 	}
 

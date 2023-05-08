@@ -15,6 +15,7 @@ import javax.swing.border.Border;
 
 import Botones.*;
 import Logico.Ciudades;
+import Logico.Parametros;
 import Logico.Partida;
 
 public class JF_PanelPartidaPanel1 extends JPanel {
@@ -37,6 +38,49 @@ public class JF_PanelPartidaPanel1 extends JPanel {
 		this.setBorder(borde);
 		this.setOpaque(true);
 
+		JLabel puntuacion = new JLabel();
+		JLabel brotes = new JLabel();
+		JLabel ronda = new JLabel();
+		
+
+		puntuacion.setBounds((this.getWidth()/2)-((this.getWidth()/2)/2),
+				((this.getHeight()/12)*4),
+				this.getWidth()/2,
+				this.getHeight()/15);
+		puntuacion.setBackground(Color.orange);
+		puntuacion.setVisible(true);
+		puntuacion.setBorder(borde);
+		puntuacion.setOpaque(true);
+		puntuacion.setText("la puntuacion es de: "+Partida.Puntuacion);
+		
+		
+		
+		brotes.setBounds((this.getWidth()/2)-((this.getWidth()/2)/2),
+				((this.getHeight()/12)*6),
+				this.getWidth()/2,
+				this.getHeight()/15);
+		brotes.setBackground(Color.orange);
+		brotes.setVisible(true);
+		brotes.setBorder(borde);
+		brotes.setOpaque(true);
+		brotes.setText("Brotes: "+Partida.brotes+"/"+Parametros.brotesTotal);
+		
+		ronda.setBounds((this.getWidth()/2)-((this.getWidth()/2)/2),
+				((this.getHeight()/12)*8),
+				this.getWidth()/2,
+				this.getHeight()/15);
+		ronda.setBackground(Color.orange);
+		ronda.setVisible(true);
+		ronda.setBorder(borde);
+		ronda.setOpaque(true);
+		ronda.setText("Ronda :" + Partida.ronda);
+
+		
+		add(ronda);
+		add(brotes);
+		add(puntuacion);
+	
+		
 	}
 
 }
