@@ -51,7 +51,7 @@ public class JF_PanelPartidaPanel2 extends JPanel {
 		acciones.setVisible(true);
 		acciones.setBorder(borde);
 		acciones.setOpaque(true);
-		acciones.setText("numero de acciones restantes");
+		acciones.setText("acciones restantes: ");
 		
 		log.setBounds((this.getWidth()/2)-((this.getWidth()/2)/2),
 				((this.getHeight()/16)*2),

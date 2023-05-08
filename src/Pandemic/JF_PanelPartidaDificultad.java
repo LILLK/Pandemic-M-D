@@ -31,10 +31,18 @@ public class JF_PanelPartidaDificultad extends JPanel {
 		setLayout(null);
 		
 		JLabel normal = new JLabel();
-		
+		JLabel facil = new JLabel();
+		JLabel dificil = new JLabel();
+
+		normal.setBounds(((this.screenSize.width/2)-(this.screenSize.width/10)),(this.screenSize.height/6),(this.screenSize.width/5),(this.screenSize.width/20));
+		normal.setIcon(img.tamaño(new ImageIcon("botones/BottonDif_normal-1.png"), ((int)(screenSize.getWidth()/5)), ((int)(screenSize.getWidth()/20))));
 		normal.addMouseListener(new MouseListener() {	
-			public void mouseEntered(MouseEvent e) {}
-			public void mouseExited(MouseEvent a) {}
+			public void mouseEntered(MouseEvent e) {
+				normal.setIcon(img.tamaño(new ImageIcon("botones/BottonDif_normal-2.png"), ((int)(screenSize.getWidth()/5)), ((int)(screenSize.getWidth()/20))));
+			}
+			public void mouseExited(MouseEvent a) {
+				normal.setIcon(img.tamaño(new ImageIcon("botones/BottonDif_normal-1.png"), ((int)(screenSize.getWidth()/5)), ((int)(screenSize.getWidth()/20))));
+			}
 			public void mousePressed(MouseEvent i) {}
 			public void mouseClicked(MouseEvent e) {
 				dificultad = 1;
@@ -44,10 +52,17 @@ public class JF_PanelPartidaDificultad extends JPanel {
 			public void mouseReleased(MouseEvent e) {}
 		});	
 		
-		JLabel facil = new JLabel();
+		
+		facil.setText("facil");
+		facil.setBounds(((this.screenSize.width/2)-(this.screenSize.width/10)),((this.screenSize.height/6)+(this.screenSize.width/18)),(this.screenSize.width/5),(this.screenSize.width/20));
+		facil.setIcon(img.tamaño(new ImageIcon("botones/BottonDif_facil-1.png"), ((int)(screenSize.getWidth()/5)), ((int)(screenSize.getWidth()/20))));
 		facil.addMouseListener(new MouseListener() {	
-			public void mouseEntered(MouseEvent e) {}
-			public void mouseExited(MouseEvent a) {}
+			public void mouseEntered(MouseEvent e) {
+				facil.setIcon(img.tamaño(new ImageIcon("botones/BottonDif_facil-2.png"), ((int)(screenSize.getWidth()/5)), ((int)(screenSize.getWidth()/20))));
+			}
+			public void mouseExited(MouseEvent a) {
+				facil.setIcon(img.tamaño(new ImageIcon("botones/BottonDif_facil-1.png"), ((int)(screenSize.getWidth()/5)), ((int)(screenSize.getWidth()/20))));
+			}
 			public void mousePressed(MouseEvent i) {}
 			public void mouseClicked(MouseEvent e) {
 				dificultad = 0;
@@ -58,10 +73,16 @@ public class JF_PanelPartidaDificultad extends JPanel {
 		});
 		
 		
-		JLabel dificil = new JLabel();
+		dificil.setIcon(img.tamaño(new ImageIcon("botones/BottonDif_dificil-1.png"), ((int)(screenSize.getWidth()/5)), ((int)(screenSize.getWidth()/20))));
+		dificil.setText("dificil");
+		dificil.setBounds(((this.screenSize.width/2)-(this.screenSize.width/10)),(this.screenSize.height/6+((this.screenSize.width/18)*2)),(this.screenSize.width/5),(this.screenSize.width/20));
 		dificil.addMouseListener(new MouseListener() {	
-			public void mouseEntered(MouseEvent e) {}
-			public void mouseExited(MouseEvent a) {}
+			public void mouseEntered(MouseEvent e) {
+				dificil.setIcon(img.tamaño(new ImageIcon("botones/BottonDif_dificil-2.png"), ((int)(screenSize.getWidth()/5)), ((int)(screenSize.getWidth()/20))));
+			}
+			public void mouseExited(MouseEvent a) {
+				dificil.setIcon(img.tamaño(new ImageIcon("botones/BottonDif_dificil-1.png"), ((int)(screenSize.getWidth()/5)), ((int)(screenSize.getWidth()/20))));
+			}
 			public void mousePressed(MouseEvent i) {}
 			public void mouseClicked(MouseEvent e) {
 				dificultad = 2;
@@ -70,14 +91,16 @@ public class JF_PanelPartidaDificultad extends JPanel {
 			public void mouseReleased(MouseEvent e) {}
 		});
 		
-		
+		add(dificil);
+		add(facil);
+		add(normal);
 	}
 
 	public void paint(Graphics g) {
 		BufferedImage imgFondo;
 		try {
 			Dimension size = getSize();
-			imgFondo = ImageIO.read(new File("imagenes/white.png"));
+			imgFondo = ImageIO.read(new File("imagenes/imagenPandemic6.png"));
 			g.drawImage(imgFondo, 0, 0, size.width, size.height, null);
 			setOpaque(false);
 			super.paint(g);
