@@ -8,6 +8,7 @@ import java.awt.event.MouseListener;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
+import Logico.Partida;
 import Pandemic.cambiarImg;
 
 public class BotonCargar extends JLabel {
@@ -19,21 +20,21 @@ public class BotonCargar extends JLabel {
 		
 		this.idP= idP;
 		
-		setIcon(cambiarImg.tamaño(new ImageIcon("botones/bottonInformacion-1.png"), ((int)(screenSize.getWidth()/5)), ((int)(screenSize.getWidth()/20))) );
+		setIcon(cambiarImg.tamaño(new ImageIcon("botones/cargarPartida.png"), 100, 100));
 
 		addMouseListener(new MouseListener() {	
 			public void mouseEntered(MouseEvent e) {
-				setIcon(cambiarImg.tamaño(new ImageIcon("botones/bottonInformacion-2.png"), ((int)(screenSize.getWidth()/5)), ((int)(screenSize.getWidth()/20))) );
+				setIcon(cambiarImg.tamaño(new ImageIcon("botones/cargarPartida.png"),100,100 ));
 			}
 			public void mouseExited(MouseEvent a) {
-				setIcon(cambiarImg.tamaño(new ImageIcon("botones/bottonInformacion-1.png"), ((int)(screenSize.getWidth()/5)), ((int)(screenSize.getWidth()/20))) );
+				setIcon(cambiarImg.tamaño(new ImageIcon("botones/cargarPartida.png"),100, 100));
 			}
 
 			public void mousePressed(MouseEvent i) {
-				setIcon(cambiarImg.tamaño(new ImageIcon("botones/bottonInformacion-3.png"), ((int)(screenSize.getWidth()/5)), ((int)(screenSize.getWidth()/20))) );
+				setIcon(cambiarImg.tamaño(new ImageIcon("botones/cargarPartida.png"), 100, 100 ));
 			}
 			public void mouseClicked(MouseEvent e) {
-				//JF_PanelMenu.irPanelInformacion();
+				Partida.cargarPartida(idP);;
 			}
 			public void mouseReleased(MouseEvent e) {
 				// TODO Apéndice de método generado automáticamente

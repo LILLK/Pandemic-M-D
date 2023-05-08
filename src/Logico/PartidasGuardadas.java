@@ -1,20 +1,18 @@
 package Logico;
 
 public class PartidasGuardadas {
-	public int idP;
+	public int idPartida;
 	public int brotes;
 	public int ronda;
 	public int puntuacion;
-	public int dificultad;
-	public String nomb_us;
+	public int dificultadPartida;
 	
-	public PartidasGuardadas(int idP,int brotes, int ronda,  int puntuacion, int dificultad,String nomb_us) {
-		this.brotes = idP;
+	public PartidasGuardadas(int idP,int brotes, int ronda,  int puntuacion, int dificultad) {
+		this.idPartida = idP;
 		this.brotes = brotes;
 		this.ronda = ronda;
 		this.puntuacion = puntuacion;
-		this.dificultad = dificultad;
-		this.nomb_us = nomb_us;
+		this.dificultadPartida = dificultad;
 	}
 	public int getBrotes() {
 		return brotes;
@@ -35,15 +33,10 @@ public class PartidasGuardadas {
 		this.puntuacion = puntuacion;
 	}	
 	public int getDificultad() {
-		return dificultad;
+		return dificultadPartida;
 	}
 	public void setDificultad(int dificultad) {
-		this.dificultad = dificultad;
+		this.dificultadPartida = dificultad;
 	}
-	public String getNombreU() {
-		return nomb_us;
-	}
-	public void setNombreU(String nomb_us) {
-		this.nomb_us = nomb_us;
-	}
+
 }

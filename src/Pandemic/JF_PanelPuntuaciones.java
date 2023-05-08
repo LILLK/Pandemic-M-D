@@ -40,21 +40,19 @@ public class JF_PanelPuntuaciones extends JPanel {
 	BotonAtras Atras;
 	Dimension screenSize;
 	public static ArrayList<Rankings> rankings;
-	private static final String USER = "DAW_PNDC22_23_DAME";
-	private static final String PWD = "DM123";
-	// Si estáis desde casa, la url será oracle.ilerna.com y no 192.168.3.26
-	private static final String URL = "jdbc:oracle:thin:@192.168.3.26:1521:xe";
+	
 	public JF_PanelPuntuaciones() {
 		
 		
 		setLayout(null);
 		
 		JScrollPane scroll = new JScrollPane();
-		Connection con = conectarBaseDatos();
 		Color color = new Color(71, 161, 197);
 		Border borde = BorderFactory.createLineBorder(Color.BLACK,6);
 		Border borde1 = BorderFactory.createLineBorder(Color.WHITE,2);
+		
 		JF_PanelPuntuaciones.rankings = new ArrayList<Rankings>();
+		
 		JPanel panel = new JPanel();
 		JLabel posicion = new JLabel();
 		JLabel nomUsu = new JLabel();
@@ -65,7 +63,7 @@ public class JF_PanelPuntuaciones extends JPanel {
 		
 		
 		this.screenSize=Toolkit.getDefaultToolkit().getScreenSize();
-		ConexionBD.cargarRanking(con);
+		ConexionBD.cargarRanking(ConexionBD.con);
 		
 		scroll.setBounds((this.screenSize.width/2)-410,100,820,450);
 		scroll.getVerticalScrollBar().setUI(new BasicScrollBarUI());
@@ -257,24 +255,5 @@ public class JF_PanelPuntuaciones extends JPanel {
 		marcoP.setVisible(true);
 	}
 
-	private static Connection conectarBaseDatos() {
-		Connection con = null;
 
-		System.out.println("Intentando conectarse a la base de datos");
-
-		try {
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-			con = DriverManager.getConnection(URL, USER, PWD);
-			System.out.println("Conectados a la base de datos");
-		} catch (ClassNotFoundException e) {
-			System.out.println("No se ha encontrado el driver " + e);
-		} catch (SQLException e) {
-			System.out.println("Error en las credenciales o en la URL " + e);
-		}
-		
-
-		//System.out.println("Conectados a la base de datos");
-
-		return con;
-	}
 }

@@ -12,6 +12,7 @@ import java.sql.Struct;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import Pandemic.JF_PanelCargarPartida;
 import Pandemic.JF_PanelPuntuaciones;
 
 //import ConexionBD.NuevaPersona;
@@ -25,49 +26,30 @@ public class ConexionBD {
 	private static final String PWD = "DM123";
 	// Si estáis desde casa, la url será oracle.ilerna.com y no 192.168.3.26
 	private static final String URL = "jdbc:oracle:thin:@192.168.3.26:1521:xe";
-
+	public static final Connection con = ConexionBD.conectarBaseDatos();
+	
 	public ConexionBD() {
 		
 	}
-	/*
-	private static Connection conectarBaseDatos() {
-		Connection con = null;
 
-		System.out.println("Intentando conectarse a la base de datos");
-
-		try {
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-			con = DriverManager.getConnection(URL, USER, PWD);
-			System.out.println("Conectados a la base de datos");
-		} catch (ClassNotFoundException e) {
-			System.out.println("No se ha encontrado el driver " + e);
-		} catch (SQLException e) {
-			System.out.println("Error en las credenciales o en la URL " + e);
-		}
-		
-
-		//System.out.println("Conectados a la base de datos");
-
-		return con;
-	}*/
 	public static void guardarPartida(Connection con, int idU) {
 		
 	}
 	public static void cargarRanking(Connection con) {
 		String sql ="select p.brotes, p.ronda, p.puntuacion,p.dificultad,u.nom_us FROM PARTIDAS P, USUARIOS U WHERE p.jugador = u.id_u AND p.estado LIKE 'A' ORDER BY p.puntuacion DESC";
-		System.out.println("carg-1");
+
 		try {
 			Statement STranking = con.createStatement();
-			ResultSet RSranking = STranking.executeQuery(sql); 	 	
+			ResultSet rs = STranking.executeQuery(sql); 	 	
 
-			if (RSranking.isBeforeFirst()) {
-				while (RSranking.next()) {
+			if (rs.isBeforeFirst()) {
+				while (rs.next()) {
 
-					int brotes = RSranking.getInt("brotes");
-					int ronda =RSranking.getInt("ronda");
-					int puntuacion=RSranking.getInt("puntuacion");
-					int dificultad = RSranking.getInt("dificultad");
-					String nom_us = RSranking.getString("nom_us");
+					int brotes = rs.getInt("brotes");
+					int ronda =rs.getInt("ronda");
+					int puntuacion=rs.getInt("puntuacion");
+					int dificultad = rs.getInt("dificultad");
+					String nom_us = rs.getString("nom_us");
 
 					Rankings ranking = new Rankings(brotes,ronda,puntuacion,dificultad,nom_us);
 
@@ -75,50 +57,43 @@ public class ConexionBD {
 
 					
 
-				}
-				
-				for (Rankings ranking1 : JF_PanelPuntuaciones.rankings) {
-					System.out.println(ranking1.brotes+" "+ranking1.dificultad+ranking1.nomb_us);
 				}
 
 		} else {
 			System.out.println("No he encontrado nada");
 		}	
 			
-
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			//System.out.println(e);
 		}
 		
 					} 
-	public static void cargarPartidas(Connection con) {
-		String sql ="select p.id_p p.brotes, p.ronda, p.puntuacion,p.dificultad,u.nom_us FROM PARTIDAS P, USUARIOS U WHERE p.jugador = u.id_u AND p.estado LIKE 'I/' ORDER BY p.puntuacion DESC";
-		System.out.println("carg-1");
+	public static void cargarPartidas(Connection con,int id_J) {
+		String sql ="select p.id_p, p.brotes, p.ronda, p.puntuacion,p.dificultad FROM PARTIDAS P, USUARIOS U WHERE p.jugador = u.id_u AND p.estado LIKE 'I' AND p.jugador ="+ id_J;
+
 		try {
-			Statement STranking = con.createStatement();
-			ResultSet RSranking = STranking.executeQuery(sql); 	 	
+			Statement st = con.createStatement();
+			ResultSet rs = st.executeQuery(sql); 	 	
 
-			if (RSranking.isBeforeFirst()) {
-				while (RSranking.next()) {
+			if (rs.isBeforeFirst()) {
+				while (rs.next()) {
+					
+					int idP = rs.getInt("id_p");
+					int brotes = rs.getInt("brotes");
+					int ronda =rs.getInt("ronda");
+					int puntuacion=rs.getInt("puntuacion");
+					int dificultad = rs.getInt("dificultad");
+			
 
-					int brotes = RSranking.getInt("brotes");
-					int ronda =RSranking.getInt("ronda");
-					int puntuacion=RSranking.getInt("puntuacion");
-					int dificultad = RSranking.getInt("dificultad");
-					String nom_us = RSranking.getString("nom_us");
+					PartidasGuardadas partidaGuardada = new PartidasGuardadas(idP,brotes,ronda,puntuacion,dificultad);
 
-					Rankings ranking = new Rankings(brotes,ronda,puntuacion,dificultad,nom_us);
-
-					JF_PanelPuntuaciones.rankings.add(ranking);
+					JF_PanelCargarPartida.partGuar.add(partidaGuardada);
 
 					
 
 				}
 				
-				for (Rankings ranking1 : JF_PanelPuntuaciones.rankings) {
-					System.out.println(ranking1.brotes+" "+ranking1.dificultad+ranking1.nomb_us);
-				}
 
 		} else {
 			System.out.println("No he encontrado nada");
@@ -140,6 +115,7 @@ public class ConexionBD {
 
 			if (rs.isBeforeFirst()) {
 				while (rs.next()) {
+					
 					Partida.idP = rs.getInt("id_P");
 					int idJ = rs.getInt("jugador");
 					String estado = rs.getString("estado");
@@ -210,23 +186,8 @@ public class ConexionBD {
 					int dni = rs.getInt("id_U");
 					String nombre = rs.getString("nom_Us");
 					String passw = rs.getString("passwd_J");
-					
-
-/*
-					Struct domicilio = (Struct) rs.getObject("DOMICILIO");
-					Object[] valoresDireccion = domicilio.getAttributes();
-					String calle = (String) valoresDireccion[0];
-					String ciudad = (String) valoresDireccion[1];
-					String pais = (String) valoresDireccion[2];
-
-/*
-					Direccion direccion = new Direccion(calle,ciudad,pais);
-					Persona persona = new Persona(dni, nombre, direccion);*/
-					
-					//NuevaPersona persona = new NuevaPersona(dni, nombre, calle, ciudad, pais);
-
-					System.out.println("PERSONA ENCONTRADA");
 					existe = true;
+					Jugador.id = dni;
 				}
 			} else {
 				System.out.println("No he encontrado nada");
@@ -242,7 +203,26 @@ public class ConexionBD {
 		}
 		return existe;
 	
-}
+	}
+	
+	public static Connection conectarBaseDatos() {
+		Connection con = null;
+
+		System.out.println("Intentando conectarse a la base de datos");
+
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			con = DriverManager.getConnection(URL, USER, PWD);
+			System.out.println("Conectados a la base de datos");
+		} catch (ClassNotFoundException e) {
+			System.out.println("No se ha encontrado el driver " + e);
+		} catch (SQLException e) {
+			System.out.println("Error en las credenciales o en la URL " + e);
+		}
+		
+
+		return con;
+	}
 }
 
 

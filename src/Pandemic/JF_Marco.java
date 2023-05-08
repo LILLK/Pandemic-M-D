@@ -1,8 +1,10 @@
 package Pandemic;
 import java.awt.Dimension;
+import java.awt.Image;
 import java.awt.Toolkit;
 
 import javax.swing.BoxLayout;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
 public class JF_Marco extends JFrame{
@@ -17,6 +19,8 @@ public class JF_Marco extends JFrame{
 		setResizable(false);
 		
 		setTitle("Pandemic");
+		ImageIcon img = new ImageIcon("imagenes/fotoIcon.png");
+		setIconImage(img.getImage());
 		
 		this.JF_PanelInicioSesion = new JF_PanelInicioSesion();
 		add(this.JF_PanelInicioSesion);

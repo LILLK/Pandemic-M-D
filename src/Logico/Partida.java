@@ -1,3 +1,4 @@
+
 package Logico;
 
 //Mehdi Tahrat && David hola
@@ -25,6 +26,8 @@ public class Partida {
 	public static ArrayList<Vacunas> vacunas;
 	// Lista de todas las Viruses con sus atributos
 	public static ArrayList<Viruses> viruses;
+	
+
 
 	////////////////////////////////////
 	/////////// constructores //////////
@@ -168,7 +171,11 @@ public class Partida {
 	// - genrarViruses
 	// rellena la lista de viruses
 	/////////////////////////////////////////////////////////////////////////////////////
-	public static void cargarPartida() {
+	public static void cargarPartida(int idP) {
+		
+		ConexionBD.cargarPartida(ConexionBD.con, Jugador.id, idP);
+		
+		Partida.jugarPartida();
 	}
 
 	//////////////////////////////////////////////////////////////////////////////////////

@@ -15,9 +15,10 @@ import javax.swing.JPanel;
 
 public class cambiarImg {
 	
-	Dimension screenSize;
+	public static Dimension screenSize=Toolkit.getDefaultToolkit().getScreenSize();
+	
 	public cambiarImg() {
-		this.screenSize=Toolkit.getDefaultToolkit().getScreenSize();
+		
 	}
 	public static ImageIcon tamaño(ImageIcon im, int w, int h) {
 		BufferedImage bi = new BufferedImage(w,h, BufferedImage.TRANSLUCENT);
