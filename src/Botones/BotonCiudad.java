@@ -15,11 +15,9 @@ import Pandemic.*;
 public class BotonCiudad extends JLabel {
 	
 	public String nombre;
+	public JLabel JLNombreCiudad;
 	Dimension screenSize;
 	cambiarImg img;
-	public JLabel JLNombreCiudad;
-
-
 
 	public BotonCiudad(JF_PanelPartida JF_PanelPartida, int virusID, String nombre) {
 		Border borde = BorderFactory.createLineBorder(Color.BLACK,3);
@@ -28,17 +26,14 @@ public class BotonCiudad extends JLabel {
 		this.nombre = nombre;
 		this.screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 		this.establecerIcono(virusID, tamañoX, tamañoY);
+		this.setVisible(true);
+		this.setOpaque(false);
 		this.JLNombreCiudad = new JLabel();
 		this.JLNombreCiudad.setVisible(false);
 		this.JLNombreCiudad.setText(nombre);
 		this.JLNombreCiudad.setBorder(borde);
 		this.JLNombreCiudad.setBackground(Color.WHITE);
-		this.JLNombreCiudad.setOpaque(true);
-
-		
-		
-		
-
+		this.JLNombreCiudad.setOpaque(true);		
 		
 		addMouseListener((MouseListener) new MouseListener() {
 			public void mouseEntered(MouseEvent e) {

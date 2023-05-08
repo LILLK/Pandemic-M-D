@@ -29,11 +29,9 @@ public class JF_PanelPartida extends JPanel {
 	JF_PanelPartidaPanel2 panelLabel2 ;
 
 	public JF_PanelPartida() {
-
+		int tamañoX = 30;
+		int tamañoY = 20;
 		cambiarImg img = new cambiarImg();
-
-		Color color = new Color(71, 161, 197);
-		Border borde = BorderFactory.createLineBorder(Color.BLACK, 3);
 		screenSize = new Dimension(Toolkit.getDefaultToolkit().getScreenSize());
 		setLayout(null);
 
@@ -47,19 +45,18 @@ public class JF_PanelPartida extends JPanel {
 		mapa.setBounds(1, 1, 1550, 850);
 		
 		
-		
-		establecerBotonesCiudades();
 		for (Ciudades ciudad : Partida.ciudades) {
+			ciudad.boton.setBounds(ciudad.posicionX - (tamañoX / 2), ciudad.posicionY - (tamañoY / 2), tamañoX,tamañoY);
 			add(ciudad.boton.JLNombreCiudad);
 		}
 		for (Ciudades ciudad : Partida.ciudades) {
+			ciudad.boton.JLNombreCiudad.setBounds(ciudad.posicionX - (50), ciudad.posicionY + (20), 100, 20);
 			add(ciudad.boton);
 		}
 		add(panelLabel2);
-		add(panelVacunas);
 		add(panelLabel1);
+		add(panelVacunas);
 		add(mapa);
-
 
 	}
 
@@ -91,23 +88,6 @@ public class JF_PanelPartida extends JPanel {
 		marcoP.remove(this);
 		marcoP.add(new JF_PanelMenu());
 		marcoP.setVisible(true);
-	}
-
-	/////////////////////////////////////////////////////////////////////////
-	/// -establecerBotonesCiudades
-	/// Coloca las ciudades en su lugar
-	////////////////////////////////////////////////////////////////////////
-	public static void establecerBotonesCiudades() {
-		int tamañoX = 30;
-		int tamañoY = 20;
-		for (Ciudades ciudad : Partida.ciudades) {
-			ciudad.boton.setBounds(ciudad.posicionX - (tamañoX / 2), ciudad.posicionY - (tamañoY / 2), tamañoX,
-					tamañoY);
-			ciudad.boton.setVisible(true);
-			ciudad.boton.setOpaque(false);
-			ciudad.boton.JLNombreCiudad.setBounds(ciudad.posicionX - (50), ciudad.posicionY + (20), 100, 20);
-			
-		}
 	}
 
 }
