@@ -2,15 +2,21 @@ package Logico;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import Botones.BotonCiudad;
+import Pandemic.JF_PanelPartida;
+import Pandemic.JF_PanelPartidaPanel2;
+
 //Mehdi Tahrat && David hola
 
 public class Ciudades {
-	String nombre;
-	int idVirus;
-	int[] posicion = new int[2];
-	ArrayList<String> colindantes;
-	boolean brote;
-	int nEnfermedades;
+	public String nombre;
+	public int idVirus;
+	public int posicionX;
+	public int posicionY;
+	public ArrayList<String> colindantes;
+	public boolean brote;
+	public int nEnfermedades;
+	public BotonCiudad boton; 
 	
 	
 	
@@ -22,15 +28,17 @@ public class Ciudades {
 	////////////////////////////////////
 	/////////// constructores //////////
 	////////////////////////////////////
-	public Ciudades(String nombre, int[] posicion, int idVirus) {
+	public Ciudades(String nombre, int posicionX, int posicionY, int idVirus) {
 		this.nombre = nombre;
-		this.posicion = posicion;
+		this.posicionX = posicionX;
+		this.posicionY = posicionY;
 		this.idVirus = idVirus;
 		colindantes = new ArrayList<String>();
 		this.nEnfermedades = 0;
 		this.brote = false;
 		this.colindantes = generarColindantes(this.nombre);
 		this.infeccionRonda = false;
+		this.boton = new BotonCiudad(new JF_PanelPartida(), idVirus, nombre);
 	}
 	////////////////////////////////////
 	////////////// metodos /////////////
@@ -118,7 +126,7 @@ public class Ciudades {
 			posicion[0] = Integer.parseInt(lin.split(";")[2].split(",")[0]);
 			posicion[1] = Integer.parseInt(lin.split(";")[2].split(",")[1]);
 			// Construccion de todas las ciudades
-			Ciudades ciudad = new Ciudades(nombre, posicion, idVirus);
+			Ciudades ciudad = new Ciudades(nombre, posicion[0],posicion[1],  idVirus);
 			// Se añade en la lista global Partida.ciudades
 			Partida.ciudades.add(ciudad);
 		}
@@ -156,6 +164,8 @@ public class Ciudades {
 		}
 		return colindantes;
 	}
+	
+	
 
 	////////////////////////////////////
 	/////////// setters&getters//////////
@@ -176,13 +186,7 @@ public class Ciudades {
 		this.brote = brote;
 	}
 
-	public int[] getPosicion() {
-		return posicion;
-	}
-
-	public void setPosicion(int[] posicion) {
-		this.posicion = posicion;
-	}
+	
 
 	public int getIdVirus() {
 		return idVirus;

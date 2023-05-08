@@ -33,7 +33,7 @@ public class BotonNuevaPartida extends JLabel {
 				setIcon(img.tamaño(new ImageIcon("botones/bottonNuevaPartida-3.png"),((int)(screenSize.getWidth()/5)), ((int)(screenSize.getWidth()/20))));
 			}
 			public void mouseClicked(MouseEvent e) {
-				JF_PanelMenu.irPanelPartida();
+				JF_PanelMenu.irPanelPartidaDificultad();
 			}
 			public void mouseReleased(MouseEvent e) {
 				// TODO Apéndice de método generado automáticamente

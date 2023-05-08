@@ -7,99 +7,59 @@ import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.border.Border;
 
 import Botones.*;
+import Logico.Ciudades;
+import Logico.Partida;
 
 public class JF_PanelPartida extends JPanel {
 
-	BotonSalir Salir;
-	JFrame marcoP;
+	BotonCiudad BotonCiudad;
 	Dimension screenSize;
-	JTextField JTFUsuario;
-	JTextField JTFContraseña;
+	//Label debajo del mapa
+	JF_PanelPartidaVacunas panelVacunas;
+	//Label derecha arriba
+	JF_PanelPartidaPanel1 panelLabel1 ;
+	//Label derecha abajo
+	JF_PanelPartidaPanel2 panelLabel2 ;
 
 	public JF_PanelPartida() {
-
-		Color color =new Color(71, 161, 197);
-		Border borde = BorderFactory.createLineBorder(Color.BLACK,3);
+		int tamañoX = 30;
+		int tamañoY = 20;
+		cambiarImg img = new cambiarImg();
 		screenSize = new Dimension(Toolkit.getDefaultToolkit().getScreenSize());
-		//cambiarImg img = new cambiarImg();
 		setLayout(null);
 
-		
-		//labels//
-		JLabel JLUsuario = new  JLabel();
-		JLUsuario.setBounds(((this.screenSize.width / 7)*3),
-				((this.screenSize.height / 7)*2 - (this.screenSize.width / 55)),
-				((this.screenSize.width / 7)/2),
-				(this.screenSize.width / 55));
-		JLUsuario.setBackground(color);
-		JLUsuario.setOpaque(true);
-		
+		// labels//
 		JLabel mapa = new JLabel();
-		mapa.setIcon(cambiarImg.tamaño(new ImageIcon("imagenes/mapa_2.png"), 1550, 850));
-		mapa.setBounds(this.screenSize.width/2-(1550/2),
-				1, 
-				1550, 
-				850);
-		mapa.setVisible(true);
-		mapa.setOpaque(true);
+		panelLabel1 = new JF_PanelPartidaPanel1();
+		panelVacunas = new JF_PanelPartidaVacunas();
+		panelLabel2 = new JF_PanelPartidaPanel2();
+		
+		mapa.setIcon(img.tamaño(new ImageIcon("imagenes/mapa_2.png"), 1550, 850));
+		mapa.setBounds(1, 1, 1550, 850);
 		
 		
-		JLabel derecha = new  JLabel();
-		derecha.setBounds(this.screenSize.width/2+(1550/2),
-				1, 
-				(this.screenSize.width-1550)/2, 
-				this.screenSize.width);
-		derecha.setBackground(color);
-		derecha.setBorder(borde);
-		derecha.setOpaque(true);
-		
-		
-		
-		JLabel iquierda = new  JLabel();
-		iquierda.setBounds((1),
-				(1),
-				((this.screenSize.width-1550)/2),
-				(this.screenSize.width));
-		iquierda.setText("<html><center>Usuario");
-		iquierda.setBackground(color);
-		iquierda.setBorder(borde);
-		iquierda.setOpaque(true);
-		
-		
-		JLabel abajo = new  JLabel();
-		abajo.setBounds(this.screenSize.width/2-(1550/2),
-				(850),
-				(1550),
-				(850));
-		abajo.setText("<html><center>Usuario");
-		abajo.setBackground(color);
-		abajo.setBorder(borde);
-		abajo.setOpaque(true);
-		
-	
-		
-		
-		
-		
-		add(iquierda);
-		add(derecha);
-		add(abajo);
+		for (Ciudades ciudad : Partida.ciudades) {
+			ciudad.boton.setBounds(ciudad.posicionX - (tamañoX / 2), ciudad.posicionY - (tamañoY / 2), tamañoX,tamañoY);
+			add(ciudad.boton.JLNombreCiudad);
+		}
+		for (Ciudades ciudad : Partida.ciudades) {
+			ciudad.boton.JLNombreCiudad.setBounds(ciudad.posicionX - (50), ciudad.posicionY + (20), 100, 20);
+			add(ciudad.boton);
+		}
+		add(panelLabel2);
+		add(panelLabel1);
+		add(panelVacunas);
 		add(mapa);
-	;
-		
+
 	}
-	public String getJTFUsuario() {
-		return JTFUsuario.getText();
-	}
-	public String getJTFContraseña() {
-		return JTFContraseña.getText();
-	}
+
 
 
 	public void paint(Graphics g) {
@@ -122,12 +82,12 @@ public class JF_PanelPartida extends JPanel {
 		marcoP.add(new JF_PanelRegistrarse());
 		marcoP.setVisible(true);
 	}
+
 	public void irMenu() {
-		JFrame marcoP = (JFrame)SwingUtilities.getWindowAncestor(this);	
+		JFrame marcoP = (JFrame) SwingUtilities.getWindowAncestor(this);
 		marcoP.remove(this);
 		marcoP.add(new JF_PanelMenu());
 		marcoP.setVisible(true);
 	}
-	
 
 }

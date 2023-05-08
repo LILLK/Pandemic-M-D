@@ -36,6 +36,9 @@ import Pandemic.cambiarImg;
 
 			setIcon(img.tamaño(new ImageIcon("botones/bottonAtras-1.png"), screenSize.width, (screenSize.width/30)) );
 			
+			
+			
+			
 			addMouseListener(new MouseListener() {	
 				public void mouseEntered(MouseEvent e) {
 					setIcon(img.tamaño(new ImageIcon("botones/bottonAtras-2.png"), screenSize.width, (screenSize.width/30)) );
