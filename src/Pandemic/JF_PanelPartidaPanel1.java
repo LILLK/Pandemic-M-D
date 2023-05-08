@@ -20,7 +20,9 @@ import Logico.Partida;
 
 public class JF_PanelPartidaPanel1 extends JPanel {
 
-	
+	JLabel puntuacion;
+	JLabel brotes;
+	JLabel ronda;
 	Dimension screenSize;
 
 	public JF_PanelPartidaPanel1() {
@@ -38,9 +40,9 @@ public class JF_PanelPartidaPanel1 extends JPanel {
 		this.setBorder(borde);
 		this.setOpaque(true);
 
-		JLabel puntuacion = new JLabel();
-		JLabel brotes = new JLabel();
-		JLabel ronda = new JLabel();
+		puntuacion = new JLabel();
+		brotes = new JLabel();
+		ronda = new JLabel();
 		
 
 		puntuacion.setBounds((this.getWidth()/2)-((this.getWidth()/2)/2),

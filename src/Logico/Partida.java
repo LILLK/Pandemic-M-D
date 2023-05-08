@@ -113,7 +113,7 @@ public class Partida {
 	public static void nuevaPartida() {
 		// Incicializa las variables necesarias para empezar partida
 		// empieza la partida
-		iniciarNuevaPartida();
+		iniciarNuevaPartida(0);
 		Partida.jugarPartida();
 
 		
@@ -147,12 +147,12 @@ public class Partida {
 	// -iniciarNuevaPartida 	
 	// - rellena y inicializa las variables, listas y objetos necesarios
 	/////////////////////////////////////////////////////////////////////////////////////
-	public static void iniciarNuevaPartida() {
+	public static void iniciarNuevaPartida(int dificultad) {
 		Partida.brotes = 0;
 		Partida.Puntuacion = 0;
 		Partida.enfermedades = 0;
 		Partida.ronda = 0;
-		Parametros.establecerParametros();
+		Parametros.establecerParametros(dificultad);
 		Partida.viruses = new ArrayList<Viruses>();
 		Partida.vacunas = new ArrayList<Vacunas>();
 		Partida.ciudades = new ArrayList<Ciudades>();

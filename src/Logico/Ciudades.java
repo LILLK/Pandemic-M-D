@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 import Botones.BotonCiudad;
 import Pandemic.JF_PanelPartida;
+import Pandemic.JF_PanelPartidaPanel2;
 
 //Mehdi Tahrat && David hola
 
@@ -37,7 +38,7 @@ public class Ciudades {
 		this.brote = false;
 		this.colindantes = generarColindantes(this.nombre);
 		this.infeccionRonda = false;
-		this.boton = new BotonCiudad(new JF_PanelPartida() , this.idVirus, this.nombre);
+		this.boton = new BotonCiudad(new JF_PanelPartida(), idVirus, nombre);
 	}
 	////////////////////////////////////
 	////////////// metodos /////////////

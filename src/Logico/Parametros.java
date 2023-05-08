@@ -51,19 +51,19 @@ public class Parametros {
 		//guarda los nuevos datos en el archivo 
 		ArchivosIO.escribirParametros(brotesTotal, infeccionRonda, porcentajeCura, brotesInicio);
 		// y en el programa
-		establecerParametros();
+		establecerParametros(0);
 	}
 	/////////////////////////////////////////////////////////////////////
 	// - establecerParametros
 	// Da valor a las variables usando los datos de Parametros.xml
 	///////////////////////////////////////////////////////////////////////
-	public static void establecerParametros() {
+	public static void establecerParametros(int dificultad) {
 		//extraer los datos a una lista 
 		ArrayList<Integer> parametros = ArchivosIO.leerParametros();
-		Parametros.brotesTotal = parametros.get(0);
-		Parametros.infeccionRonda = parametros.get(1);
-		Parametros.porcentajeCura = parametros.get(2);
-		Parametros.brotesInicio = parametros.get(3);
+		Parametros.brotesTotal = parametros.get(0) - dificultad; 
+		Parametros.infeccionRonda = parametros.get(1) + dificultad ;
+		Parametros.porcentajeCura = parametros.get(2) ;
+		Parametros.brotesInicio = parametros.get(3) + dificultad;
 	}
 
 	////////////////////////////////////

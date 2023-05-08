@@ -13,7 +13,6 @@ public class BotonGuardarPartida extends JLabel {
 	Dimension  screenSize;
 	cambiarImg img;
 	
-	static JF_PanelMenu JF_PanelMenu;
 	
 	public BotonGuardarPartida(JF_PanelPartidaPanel2 panel) {
 		this.screenSize=Toolkit.getDefaultToolkit().getScreenSize();
@@ -47,13 +46,14 @@ public class BotonGuardarPartida extends JLabel {
 				
 			}
 			public void mouseClicked(MouseEvent e) {
-				JF_PanelMenu.irPanelIniciarSesion();
+				
 			}
 			public void mouseReleased(MouseEvent e) {
 				// TODO Apéndice de método generado automáticamente
 				
 			}
 		});
+	
 	
 	}
 	

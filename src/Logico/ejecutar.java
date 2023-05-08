@@ -5,7 +5,6 @@ import Pandemic.JF_Marco;
 public class ejecutar {
 	
 	public static void main(String[] args) {
-		Partida.iniciarNuevaPartida();
 		JF_Marco marco = new JF_Marco();
 	}
 	

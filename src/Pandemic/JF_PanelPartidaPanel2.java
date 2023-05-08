@@ -19,7 +19,8 @@ import Logico.Partida;
 
 public class JF_PanelPartidaPanel2 extends JPanel {
 
-	
+	static JLabel log = new JLabel();
+	JLabel acciones = new JLabel();
 	Dimension screenSize;
 	BotonGuardarPartida BotonGuardarPartida;
 	public JF_PanelPartidaPanel2() {
@@ -38,12 +39,9 @@ public class JF_PanelPartidaPanel2 extends JPanel {
 		this.setOpaque(true);
 		
 		
-		JLabel acciones = new JLabel();
-		JLabel log = new JLabel();
-		BotonGuardarPartida = new BotonGuardarPartida(this);
-
-
-		
+		acciones = new JLabel();
+		log = new JLabel();
+		BotonGuardarPartida = new BotonGuardarPartida(this);	
 
 		acciones.setBounds((this.getWidth()/2)-((this.getWidth()/2)/2),
 				((this.getHeight()/16)),
@@ -63,16 +61,16 @@ public class JF_PanelPartidaPanel2 extends JPanel {
 		log.setVisible(true);
 		log.setBorder(borde);
 		log.setOpaque(true);
-		log.setText("has infectado....se a curado...");
-		
-		
-	
 		
 		add(BotonGuardarPartida);
 		add(acciones);
 		add(log);
 
 
+	}
+	
+	public static void updateLog(String newTexto) {
+		log.setText(newTexto);
 	}
 
 }
