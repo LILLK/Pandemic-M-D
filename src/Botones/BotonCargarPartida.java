@@ -27,9 +27,10 @@ public class BotonCargarPartida extends JLabel {
 
 			public void mousePressed(MouseEvent i) {
 				setIcon(img.tamaño(new ImageIcon("botones/bottonCargarPartida-3.png"), ((int)(screenSize.getWidth()/5)), ((int)(screenSize.getWidth()/20))));
+				
 			}
 			public void mouseClicked(MouseEvent e) {
-				//JF_PanelMenu.irPanelInformacion();
+				JF_PanelMenu.irPanelCargarPartida();
 			}
 			public void mouseReleased(MouseEvent e) {
 				// TODO Apéndice de método generado automáticamente

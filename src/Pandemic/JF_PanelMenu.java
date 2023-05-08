@@ -120,6 +120,12 @@ public class JF_PanelMenu extends JPanel {
 		marcoP.add(new JF_PanelInicioSesion());
 		marcoP.setVisible(true);
 	}
+	public void irPanelCargarPartida() {
+		JFrame marcoP = (JFrame) SwingUtilities.getWindowAncestor(this);
+		marcoP.remove(this);
+		marcoP.add(new JF_PanelCargarPartida());
+		marcoP.setVisible(true);
+	}
 	/*
 	public void irMenu(JPanel JPanel) {
 		JFrame marcoP = (JFrame)SwingUtilities.getWindowAncestor(JPanel);	

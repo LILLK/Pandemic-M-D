@@ -25,8 +25,7 @@ public class ConexionBD {
 	private static final String PWD = "DM123";
 	// Si estáis desde casa, la url será oracle.ilerna.com y no 192.168.3.26
 	private static final String URL = "jdbc:oracle:thin:@192.168.3.26:1521:xe";
-	ArrayList<Ciudades> ciudades;
-	ArrayList<Vacunas> vacunas;
+
 	public ConexionBD() {
 		
 	}
@@ -60,37 +59,22 @@ public class ConexionBD {
 		try {
 			Statement STranking = con.createStatement();
 			ResultSet RSranking = STranking.executeQuery(sql); 	 	
-			System.out.println("hola");
+
 			if (RSranking.isBeforeFirst()) {
 				while (RSranking.next()) {
-					//System.out.println("tupadre");
+
 					int brotes = RSranking.getInt("brotes");
 					int ronda =RSranking.getInt("ronda");
 					int puntuacion=RSranking.getInt("puntuacion");
 					int dificultad = RSranking.getInt("dificultad");
 					String nom_us = RSranking.getString("nom_us");
-					//System.out.println(RSranking.getString("nom_us"));
-					//JF_PanelPuntuaciones jf = new JF_PanelPuntuaciones();
+
 					Rankings ranking = new Rankings(brotes,ronda,puntuacion,dificultad,nom_us);
-					//System.out.println(ranking.brotes+""+ranking.nomb_us);
+
 					JF_PanelPuntuaciones.rankings.add(ranking);
-					System.out.println(ranking.nomb_us);
-					
-					
-/*
-					Struct domicilio = (Struct) rs.getObject("DOMICILIO");
-					Object[] valoresDireccion = domicilio.getAttributes();
-					String calle = (String) valoresDireccion[0];
-					String ciudad = (String) valoresDireccion[1];
-					String pais = (String) valoresDireccion[2];
 
-/*
-					Direccion direccion = new Direccion(calle,ciudad,pais);
-					Persona persona = new Persona(dni, nombre, direccion);*/
 					
-					//NuevaPersona persona = new NuevaPersona(dni, nombre, calle, ciudad, pais);
 
-					//System.out.println("PERSONA ENCONTRADA");
 				}
 				
 				for (Rankings ranking1 : JF_PanelPuntuaciones.rankings) {
@@ -106,39 +90,46 @@ public class ConexionBD {
 			// TODO Auto-generated catch block
 			//System.out.println(e);
 		}
-		/*
+		
+					} 
+	public static void cargarPartidas(Connection con) {
+		String sql ="select p.id_p p.brotes, p.ronda, p.puntuacion,p.dificultad,u.nom_us FROM PARTIDAS P, USUARIOS U WHERE p.jugador = u.id_u AND p.estado LIKE 'I/' ORDER BY p.puntuacion DESC";
+		System.out.println("carg-1");
 		try {
-			Statement st = con.createStatement();
-			ResultSet rs = st.executeQuery(sql); 	 	
+			Statement STranking = con.createStatement();
+			ResultSet RSranking = STranking.executeQuery(sql); 	 	
 
-			if (rs.isBeforeFirst()) {
-				while (rs.next()) {
-					
-					
-					int brotes = rs.getInt("brotes");
-					int ronda =rs.getInt("ronda");
-					int puntuacion=rs.getInt("puntuacion");
-					int dificultad = rs.getInt("dificultad");
-					String nom_us = rs.getString("nom_us");
-					//JF_PanelPuntuaciones jf = new JF_PanelPuntuaciones();
+			if (RSranking.isBeforeFirst()) {
+				while (RSranking.next()) {
+
+					int brotes = RSranking.getInt("brotes");
+					int ronda =RSranking.getInt("ronda");
+					int puntuacion=RSranking.getInt("puntuacion");
+					int dificultad = RSranking.getInt("dificultad");
+					String nom_us = RSranking.getString("nom_us");
+
 					Rankings ranking = new Rankings(brotes,ronda,puntuacion,dificultad,nom_us);
-					System.out.println(brotes+ronda+puntuacion+dificultad+nom_us);
+
 					JF_PanelPuntuaciones.rankings.add(ranking);
 
-/*
-					Struct domicilio = (Struct) rs.getObject("DOMICILIO");
-					Object[] valoresDireccion = domicilio.getAttributes();
-					String calle = (String) valoresDireccion[0];
-					String ciudad = (String) valoresDireccion[1];
-					String pais = (String) valoresDireccion[2];
-
-/*
-					Direccion direccion = new Direccion(calle,ciudad,pais);
-					Persona persona = new Persona(dni, nombre, direccion);*/
 					
-					//NuevaPersona persona = new NuevaPersona(dni, nombre, calle, ciudad, pais);
-					//System.out.println();
-					/*System.out.println("Partu ENCONTRADA-rank");*/
+
+				}
+				
+				for (Rankings ranking1 : JF_PanelPuntuaciones.rankings) {
+					System.out.println(ranking1.brotes+" "+ranking1.dificultad+ranking1.nomb_us);
+				}
+
+		} else {
+			System.out.println("No he encontrado nada");
+		}	
+			
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			//System.out.println(e);
+		}
+		
 					} 
 	
 	public static void cargarPartida(Connection con, int idU,int idP) {

@@ -43,25 +43,89 @@ public class JF_PanelPuntuaciones extends JPanel {
 	private static final String USER = "DAW_PNDC22_23_DAME";
 	private static final String PWD = "DM123";
 	// Si estáis desde casa, la url será oracle.ilerna.com y no 192.168.3.26
-	private static final String URL = "jdbc:oracle:thin:@oracle.ilerna.com:1521:xe";
+	private static final String URL = "jdbc:oracle:thin:@192.168.3.26:1521:xe";
 	public JF_PanelPuntuaciones() {
 		
-		JF_PanelPuntuaciones.rankings = new ArrayList<Rankings>();
+		
 		setLayout(null);
-		ConexionBD ds= new ConexionBD();
-		this.screenSize=Toolkit.getDefaultToolkit().getScreenSize();
+		
+		JScrollPane scroll = new JScrollPane();
 		Connection con = conectarBaseDatos();
 		Color color = new Color(71, 161, 197);
 		Border borde = BorderFactory.createLineBorder(Color.BLACK,6);
 		Border borde1 = BorderFactory.createLineBorder(Color.WHITE,2);
-		//ranking rk = new ranking();
-		ds.cargarRanking(con);
-		JScrollPane scroll = new JScrollPane();
-		scroll.setBounds(100,100,820,450);
-		//scroll.getVerticalScrollBar().setBackground(Color.BLACK);
-		scroll.getVerticalScrollBar().setUI(new BasicScrollBarUI());
-		
+		JF_PanelPuntuaciones.rankings = new ArrayList<Rankings>();
 		JPanel panel = new JPanel();
+		JLabel posicion = new JLabel();
+		JLabel nomUsu = new JLabel();
+		JLabel dificultad = new JLabel();
+		JLabel brotes = new JLabel();
+		JLabel ronda = new JLabel();
+		JLabel puntuacion = new JLabel();
+		
+		
+		this.screenSize=Toolkit.getDefaultToolkit().getScreenSize();
+		ConexionBD.cargarRanking(con);
+		
+		scroll.setBounds((this.screenSize.width/2)-410,100,820,450);
+		scroll.getVerticalScrollBar().setUI(new BasicScrollBarUI());
+		scroll.setViewportView(panel);
+		
+		
+		posicion.setText("Pos.");
+		posicion.setBackground(Color.black);
+		posicion.setForeground(Color.white);
+		posicion.setHorizontalAlignment(SwingConstants.CENTER);
+		posicion.setFont(new Font("Stika Text",Font.BOLD,20) );
+		posicion.setBounds((this.screenSize.width/2)-410,50,80,50);
+		posicion.setOpaque(true);
+		posicion.setVisible(true);
+		
+		nomUsu.setText("Nombre Usuario");
+		nomUsu.setBackground(Color.black);
+		nomUsu.setForeground(Color.white);
+		nomUsu.setHorizontalAlignment(SwingConstants.CENTER);
+		nomUsu.setFont(new Font("Stika Text",Font.BOLD,20) );
+		nomUsu.setBounds(((this.screenSize.width/2)-410)+80,50,240,50);
+		nomUsu.setOpaque(true);
+		nomUsu.setVisible(true);
+		
+		dificultad.setText("Dificultad");
+		dificultad.setBackground(Color.black);
+		dificultad.setForeground(Color.white);
+		dificultad.setHorizontalAlignment(SwingConstants.CENTER);
+		dificultad.setFont(new Font("Stika Text",Font.BOLD,20) );
+		dificultad.setBounds(((this.screenSize.width/2)-410)+320,50,100,50);
+		dificultad.setOpaque(true);
+		dificultad.setVisible(true);
+		
+		brotes.setText("Brotes");
+		brotes.setBackground(Color.black);
+		brotes.setForeground(Color.white);
+		brotes.setHorizontalAlignment(SwingConstants.CENTER);
+		brotes.setFont(new Font("Stika Text",Font.BOLD,20) );
+		brotes.setBounds(((this.screenSize.width/2)-410)+420,50,100,50);
+		brotes.setOpaque(true);
+		brotes.setVisible(true);
+		
+		ronda.setText("Ronda");
+		ronda.setBackground(Color.black);
+		ronda.setForeground(Color.white);
+		ronda.setHorizontalAlignment(SwingConstants.CENTER);
+		ronda.setFont(new Font("Stika Text",Font.BOLD,20) );
+		ronda.setBounds(((this.screenSize.width/2)-410)+520,50,100,50);
+		ronda.setOpaque(true);
+		ronda.setVisible(true);
+		
+		puntuacion.setText("Puntuacion");
+		puntuacion.setBackground(Color.black);
+		puntuacion.setForeground(Color.white);
+		puntuacion.setHorizontalAlignment(SwingConstants.CENTER);
+		puntuacion.setFont(new Font("Stika Text",Font.BOLD,20) );
+		puntuacion.setBounds(((this.screenSize.width/2)-410)+620,50,180,50);
+		puntuacion.setOpaque(true);
+		puntuacion.setVisible(true);
+		
 		panel.setLayout(null);
 		
 		int i =0;
@@ -70,12 +134,7 @@ public class JF_PanelPuntuaciones extends JPanel {
 			label.setBounds(0, 0+(100*i), 800,100 );
 			label.setBackground(color);
 			label.setBorder(borde);
-			/*label.setText(i+"                                    "+
-					ranking.nomb_us+"                            "+
-					ranking.brotes+"                         "+
-					ranking.puntuacion+"                     "+
-					ranking.dificultad+"                    "+
-					ranking.ronda);*/
+
 			JLabel pos = new JLabel();
 			String posS = "<html><center>"+(i+1);
 			pos.setText(posS);
@@ -99,49 +158,49 @@ public class JF_PanelPuntuaciones extends JPanel {
 			nom.setOpaque(true);
 			label.add(nom);
 			//////////////////
-			JLabel dificultad = new JLabel();
+			JLabel dificultadU = new JLabel();
 			String dificultadS ="<html><center>"+ranking.dificultad;
-			dificultad.setText(dificultadS);
-			dificultad.setHorizontalAlignment(SwingConstants.CENTER);
-			dificultad.setBounds(360,32,25,35);
-			dificultad.setFont(new Font("Stika Text",Font.BOLD,32));
-			dificultad.setForeground(Color.white);
-			dificultad.setBackground(Color.BLACK);
-			dificultad.setBorder(borde1);
-			dificultad.setOpaque(true);
-			label.add(dificultad);
+			dificultadU.setText(dificultadS);
+			dificultadU.setHorizontalAlignment(SwingConstants.CENTER);
+			dificultadU.setBounds(365,32,30,35);
+			dificultadU.setFont(new Font("Stika Text",Font.BOLD,32));
+			dificultadU.setForeground(Color.white);
+			dificultadU.setBackground(Color.BLACK);
+			dificultadU.setBorder(borde1);
+			dificultadU.setOpaque(true);
+			label.add(dificultadU);
 			//////////////////
-			JLabel brotes = new JLabel();
+			JLabel brotesU = new JLabel();
 			String brotesS ="<html><center>"+ranking.brotes;
-			brotes.setText(brotesS);
-			brotes.setHorizontalAlignment(SwingConstants.CENTER);
-			brotes.setBounds(420,32,25,35);
-			brotes.setFont(new Font("Stika Text",Font.BOLD,32));
-			brotes.setForeground(Color.white);
-			brotes.setBackground(Color.BLACK);
-			brotes.setBorder(borde1);
-			brotes.setOpaque(true);
-			label.add(brotes);
+			brotesU.setText(brotesS);
+			brotesU.setHorizontalAlignment(SwingConstants.CENTER);
+			brotesU.setBounds(465,32,30,35);
+			brotesU.setFont(new Font("Stika Text",Font.BOLD,32));
+			brotesU.setForeground(Color.white);
+			brotesU.setBackground(Color.BLACK);
+			brotesU.setBorder(borde1);
+			brotesU.setOpaque(true);
+			label.add(brotesU);
 			//////////////////
 			//////////////////
-			JLabel ronda = new JLabel();
+			JLabel rondaU = new JLabel();
 			String rondaS ="<html><center>"+ranking.ronda;
-			ronda.setText(rondaS);
-			ronda.setHorizontalAlignment(SwingConstants.CENTER);
-			ronda.setBounds(480,32,25,35);
-			ronda.setFont(new Font("Stika Text",Font.BOLD,32));
-			ronda.setForeground(Color.white);
-			ronda.setBackground(Color.BLACK);
-			ronda.setBorder(borde1);
-			ronda.setOpaque(true);
-			label.add(ronda);
+			rondaU.setText(rondaS);
+			rondaU.setHorizontalAlignment(SwingConstants.CENTER);
+			rondaU.setBounds(565,32,30,35);
+			rondaU.setFont(new Font("Stika Text",Font.BOLD,32));
+			rondaU.setForeground(Color.white);
+			rondaU.setBackground(Color.BLACK);
+			rondaU.setBorder(borde1);
+			rondaU.setOpaque(true);
+			label.add(rondaU);
 			//////////////////
 			//////////////////
 			JLabel puntos = new JLabel();
 			String puntosS ="<html><center>"+ranking.puntuacion;
 			puntos.setText(puntosS);
 			puntos.setHorizontalAlignment(SwingConstants.CENTER);
-			puntos.setBounds(600,32,100,35);
+			puntos.setBounds(640,32,150,35);
 			puntos.setFont(new Font("Stika Text",Font.BOLD,32));
 			puntos.setForeground(Color.white);
 			puntos.setBackground(Color.BLACK);
@@ -155,11 +214,15 @@ public class JF_PanelPuntuaciones extends JPanel {
 			//p.updateUI();
 			i++;
 		}
+	
 		panel.setPreferredSize(new Dimension(800,100*i));
 		
-		scroll.setViewportView(panel);
-		
-		
+		add(posicion);
+		add(nomUsu);
+		add(dificultad);
+		add(ronda);
+		add(brotes);
+		add(puntuacion);
 		add(scroll);
 		int x = 0; 
 		int y = 0;

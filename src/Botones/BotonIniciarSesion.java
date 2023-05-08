@@ -21,7 +21,7 @@ public class BotonIniciarSesion extends JLabel {
 	private static final String USER = "DAW_PNDC22_23_DAME";
 	private static final String PWD = "DM123";
 	// Si estáis desde casa, la url será oracle.ilerna.com y no 192.168.3.26
-	private static final String URL = "jdbc:oracle:thin:@oracle.ilerna.com:1521:xe";
+	private static final String URL = "jdbc:oracle:thin:@192.168.3.26:1521:xe";
 	
 	public BotonIniciarSesion(JF_PanelInicioSesion JF_PanelInicioSesion) {
 		this.screenSize=Toolkit.getDefaultToolkit().getScreenSize();
