@@ -41,7 +41,7 @@ public class JF_PanelPartida extends JPanel {
 		JLabel mapa = new JLabel();
 		panelLabel1 = new JF_PanelPartidaPanel1();
 		panelVacunas = new JF_PanelPartidaVacunas();
-		//JLabel puntuacion = new JLabel();
+		JLabel puntuacion = new JLabel();
 		panelLabel2 = new JF_PanelPartidaPanel2();
 		
 		mapa.setIcon(img.tamaño(new ImageIcon("imagenes/mapa_2.png"), 1550, 850));
@@ -58,7 +58,6 @@ public class JF_PanelPartida extends JPanel {
 		add(panelLabel1);
 		add(mapa);
 
-		;
 
 	}
 
