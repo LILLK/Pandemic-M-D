@@ -131,7 +131,7 @@ public class JF_PanelCargarPartida extends JPanel {
 			
 			BotonCargar cargar = new BotonCargar(i);
 			cargar.setBounds(0, 0, 100, 100);
-			cargar.setBorder(borde);
+			//cargar.setBorder(borde);
 			label.add(cargar);
 			
 
