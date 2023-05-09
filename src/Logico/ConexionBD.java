@@ -35,12 +35,51 @@ public class ConexionBD {
 	public static void guardarPartida(Connection con, int idU) {
 		
 	}
+	public static void IniciarPartida(Connection con) {
+
+		String sql="INSERT INTO PARTIDAS VALUES(idP_sequ.nextval,"+Jugador.id+",'I', vacunaspartida(";
+		
+		int i=0;
+		for(Vacunas vacuna : Partida.vacunas) {
+			if(i==0) {
+				sql += " vacunas('"+vacuna.color+"',"+vacuna.desarollo+")";
+			}else {
+				sql += ", vacunas('"+vacuna.color+"',"+vacuna.desarollo+")";
+			}
+		}
+		
+		sql+="),"+Partida.brotes+", ciudadespartida(";
+			i =0;
+		for(Ciudades ciudad : Partida.ciudades) {
+			String infeccion = ciudad.brote?"S":"N";
+			if(i==0) {
+				sql += " ciudades('"+ciudad.nombre+"',"+ciudad.idVirus+","+ciudad.nEnfermedades+",'"+infeccion+"')";
+			}else {
+				sql += ", ciudades('"+ciudad.nombre+"',"+ciudad.idVirus+","+ciudad.nEnfermedades+",'"+infeccion+"')";
+			}
+			i++;
+		}
+		
+		sql +="),"+Partida.ronda+","+Partida.Puntuacion+","+Partida.dificultad+")";
+	
+		
+		try {
+			Statement st = con.createStatement();
+			st.execute(sql);
+			
+			System.out.println("Persona registrada correctamente");
+		
+		} catch (SQLException e) {
+			System.out.println(e.getErrorCode());
+			
+		}
+	}
 	public static void cargarRanking(Connection con) {
 		String sql ="select p.brotes, p.ronda, p.puntuacion,p.dificultad,u.nom_us FROM PARTIDAS P, USUARIOS U WHERE p.jugador = u.id_u AND p.estado LIKE 'A' ORDER BY p.puntuacion DESC";
 
 		try {
-			Statement STranking = con.createStatement();
-			ResultSet rs = STranking.executeQuery(sql); 	 	
+			Statement st = con.createStatement();
+			ResultSet rs = st.executeQuery(sql); 	 	
 
 			if (rs.isBeforeFirst()) {
 				while (rs.next()) {
@@ -54,6 +93,8 @@ public class ConexionBD {
 					Rankings ranking = new Rankings(brotes,ronda,puntuacion,dificultad,nom_us);
 
 					JF_PanelPuntuaciones.rankings.add(ranking);
+					
+					
 
 					
 
@@ -67,8 +108,9 @@ public class ConexionBD {
 			// TODO Auto-generated catch block
 			//System.out.println(e);
 		}
+
 		
-					} 
+		} 
 	public static void cargarPartidas(Connection con,int id_J) {
 		String sql ="select p.id_p, p.brotes, p.ronda, p.puntuacion,p.dificultad FROM PARTIDAS P, USUARIOS U WHERE p.jugador = u.id_u AND p.estado LIKE 'I' AND p.jugador ="+ id_J;
 
@@ -105,7 +147,7 @@ public class ConexionBD {
 			//System.out.println(e);
 		}
 		
-					} 
+			} 
 	
 	public static void cargarPartida(Connection con, int idU,int idP) {
 		String sql="SELECT * FROM PARTIDAS P WHERE P.id_p = "+idP+"AND P.jugador = "+idU+";";

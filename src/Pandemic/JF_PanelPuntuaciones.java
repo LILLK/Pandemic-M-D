@@ -227,9 +227,6 @@ public class JF_PanelPuntuaciones extends JPanel {
 		
 		
 		
-		
-		
-		
 		this.Atras = new BotonAtras(this);
 		Atras.setBounds(0,(this.screenSize.height-((screenSize.width/20)-3)),this.screenSize.width,(screenSize.width/25));
 		add(this.Atras);
