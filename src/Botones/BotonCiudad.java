@@ -14,23 +14,23 @@ import Pandemic.*;
 
 public class BotonCiudad extends JLabel {
 
-	public String nombre;
 	public JLabel JLNombreCiudad;
+	public Ciudades ciudad;
 	Dimension screenSize;
 	cambiarImg img;
 
-	public BotonCiudad(JF_PanelPartida JF_PanelPartida, int virusID, String nombre) {
+	public BotonCiudad(JF_PanelPartida JF_PanelPartida,Ciudades ciudad) {
 		Border borde = BorderFactory.createLineBorder(Color.BLACK, 3);
 		int tamañoX = 30;
 		int tamañoY = 20;
-		this.nombre = nombre;
 		this.screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-		this.establecerIcono(virusID, tamañoX, tamañoY);
+		this.establecerIcono(tamañoX, tamañoY);
 		this.setVisible(true);
 		this.setOpaque(false);
+		this.ciudad= ciudad;
 		this.JLNombreCiudad = new JLabel();
 		this.JLNombreCiudad.setVisible(false);
-		this.JLNombreCiudad.setText(nombre);
+		this.JLNombreCiudad.setText(ciudad.nombre);
 		this.JLNombreCiudad.setBorder(borde);
 		this.JLNombreCiudad.setBackground(Color.WHITE);
 		this.JLNombreCiudad.setOpaque(true);
@@ -38,7 +38,7 @@ public class BotonCiudad extends JLabel {
 		addMouseListener((MouseListener) new MouseListener() {
 			public void mouseEntered(MouseEvent e) {
 				JLNombreCiudad.setVisible(true);
-				switch (virusID) {
+				switch (ciudad.idVirus) {
 				case 0:
 					setIcon(img.tamaño(new ImageIcon("botones/ciudad_azul_0_sano_entered.png"), tamañoX, tamañoY));
 					break;
@@ -57,7 +57,7 @@ public class BotonCiudad extends JLabel {
 			}
 			public void mouseExited(MouseEvent a) {
 				JLNombreCiudad.setVisible(false);
-				switch (virusID) {
+				switch (ciudad.idVirus) {
 				case 0:
 					setIcon(img.tamaño(new ImageIcon("botones/ciudad_azul_0_sano.png"), tamañoX, tamañoY));
 					break;
@@ -76,7 +76,7 @@ public class BotonCiudad extends JLabel {
 			}
 			public void mousePressed(MouseEvent i) {}
 			public void mouseClicked(MouseEvent e) {
-				 JF_PanelPartidaPanel2.updateLog(nombre);
+				 JF_PanelPartidaPanel2.updateLog(ciudad.nombre);
 			}
 			public void mouseReleased(MouseEvent e) {}
 		});
@@ -84,9 +84,9 @@ public class BotonCiudad extends JLabel {
 	}
 
 
-	public void establecerIcono(int virusID, int tamañoX, int tamañoY) {
+	public void establecerIcono( int tamañoX, int tamañoY) {
 
-		switch (virusID) {
+		switch (this.ciudad.idVirus) {
 		case 0:
 			setIcon(img.tamaño(new ImageIcon("botones/ciudad_azul_0_sano.png"), tamañoX, tamañoY));
 

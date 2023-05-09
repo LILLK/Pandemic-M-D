@@ -19,7 +19,8 @@ import Logico.Partida;
 
 public class JF_PanelPartida extends JPanel {
 
-	BotonCiudad BotonCiudad;
+	
+	ArrayList<BotonCiudad> btnsCiudades;
 	Dimension screenSize;
 	//Label debajo del mapa
 	JF_PanelPartidaVacunas panelVacunas;
@@ -46,11 +47,15 @@ public class JF_PanelPartida extends JPanel {
 		
 		
 		for (Ciudades ciudad : Partida.ciudades) {
+			BotonCiudad botonC = new BotonCiudad(this);
+		}
+		
+		for (Ciudades ciudad : Partida.ciudades) {
 			ciudad.boton.setBounds(ciudad.posicionX - (tamañoX / 2), ciudad.posicionY - (tamañoY / 2), tamañoX,tamañoY);
 			add(ciudad.boton.JLNombreCiudad);
 		}
 		for (Ciudades ciudad : Partida.ciudades) {
-			ciudad.boton.JLNombreCiudad.setBounds(ciudad.posicionX - (50), ciudad.posicionY + (20), 100, 20);
+			ciudad.boton.JLNombreCiudad.setBounds(ciudad.posicionX - (50), ciudad.posicionY + (20), 100, 20);	
 			add(ciudad.boton);
 		}
 		add(panelLabel2);
