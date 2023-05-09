@@ -16,7 +16,6 @@ public class Ciudades {
 	public ArrayList<String> colindantes;
 	public boolean brote;
 	public int nEnfermedades;
-	public BotonCiudad boton; 
 	
 	
 	
@@ -38,7 +37,6 @@ public class Ciudades {
 		this.brote = false;
 		this.colindantes = generarColindantes(this.nombre);
 		this.infeccionRonda = false;
-		this.boton = new BotonCiudad(new JF_PanelPartida(), idVirus, nombre);
 	}
 	////////////////////////////////////
 	////////////// metodos /////////////

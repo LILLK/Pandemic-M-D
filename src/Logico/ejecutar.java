@@ -6,6 +6,9 @@ public class ejecutar {
 	
 	public static void main(String[] args) {
 		JF_Marco marco = new JF_Marco();
+		boolean a =true;
+	int resultado = a?0:1;
+
 	}
 	
 	

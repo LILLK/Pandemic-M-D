@@ -19,7 +19,7 @@ import Logico.Partida;
 
 public class JF_PanelPartida extends JPanel {
 
-	BotonCiudad BotonCiudad;
+	public static ArrayList<BotonCiudad> botonesCiudad;
 	Dimension screenSize;
 	//Label debajo del mapa
 	JF_PanelPartidaVacunas panelVacunas;
@@ -34,6 +34,8 @@ public class JF_PanelPartida extends JPanel {
 		cambiarImg img = new cambiarImg();
 		screenSize = new Dimension(Toolkit.getDefaultToolkit().getScreenSize());
 		setLayout(null);
+		JF_PanelPartida.botonesCiudad = genrarBotonesCiudad();
+
 
 		// labels//
 		JLabel mapa = new JLabel();
@@ -45,18 +47,24 @@ public class JF_PanelPartida extends JPanel {
 		mapa.setBounds(1, 1, 1550, 850);
 		
 		
-		for (Ciudades ciudad : Partida.ciudades) {
-			ciudad.boton.setBounds(ciudad.posicionX - (tamañoX / 2), ciudad.posicionY - (tamañoY / 2), tamañoX,tamañoY);
-			add(ciudad.boton.JLNombreCiudad);
+		for (BotonCiudad botonCiudad : botonesCiudad) {
+			botonCiudad.JLNombreCiudad.setBounds(botonCiudad.ciudad.posicionX - (50), botonCiudad.ciudad.posicionY + (20), 100, 20);
+			add(botonCiudad.JLNombreCiudad);	
 		}
-		for (Ciudades ciudad : Partida.ciudades) {
-			ciudad.boton.JLNombreCiudad.setBounds(ciudad.posicionX - (50), ciudad.posicionY + (20), 100, 20);
-			add(ciudad.boton);
+		
+		for (BotonCiudad botonCiudad : botonesCiudad) {
+			botonCiudad.setBounds(botonCiudad.ciudad.posicionX - (tamañoX / 2), botonCiudad.ciudad.posicionY - (tamañoY / 2), tamañoX,tamañoY);
+			add(botonCiudad);	
 		}
+		
 		add(panelLabel2);
 		add(panelLabel1);
 		add(panelVacunas);
 		add(mapa);
+		
+		while(!Partida.fin()) {
+			
+		}
 
 	}
 
@@ -75,19 +83,14 @@ public class JF_PanelPartida extends JPanel {
 		}
 
 	}
-
-	public void irPanelRegistrarse() {
-		JFrame marcoP = (JFrame) SwingUtilities.getWindowAncestor(this);
-		marcoP.remove(this);
-		marcoP.add(new JF_PanelRegistrarse());
-		marcoP.setVisible(true);
-	}
-
-	public void irMenu() {
-		JFrame marcoP = (JFrame) SwingUtilities.getWindowAncestor(this);
-		marcoP.remove(this);
-		marcoP.add(new JF_PanelMenu());
-		marcoP.setVisible(true);
+	
+	public ArrayList<BotonCiudad> genrarBotonesCiudad() {
+		ArrayList<BotonCiudad> array = new ArrayList<>();
+		for (Ciudades ciudad : Partida.ciudades) {
+			BotonCiudad btn = new BotonCiudad( this , ciudad);
+			array.add(btn);
+		}
+		return array;
 	}
 
 }

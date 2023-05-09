@@ -5,6 +5,9 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Scanner;
 
+import Botones.BotonCiudad;
+import Pandemic.JF_PanelPartida;
+
 public class Partida {
 	
 	//id de la Partida
@@ -17,6 +20,8 @@ public class Partida {
 	public static int enfermedades;
 	// rondas de la partida
 	public static int ronda;
+	// acciones de la ronda 
+	public static int accionesRonda;
 	//Dificultad de la partida
 	public static int dificultad;
 	// Lista de todas las ciudades con sus atributos
@@ -162,6 +167,7 @@ public class Partida {
 		Partida.ciudades = new ArrayList<Ciudades>();
 		Ciudades.generarCiudades();
 		Viruses.generarVirus();
+		
 	}
 
 	//////////////////////////////////////////////////////////////////////////////////////

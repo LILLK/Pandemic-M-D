@@ -5,9 +5,9 @@ import java.util.ArrayList;
 
 public class Vacunas {
 
-	String nombre;
-	String color;
-	int desarollo;
+	public String nombre;
+	public String color;
+	public int desarollo;
 
 	////////////////////////////////////
 	/////////// constructores //////////

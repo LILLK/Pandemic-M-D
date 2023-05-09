@@ -47,7 +47,6 @@ public class BotonIniciarSesion extends JLabel {
 				}else {
 					JF_PanelInicioSesion.usuContError();
 				}
-				
 			}
 			public void mouseReleased(MouseEvent e) {
 				// TODO Apéndice de método generado automáticamente

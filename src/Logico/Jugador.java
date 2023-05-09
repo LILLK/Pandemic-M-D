@@ -40,7 +40,7 @@ public class Jugador {
 			break;
 		case 2:
 			System.out.println("desarollar");
-			desarollar();
+			desarollar(0);
 			break;
 		}
 	}
@@ -80,17 +80,7 @@ public class Jugador {
 	// -desarollar
 	// aumenta el desarollo de la cura
 	////////////////////////////////////
-	public static void desarollar() {
-		Scanner scn = new Scanner(System.in);
-		int id;
-		do {
-			System.out.println("vacuna a desarollar (0-3): ");
-			id = scn.nextInt();
-			if (Partida.vacunas.get(id).desarollo >= 100) {
-				System.out.println("ya a sido desarollada ");
-			}
-		} while (Partida.vacunas.get(id).desarollo >= 100);
-
+	public static void desarollar(int id) {
 		Partida.vacunas.get(id).desarollo += Parametros.porcentajeCura;
 	}
 
