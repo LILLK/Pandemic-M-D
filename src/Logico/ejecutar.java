@@ -5,10 +5,16 @@ import Pandemic.JF_Marco;
 public class ejecutar {
 	
 	public static void main(String[] args) {
+<<<<<<< HEAD
 		//JF_Marco marco = new JF_Marco();
 		Partida.iniciarNuevaPartida(0);
 		ConexionBD.cargarPartida(ConexionBD.con, 10028, 30035);
 		//Partida.nuevaPartida();
+=======
+		JF_Marco marco = new JF_Marco();
+
+
+>>>>>>> Partida
 	}
 	
 	

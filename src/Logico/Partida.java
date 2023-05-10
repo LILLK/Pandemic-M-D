@@ -6,6 +6,10 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Scanner;
 
+import Botones.BotonCiudad;
+import Pandemic.JF_PanelPartida;
+import Pandemic.JF_PanelPartidaPanel2;
+
 public class Partida {
 	
 	//id de la Partida
@@ -18,6 +22,8 @@ public class Partida {
 	public static int enfermedades;
 	// rondas de la partida
 	public static int ronda;
+	// acciones de la ronda 
+	public static int accionesRonda;
 	//Dificultad de la partida
 	public static int dificultad;
 	// Lista de todas las ciudades con sus atributos
@@ -54,57 +60,26 @@ public class Partida {
 	// -jugarPartida
 	// es dode se ejecuta la partida 
 	////////////////////////////////////////
-	public static void jugarPartida() {
-		
-		
-		updatePartida();
-		//ejecutar.imprimir();
-		
-		
-		while (!fin()) {
-			Partida.ronda++;
-			
-			ronda();
-			
-			if (!fin()) {
-				infectar();
-			}
-			
-			
-			//ejecutar.imprimir();
-			
-			
-			
+	public static void jugarPartida(JF_PanelPartida pPartida) {
+		JF_PanelPartidaPanel2.updateAcciones();
+		if (Partida.accionesRonda<=0) {
+			Partida.accionesRonda=4;
+			JF_PanelPartidaPanel2.updateAcciones();
+			Partida.infectar();
+		}
+		if (Partida.fin()) {
+			pPartida.irMenu();
 		}
 	}
-	//////////////////////////////////////////////////////////////////////////////////////
-	// -ronda
-	// Las acciones del jugador en la ronda
-	/////////////////////////////////////////////////////////////////////////////////////
-	public static void ronda() {
-		Scanner scn = new Scanner(System.in);
-		int intput;
-		System.out.println("Ronda: " + Partida.ronda);
-		for (int i = 1; i < 5; i++) {
-			System.out.println("Acciones restantes: "+(5-i));
-			System.out.println("1 curar - 2 desarollar");
-			intput = scn.nextInt();
-			Jugador.acciones(intput);
-			updatePartida();
-		}
-	}
+	
 	//////////////////////////////////////////////////////////////////////////////////////
 	// -infectar
 	//Las acciones del programa despues de las del jugador 
 	/////////////////////////////////////////////////////////////////////////////////////
 	public static void infectar() {
 		for (int i = 0; i < Parametros.infeccionRonda; i++) {
-			int random = (int) (Math.random() * Partida.ciudades.size());
-			
-			Partida.ciudades.get(random).infectar();
-			
-			
-			System.out.println("se a infectado la ciudad: "+ Partida.ciudades.get(random).nombre);
+			int random = (int) (Math.random() * JF_PanelPartida.botonesCiudad.size());			
+			JF_PanelPartida.botonesCiudad.get(random).ciudad.infectar();
 		}
 		Ciudades.setInfeccionRondaFalse();
 		// esto impide que las ciudades se infecten infinitamente proibiendo infectarse
@@ -140,10 +115,10 @@ public class Partida {
 			System.out.println("llega al numero de brotes necesrio ");
 			return true;
 			// si todas las ciudades han sidio limpiadas
-		} else if (Partida.enfermedades == 0) {
+		} /*else if (Partida.enfermedades == 0) {
 			System.out.println();
 			return true;
-		}
+		}*/
 		// si han sido todas las vacunas descubiertas
 		else if (Vacunas.vacunasDescubiertas()) {
 			return true;
@@ -160,12 +135,14 @@ public class Partida {
 		Partida.Puntuacion = 0;
 		Partida.enfermedades = 0;
 		Partida.ronda = 0;
+		Partida.accionesRonda = 4;
 		Parametros.establecerParametros(dificultad);
 		Partida.viruses = new ArrayList<Viruses>();
 		Partida.vacunas = new ArrayList<Vacunas>();
 		Partida.ciudades = new ArrayList<Ciudades>();
 		Ciudades.generarCiudades();
 		Viruses.generarVirus();
+		
 	}
 
 	//////////////////////////////////////////////////////////////////////////////////////
@@ -233,23 +210,11 @@ public class Partida {
 	/////////////////////////////////////////////////////////////////////////////////////
 	public static void updateEnfermedades() {
 		Partida.enfermedades = 0;
-		for (Ciudades ciudad : Partida.ciudades) {
-			Partida.enfermedades += ciudad.nEnfermedades;
+		for (BotonCiudad btnCiudad : JF_PanelPartida.botonesCiudad) {
+			Partida.enfermedades += btnCiudad.ciudad.nEnfermedades;
 		}
 	}
 
-	//////////////////////////////////////////////////////////////////////////////////////
-	// - updateBrotes
-	// actualiza los brotes en el juego
-	/////////////////////////////////////////////////////////////////////////////////////
-	public static void updateBrotes() {
-		Partida.brotes = 0;
-		for (Ciudades ciudad : Partida.ciudades) {
-			if (ciudad.nEnfermedades == 3) {
-				Partida.brotes++;
-			}
-		}
-	}
 
 	/////////////////////////////////////////////
 	// - updatePuntuacion
@@ -265,6 +230,7 @@ public class Partida {
 	////////////////////////////////////////////
 	public static void updatePartida() {
 		updateEnfermedades();
+		// acabar de hacer puntuacion
 		updatePuntuacion();
 	}
 

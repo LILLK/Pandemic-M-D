@@ -8,7 +8,9 @@ import java.util.ArrayList;
 import javax.swing.*;
 
 import Logico.Ciudades;
+import Logico.Jugador;
 import Logico.Partida;
+import Logico.Vacunas;
 import Pandemic.*;
 
 public class BotonVacunaVerde extends JLabel {
@@ -17,8 +19,8 @@ public class BotonVacunaVerde extends JLabel {
 	cambiarImg img;
 
 
-	public BotonVacunaVerde(JF_PanelPartidaVacunas panel) {
-		
+	public BotonVacunaVerde(JF_PanelPartidaVacunas panel,JF_PanelPartida pPartida) {
+		int idVirus = 2;
 		int tamañoX = 40;
 		int tamañoY = 40;
 		this.screenSize = Toolkit.getDefaultToolkit().getScreenSize();
@@ -36,7 +38,12 @@ public class BotonVacunaVerde extends JLabel {
 
 			public void mousePressed(MouseEvent i) {}
 
-			public void mouseClicked(MouseEvent e) {}
+			public void mouseClicked(MouseEvent e) {
+				Vacunas.desarollar(idVirus);
+				panel.updateBarraVacunaVerde();
+				Partida.jugarPartida(pPartida);
+
+			}
 
 			public void mouseReleased(MouseEvent e) {}
 		});
