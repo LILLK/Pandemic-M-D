@@ -46,7 +46,6 @@ public class BotonCiudad extends JLabel {
 				JLNombreCiudad.setVisible(true);
 				establecerIconoEntered(tamañoX, tamañoY);
 			}
-
 			public void mouseExited(MouseEvent a) {
 				JLNombreCiudad.setVisible(false);
 				establecerIcono(tamañoX, tamañoY);
@@ -54,10 +53,9 @@ public class BotonCiudad extends JLabel {
 			public void mousePressed(MouseEvent i) {
 			}
 			public void mouseClicked(MouseEvent e) {
-				JF_PanelPartidaPanel2.updateLog(BotonCiudad.this.ciudad.nombre);
-				if (BotonCiudad.this.ciudad.brote) {
-					
-				}
+				BotonCiudad.this.ciudad.curar();
+				establecerIcono(tamañoX, tamañoY);
+				Partida.jugarPartida(JF_PanelPartida,BotonCiudad.this);
 			}
 			public void mouseReleased(MouseEvent e) {
 			}

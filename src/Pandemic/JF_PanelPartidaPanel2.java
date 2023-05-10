@@ -19,8 +19,9 @@ import Logico.Partida;
 
 public class JF_PanelPartidaPanel2 extends JPanel {
 
-	static JLabel log = new JLabel();
-	JLabel acciones = new JLabel();
+	static  JLabel log = new JLabel();
+	static String logText ;
+	static JLabel acciones = new JLabel();
 	Dimension screenSize;
 	BotonGuardarPartida BotonGuardarPartida;
 	public JF_PanelPartidaPanel2() {
@@ -61,6 +62,7 @@ public class JF_PanelPartidaPanel2 extends JPanel {
 		log.setVisible(true);
 		log.setBorder(borde);
 		log.setOpaque(true);
+		log.setText(logText=" ");
 		
 		add(BotonGuardarPartida);
 		add(acciones);
@@ -70,7 +72,25 @@ public class JF_PanelPartidaPanel2 extends JPanel {
 	}
 	
 	public static void updateLog(String newTexto) {
-		log.setText(newTexto);
+		String resultado="<p>"+newTexto+"</p>";
+		logText += resultado;
+		log.setText("<html>"+logText+"</html>");
 	}
+	
+	public static void updateAcciones() {
+		acciones.setText("acciones restantes: "+Partida.accionesRonda);
+	}
+	
+	public void update() {
+		updateAcciones();
+		updateLog(" ");
+	}
+	
+	public static void restarAcciones() {
+		Partida.accionesRonda--;
+		acciones.setText("acciones restantes: "+Partida.accionesRonda);
+	}
+	
 
+	
 }

@@ -1,5 +1,8 @@
 package Logico;
+
 import java.util.ArrayList;
+
+import Pandemic.JF_PanelPartidaPanel2;
 
 //Mehdi Tahrat && David hola
 
@@ -11,7 +14,7 @@ public class Vacunas {
 
 	////////////////////////////////////
 	/////////// constructores //////////
-	////////////////////////////////////	
+	////////////////////////////////////
 	public Vacunas(int idVirus) {
 		ArrayList<String> datos = new ArrayList<>();
 		ArchivosIO.leerCCP(datos, null, false);
@@ -31,18 +34,30 @@ public class Vacunas {
 	/////////////////////////////////////
 	///////////// Funciones ////////////
 	////////////////////////////////////
-	
+
 	//////////////////////////////////////////////////////////////////////////////////////
 	// -vacunasDescubiertas
-	// recorre todas las vacunas y devuelve verdaero si todas estan all 100% de desarollo
+	// recorre todas las vacunas y devuelve verdaero si todas estan all 100% de
+	////////////////////////////////////////////////////////////////////////////////////// desarollo
 	/////////////////////////////////////////////////////////////////////////////////////
 	public static boolean vacunasDescubiertas() {
-		boolean aux=true;
+		boolean aux = true;
 		for (Vacunas vacuna : Partida.vacunas) {
-			if (vacuna.desarollo!=100)
-				aux=false;
+			if (vacuna.desarollo != 100)
+				aux = false;
 		}
-		return aux;	
+		return aux;
+	}
+
+	////////////////////////////////////
+	// -desarollar
+	// aumenta el desarollo de la cura
+	////////////////////////////////////
+	public static void desarollar(int id) {
+		Partida.vacunas.get(id).desarollo += Parametros.porcentajeCura;
+		JF_PanelPartidaPanel2.updateLog("se ha desarollado un"+Parametros.porcentajeCura+" la vacuna: "+Partida.vacunas.get(id).color);
+		JF_PanelPartidaPanel2.restarAcciones();
+		
 	}
 	////////////////////////////////////
 	/////////// setters&getters//////////

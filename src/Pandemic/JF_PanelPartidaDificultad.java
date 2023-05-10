@@ -115,6 +115,6 @@ public class JF_PanelPartidaDificultad extends JPanel {
 		JFrame marcoP = (JFrame)SwingUtilities.getWindowAncestor(this);	
 		marcoP.remove(this);
 		marcoP.add(new JF_PanelPartida());
-		marcoP.setVisible(true); 
+		marcoP.setVisible(true);
 	}
 }

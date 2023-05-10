@@ -31,7 +31,7 @@ public class JF_PanelPartidaVacunas extends JPanel {
 	Dimension screenSize;
 	cambiarImg img = new cambiarImg();
 
-	public JF_PanelPartidaVacunas() {
+	public JF_PanelPartidaVacunas(JF_PanelPartida panel) {
 
 		int tamañoX = 40;
 		int tamañoY = 40;
@@ -48,10 +48,10 @@ public class JF_PanelPartidaVacunas extends JPanel {
 		barraVacunaRojo = new JLabel();
 		barraVacunaVerde = new JLabel();
 		barraVacunaAmarillo = new JLabel();
-		botonVacunaAzul = new BotonVacunaAzul(this);
-		botonVacunaVerde = new BotonVacunaVerde(this);
-		botonVacunaRojo = new BotonVacunaRojo(this);
-		botonVacunaAmarillo = new BotonVacunaAmarillo(this);
+		botonVacunaAzul = new BotonVacunaAzul(this,panel );
+		botonVacunaVerde = new BotonVacunaVerde(this,panel);
+		botonVacunaRojo = new BotonVacunaRojo(this,panel);
+		botonVacunaAmarillo = new BotonVacunaAmarillo(this, panel);
 
 		updateBarraVacunaAzul();
 		barraVacunaAzul.setBounds((this.getWidth() / 10), ((this.getHeight() / 5)), ((this.getWidth() / 10) * 2),(tamañoY));

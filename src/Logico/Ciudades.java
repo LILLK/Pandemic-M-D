@@ -2,6 +2,7 @@ package Logico;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Scanner;
 
 import Botones.BotonCiudad;
 import Pandemic.JF_PanelPartida;
@@ -46,24 +47,14 @@ public class Ciudades {
 	////////////////////////////////////
 	public void infectar() {
 		this.infeccionRonda = true;
-		/*
-		 * System.out.println("////////////////////////////////////");
-		 * System.out.println("infecto:  " + this.nombre); for (String string :
-		 * colindantes) { System.out.println("colindante: " + string); }
-		 * System.out.println("////////////////////////////////////");
-		 */
+		JF_PanelPartidaPanel2.updateLog("Se a infectado la ciudad: "+this.nombre);
 		if (this.nEnfermedades < 3) {// si es mas pequeño de 3
 			this.nEnfermedades++;
 			// si tiene 3 enfermedades y no tiene un brote, se generara uno
 		} else if (this.nEnfermedades == 3 && !this.brote) {
+			JF_PanelPartidaPanel2.updateLog("BROTE GENERADO EN: "+this.nombre+"!!!!!!!!!!!");
 			this.brote = true;
 			Partida.brotes++;
-			/*
-			 * System.out.println("////////////////");
-			 * System.out.println("brote en: "+this.nombre);
-			 * System.out.println("////////////////");
-			 */
-
 			// recorremos las ciudades colindantes a esta
 			for (String ciudadColindante : this.colindantes) {
 				// si no a sido infectada en esta ronda
@@ -73,6 +64,7 @@ public class Ciudades {
 			}
 			// si ya tiene brote esta infectara a las colindantes
 		} else if (this.brote) {
+			JF_PanelPartidaPanel2.updateLog("BROTE GENERADO EN: "+this.nombre+"!!!!!!!!!!!");
 			// recorremos las ciudades colindantes a esta
 			for (String ciudadColindante : this.colindantes) {
 				// si no a sido infectada en esta ronda
@@ -81,6 +73,33 @@ public class Ciudades {
 					JF_PanelPartida.botonesCiudad.get(getIdXnombre(ciudadColindante)).ciudad.infectar();
 			}
 		}
+	}
+
+	////////////////////////////////////
+	// -curar
+	// resta 1 enefrmedad a la ciudad elejida
+	////////////////////////////////////
+	public void curar() {
+		if (this.nEnfermedades>=0) {
+			JF_PanelPartidaPanel2.updateLog("no se puede curar la ciudad: "+this.nombre);
+		}
+		else {
+			JF_PanelPartidaPanel2.updateLog("se ha curado la ciudad: "+this.nombre);
+			// si el id de virus de la ciudad es el mismo que la vacuna y la hemos desarollado 
+			if (Partida.vacunas.get(this.idVirus).desarollo >= 100) {
+				// curar ciudad elejida completamente
+				this.nEnfermedades = 0;
+			}else {
+				// sino se restara una enfermedad
+				this.nEnfermedades -= 1;
+			}
+			// si teiene estado de brote se quita
+			if (this.brote)
+				this.setBrote(false);
+			JF_PanelPartidaPanel2.updateLog("brote curado en :"+this.nombre);
+
+		}
+		JF_PanelPartidaPanel2.restarAcciones();
 	}
 
 	/////////////////////////////////////

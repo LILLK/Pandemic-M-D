@@ -24,9 +24,9 @@ public class JF_PanelPartida extends JPanel {
 	//Label debajo del mapa
 	JF_PanelPartidaVacunas panelVacunas;
 	//Label derecha arriba
-	JF_PanelPartidaPanel1 panelLabel1 ;
+	JF_PanelPartidaPanel1 panel1 ;
 	//Label derecha abajo
-	JF_PanelPartidaPanel2 panelLabel2 ;
+	JF_PanelPartidaPanel2 panel2 ;
 
 	public JF_PanelPartida() {
 		int tamañoX = 30;
@@ -39,9 +39,9 @@ public class JF_PanelPartida extends JPanel {
 
 		// labels//
 		JLabel mapa = new JLabel();
-		panelLabel1 = new JF_PanelPartidaPanel1();
-		panelVacunas = new JF_PanelPartidaVacunas();
-		panelLabel2 = new JF_PanelPartidaPanel2();
+		panel1 = new JF_PanelPartidaPanel1();
+		panel2 = new JF_PanelPartidaPanel2();
+		panelVacunas = new JF_PanelPartidaVacunas(this);
 		
 		mapa.setIcon(img.tamaño(new ImageIcon("imagenes/mapa_2.png"), 1550, 850));
 		mapa.setBounds(1, 1, 1550, 850);
@@ -57,22 +57,14 @@ public class JF_PanelPartida extends JPanel {
 			add(botonCiudad);	
 		}
 		
-		add(panelLabel2);
-		add(panelLabel1);
+		add(panel1);
+		add(panel2);
 		add(panelVacunas);
 		add(mapa);
 		
-		while(!Partida.fin()) {
-			Partida.accionesRonda=4;
-			while (Partida.accionesRonda!=0) {
-				
-			}
-		}
+
 
 	}
-
-
-
 	public void paint(Graphics g) {
 		BufferedImage imgFondo;
 		try {
@@ -95,5 +87,12 @@ public class JF_PanelPartida extends JPanel {
 		}
 		return array;
 	}
-
+	
+	
+	public void irMenu() {
+		JFrame marcoP = (JFrame)SwingUtilities.getWindowAncestor(this);	
+		marcoP.remove(this);
+		marcoP.add(new JF_PanelMenu());
+		marcoP.setVisible(true);
+	}
 }
