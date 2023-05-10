@@ -1,8 +1,9 @@
 package Logico;
 import java.sql.Array;
+
 import java.sql.Connection;
 
-
+ 
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -15,9 +16,6 @@ import java.util.Scanner;
 import Pandemic.JF_PanelCargarPartida;
 import Pandemic.JF_PanelPuntuaciones;
 
-//import ConexionBD.NuevaPersona;
-
-//import ConexionBD.NuevaPersona;
 
 public class ConexionBD {
 	
@@ -25,8 +23,8 @@ public class ConexionBD {
 	private static final String USER = "DAW_PNDC22_23_DAME";
 	private static final String PWD = "DM123";
 	// Si estáis desde casa, la url será oracle.ilerna.com y no 192.168.3.26
-	private static final String URL = "jdbc:oracle:thin:@192.168.3.26:1521:xe";
-	public static final Connection con = ConexionBD.conectarBaseDatos();
+	private static final String URL = "jdbc:oracle:thin:@oracle.ilerna.com:1521:xe";
+	public static final Connection con = conectarBaseDatos();
 	
 	public ConexionBD() {
 		
@@ -35,9 +33,9 @@ public class ConexionBD {
 	public static void guardarPartida(Connection con, int idU) {
 		
 	}
-	public static void IniciarPartida(Connection con) {
+	public static void iniciarPartida(Connection con) {
 
-		String sql="INSERT INTO PARTIDAS VALUES(idP_sequ.nextval,"+Jugador.id+",'I', vacunaspartida(";
+		String sql="INSERT INTO PARTIDAS VALUES(idP_sequ.nextval,10028,'I', vacunaspartida(";
 		
 		int i=0;
 		for(Vacunas vacuna : Partida.vacunas) {
@@ -46,6 +44,7 @@ public class ConexionBD {
 			}else {
 				sql += ", vacunas('"+vacuna.color+"',"+vacuna.desarollo+")";
 			}
+			i++;
 		}
 		
 		sql+="),"+Partida.brotes+", ciudadespartida(";
@@ -60,9 +59,9 @@ public class ConexionBD {
 			i++;
 		}
 		
-		sql +="),"+Partida.ronda+","+Partida.Puntuacion+","+Partida.dificultad+")";
+		sql +="),"+Partida.ronda+","+Partida.Puntuacion+","+Partida.dificultad+",0)";
 	
-		
+		System.out.println(sql);
 		try {
 			Statement st = con.createStatement();
 			st.execute(sql);
@@ -70,7 +69,7 @@ public class ConexionBD {
 			System.out.println("Persona registrada correctamente");
 		
 		} catch (SQLException e) {
-			System.out.println(e.getErrorCode());
+			System.out.println(e.getMessage());
 			
 		}
 	}
@@ -150,7 +149,7 @@ public class ConexionBD {
 			} 
 	
 	public static void cargarPartida(Connection con, int idU,int idP) {
-		String sql="SELECT * FROM PARTIDAS P WHERE P.id_p = "+idP+"AND P.jugador = "+idU+";";
+		String sql="SELECT * FROM PARTIDAS P WHERE P.id_p = "+idP+"AND P.jugador = "+idU+"";
 		try {
 			Statement st = con.createStatement();
 			ResultSet rs = st.executeQuery(sql); 	 	
@@ -161,16 +160,20 @@ public class ConexionBD {
 					Partida.idP = rs.getInt("id_P");
 					int idJ = rs.getInt("jugador");
 					String estado = rs.getString("estado");
-					Struct domicilio = (Struct) ((Array) rs.getObject("VacunasPartida")).getArray();
-					Partida.vacunas = (ArrayList<Vacunas>)((Array) ((ResultSet) rs).getObject(4)).getArray();
+					//Struct domicilio = (Struct) ((Array) rs.getObject("Vacunasp")).getArray();
+					vacuna va = new vacuna(rs.getObject(4));
+					System.out.println(va.id+va.nomb_us);
+				  
 					Partida.brotes = rs.getInt("brotes");
-					domicilio = (Struct) ((Array) rs.getObject("CiudadesPartida")).getArray();
-					Partida.ciudades = (ArrayList<Ciudades>) ((Array) ((ResultSet) rs).getObject(49)).getArray();
+					//domicilio = (Struct) ((Array) rs.getObject("Ciudadesp")).getArray();
+					
+					//va =    rs.getObject(6);
 					Partida.ronda = rs.getInt("ronda");
 					Partida.Puntuacion = rs.getInt("puntuacion");
 					Partida.dificultad = rs.getInt("dificultad");
+					int ds = rs.getInt("acciones");
 					
-
+					System.out.println(va.id+va.nomb_us);
 /*
 					Struct domicilio = (Struct) rs.getObject("DOMICILIO");
 					Object[] valoresDireccion = domicilio.getAttributes();
@@ -246,7 +249,6 @@ public class ConexionBD {
 		return existe;
 	
 	}
-	
 	public static Connection conectarBaseDatos() {
 		Connection con = null;
 
@@ -263,8 +265,11 @@ public class ConexionBD {
 		}
 		
 
+		//System.out.println("Conectados a la base de datos");
+
 		return con;
 	}
+
 }
 
 

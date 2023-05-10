@@ -6,6 +6,8 @@ public class ejecutar {
 	
 	public static void main(String[] args) {
 		JF_Marco marco = new JF_Marco();
+		//ConexionBD.cargarPartida(ConexionBD.con, 10028, 30035);
+		//Partida.nuevaPartida();
 	}
 	
 	

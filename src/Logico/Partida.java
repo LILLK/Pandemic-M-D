@@ -121,6 +121,7 @@ public class Partida {
 		// Incicializa las variables necesarias para empezar partida
 		// empieza la partida
 		iniciarNuevaPartida(0);
+		ConexionBD.iniciarPartida(ConexionBD.con);
 		Partida.jugarPartida();
 
 		
