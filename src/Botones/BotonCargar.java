@@ -9,6 +9,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
 import Logico.Partida;
+import Pandemic.JF_PanelCargarPartida;
 import Pandemic.cambiarImg;
 
 public class BotonCargar extends JLabel {
@@ -16,7 +17,7 @@ public class BotonCargar extends JLabel {
 	public int idP;
 	Dimension screenSize = new Dimension(Toolkit.getDefaultToolkit().getScreenSize());
 	
-	public BotonCargar(int idP) {
+	public BotonCargar(int idP, JF_PanelCargarPartida jf_PanelCargarPartida) {
 		
 		this.idP= idP;
 		
@@ -34,7 +35,7 @@ public class BotonCargar extends JLabel {
 				setIcon(cambiarImg.tamaño(new ImageIcon("botones/cargarPartida.png"), 100, 100 ));
 			}
 			public void mouseClicked(MouseEvent e) {
-				Partida.cargarPartida(idP);;
+				jf_PanelCargarPartida.irPanelPartida(BotonCargar.this.idP);
 			}
 			public void mouseReleased(MouseEvent e) {
 				// TODO Apéndice de método generado automáticamente

@@ -97,7 +97,7 @@ public class Partida {
 		// empieza la partida
 		iniciarNuevaPartida(0);
 		ConexionBD.iniciarPartida(ConexionBD.con);
-		Partida.jugarPartida();
+		Partida.jugarPartida(null);
 
 		
 	}
@@ -145,16 +145,7 @@ public class Partida {
 		
 	}
 
-	//////////////////////////////////////////////////////////////////////////////////////
-	// - genrarViruses
-	// rellena la lista de viruses
-	/////////////////////////////////////////////////////////////////////////////////////
-	public static void cargarPartida(int idP) {
-		
-		ConexionBD.cargarPartida(ConexionBD.con, Jugador.id, idP);
-		
-		Partida.jugarPartida();
-	}
+
 
 	//////////////////////////////////////////////////////////////////////////////////////
 	// - genrarViruses

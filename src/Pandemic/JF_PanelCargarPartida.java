@@ -26,6 +26,7 @@ import Botones.BotonAtras;
 import Botones.BotonCargar;
 import Logico.ConexionBD;
 import Logico.Jugador;
+import Logico.Partida;
 import Logico.PartidasGuardadas;
 import Logico.Rankings;
 
@@ -129,7 +130,7 @@ public class JF_PanelCargarPartida extends JPanel {
 			label.setBackground(color);
 			label.setBorder(borde);
 			
-			BotonCargar cargar = new BotonCargar(i);
+			BotonCargar cargar = new BotonCargar(i,this);
 			cargar.setBounds(0, 0, 100, 100);
 			//cargar.setBorder(borde);
 			label.add(cargar);
@@ -223,6 +224,13 @@ public class JF_PanelCargarPartida extends JPanel {
 		JFrame marcoP = (JFrame)SwingUtilities.getWindowAncestor(this);	
 		marcoP.remove(this);
 		marcoP.add(new JF_PanelMenu());
+		marcoP.setVisible(true);
+	}
+	public void irPanelPartida(int idP) {
+		ConexionBD.cargarPartida(ConexionBD.con, Jugador.id, idP);
+		JFrame marcoP = (JFrame)SwingUtilities.getWindowAncestor(this);	
+		marcoP.remove(this);
+		marcoP.add(new JF_PanelPartida());
 		marcoP.setVisible(true);
 	}
 
