@@ -16,7 +16,7 @@ public class Ciudades {
 	public ArrayList<String> colindantes;
 	public boolean brote;
 	public int nEnfermedades;
-	public BotonCiudad boton; 
+	//public BotonCiudad boton; 
 	
 	
 	
@@ -38,7 +38,21 @@ public class Ciudades {
 		this.brote = false;
 		this.colindantes = generarColindantes(this.nombre);
 		this.infeccionRonda = false;
-		this.boton = new BotonCiudad(new JF_PanelPartida(), idVirus, nombre);
+		//this.boton = new BotonCiudad(new JF_PanelPartida(), idVirus, nombre);
+	}
+	public Ciudades(String nombre, int infeccion, int idVirus, boolean brote) {
+		int[]xy = new int[2];
+		xy = posicionxy(nombre);
+		this.nombre = nombre;
+		this.posicionX = xy[0];
+		this.posicionY = xy[1];
+		this.idVirus = idVirus;
+		colindantes = new ArrayList<String>();
+		this.nEnfermedades = infeccion;
+		this.brote = brote;
+		this.colindantes = generarColindantes(this.nombre);
+		this.infeccionRonda = false;
+		//this.boton = new BotonCiudad(new JF_PanelPartida(), idVirus, nombre);
 	}
 	////////////////////////////////////
 	////////////// metodos /////////////
@@ -147,6 +161,22 @@ public class Ciudades {
 
 		}
 
+	}
+	public static int[] posicionxy(String nombreC) {
+		int[] xy = new int[2];
+		ArrayList<String> listaCiudades = ArchivosIO.leerCiudades();
+		// por cada linea se recogen los datos y pasan a ser los constructores de
+		// ciudades
+		for (String lin : listaCiudades) {
+			
+			if(nombreC.equals(lin.split(";")[0])) {
+				xy[0] = Integer.parseInt(lin.split(";")[2].split(",")[0]);
+				xy[1] = Integer.parseInt(lin.split(";")[2].split(",")[1]);
+			}
+		}
+
+		
+		return xy;
 	}
 
 	//////////////////////////////////////////////////////////////////////////////////////

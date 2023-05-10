@@ -6,8 +6,8 @@ import java.util.ArrayList;
 public class Vacunas {
 
 	String nombre;
-	String color;
-	int desarollo;
+	public String color;
+	public int desarollo;
 
 	////////////////////////////////////
 	/////////// constructores //////////
@@ -19,6 +19,14 @@ public class Vacunas {
 		this.nombre = datos.get(idVirus).split(" ")[1];
 		this.color = datos.get(idVirus).split(" ")[2];
 		this.desarollo = 0;
+	}
+	public Vacunas(int idVirus,int desarrollo,String color) {
+		ArrayList<String> datos = new ArrayList<>();
+		ArchivosIO.leerCCP(datos, null, false);
+		// datos = "id nombre color"
+		this.nombre = datos.get(idVirus).split(" ")[1];
+		this.color = color;
+		this.desarollo = desarrollo;
 	}
 
 	////////////////////////////////////

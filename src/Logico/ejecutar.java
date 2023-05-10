@@ -5,8 +5,9 @@ import Pandemic.JF_Marco;
 public class ejecutar {
 	
 	public static void main(String[] args) {
-		JF_Marco marco = new JF_Marco();
-		//ConexionBD.cargarPartida(ConexionBD.con, 10028, 30035);
+		//JF_Marco marco = new JF_Marco();
+		Partida.iniciarNuevaPartida(0);
+		ConexionBD.cargarPartida(ConexionBD.con, 10028, 30035);
 		//Partida.nuevaPartida();
 	}
 	
@@ -20,7 +21,7 @@ public class ejecutar {
 		System.out.println("----------------");
 
 		for (Vacunas string : Partida.vacunas) {
-			System.out.println(string.nombre + " " + string.desarollo + "%"+" "+string.color );
+			//System.out.println(string.nombre + " " + string.desarollo + "%"+" "+string.color );
 		}
 		System.out.println("----------------");
 		

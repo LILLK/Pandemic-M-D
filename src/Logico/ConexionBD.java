@@ -23,7 +23,7 @@ public class ConexionBD {
 	private static final String USER = "DAW_PNDC22_23_DAME";
 	private static final String PWD = "DM123";
 	// Si estáis desde casa, la url será oracle.ilerna.com y no 192.168.3.26
-	private static final String URL = "jdbc:oracle:thin:@oracle.ilerna.com:1521:xe";
+	private static final String URL = "jdbc:oracle:thin:@192.168.3.26:1521:xe";
 	public static final Connection con = conectarBaseDatos();
 	
 	public ConexionBD() {
@@ -160,20 +160,66 @@ public class ConexionBD {
 					Partida.idP = rs.getInt("id_P");
 					int idJ = rs.getInt("jugador");
 					String estado = rs.getString("estado");
-					//Struct domicilio = (Struct) ((Array) rs.getObject("Vacunasp")).getArray();
-					vacuna va = new vacuna(rs.getObject(4));
-					System.out.println(va.id+va.nomb_us);
+					//Array a = rs.getArray("vacunasp");
+			
+					//Object[] vacunas = (Object[]) a.getArray(); 
+					//Struct s = vacunas;
+					Object[] dataV = rs.getObject(4)!=null? (Object[]) ((Array) rs.getObject(4)).getArray() :null;
+					// si nos devuelve datos, mostramos en consola
+					if(dataV!=null){
+					//System.out.println(«quantity resp: «+data.length);
+						
+					int i =0;
+					Partida.vacunas.clear();
+					for(Object tmpV : dataV) {
+					Struct rowV = (Struct) tmpV;
+					Object[] valuesV = rowV.getAttributes();
+					
+					Vacunas vacuna = new Vacunas(i,Integer.parseInt(valuesV[1].toString()), valuesV[0].toString() );
+					
+					Partida.vacunas.add(vacuna);
+					
+						i++;
+					}
+					for(Vacunas va : Partida.vacunas) {
+						System.out.println(va.color+va.desarollo+va.nombre);
+					}
+					System.out.println();
+					//Vacunas[] vacunas1 = (Vacunas[]) vacunas;
 				  
 					Partida.brotes = rs.getInt("brotes");
-					//domicilio = (Struct) ((Array) rs.getObject("Ciudadesp")).getArray();
+					Object[] dataC = rs.getObject(6)!=null? (Object[]) ((Array) rs.getObject(6)).getArray() :null;
+					// si nos devuelve datos, mostramos en consola
+					if(dataC!=null){
+					//System.out.println(«quantity resp: «+data.length);
+						
+					 i =0;
+					Partida.ciudades.clear();
+					boolean brote ;
+					for(Object tmpC : dataC) {
+					Struct rowC = (Struct) tmpC;
+					Object[] valuesC = rowC.getAttributes();
+					if(valuesC[3].toString().equals("S")) {
+						brote=true;
+					}else {
+						brote=false;
+					}
 					
-					//va =    rs.getObject(6);
+					Ciudades ciudad = new Ciudades(valuesC[0].toString(),Integer.parseInt(valuesC[2].toString()),Integer.parseInt(valuesC[1].toString()),brote);
+					
+					Partida.ciudades.add(ciudad);
+					
+						i++;
+					}
+					for(Ciudades c:Partida.ciudades) {
+						System.out.println(c.nombre+c.idVirus+c.nEnfermedades+c.posicionX+c.posicionY);
+					}
 					Partida.ronda = rs.getInt("ronda");
 					Partida.Puntuacion = rs.getInt("puntuacion");
 					Partida.dificultad = rs.getInt("dificultad");
 					int ds = rs.getInt("acciones");
 					
-					System.out.println(va.id+va.nomb_us);
+					
 /*
 					Struct domicilio = (Struct) rs.getObject("DOMICILIO");
 					Object[] valoresDireccion = domicilio.getAttributes();
@@ -189,6 +235,8 @@ public class ConexionBD {
 					System.out.println();
 					System.out.println("Partu ENCONTRADA");
 
+					}
+				}
 				}
 			} else {
 				System.out.println("No he encontrado nada");
