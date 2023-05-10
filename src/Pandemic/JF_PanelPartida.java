@@ -63,7 +63,10 @@ public class JF_PanelPartida extends JPanel {
 		add(mapa);
 		
 		while(!Partida.fin()) {
-			
+			Partida.accionesRonda=4;
+			while (Partida.accionesRonda!=0) {
+				
+			}
 		}
 
 	}

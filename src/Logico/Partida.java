@@ -101,12 +101,10 @@ public class Partida {
 	/////////////////////////////////////////////////////////////////////////////////////
 	public static void infectar() {
 		for (int i = 0; i < Parametros.infeccionRonda; i++) {
-			int random = (int) (Math.random() * Partida.ciudades.size());
+			int random = (int) (Math.random() * JF_PanelPartida.botonesCiudad.size());
 			
-			Partida.ciudades.get(random).infectar();
+			JF_PanelPartida.botonesCiudad.get(random).ciudad.infectar();
 			
-			
-			System.out.println("se a infectado la ciudad: "+ Partida.ciudades.get(random).nombre);
 		}
 		Ciudades.setInfeccionRondaFalse();
 		// esto impide que las ciudades se infecten infinitamente proibiendo infectarse
@@ -161,6 +159,7 @@ public class Partida {
 		Partida.Puntuacion = 0;
 		Partida.enfermedades = 0;
 		Partida.ronda = 0;
+		Partida.accionesRonda = 0;
 		Parametros.establecerParametros(dificultad);
 		Partida.viruses = new ArrayList<Viruses>();
 		Partida.vacunas = new ArrayList<Vacunas>();
@@ -231,23 +230,11 @@ public class Partida {
 	/////////////////////////////////////////////////////////////////////////////////////
 	public static void updateEnfermedades() {
 		Partida.enfermedades = 0;
-		for (Ciudades ciudad : Partida.ciudades) {
-			Partida.enfermedades += ciudad.nEnfermedades;
+		for (BotonCiudad btnCiudad : JF_PanelPartida.botonesCiudad) {
+			Partida.enfermedades += btnCiudad.ciudad.nEnfermedades;
 		}
 	}
 
-	//////////////////////////////////////////////////////////////////////////////////////
-	// - updateBrotes
-	// actualiza los brotes en el juego
-	/////////////////////////////////////////////////////////////////////////////////////
-	public static void updateBrotes() {
-		Partida.brotes = 0;
-		for (Ciudades ciudad : Partida.ciudades) {
-			if (ciudad.nEnfermedades == 3) {
-				Partida.brotes++;
-			}
-		}
-	}
 
 	/////////////////////////////////////////////
 	// - updatePuntuacion
@@ -263,6 +250,7 @@ public class Partida {
 	////////////////////////////////////////////
 	public static void updatePartida() {
 		updateEnfermedades();
+		// acabar de hacer puntuacion
 		updatePuntuacion();
 	}
 
