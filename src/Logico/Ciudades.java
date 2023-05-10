@@ -73,6 +73,8 @@ public class Ciudades {
 					JF_PanelPartida.botonesCiudad.get(getIdXnombre(ciudadColindante)).ciudad.infectar();
 			}
 		}
+		JF_PanelPartida.botonesCiudad.get(getIdXnombre(this.nombre)).establecerIcono(30, 20);;
+		
 	}
 
 	////////////////////////////////////
@@ -80,7 +82,11 @@ public class Ciudades {
 	// resta 1 enefrmedad a la ciudad elejida
 	////////////////////////////////////
 	public void curar() {
-		if (this.nEnfermedades>=0) {
+		JF_PanelPartidaPanel2.updateLog("-----------------");
+		JF_PanelPartidaPanel2.updateLog(nombre);
+		JF_PanelPartidaPanel2.updateLog(brote?"brote":"");
+		JF_PanelPartidaPanel2.updateLog(String.valueOf(nEnfermedades));
+		if (this.nEnfermedades<=0) {
 			JF_PanelPartidaPanel2.updateLog("no se puede curar la ciudad: "+this.nombre);
 		}
 		else {
@@ -94,12 +100,15 @@ public class Ciudades {
 				this.nEnfermedades -= 1;
 			}
 			// si teiene estado de brote se quita
-			if (this.brote)
-				this.setBrote(false);
+			if (this.brote) {
+				this.brote=false;
 			JF_PanelPartidaPanel2.updateLog("brote curado en :"+this.nombre);
+			}
 
 		}
 		JF_PanelPartidaPanel2.restarAcciones();
+		JF_PanelPartidaPanel2.updateLog(String.valueOf(nEnfermedades));
+		JF_PanelPartidaPanel2.updateLog("-----------------");
 	}
 
 	/////////////////////////////////////

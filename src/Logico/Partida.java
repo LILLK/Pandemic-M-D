@@ -57,10 +57,9 @@ public class Partida {
 	// -jugarPartida
 	// es dode se ejecuta la partida 
 	////////////////////////////////////////
-	public static void jugarPartida(JF_PanelPartida pPartida,BotonCiudad btn) {
-		btn.establecerIcono(30, 20);
-		JF_PanelPartidaPanel2.restarAcciones();
-		if (Partida.accionesRonda==0) {
+	public static void jugarPartida(JF_PanelPartida pPartida) {
+		JF_PanelPartidaPanel2.updateAcciones();
+		if (Partida.accionesRonda<=0) {
 			Partida.accionesRonda=4;
 			JF_PanelPartidaPanel2.updateAcciones();
 			Partida.infectar();

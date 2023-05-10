@@ -41,7 +41,7 @@ public class BotonVacunaAzul extends JLabel {
 			public void mouseClicked(MouseEvent e) {
 				Vacunas.desarollar(idVirus);
 				panel.updateBarraVacunaAzul();
-				Partida.jugarPartida(pPartida,null);
+				Partida.jugarPartida(pPartida);
 
 			}
 
