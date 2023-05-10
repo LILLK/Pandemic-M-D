@@ -8,6 +8,8 @@ import java.awt.event.MouseListener;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
+import Logico.ConexionBD;
+import Logico.Jugador;
 import Logico.Partida;
 import Pandemic.JF_PanelCargarPartida;
 import Pandemic.cambiarImg;
@@ -35,7 +37,8 @@ public class BotonCargar extends JLabel {
 				setIcon(cambiarImg.tamaño(new ImageIcon("botones/cargarPartida.png"), 100, 100 ));
 			}
 			public void mouseClicked(MouseEvent e) {
-				jf_PanelCargarPartida.irPanelPartida(BotonCargar.this.idP);
+				ConexionBD.cargarPartida(ConexionBD.con, Jugador.id, idP);
+				jf_PanelCargarPartida.irPanelPartida();
 			}
 			public void mouseReleased(MouseEvent e) {
 				// TODO Apéndice de método generado automáticamente

@@ -6,6 +6,7 @@ import java.awt.event.MouseListener;
 import javax.swing.*;
 import javax.swing.border.Border;
 
+import Logico.ConexionBD;
 import Pandemic.*;
 
 public class BotonGuardarPartida extends JLabel {
@@ -46,7 +47,7 @@ public class BotonGuardarPartida extends JLabel {
 				
 			}
 			public void mouseClicked(MouseEvent e) {
-				
+				ConexionBD.guardarPartida(ConexionBD.con,false);
 			}
 			public void mouseReleased(MouseEvent e) {
 				// TODO Apéndice de método generado automáticamente

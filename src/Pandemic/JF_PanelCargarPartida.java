@@ -226,8 +226,7 @@ public class JF_PanelCargarPartida extends JPanel {
 		marcoP.add(new JF_PanelMenu());
 		marcoP.setVisible(true);
 	}
-	public void irPanelPartida(int idP) {
-		ConexionBD.cargarPartida(ConexionBD.con, Jugador.id, idP);
+	public void irPanelPartida() {
 		JFrame marcoP = (JFrame)SwingUtilities.getWindowAncestor(this);	
 		marcoP.remove(this);
 		marcoP.add(new JF_PanelPartida());

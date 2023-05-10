@@ -142,7 +142,8 @@ public class Partida {
 		Partida.ciudades = new ArrayList<Ciudades>();
 		Ciudades.generarCiudades();
 		Viruses.generarVirus();
-		
+		ConexionBD.iniciarPartida(ConexionBD.con);
+		ConexionBD.idPartida(ConexionBD.con);
 	}
 
 

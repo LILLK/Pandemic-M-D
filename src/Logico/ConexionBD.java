@@ -30,12 +30,69 @@ public class ConexionBD {
 		
 	}
 
-	public static void guardarPartida(Connection con, int idU) {
+	public static void guardarPartida(Connection con,boolean estado) {
 		
+		String estadop = estado?"A":"I";
+		
+		String sql ="UPDATE PARTIDAS SET estado = '"+estadop+"',vacunasp = vacunaspartida(";
+		
+		int i=0;
+		for(Vacunas vacuna : Partida.vacunas) {
+			if(i==0) {
+				sql += " vacunas('"+vacuna.color+"',"+vacuna.desarollo+")";
+			}else {
+				sql += ", vacunas('"+vacuna.color+"',"+vacuna.desarollo+")";
+			}
+			i++;
+		}
+		sql+="), brotes ="+Partida.brotes+", ciudadesp = ciudadespartida(";
+		i =0;
+		for(Ciudades ciudad : Partida.ciudades) {
+			String infeccion = ciudad.brote?"S":"N";
+			if(i==0) {
+				sql += " ciudades('"+ciudad.nombre+"',"+ciudad.idVirus+","+ciudad.nEnfermedades+",'"+infeccion+"')";
+			}else {
+				sql += ", ciudades('"+ciudad.nombre+"',"+ciudad.idVirus+","+ciudad.nEnfermedades+",'"+infeccion+"')";
+			}
+			i++;
+		}
+		sql+="),ronda ="+Partida.ronda+", puntuacion = "+Partida.Puntuacion+", dificultad="+Partida.dificultad+", acciones = "+Partida.accionesRonda+" WHERE id_p ="+Partida.idP+"";
+		try {
+			Statement st = con.createStatement();
+			System.out.println(sql);
+			st.execute(sql);
+			
+			System.out.println("Persona registrada correctamente");
+		
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+			
+		}
+	}
+	public static void idPartida(Connection con) {
+		String sql= "SELECT p.id_p FROM PARTIDAS P WHERE rownum = 1 ORDER BY p.id_p DESC";
+
+		try {
+			Statement st = con.createStatement();
+			ResultSet rs = st.executeQuery(sql); 	 	
+
+			if (rs.isBeforeFirst()) {
+				while (rs.next()) {
+					Partida.idP = rs.getInt(1);
+				}
+		} else {
+			System.out.println("No he encontrado nada");
+		}	
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			//System.out.println(e);
+		}
+
 	}
 	public static void iniciarPartida(Connection con) {
 
-		String sql="INSERT INTO PARTIDAS VALUES(idP_sequ.nextval,10028,'I', vacunaspartida(";
+		String sql="INSERT INTO PARTIDAS VALUES(idP_sequ.nextval,"+Jugador.id+",'I', vacunaspartida(";
 		
 		int i=0;
 		for(Vacunas vacuna : Partida.vacunas) {
