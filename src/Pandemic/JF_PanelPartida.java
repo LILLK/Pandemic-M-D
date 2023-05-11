@@ -65,19 +65,7 @@ public class JF_PanelPartida extends JPanel {
 
 
 	}
-	public void paint(Graphics g) {
-		BufferedImage imgFondo;
-		try {
-			Dimension size = getSize();
-			imgFondo = ImageIO.read(new File("imagenes/white.png"));
-			g.drawImage(imgFondo, 0, 0, size.width, size.height, null);
-			setOpaque(false);
-			super.paint(g);
-		} catch (IOException e) {
-			System.out.print("Error IMGfondo JF_PanelInicio");
-		}
 
-	}
 	
 	public ArrayList<BotonCiudad> genrarBotonesCiudad() {
 		ArrayList<BotonCiudad> array = new ArrayList<>();
