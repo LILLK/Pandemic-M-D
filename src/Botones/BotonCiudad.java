@@ -22,13 +22,14 @@ public class BotonCiudad extends JLabel {
 
 	public Ciudades ciudad;
 	public JLabel JLNombreCiudad;
+	public int tamañoX = 30;
+	public int tamañoY = 20;
 	Dimension screenSize;
 	cambiarImg img;
 
 	public BotonCiudad(JF_PanelPartida JF_PanelPartida, Ciudades ciudad) {
 		Border borde = BorderFactory.createLineBorder(Color.BLACK, 3);
-		int tamañoX = 30;
-		int tamañoY = 20;
+
 		this.screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 		this.ciudad = ciudad;
 		this.establecerIcono(tamañoX, tamañoY);

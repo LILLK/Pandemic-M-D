@@ -29,8 +29,6 @@ public class JF_PanelPartida extends JPanel {
 	JF_PanelPartidaPanel2 panel2 ;
 
 	public JF_PanelPartida() {
-		int tamañoX = 30;
-		int tamañoY = 20;
 		cambiarImg img = new cambiarImg();
 		screenSize = new Dimension(Toolkit.getDefaultToolkit().getScreenSize());
 		setLayout(null);
@@ -53,7 +51,7 @@ public class JF_PanelPartida extends JPanel {
 		}
 		
 		for (BotonCiudad botonCiudad : botonesCiudad) {
-			botonCiudad.setBounds(botonCiudad.ciudad.posicionX - (tamañoX / 2), botonCiudad.ciudad.posicionY - (tamañoY / 2), tamañoX,tamañoY);
+			botonCiudad.setBounds(botonCiudad.ciudad.posicionX - (botonCiudad.tamañoX / 2), botonCiudad.ciudad.posicionY - (botonCiudad.tamañoY / 2), botonCiudad.tamañoX,botonCiudad.tamañoY);
 			add(botonCiudad);	
 		}
 		
