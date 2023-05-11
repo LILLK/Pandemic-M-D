@@ -206,11 +206,11 @@ public class ConexionBD {
 			} 
 	
 	public static void cargarPartida(Connection con, int idU,int idP) {
-		String sql="SELECT * FROM PARTIDAS P WHERE P.id_p = "+idP+"AND P.jugador = "+idU+"";
+		String sql="SELECT * FROM PARTIDAS P WHERE P.id_p = "+idP+" AND P.jugador = "+idU+"";
 		try {
 			Statement st = con.createStatement();
 			ResultSet rs = st.executeQuery(sql); 	 	
-
+			System.out.println(sql);
 			if (rs.isBeforeFirst()) {
 				while (rs.next()) {
 					
@@ -238,10 +238,6 @@ public class ConexionBD {
 					
 						i++;
 					}
-					for(Vacunas va : Partida.vacunas) {
-						System.out.println(va.color+va.desarollo+va.nombre);
-					}
-					System.out.println();
 					//Vacunas[] vacunas1 = (Vacunas[]) vacunas;
 				  
 					Partida.brotes = rs.getInt("brotes");
@@ -267,9 +263,6 @@ public class ConexionBD {
 					Partida.ciudades.add(ciudad);
 					
 						i++;
-					}
-					for(Ciudades c:Partida.ciudades) {
-						System.out.println(c.nombre+c.idVirus+c.nEnfermedades+c.posicionX+c.posicionY);
 					}
 					Partida.ronda = rs.getInt("ronda");
 					Partida.Puntuacion = rs.getInt("puntuacion");
@@ -309,7 +302,7 @@ public class ConexionBD {
 	}
 	public static boolean crearUsuario(Connection con,String nomUsu,String passUsu) {
 		
-		String sql=" BEGIN crearUsuario ('"+nomUsu+"', '"+passUsu+"'); END;";
+		String sql="BEGIN crearUsuario ('"+nomUsu+"', '"+passUsu+"'); END;";
 		boolean usuCorr = true;
 		
 		try {
@@ -319,7 +312,7 @@ public class ConexionBD {
 			System.out.println("Persona registrada correctamente");
 			usuCorr = true;
 		} catch (SQLException e) {
-			System.out.println(e.getErrorCode());
+			System.out.println(e);
 			usuCorr = false;
 		}
 		return usuCorr;

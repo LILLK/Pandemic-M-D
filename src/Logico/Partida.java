@@ -27,11 +27,11 @@ public class Partida {
 	//Dificultad de la partida
 	public static int dificultad;
 	// Lista de todas las ciudades con sus atributos
-	public static ArrayList<Ciudades> ciudades;
+	public static ArrayList<Ciudades> ciudades= new ArrayList<Ciudades>();
 	// Lista de todas las Vacunas con sus atributos
-	public static ArrayList<Vacunas> vacunas;
+	public static ArrayList<Vacunas> vacunas = new ArrayList<Vacunas>();;
 	// Lista de todas las Viruses con sus atributos
-	public static ArrayList<Viruses> viruses;
+	public static ArrayList<Viruses> viruses = new ArrayList<Viruses>();
 	
 
 
@@ -69,6 +69,7 @@ public class Partida {
 		}
 		if (Partida.fin()) {
 			pPartida.irMenu();
+			ConexionBD.guardarPartida(ConexionBD.con, true);
 		}
 	}
 	
@@ -145,8 +146,6 @@ public class Partida {
 		ConexionBD.iniciarPartida(ConexionBD.con);
 		ConexionBD.idPartida(ConexionBD.con);
 	}
-
-
 
 	//////////////////////////////////////////////////////////////////////////////////////
 	// - genrarViruses

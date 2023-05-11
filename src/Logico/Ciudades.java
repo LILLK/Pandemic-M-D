@@ -117,11 +117,12 @@ public class Ciudades {
 			// si teiene estado de brote se quita
 			if (this.brote) {
 				this.brote=false;
-			JF_PanelPartidaPanel2.updateLog("brote curado en :"+this.nombre);
+			JF_PanelPartidaPanel2.updateLog("brote curado en :"+this.nombre);		
+		
 			}
-
+			JF_PanelPartidaPanel2.restarAcciones();
 		}
-		JF_PanelPartidaPanel2.restarAcciones();
+
 		JF_PanelPartidaPanel2.updateLog(String.valueOf(nEnfermedades));
 		JF_PanelPartidaPanel2.updateLog("-----------------");
 	}

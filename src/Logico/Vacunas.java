@@ -2,6 +2,9 @@ package Logico;
 
 import java.util.ArrayList;
 
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
 import Pandemic.JF_PanelPartidaPanel2;
 
 //Mehdi Tahrat && David hola
@@ -51,7 +54,7 @@ public class Vacunas {
 	public static boolean vacunasDescubiertas() {
 		boolean aux = true;
 		for (Vacunas vacuna : Partida.vacunas) {
-			if (vacuna.desarollo != 100)
+			if (vacuna.desarollo < 100)
 				aux = false;
 		}
 		return aux;
@@ -62,9 +65,15 @@ public class Vacunas {
 	// aumenta el desarollo de la cura
 	////////////////////////////////////
 	public static void desarollar(int id) {
-		Partida.vacunas.get(id).desarollo += Parametros.porcentajeCura;
-		JF_PanelPartidaPanel2.updateLog("se ha desarollado un"+Parametros.porcentajeCura+" la vacuna: "+Partida.vacunas.get(id).color);
-		JF_PanelPartidaPanel2.restarAcciones();
+		
+		if(Partida.vacunas.get(id).desarollo >=100) {
+			JOptionPane.showMessageDialog(new JFrame(), "Ya esta desarollado al tope");
+		}else {
+			Partida.vacunas.get(id).desarollo += Parametros.porcentajeCura;
+			JF_PanelPartidaPanel2.updateLog("se ha desarollado un"+Parametros.porcentajeCura+" la vacuna: "+Partida.vacunas.get(id).color);
+			JF_PanelPartidaPanel2.restarAcciones();	
+		}
+		
 		
 	}
 	////////////////////////////////////
