@@ -32,10 +32,9 @@ public class JF_PanelPartidaVacunas extends JPanel {
 	cambiarImg img = new cambiarImg();
 
 	public JF_PanelPartidaVacunas(JF_PanelPartida panel) {
-
+		//tamaño de los componentes de este panel
 		int tamañoX = 40;
 		int tamañoY = 40;
-
 		Color color = new Color(71, 161, 197);
 		Border borde = BorderFactory.createLineBorder(Color.BLACK, 3);
 		screenSize = new Dimension(Toolkit.getDefaultToolkit().getScreenSize());
@@ -54,19 +53,12 @@ public class JF_PanelPartidaVacunas extends JPanel {
 		botonVacunaAmarillo = new BotonVacunaAmarillo(this, panel);
 
 		updateBarraVacunaAzul();
-		barraVacunaAzul.setBounds((this.getWidth() / 10), ((this.getHeight() / 5)), ((this.getWidth() / 10) * 2),(tamañoY));
 		barraVacunaAzul.setOpaque(false);
-		
 		updateBarraVacunaRojo();
-		barraVacunaRojo.setBounds((this.getWidth() / 10), ((this.getHeight() / 5) * 3), ((this.getWidth() / 10) * 2),(tamañoY));
 		barraVacunaRojo.setOpaque(false);
-		
 		updateBarraVacunaVerde();
-		barraVacunaVerde.setBounds((this.getWidth() / 10 * 7), ((this.getHeight() / 5) * 3),((this.getWidth() / 10) * 2), (tamañoY));
 		barraVacunaVerde.setOpaque(false);
-		
 		updateBarraVacunaAmarillo();
-		barraVacunaAmarillo.setBounds((this.getWidth() / 10 * 7), ((this.getHeight() / 5)),	((this.getWidth() / 10) * 2), (tamañoY));
 		barraVacunaAmarillo.setOpaque(false);
 		
 		botonVacunaAzul.setBounds((this.getWidth() / 10 * 3 + 10), ((this.getHeight() / 5)), (tamañoX), (tamañoY));
@@ -74,17 +66,20 @@ public class JF_PanelPartidaVacunas extends JPanel {
 		botonVacunaVerde.setBounds((this.getWidth() / 10 * 7 - 10 - tamañoX), ((this.getHeight() / 5) * 3), (tamañoX),(tamañoY));
 		botonVacunaAmarillo.setBounds((this.getWidth() / 10 * 7 - 10 - tamañoX), ((this.getHeight() / 5)), (tamañoX),(tamañoY));
 
-		this.add(barraVacunaAzul);
-		this.add(barraVacunaRojo);
-		this.add(barraVacunaVerde);
-		this.add(barraVacunaAmarillo);
-		this.add(botonVacunaAzul);
-		this.add(botonVacunaRojo);
-		this.add(botonVacunaVerde);
-		this.add(botonVacunaAmarillo);
+		add(barraVacunaAzul);
+		add(barraVacunaRojo);
+		add(barraVacunaVerde);
+		add(barraVacunaAmarillo);
+		add(botonVacunaAzul);
+		add(botonVacunaRojo);
+		add(botonVacunaVerde);
+		add(botonVacunaAmarillo);
 
 	}
-	
+	///////////////////////////////////
+	//-updateBarraVacuna"color"
+	//Actualiza la imagen de las barras vacuna de cada color
+	///////////////////////////////////
 	public void updateBarraVacunaAzul() {
 		int tamañoX = 40;
 		int tamañoY = 40;
