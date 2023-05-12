@@ -28,14 +28,14 @@ public class BotonCargar extends JLabel {
 
 		addMouseListener(new MouseListener() {	
 			public void mouseEntered(MouseEvent e) {
-				setIcon(cambiarImg.tamaño(new ImageIcon("botones/cargarPartida.png"),100,100 ));
+				setIcon(cambiarImg.tamaño(new ImageIcon("botones/cargarPartida-1.png"),100,100 ));
 			}
 			public void mouseExited(MouseEvent a) {
 				setIcon(cambiarImg.tamaño(new ImageIcon("botones/cargarPartida.png"),100, 100));
 			}
 
 			public void mousePressed(MouseEvent i) {
-				setIcon(cambiarImg.tamaño(new ImageIcon("botones/cargarPartida.png"), 100, 100 ));
+				setIcon(cambiarImg.tamaño(new ImageIcon("botones/cargarPartida-2.png"), 100, 100 ));
 			}
 			public void mouseClicked(MouseEvent e) {
 
