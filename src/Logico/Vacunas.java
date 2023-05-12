@@ -67,14 +67,19 @@ public class Vacunas {
 	public static void desarollar(int id) {
 		
 		if(Partida.vacunas.get(id).desarollo >=100) {
+			JF_PanelPartidaPanel2.updateLog(" ");
+
 			JOptionPane.showMessageDialog(new JFrame(), "Ya esta desarollado al tope!!!");
 		}else {
 			Partida.vacunas.get(id).desarollo += Parametros.porcentajeCura;
-			JF_PanelPartidaPanel2.updateLog("se ha desarollado un"+Parametros.porcentajeCura+" la vacuna: "+Partida.vacunas.get(id).color);
+			JF_PanelPartidaPanel2.updateLog("Se ha desarollado un "+Parametros.porcentajeCura+"% la vacuna: "+Partida.vacunas.get(id).color);
 			JF_PanelPartidaPanel2.restarAcciones();	
+			Partida.Puntuacion+=200;
+			if (Partida.vacunas.get(id).desarollo >=100) {
+				Partida.Puntuacion+=2000;
+			}
 		}
-		
-		
+		JF_PanelPartidaPanel2.updateLog(" ");
 	}
 	////////////////////////////////////
 	/////////// setters&getters//////////

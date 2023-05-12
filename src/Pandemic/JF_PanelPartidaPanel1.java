@@ -62,7 +62,9 @@ public class JF_PanelPartidaPanel1 extends JPanel {
 		ronda.setBorder(borde);
 		ronda.setOpaque(true);
 		ronda.setText("Ronda :" + Partida.ronda);
-
+		
+		
+		
 		add(ronda);
 		add(brotes);
 		add(puntuacion);
@@ -77,5 +79,12 @@ public class JF_PanelPartidaPanel1 extends JPanel {
 	}
 	public static void updateBrotes() {
 		brotes.setText("Brotes: " + Partida.brotes + "/" + Parametros.brotesTotal);
+	}
+	
+	public void irMenu() {
+		JFrame marcoP = (JFrame)SwingUtilities.getWindowAncestor(this);	
+		marcoP.remove(this);
+		marcoP.add(new JF_PanelMenu());
+		marcoP.setVisible(true);
 	}
 }

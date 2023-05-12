@@ -53,12 +53,19 @@ public class JF_PanelPartidaVacunas extends JPanel {
 		botonVacunaAmarillo = new BotonVacunaAmarillo(this, panel);
 
 		updateBarraVacunaAzul();
+		barraVacunaAzul.setBounds((this.getWidth() / 10), ((this.getHeight() / 5)), ((this.getWidth() / 10) * 2),(tamañoY));
 		barraVacunaAzul.setOpaque(false);
+		
 		updateBarraVacunaRojo();
+		barraVacunaRojo.setBounds((this.getWidth() / 10), ((this.getHeight() / 5) * 3), ((this.getWidth() / 10) * 2),(tamañoY));
 		barraVacunaRojo.setOpaque(false);
+		
 		updateBarraVacunaVerde();
+		barraVacunaVerde.setBounds((this.getWidth() / 10 * 7), ((this.getHeight() / 5) * 3),((this.getWidth() / 10) * 2), (tamañoY));
 		barraVacunaVerde.setOpaque(false);
+		
 		updateBarraVacunaAmarillo();
+		barraVacunaAmarillo.setBounds((this.getWidth() / 10 * 7), ((this.getHeight() / 5)),	((this.getWidth() / 10) * 2), (tamañoY));
 		barraVacunaAmarillo.setOpaque(false);
 		
 		botonVacunaAzul.setBounds((this.getWidth() / 10 * 3 + 10), ((this.getHeight() / 5)), (tamañoX), (tamañoY));

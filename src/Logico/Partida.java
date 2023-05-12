@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 import Botones.BotonCiudad;
 import Pandemic.JF_PanelPartida;
+import Pandemic.JF_PanelPartidaPanel1;
 import Pandemic.JF_PanelPartidaPanel2;
 
 public class Partida {
@@ -38,10 +39,12 @@ public class Partida {
 	// es dode se ejecuta la partida 
 	////////////////////////////////////////
 	public static void jugarPartida(JF_PanelPartida pPartida) {
-		JF_PanelPartidaPanel2.updateAcciones();
+		update();
 		if (Partida.accionesRonda<=0) {
 			Partida.accionesRonda=4;
-			JF_PanelPartidaPanel2.updateAcciones();
+			Partida.ronda++;
+			Partida.Puntuacion-=10;
+			update();
 			Partida.infectar();
 		}
 		if (Partida.fin()) {
@@ -121,21 +124,9 @@ public class Partida {
 		ConexionBD.idPartida(ConexionBD.con);
 	}
 
-	//////////////////////////////////////////////////////////////////////////////////////
-	// - genrarViruses
-	// rellena la lista de viruses
-	/////////////////////////////////////////////////////////////////////////////////////
-	public static void guardarPartida() {
 
-	}
 
-	//////////////////////////////////////////////////////////////////////////////////////
-	// - genrarViruses
-	// rellena la lista de viruses
-	/////////////////////////////////////////////////////////////////////////////////////
-	public static void registrarParametros() {
 
-	}
 
 	//////////////////////////////////////////////////////////////////////////////////////
 	// - distanciaEntre2Puntos
@@ -167,6 +158,13 @@ public class Partida {
 
 	public static int enfermedades() {
 		return enfermedades;
+	}
+	
+	public static void update() {
+		JF_PanelPartidaPanel2.updateAcciones();
+		JF_PanelPartidaPanel1.updateBrotes();
+		JF_PanelPartidaPanel1.updateRonda();
+		JF_PanelPartidaPanel1.updatePuntuacion();
 	}
 
 
