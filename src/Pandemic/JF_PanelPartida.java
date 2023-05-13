@@ -20,6 +20,7 @@ import Logico.Partida;
 public class JF_PanelPartida extends JPanel {
 
 	public static ArrayList<BotonCiudad> botonesCiudad;
+	public BotonMostrarNombres btnNombres;
 	Dimension screenSize;
 	//Label debajo del mapa
 	JF_PanelPartidaVacunas panelVacunas;
@@ -27,10 +28,9 @@ public class JF_PanelPartida extends JPanel {
 	JF_PanelPartidaPanel1 panel1 ;
 	//Label derecha abajo
 	JF_PanelPartidaPanel2 panel2 ;
+	
 
 	public JF_PanelPartida() {
-		int tamañoX = 30;
-		int tamañoY = 20;
 		cambiarImg img = new cambiarImg();
 		screenSize = new Dimension(Toolkit.getDefaultToolkit().getScreenSize());
 		setLayout(null);
@@ -39,6 +39,7 @@ public class JF_PanelPartida extends JPanel {
 
 		// labels//
 		JLabel mapa = new JLabel();
+		btnNombres = new BotonMostrarNombres();
 		panel1 = new JF_PanelPartidaPanel1();
 		panel2 = new JF_PanelPartidaPanel2();
 		panelVacunas = new JF_PanelPartidaVacunas(this);
@@ -47,16 +48,17 @@ public class JF_PanelPartida extends JPanel {
 		mapa.setBounds(1, 1, 1550, 850);
 		
 		
+		
 		for (BotonCiudad botonCiudad : botonesCiudad) {
 			botonCiudad.JLNombreCiudad.setBounds(botonCiudad.ciudad.posicionX - (50), botonCiudad.ciudad.posicionY + (20), 100, 20);
 			add(botonCiudad.JLNombreCiudad);	
 		}
 		
 		for (BotonCiudad botonCiudad : botonesCiudad) {
-			botonCiudad.setBounds(botonCiudad.ciudad.posicionX - (tamañoX / 2), botonCiudad.ciudad.posicionY - (tamañoY / 2), tamañoX,tamañoY);
+			botonCiudad.setBounds(botonCiudad.ciudad.posicionX - (botonCiudad.tamañoX / 2), botonCiudad.ciudad.posicionY - (botonCiudad.tamañoY / 2), botonCiudad.tamañoX,botonCiudad.tamañoY);
 			add(botonCiudad);	
 		}
-		
+		add(btnNombres);
 		add(panel1);
 		add(panel2);
 		add(panelVacunas);
@@ -77,10 +79,19 @@ public class JF_PanelPartida extends JPanel {
 	}
 	
 	
-	public void irMenu() {
+	public void acabarParida(int estado) {
 		JFrame marcoP = (JFrame)SwingUtilities.getWindowAncestor(this);	
 		marcoP.remove(this);
-		marcoP.add(new JF_PanelMenu());
+		switch (estado) {
+			case 1:
+				JOptionPane.showMessageDialog(new JFrame(), "Victoria!"+"\n Puntuacion :"+Partida.Puntuacion+"\n Rondas :"+Partida.ronda);
+				marcoP.add(new JF_PanelMenu());
+				break;
+			case 2:
+				JOptionPane.showMessageDialog(new JFrame(), "Derota!"+"\n Puntuacion :"+Partida.Puntuacion+"\n Rondas :"+Partida.ronda);
+				marcoP.add(new JF_PanelMenu());
+				break;
+		}
 		marcoP.setVisible(true);
 	}
 }

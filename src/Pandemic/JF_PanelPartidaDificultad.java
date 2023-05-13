@@ -24,6 +24,8 @@ public class JF_PanelPartidaDificultad extends JPanel {
 
 	Dimension screenSize;
 	int dificultad;
+	BotonAtras Atras;
+
 
 	public JF_PanelPartidaDificultad() {
 		cambiarImg img = new cambiarImg();
@@ -33,6 +35,8 @@ public class JF_PanelPartidaDificultad extends JPanel {
 		JLabel normal = new JLabel();
 		JLabel facil = new JLabel();
 		JLabel dificil = new JLabel();
+		Atras = new BotonAtras(this);
+
 
 		normal.setBounds(((this.screenSize.width/2)-(this.screenSize.width/10)),(this.screenSize.height/6),(this.screenSize.width/5),(this.screenSize.width/20));
 		normal.setIcon(img.tamaño(new ImageIcon("botones/BottonDif_normal-1.png"), ((int)(screenSize.getWidth()/5)), ((int)(screenSize.getWidth()/20))));
@@ -91,6 +95,9 @@ public class JF_PanelPartidaDificultad extends JPanel {
 			public void mouseReleased(MouseEvent e) {}
 		});
 		
+		Atras.setBounds(0,(this.screenSize.height-((screenSize.width/20)-3)),this.screenSize.width,(screenSize.width/25));
+		
+		add(this.Atras);
 		add(dificil);
 		add(facil);
 		add(normal);
@@ -115,6 +122,13 @@ public class JF_PanelPartidaDificultad extends JPanel {
 		JFrame marcoP = (JFrame)SwingUtilities.getWindowAncestor(this);	
 		marcoP.remove(this);
 		marcoP.add(new JF_PanelPartida());
+		marcoP.setVisible(true);
+	}
+	
+	public void irMenu() {
+		JFrame marcoP = (JFrame)SwingUtilities.getWindowAncestor(this);	
+		marcoP.remove(this);
+		marcoP.add(new JF_PanelMenu());
 		marcoP.setVisible(true);
 	}
 }

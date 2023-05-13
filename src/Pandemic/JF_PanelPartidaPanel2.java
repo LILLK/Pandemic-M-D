@@ -17,6 +17,7 @@ import javax.swing.plaf.basic.BasicScrollBarUI;
 import Botones.*;
 import Logico.Ciudades;
 import Logico.Partida;
+import oracle.security.o3logon.a;
 
 public class JF_PanelPartidaPanel2 extends JPanel {
 
@@ -29,16 +30,13 @@ public class JF_PanelPartidaPanel2 extends JPanel {
 	
 	public JF_PanelPartidaPanel2() {
 
-		int tamañoX = 40;
-		int tamañoY = 40;
-		numPanelAcciones =0;
-		
-		cambiarImg img = new cambiarImg();
+
+
 		Color color = new Color(71, 161, 197);
 		Border borde = BorderFactory.createLineBorder(Color.BLACK, 3);
 		screenSize = new Dimension(Toolkit.getDefaultToolkit().getScreenSize());
 		setLayout(null);
-		this.setBounds(1551, this.screenSize.height / 2 + 1, (this.screenSize.width - 1550),(this.screenSize.height / 2) - 23);
+		this.setBounds(1551, this.screenSize.height / 2 + 1, (this.screenSize.width - 1550), (this.screenSize.height / 2) - 23);
 		this.setBackground(color);
 		this.setBorder(borde);
 		this.setOpaque(true);
@@ -48,24 +46,14 @@ public class JF_PanelPartidaPanel2 extends JPanel {
 		log = new JPanel();
 		BotonGuardarPartida = new BotonGuardarPartida(this);	
 
-		acciones.setBounds((this.getWidth()/2)-((this.getWidth()/2)/2),
-				((this.getHeight()/16)),
-				this.getWidth()/2,
-				this.getHeight()/15);
+		acciones.setBounds((this.getWidth()/2)-((this.getWidth()/2)/2), ((this.getHeight()/16)), this.getWidth()/2, this.getHeight()/15);
 		acciones.setBackground(Color.orange);
 		acciones.setVisible(true);
 		acciones.setBorder(borde);
 		acciones.setOpaque(true);
 		acciones.setText("acciones restantes: "+Partida.accionesRonda);
 		
-		scroll.setBounds(0,((this.getHeight()/16)*2),	this.getWidth(),this.getHeight()/2);
-		scroll.getVerticalScrollBar().setUI(new BasicScrollBarUI());
-		scroll.setViewportView(log);
-		
-		log.setBounds((this.getWidth()/2)-((this.getWidth()/2)/2),
-				0,
-				this.getWidth(),
-				this.getHeight());
+		log.setBounds((this.getWidth()/2)-((this.getWidth()/2)/2), ((this.getHeight()/16)*2), this.getWidth()/2, this.getHeight()/2);
 		log.setBackground(Color.WHITE);
 		log.setVisible(true);
 		log.setBorder(borde);
@@ -79,7 +67,6 @@ public class JF_PanelPartidaPanel2 extends JPanel {
 
 
 	}
-	
 	public static void updateLog(String newTexto) {
 
 		//log.setText("<html>"+logText+"</html>");
@@ -101,16 +88,11 @@ public class JF_PanelPartidaPanel2 extends JPanel {
 		acciones.setText("acciones restantes: "+Partida.accionesRonda);
 	}
 	
-	public void update() {
-		updateAcciones();
-		updateLog(" ");
-	}
-	
 	public static void restarAcciones() {
 		Partida.accionesRonda--;
 		acciones.setText("acciones restantes: "+Partida.accionesRonda);
 	}
 	
-
+	
 	
 }

@@ -11,13 +11,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 
-import Pandemic.JF_PanelAutores;
-import Pandemic.JF_PanelCargarPartida;
-import Pandemic.JF_PanelInfo;
-import Pandemic.JF_PanelMenu;
-import Pandemic.JF_PanelPuntuaciones;
-import Pandemic.JF_PanelVersion;
-import Pandemic.cambiarImg;
+import Logico.ConexionBD;
+import Pandemic.*;
 
 
 	public class BotonAtras extends JLabel {
@@ -174,5 +169,40 @@ import Pandemic.cambiarImg;
 			});
 		}
 		
+		public BotonAtras(JF_PanelPartidaDificultad panel) {
+			this.screenSize=Toolkit.getDefaultToolkit().getScreenSize();
+			
+
+			setIcon(img.tamaño(new ImageIcon("botones/bottonAtras-1.png"), screenSize.width, (screenSize.width/30)) );
+			
+			addMouseListener(new MouseListener() {	
+				public void mouseEntered(MouseEvent e) {
+					setIcon(img.tamaño(new ImageIcon("botones/bottonAtras-2.png"), screenSize.width, (screenSize.width/30)) );
+				}
+				public void mouseExited(MouseEvent a) {
+					setIcon(img.tamaño(new ImageIcon("botones/bottonAtras-1.png"), screenSize.width, (screenSize.width/30)) );
+				}
+
+				public void mousePressed(MouseEvent i) {
+					setIcon(img.tamaño(new ImageIcon("botones/bottonAtras-3.png"), screenSize.width, (screenSize.width/30)) );
+				}
+				public void mouseClicked(MouseEvent e) {
+					
+					panel.irMenu();
+				}
+				public void mouseReleased(MouseEvent e) {
+					// TODO Apéndice de método generado automáticamente
+					
+				}
+			});
+		
+			
+		}
+
+
+		
+		
+
+
 	}
 

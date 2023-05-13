@@ -17,18 +17,16 @@ import Botones.*;
 import Logico.Ciudades;
 import Logico.Parametros;
 import Logico.Partida;
+import oracle.security.o3logon.a;
 
 public class JF_PanelPartidaPanel1 extends JPanel {
 
-	JLabel puntuacion;
-	JLabel brotes;
-	JLabel ronda;
+	static JLabel puntuacion;
+	static JLabel brotes;
+	static JLabel ronda;
 	Dimension screenSize;
 
 	public JF_PanelPartidaPanel1() {
-
-		int tamañoX = 40;
-		int tamañoY = 40;
 
 		cambiarImg img = new cambiarImg();
 		Color color = new Color(71, 161, 197);
@@ -43,46 +41,50 @@ public class JF_PanelPartidaPanel1 extends JPanel {
 		puntuacion = new JLabel();
 		brotes = new JLabel();
 		ronda = new JLabel();
-		
 
-		puntuacion.setBounds((this.getWidth()/2)-((this.getWidth()/2)/2),
-				((this.getHeight()/12)*4),
-				this.getWidth()/2,
-				this.getHeight()/15);
+		puntuacion.setBounds((this.getWidth() / 2) - ((this.getWidth() / 2) / 2), ((this.getHeight() / 12) * 4), this.getWidth() / 2, this.getHeight() / 15);
 		puntuacion.setBackground(Color.orange);
 		puntuacion.setVisible(true);
 		puntuacion.setBorder(borde);
 		puntuacion.setOpaque(true);
-		puntuacion.setText("la puntuacion es de: "+Partida.Puntuacion);
-		
-		
-		
-		brotes.setBounds((this.getWidth()/2)-((this.getWidth()/2)/2),
-				((this.getHeight()/12)*6),
-				this.getWidth()/2,
-				this.getHeight()/15);
+		puntuacion.setText("la puntuacion es de: " + Partida.Puntuacion);
+
+		brotes.setBounds((this.getWidth() / 2) - ((this.getWidth() / 2) / 2), ((this.getHeight() / 12) * 6), this.getWidth() / 2, this.getHeight() / 15);
 		brotes.setBackground(Color.orange);
 		brotes.setVisible(true);
 		brotes.setBorder(borde);
 		brotes.setOpaque(true);
-		brotes.setText("Brotes: "+Partida.brotes+"/"+Parametros.brotesTotal);
-		
-		ronda.setBounds((this.getWidth()/2)-((this.getWidth()/2)/2),
-				((this.getHeight()/12)*8),
-				this.getWidth()/2,
-				this.getHeight()/15);
+		brotes.setText("Brotes: " + Partida.brotes + "/" + Parametros.brotesTotal);
+
+		ronda.setBounds((this.getWidth() / 2) - ((this.getWidth() / 2) / 2), ((this.getHeight() / 12) * 8), this.getWidth() / 2, this.getHeight() / 15);
 		ronda.setBackground(Color.orange);
 		ronda.setVisible(true);
 		ronda.setBorder(borde);
 		ronda.setOpaque(true);
 		ronda.setText("Ronda :" + Partida.ronda);
-
+		
+		
 		
 		add(ronda);
 		add(brotes);
 		add(puntuacion);
-	
-		
 	}
-
+	
+	
+	public static void updatePuntuacion() {
+		puntuacion.setText("la puntuacion es de: " + Partida.Puntuacion);
+	}
+	public static void updateRonda() {
+		ronda.setText("Ronda :" + Partida.ronda);
+	}
+	public static void updateBrotes() {
+		brotes.setText("Brotes: " + Partida.brotes + "/" + Parametros.brotesTotal);
+	}
+	
+	public void irMenu() {
+		JFrame marcoP = (JFrame)SwingUtilities.getWindowAncestor(this);	
+		marcoP.remove(this);
+		marcoP.add(new JF_PanelMenu());
+		marcoP.setVisible(true);
+	}
 }

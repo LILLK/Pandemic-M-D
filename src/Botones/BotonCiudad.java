@@ -22,13 +22,13 @@ public class BotonCiudad extends JLabel {
 
 	public Ciudades ciudad;
 	public JLabel JLNombreCiudad;
+	public int tamañoX = 45;
+	public int tamañoY = 30;
 	Dimension screenSize;
 	cambiarImg img;
 
 	public BotonCiudad(JF_PanelPartida JF_PanelPartida, Ciudades ciudad) {
 		Border borde = BorderFactory.createLineBorder(Color.BLACK, 3);
-		int tamañoX = 30;
-		int tamañoY = 20;
 		this.screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 		this.ciudad = ciudad;
 		this.establecerIcono(tamañoX, tamañoY);
@@ -40,6 +40,7 @@ public class BotonCiudad extends JLabel {
 		this.JLNombreCiudad.setBorder(borde);
 		this.JLNombreCiudad.setBackground(Color.WHITE);
 		this.JLNombreCiudad.setOpaque(true);
+
 
 		addMouseListener((MouseListener) new MouseListener() {
 			public void mouseEntered(MouseEvent e) {
@@ -248,5 +249,13 @@ public class BotonCiudad extends JLabel {
 		}
 
 	}
-
+	public static void mostrarNombres() {
+		for (BotonCiudad boton : JF_PanelPartida.botonesCiudad) 
+			boton.JLNombreCiudad.setVisible(true);
+	}
+	
+	public static void ocultarNombres() {
+		for (BotonCiudad boton : JF_PanelPartida.botonesCiudad) 
+			boton.JLNombreCiudad.setVisible(false);
+	}
 }
