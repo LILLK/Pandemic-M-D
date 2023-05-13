@@ -112,7 +112,7 @@ public class JF_PanelPartidaDificultad extends JPanel {
 			setOpaque(false);
 			super.paint(g);
 		} catch (IOException e) {
-			System.out.print("Error IMGfondo JF_PanelInicio");
+			System.out.print("Error IMGfondo JF_PanelPartidaDificultad");
 		}
 
 	}
@@ -121,8 +121,12 @@ public class JF_PanelPartidaDificultad extends JPanel {
 		Partida.iniciarNuevaPartida(dificultad);
 		JFrame marcoP = (JFrame)SwingUtilities.getWindowAncestor(this);	
 		marcoP.remove(this);
-		marcoP.add(new JF_PanelPartida());
-		marcoP.setVisible(true);
+		if (screenSize.width<1920 && screenSize.height < 1080) {
+			JOptionPane.showMessageDialog(new JFrame(), "No se puede jugar con una resulucion menor a 1920x1080");
+			marcoP.add(new JF_PanelMenu());
+		}else {
+			marcoP.add(new JF_PanelPartida());
+		}		marcoP.setVisible(true);
 	}
 	
 	public void irMenu() {

@@ -18,11 +18,11 @@ public class BotonGuardarPartida extends JLabel {
 	public BotonGuardarPartida(JF_PanelPartidaPanel2 panel) {
 		this.screenSize=Toolkit.getDefaultToolkit().getScreenSize();
 		Border borde = BorderFactory.createLineBorder(Color.BLACK, 3);
-		this.setBounds((panel.getWidth()/2)-((panel.getWidth()/2)/2),
+		this.setBounds((panel.getWidth()/2)-((panel.getWidth()-50)/2),
 				((panel.getHeight()/16)*14),
-				panel.getWidth()/2,
-				panel.getHeight()/15);
-		setIcon(img.tamaño(new ImageIcon("botones/guardar_partida.png"),panel.getWidth()/2, panel.getHeight()/15));
+				panel.getWidth()-50,
+				panel.getHeight()/10);
+		setIcon(img.tamaño(new ImageIcon("botones/guardar_partida.png"),panel.getWidth()-50, panel.getHeight()/10));
 		this.setBackground(Color.WHITE);
 		this.setVisible(true);
 		this.setBorder(borde);
@@ -35,11 +35,11 @@ public class BotonGuardarPartida extends JLabel {
 		
 		addMouseListener((MouseListener) new MouseListener() {	
 			public void mouseEntered(MouseEvent e) {
-				setIcon(img.tamaño(new ImageIcon("botones/guardar_partida_entered.png"),panel.getWidth()/2, panel.getHeight()/15));
+				setIcon(img.tamaño(new ImageIcon("botones/guardar_partida_entered.png"),panel.getWidth()-50, panel.getHeight()/10));
 
 			}
 			public void mouseExited(MouseEvent a) {
-				setIcon(img.tamaño(new ImageIcon("botones/guardar_partida.png"),panel.getWidth()/2, panel.getHeight()/15));
+				setIcon(img.tamaño(new ImageIcon("botones/guardar_partida.png"),panel.getWidth()-50, panel.getHeight()/10));
 
 			}
 

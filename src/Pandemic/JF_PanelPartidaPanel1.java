@@ -29,37 +29,40 @@ public class JF_PanelPartidaPanel1 extends JPanel {
 	public JF_PanelPartidaPanel1() {
 
 		cambiarImg img = new cambiarImg();
-		Color color = new Color(71, 161, 197);
 		Border borde = BorderFactory.createLineBorder(Color.BLACK, 3);
 		screenSize = new Dimension(Toolkit.getDefaultToolkit().getScreenSize());
 		setLayout(null);
 		this.setBounds(1551, 1, (this.screenSize.width - 1550), this.screenSize.height / 2);
-		this.setBackground(color);
-		this.setBorder(borde);
 		this.setOpaque(true);
 
 		puntuacion = new JLabel();
 		brotes = new JLabel();
 		ronda = new JLabel();
 
-		puntuacion.setBounds((this.getWidth() / 2) - ((this.getWidth() / 2) / 2), ((this.getHeight() / 12) * 4), this.getWidth() / 2, this.getHeight() / 15);
+		puntuacion.setBounds((this.getWidth() / 10) *1, ((this.getHeight() / 12) * 3), (this.getWidth() / 10) *8, this.getHeight() / 7);
 		puntuacion.setBackground(Color.orange);
 		puntuacion.setVisible(true);
 		puntuacion.setBorder(borde);
 		puntuacion.setOpaque(true);
+		puntuacion.setHorizontalAlignment(SwingConstants.CENTER);
+		puntuacion.setFont(new Font("Stika Text",Font.BOLD,21) );
 		puntuacion.setText("la puntuacion es de: " + Partida.Puntuacion);
 
-		brotes.setBounds((this.getWidth() / 2) - ((this.getWidth() / 2) / 2), ((this.getHeight() / 12) * 6), this.getWidth() / 2, this.getHeight() / 15);
+		brotes.setBounds((this.getWidth() / 10) *1, ((this.getHeight() / 12) * 5), (this.getWidth() / 10) *8, this.getHeight() / 7);
 		brotes.setBackground(Color.orange);
 		brotes.setVisible(true);
 		brotes.setBorder(borde);
+		brotes.setHorizontalAlignment(SwingConstants.CENTER);
+		brotes.setFont(new Font("Stika Text",Font.BOLD,23) );
 		brotes.setOpaque(true);
 		brotes.setText("Brotes: " + Partida.brotes + "/" + Parametros.brotesTotal);
 
-		ronda.setBounds((this.getWidth() / 2) - ((this.getWidth() / 2) / 2), ((this.getHeight() / 12) * 8), this.getWidth() / 2, this.getHeight() / 15);
+		ronda.setBounds((this.getWidth() / 10) *1, ((this.getHeight() / 12) * 7),  (this.getWidth() / 10) *8, this.getHeight() / 7);
 		ronda.setBackground(Color.orange);
 		ronda.setVisible(true);
 		ronda.setBorder(borde);
+		ronda.setHorizontalAlignment(SwingConstants.CENTER);
+		ronda.setFont(new Font("Stika Text",Font.BOLD,23) );
 		ronda.setOpaque(true);
 		ronda.setText("Ronda :" + Partida.ronda);
 		
@@ -70,6 +73,19 @@ public class JF_PanelPartidaPanel1 extends JPanel {
 		add(puntuacion);
 	}
 	
+	
+	public void paint(Graphics g) {
+		BufferedImage imgFondo;
+		try {
+			Dimension size =getSize();
+			imgFondo = ImageIO.read(new File("imagenes/fondo_2.png"));
+			g.drawImage(imgFondo, 0, 0, size.width, size.height,null);
+			setOpaque(false);
+			super.paint(g);
+		} catch (IOException e) {
+			System.out.print("Error IMGfondo JF_PanelPartidaPanel1");
+		}
+	} 
 	
 	public static void updatePuntuacion() {
 		puntuacion.setText("la puntuacion es de: " + Partida.Puntuacion);

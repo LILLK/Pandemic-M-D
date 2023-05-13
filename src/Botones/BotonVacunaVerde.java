@@ -21,19 +21,19 @@ public class BotonVacunaVerde extends JLabel {
 
 	public BotonVacunaVerde(JF_PanelPartidaVacunas panel,JF_PanelPartida pPartida) {
 		int idVirus = 2;
-		int tamañoX = 40;
-		int tamañoY = 40;
+		int tamañoX = 80;
+		int tamañoY = 80;
 		this.screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-		setIcon(img.tamaño(new ImageIcon("botones/virus_verde_0.png"), 40, tamañoY));
+		setIcon(img.tamaño(new ImageIcon("botones/virus_verde_0.png"), tamañoX, tamañoY));
 		
 		
 		addMouseListener((MouseListener) new MouseListener() {
 			public void mouseEntered(MouseEvent e) {
-				setIcon(img.tamaño(new ImageIcon("botones/virus_verde_0_entered.png"), 40, tamañoY));
+				setIcon(img.tamaño(new ImageIcon("botones/virus_verde_0_entered.png"), tamañoX, tamañoY));
 			}
 
 			public void mouseExited(MouseEvent a) {
-				setIcon(img.tamaño(new ImageIcon("botones/virus_verde_0.png"), 40, tamañoY));
+				setIcon(img.tamaño(new ImageIcon("botones/virus_verde_0.png"), tamañoX, tamañoY));
 			}
 
 			public void mousePressed(MouseEvent i) {}

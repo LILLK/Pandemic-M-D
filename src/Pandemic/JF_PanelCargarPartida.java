@@ -15,6 +15,7 @@ import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.SwingConstants;
@@ -240,7 +241,12 @@ public class JF_PanelCargarPartida extends JPanel {
 		Parametros.establecerParametros(Partida.dificultad);
 		JFrame marcoP = (JFrame)SwingUtilities.getWindowAncestor(this);	
 		marcoP.remove(this);
-		marcoP.add(new JF_PanelPartida());
+		if (screenSize.width<1920 && screenSize.height < 1080) {
+			JOptionPane.showMessageDialog(new JFrame(), "No se puede jugar con una resulucion menor a 1920x1080");
+			marcoP.add(new JF_PanelMenu());
+		}else {
+			marcoP.add(new JF_PanelPartida());
+		}
 		marcoP.setVisible(true);
 	}
 
