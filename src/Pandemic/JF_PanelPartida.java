@@ -96,10 +96,12 @@ public class JF_PanelPartida extends JPanel {
 		marcoP.remove(this);
 		switch (estado) {
 			case 1:
-				marcoP.add(new JF_PanelVictoria());
+				JOptionPane.showMessageDialog(new JFrame(), "Victoria!"+"\n Puntuacion :"+Partida.Puntuacion+"\n Rondas :"+Partida.ronda);
+				marcoP.add(new JF_PanelMenu());
 				break;
 			case 2:
-				marcoP.add(new JF_PanelDerrota());
+				JOptionPane.showMessageDialog(new JFrame(), "Derota!"+"\n Puntuacion :"+Partida.Puntuacion+"\n Rondas :"+Partida.ronda);
+				marcoP.add(new JF_PanelMenu());
 				break;
 		}
 		marcoP.setVisible(true);
