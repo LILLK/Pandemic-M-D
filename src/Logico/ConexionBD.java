@@ -57,6 +57,7 @@ public class ConexionBD {
 			i++;
 		}
 		sql+="),ronda ="+Partida.ronda+", puntuacion = "+Partida.Puntuacion+", dificultad="+Partida.dificultad+", acciones = "+Partida.accionesRonda+" WHERE id_p ="+Partida.idP+"";
+		System.out.println("ronda guardada:"+Partida.ronda);
 		try {
 			Statement st = con.createStatement();
 			System.out.println(sql);
@@ -168,7 +169,7 @@ public class ConexionBD {
 		
 		} 
 	public static void cargarPartidas(Connection con,int id_J) {
-		String sql ="select p.id_p, p.brotes, p.ronda, p.puntuacion,p.dificultad FROM PARTIDAS P, USUARIOS U WHERE p.jugador = u.id_u AND p.estado LIKE 'I' AND p.jugador ="+ id_J;
+		String sql ="select p.id_p, p.brotes, p.ronda, p.puntuacion,p.dificultad, p.acciones FROM PARTIDAS P, USUARIOS U WHERE p.jugador = u.id_u AND p.estado LIKE 'I' AND p.jugador ="+ id_J;
 
 		try {
 			Statement st = con.createStatement();
@@ -182,9 +183,10 @@ public class ConexionBD {
 					int ronda =rs.getInt("ronda");
 					int puntuacion=rs.getInt("puntuacion");
 					int dificultad = rs.getInt("dificultad");
+					int acciones = rs.getInt("acciones");
 			
 
-					PartidasGuardadas partidaGuardada = new PartidasGuardadas(idP,brotes,ronda,puntuacion,dificultad);
+					PartidasGuardadas partidaGuardada = new PartidasGuardadas(idP,brotes,ronda,puntuacion,dificultad,acciones);
 
 					JF_PanelCargarPartida.partGuar.add(partidaGuardada);
 

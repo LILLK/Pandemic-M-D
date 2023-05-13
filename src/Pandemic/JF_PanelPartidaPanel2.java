@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.border.Border;
+import javax.swing.plaf.basic.BasicScrollBarUI;
 
 import Botones.*;
 import Logico.Ciudades;
@@ -19,16 +20,19 @@ import Logico.Partida;
 
 public class JF_PanelPartidaPanel2 extends JPanel {
 
-	static  JLabel log = new JLabel();
+	static  JPanel log = new JPanel();
 	static String logText ;
 	static JLabel acciones = new JLabel();
 	Dimension screenSize;
 	BotonGuardarPartida BotonGuardarPartida;
+	public static int numPanelAcciones ;
+	
 	public JF_PanelPartidaPanel2() {
 
 		int tamañoX = 40;
 		int tamañoY = 40;
-
+		numPanelAcciones =0;
+		
 		cambiarImg img = new cambiarImg();
 		Color color = new Color(71, 161, 197);
 		Border borde = BorderFactory.createLineBorder(Color.BLACK, 3);
@@ -39,9 +43,9 @@ public class JF_PanelPartidaPanel2 extends JPanel {
 		this.setBorder(borde);
 		this.setOpaque(true);
 		
-		
+		JScrollPane scroll = new JScrollPane();
 		acciones = new JLabel();
-		log = new JLabel();
+		log = new JPanel();
 		BotonGuardarPartida = new BotonGuardarPartida(this);	
 
 		acciones.setBounds((this.getWidth()/2)-((this.getWidth()/2)/2),
@@ -54,27 +58,43 @@ public class JF_PanelPartidaPanel2 extends JPanel {
 		acciones.setOpaque(true);
 		acciones.setText("acciones restantes: "+Partida.accionesRonda);
 		
+		scroll.setBounds(0,((this.getHeight()/16)*2),	this.getWidth(),this.getHeight()/2);
+		scroll.getVerticalScrollBar().setUI(new BasicScrollBarUI());
+		scroll.setViewportView(log);
+		
 		log.setBounds((this.getWidth()/2)-((this.getWidth()/2)/2),
-				((this.getHeight()/16)*2),
-				this.getWidth()/2,
-				this.getHeight()/2);
+				0,
+				this.getWidth(),
+				this.getHeight());
 		log.setBackground(Color.WHITE);
 		log.setVisible(true);
 		log.setBorder(borde);
 		log.setOpaque(true);
-		log.setText(logText=" ");
+		//log.setText(logText=" ");
 		
 		add(BotonGuardarPartida);
 		add(acciones);
-		add(log);
+		add(scroll);
+		
 
 
 	}
 	
 	public static void updateLog(String newTexto) {
-		String resultado="<p>"+newTexto+"</p>";
-		logText += resultado;
-		log.setText("<html>"+logText+"</html>");
+
+		//log.setText("<html>"+logText+"</html>");
+		JLabel accion = new JLabel();
+		accion.setText(newTexto);
+		accion.setBounds(0, 0+(JF_PanelPartidaPanel2.numPanelAcciones*50), 30, 60);
+		accion.setHorizontalAlignment(SwingConstants.CENTER);
+		accion.setBackground(Color.orange);
+		accion.setOpaque(true);
+		accion.setVisible(true);
+		log.add(accion);
+		//log.resize(JF_PanelPartidaPanel2.WIDTH/2, JF_PanelPartidaPanel2.HEIGHT/2+(JF_PanelPartidaPanel2.numPanelAcciones*50));
+		JF_PanelPartidaPanel2.numPanelAcciones += 1;
+		
+		
 	}
 	
 	public static void updateAcciones() {

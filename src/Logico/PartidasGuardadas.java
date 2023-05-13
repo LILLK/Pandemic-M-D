@@ -6,19 +6,27 @@ public class PartidasGuardadas {
 	public int ronda;
 	public int puntuacion;
 	public int dificultadPartida;
+	public int acciones;
 	
-	public PartidasGuardadas(int idP,int brotes, int ronda,  int puntuacion, int dificultad) {
+	public PartidasGuardadas(int idP,int brotes, int ronda,  int puntuacion, int dificultad,int acciones) {
 		this.idPartida = idP;
 		this.brotes = brotes;
 		this.ronda = ronda;
 		this.puntuacion = puntuacion;
 		this.dificultadPartida = dificultad;
+		this.acciones = acciones;
 	}
 	public int getBrotes() {
 		return brotes;
 	}
 	public void setBrotes(int brotes) {
 		this.brotes = brotes;
+	}
+	public int getAcciones() {
+		return acciones;
+	}
+	public void setAcciones(int acciones) {
+		this.acciones = acciones;
 	}
 	public int getRonda() {
 		return ronda;

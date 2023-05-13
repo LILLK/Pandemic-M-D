@@ -68,7 +68,7 @@ public class JF_PanelCargarPartida extends JPanel {
 		scroll.setViewportView(panel);
 		
 		
-		posicion.setText("Pos.");
+		posicion.setText("Cargar");
 		posicion.setBackground(Color.black);
 		posicion.setForeground(Color.white);
 		posicion.setHorizontalAlignment(SwingConstants.CENTER);
@@ -77,7 +77,7 @@ public class JF_PanelCargarPartida extends JPanel {
 		posicion.setOpaque(true);
 		posicion.setVisible(true);
 		
-		nomUsu.setText("Nombre Usuario");
+		nomUsu.setText("Acciones");
 		nomUsu.setBackground(Color.black);
 		nomUsu.setForeground(Color.white);
 		nomUsu.setHorizontalAlignment(SwingConstants.CENTER);
@@ -126,6 +126,7 @@ public class JF_PanelCargarPartida extends JPanel {
 		int i =0;
 		
 		for(PartidasGuardadas partidasGuardadas : JF_PanelCargarPartida.partGuar) {
+			System.out.println(partidasGuardadas.brotes+" "+ partidasGuardadas.puntuacion);
 			JLabel label = new JLabel();
 			label.setBounds(0, 0+(100*i), 800,100 );
 			label.setBackground(color);
@@ -136,7 +137,14 @@ public class JF_PanelCargarPartida extends JPanel {
 			//cargar.setBorder(borde);
 			label.add(cargar);
 			
-
+			for(int f = 0;f < partidasGuardadas.acciones;f++) {
+				JLabel accion = new JLabel();
+				accion.setBounds(120+(40*f), 35, 20, 30);
+				accion.setBackground(Color.black);
+				accion.setOpaque(true);
+				accion.setBorder(borde1);
+				label.add(accion);
+			}
 			//////////////////
 			JLabel dificultadU = new JLabel();
 			String dificultadS ="<html><center>"+ partidasGuardadas.dificultadPartida;
@@ -154,7 +162,7 @@ public class JF_PanelCargarPartida extends JPanel {
 			String brotesS ="<html><center>"+partidasGuardadas.brotes;
 			brotesU.setText(brotesS);
 			brotesU.setHorizontalAlignment(SwingConstants.CENTER);
-			brotesU.setBounds(465,32,30,35);
+			brotesU.setBounds(465,32,45,35);
 			brotesU.setFont(new Font("Stika Text",Font.BOLD,32));
 			brotesU.setForeground(Color.white);
 			brotesU.setBackground(Color.BLACK);
@@ -167,7 +175,7 @@ public class JF_PanelCargarPartida extends JPanel {
 			String rondaS ="<html><center>"+partidasGuardadas.ronda;
 			rondaU.setText(rondaS);
 			rondaU.setHorizontalAlignment(SwingConstants.CENTER);
-			rondaU.setBounds(565,32,30,35);
+			rondaU.setBounds(565,32,45,35);
 			rondaU.setFont(new Font("Stika Text",Font.BOLD,32));
 			rondaU.setForeground(Color.white);
 			rondaU.setBackground(Color.BLACK);

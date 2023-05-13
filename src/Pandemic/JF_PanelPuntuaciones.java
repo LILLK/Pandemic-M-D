@@ -172,7 +172,7 @@ public class JF_PanelPuntuaciones extends JPanel {
 			String brotesS ="<html><center>"+ranking.brotes;
 			brotesU.setText(brotesS);
 			brotesU.setHorizontalAlignment(SwingConstants.CENTER);
-			brotesU.setBounds(465,32,30,35);
+			brotesU.setBounds(465,32,45,35);
 			brotesU.setFont(new Font("Stika Text",Font.BOLD,32));
 			brotesU.setForeground(Color.white);
 			brotesU.setBackground(Color.BLACK);
@@ -185,7 +185,7 @@ public class JF_PanelPuntuaciones extends JPanel {
 			String rondaS ="<html><center>"+ranking.ronda;
 			rondaU.setText(rondaS);
 			rondaU.setHorizontalAlignment(SwingConstants.CENTER);
-			rondaU.setBounds(565,32,30,35);
+			rondaU.setBounds(565,32,45,35);
 			rondaU.setFont(new Font("Stika Text",Font.BOLD,32));
 			rondaU.setForeground(Color.white);
 			rondaU.setBackground(Color.BLACK);
