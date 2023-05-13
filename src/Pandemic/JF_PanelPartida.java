@@ -91,10 +91,17 @@ public class JF_PanelPartida extends JPanel {
 	}
 	
 	
-	public void irMenu() {
+	public void acabarParida(int estado) {
 		JFrame marcoP = (JFrame)SwingUtilities.getWindowAncestor(this);	
 		marcoP.remove(this);
-		marcoP.add(new JF_PanelMenu());
+		switch (estado) {
+			case 1:
+				marcoP.add(new JF_PanelVictoria());
+				break;
+			case 2:
+				marcoP.add(new JF_PanelDerrota());
+				break;
+		}
 		marcoP.setVisible(true);
 	}
 }

@@ -14,12 +14,14 @@ import javax.swing.SwingUtilities;
 import Logico.ConexionBD;
 import Pandemic.JF_PanelAutores;
 import Pandemic.JF_PanelCargarPartida;
+import Pandemic.JF_PanelDerrota;
 import Pandemic.JF_PanelInfo;
 import Pandemic.JF_PanelMenu;
 import Pandemic.JF_PanelPartidaDificultad;
 import Pandemic.JF_PanelPartidaPanel1;
 import Pandemic.JF_PanelPuntuaciones;
 import Pandemic.JF_PanelVersion;
+import Pandemic.JF_PanelVictoria;
 import Pandemic.cambiarImg;
 
 
@@ -206,6 +208,66 @@ import Pandemic.cambiarImg;
 		
 			
 		}
+
+		public BotonAtras(JF_PanelVictoria jf_PanelVictoria) {
+			
+			this.screenSize=Toolkit.getDefaultToolkit().getScreenSize();
+			
+
+			setIcon(img.tamaño(new ImageIcon("botones/bottonAtras-1.png"), screenSize.width, (screenSize.width/30)) );
+			
+			addMouseListener(new MouseListener() {	
+				public void mouseEntered(MouseEvent e) {
+					setIcon(img.tamaño(new ImageIcon("botones/bottonAtras-2.png"), screenSize.width, (screenSize.width/30)) );
+				}
+				public void mouseExited(MouseEvent a) {
+					setIcon(img.tamaño(new ImageIcon("botones/bottonAtras-1.png"), screenSize.width, (screenSize.width/30)) );
+				}
+
+				public void mousePressed(MouseEvent i) {
+					setIcon(img.tamaño(new ImageIcon("botones/bottonAtras-3.png"), screenSize.width, (screenSize.width/30)) );
+				}
+				public void mouseClicked(MouseEvent e) {
+					jf_PanelVictoria.irMenu();					
+				}
+				public void mouseReleased(MouseEvent e) {
+					// TODO Apéndice de método generado automáticamente
+					
+				}
+			});
+		
+		}
+
+		public BotonAtras(JF_PanelDerrota jf_PanelDerrota) {
+			
+			this.screenSize=Toolkit.getDefaultToolkit().getScreenSize();
+			
+
+			setIcon(img.tamaño(new ImageIcon("botones/bottonAtras-1.png"), screenSize.width, (screenSize.width/30)) );
+			
+			addMouseListener(new MouseListener() {	
+				public void mouseEntered(MouseEvent e) {
+					setIcon(img.tamaño(new ImageIcon("botones/bottonAtras-2.png"), screenSize.width, (screenSize.width/30)) );
+				}
+				public void mouseExited(MouseEvent a) {
+					setIcon(img.tamaño(new ImageIcon("botones/bottonAtras-1.png"), screenSize.width, (screenSize.width/30)) );
+				}
+
+				public void mousePressed(MouseEvent i) {
+					setIcon(img.tamaño(new ImageIcon("botones/bottonAtras-3.png"), screenSize.width, (screenSize.width/30)) );
+				}
+				public void mouseClicked(MouseEvent e) {
+					jf_PanelDerrota.irMenu();					
+				}
+				public void mouseReleased(MouseEvent e) {
+					// TODO Apéndice de método generado automáticamente
+					
+				}
+			});
+		
+		}
+		
+		
 
 
 	}

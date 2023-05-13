@@ -47,8 +47,8 @@ public class Partida {
 			update();
 			Partida.infectar();
 		}
-		if (Partida.fin()) {
-			pPartida.irMenu();
+		if (Partida.fin()!=0) {
+			pPartida.acabarParida(Partida.fin());
 			ConexionBD.guardarPartida(ConexionBD.con, true);
 		}
 	}
@@ -86,20 +86,21 @@ public class Partida {
 	// -fin
 	// determina si la partida a acabado por victoria o derrota
 	/////////////////////////////////////////////////////////////////////////////////////
-	public static boolean fin() {
-		boolean aux = false;
+	public static int fin() {
+		int aux = 0;
+		//0 = sigue el juego, 1 = victoria , 2 = derrota 
 		// si se llega al numero de brotes necesrio para perder
 		if (Partida.brotes > Parametros.brotesTotal) {
-			System.out.println("llega al numero de brotes necesrio ");
-			return true;
+			Partida.Puntuacion-=50000;
+			return 2;
 			// si todas las ciudades han sidio limpiadas
-		} /*else if (Partida.enfermedades == 0) {
-			System.out.println();
-			return true;
+		}/* else if (Partida.enfermedades == 0 && Partida.ronda!=0) {
+			return 1;
 		}*/
 		// si han sido todas las vacunas descubiertas
 		else if (Vacunas.vacunasDescubiertas()) {
-			return true;
+			Partida.Puntuacion+=50000;
+			return 1;
 		}
 		return aux;
 	}
