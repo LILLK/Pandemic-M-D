@@ -46,7 +46,7 @@ public class JF_PanelPartidaPanel1 extends JPanel {
 		puntuacion.setOpaque(true);
 		puntuacion.setHorizontalAlignment(SwingConstants.CENTER);
 		puntuacion.setFont(new Font("Stika Text",Font.BOLD,21) );
-		puntuacion.setText("la puntuacion es de: " + Partida.Puntuacion);
+		puntuacion.setText("La puntuación es de: " + Partida.Puntuacion);
 
 		brotes.setBounds((this.getWidth() / 10) *1, ((this.getHeight() / 12) * 5), (this.getWidth() / 10) *8, this.getHeight() / 7);
 		brotes.setBackground(Color.orange);
@@ -88,7 +88,7 @@ public class JF_PanelPartidaPanel1 extends JPanel {
 	} 
 	
 	public static void updatePuntuacion() {
-		puntuacion.setText("la puntuacion es de: " + Partida.Puntuacion);
+		puntuacion.setText("La puntuación es de: " + Partida.Puntuacion);
 	}
 	public static void updateRonda() {
 		ronda.setText("Ronda :" + Partida.ronda);
