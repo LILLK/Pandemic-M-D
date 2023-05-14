@@ -15,7 +15,6 @@ import Pandemic.*;
 
 public class BotonVacunaVerde extends JLabel {
 	
-	Dimension screenSize;
 	cambiarImg img;
 
 
@@ -23,7 +22,6 @@ public class BotonVacunaVerde extends JLabel {
 		int idVirus = 2;
 		int tamañoX = 80;
 		int tamañoY = 80;
-		this.screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 		setIcon(img.tamaño(new ImageIcon("botones/virus_verde_0.png"), tamañoX, tamañoY));
 		
 		

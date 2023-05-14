@@ -10,22 +10,21 @@ import Pandemic.*;
 
 public class BotonInformacion extends JLabel {
 	
-	Dimension screenSize = new Dimension(Toolkit.getDefaultToolkit().getScreenSize());
 	public BotonInformacion(JF_PanelMenu JF_PanelMenu) {
 		
 		
-		setIcon(cambiarImg.tamaño(new ImageIcon("botones/bottonInformacion-1.png"), ((int)(screenSize.getWidth()/5)), ((int)(screenSize.getWidth()/20))) );
+		setIcon(cambiarImg.tamaño(new ImageIcon("botones/bottonInformacion-1.png"), ((int)(cambiarImg.screenSize.getWidth()/5)), ((int)(cambiarImg.screenSize.getWidth()/20))) );
 		
 		addMouseListener(new MouseListener() {	
 			public void mouseEntered(MouseEvent e) {
-				setIcon(cambiarImg.tamaño(new ImageIcon("botones/bottonInformacion-2.png"), ((int)(screenSize.getWidth()/5)), ((int)(screenSize.getWidth()/20))) );
+				setIcon(cambiarImg.tamaño(new ImageIcon("botones/bottonInformacion-2.png"), ((int)(cambiarImg.screenSize.getWidth()/5)), ((int)(cambiarImg.screenSize.getWidth()/20))) );
 			}
 			public void mouseExited(MouseEvent a) {
-				setIcon(cambiarImg.tamaño(new ImageIcon("botones/bottonInformacion-1.png"), ((int)(screenSize.getWidth()/5)), ((int)(screenSize.getWidth()/20))) );
+				setIcon(cambiarImg.tamaño(new ImageIcon("botones/bottonInformacion-1.png"), ((int)(cambiarImg.screenSize.getWidth()/5)), ((int)(cambiarImg.screenSize.getWidth()/20))) );
 			}
 
 			public void mousePressed(MouseEvent i) {
-				setIcon(cambiarImg.tamaño(new ImageIcon("botones/bottonInformacion-3.png"), ((int)(screenSize.getWidth()/5)), ((int)(screenSize.getWidth()/20))) );
+				setIcon(cambiarImg.tamaño(new ImageIcon("botones/bottonInformacion-3.png"), ((int)(cambiarImg.screenSize.getWidth()/5)), ((int)(cambiarImg.screenSize.getWidth()/20))) );
 			}
 			public void mouseClicked(MouseEvent e) {
 				JF_PanelMenu.irPanelInformacion();

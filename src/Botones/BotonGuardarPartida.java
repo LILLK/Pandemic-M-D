@@ -11,12 +11,10 @@ import Pandemic.*;
 
 public class BotonGuardarPartida extends JLabel {
 
-	Dimension  screenSize;
 	cambiarImg img;
 	
 	
 	public BotonGuardarPartida(JF_PanelPartidaPanel2 panel) {
-		this.screenSize=Toolkit.getDefaultToolkit().getScreenSize();
 		Border borde = BorderFactory.createLineBorder(Color.BLACK, 3);
 		this.setBounds((panel.getWidth()/2)-((panel.getWidth()-50)/2),
 				((panel.getHeight()/16)*14),
