@@ -34,11 +34,10 @@ public class JF_PanelPartidaPanel2 extends JPanel {
 		this.setBounds(1551, cambiarImg.screenSize.height / 2 + 1, (cambiarImg.screenSize.width - 1550), (cambiarImg.screenSize.height / 2) - 23);
 		this.setOpaque(true);
 		
-		
 		acciones = new JLabel();
 		log = new JLabel();
 		BotonGuardarPartida = new BotonGuardarPartida(this);	
-
+		
 		acciones.setBounds(20, this.getHeight()/100, this.getWidth()-40, this.getHeight()/100*15);
 		acciones.setBackground(Color.orange);
 		acciones.setVisible(true);

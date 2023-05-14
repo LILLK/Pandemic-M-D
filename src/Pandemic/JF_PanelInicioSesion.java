@@ -150,17 +150,5 @@ public class JF_PanelInicioSesion extends JPanel {
 		marcoP.add(new JF_PanelMenu());
 		marcoP.setVisible(true);
 	}
-	public void usuContError() {
-		
-		error.setFont(new Font("Stika Text",Font.BOLD,(cambiarImg.screenSize.height/80)));
-		
-		error.setText("Usuario/Contraseña erroneos");
-		error.setForeground(Color.RED);
-		error.setBackground(Color.cyan);
-		error.setOpaque(true);
-		error.setVisible(true);	
-	;
-	}
 	
-
 }
