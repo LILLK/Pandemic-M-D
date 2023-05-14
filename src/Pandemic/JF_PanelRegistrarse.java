@@ -171,12 +171,7 @@ public class JF_PanelRegistrarse extends JPanel {
 		marcoP.add(new JF_PanelMenu());
 		marcoP.setVisible(true);
 	}
-	public void errorImp() {
-		System.out.println("errorr usu");
-	}
-	public void errorCont() {
-		System.out.println("error contr");
-	}
+
 	
 
 }

@@ -43,7 +43,7 @@ public class BotonIniciarSesion extends JLabel {
 				if(ConexionBD.existeUsuario(ConexionBD.con, JF_PanelInicioSesion.getJTFUsuario(), JF_PanelInicioSesion.getJTFContraseña())) {
 					JF_PanelInicioSesion.irMenu();
 				}else {
-					JF_PanelInicioSesion.usuContError();
+					JOptionPane.showMessageDialog(new JFrame(), "Nombre o constraseña erroneos " );
 				}
 			}
 			public void mouseReleased(MouseEvent e) {

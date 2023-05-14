@@ -73,10 +73,10 @@ public class BotonRegistrarse extends JLabel {
 						JF_PanelRegistrarse.irMenu();
 						
 					}else {
-						JF_PanelRegistrarse.errorImp();
+						JOptionPane.showMessageDialog(new JFrame(), "El usuario ya existe" );
 					}
 				}else {
-					JF_PanelRegistrarse.errorCont();
+					JOptionPane.showMessageDialog(new JFrame(), "Contraseñas Diferentes " );
 				}
 				
 				
