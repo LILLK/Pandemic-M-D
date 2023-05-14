@@ -15,13 +15,14 @@ import javax.swing.border.Border;
 
 import Botones.*;
 import Logico.Ciudades;
+import Logico.ConexionBD;
 import Logico.Partida;
 
 public class JF_PanelPartida extends JPanel {
 
 	public static ArrayList<BotonCiudad> botonesCiudad;
 	public BotonMostrarNombres btnNombres;
-	Dimension screenSize;
+
 	//Label debajo del mapa
 	JF_PanelPartidaVacunas panelVacunas;
 	//Label derecha arriba
@@ -32,7 +33,6 @@ public class JF_PanelPartida extends JPanel {
 
 	public JF_PanelPartida() {
 		cambiarImg img = new cambiarImg();
-		screenSize = new Dimension(Toolkit.getDefaultToolkit().getScreenSize());
 		setLayout(null);
 		JF_PanelPartida.botonesCiudad = genrarBotonesCiudad();
 
@@ -88,6 +88,7 @@ public class JF_PanelPartida extends JPanel {
 		marcoP.remove(this);
 		marcoP.add(new JF_PanelMenu());
 		marcoP.setVisible(true);
+		ConexionBD.guardarPartida(ConexionBD.con, false);
 	}
 	
 	public void acabarParida(int estado) {

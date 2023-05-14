@@ -26,27 +26,26 @@ import Botones.BotonAtras;
 public class JF_PanelVersion extends JPanel {
 	BotonAtras Atras;
 
-	Dimension screenSize;
+
 	
 	JF_PanelVersion() {
 	
 		setLayout(null);
-		this.screenSize=Toolkit.getDefaultToolkit().getScreenSize();
+
 		
 		this.Atras = new BotonAtras(this);
 		JLabel Version = new JLabel();
-		Border borde = BorderFactory.createLineBorder(Color.BLACK,8);
-		Color color =new Color(70, 160, 196);
+
 		String s= "Version 1.5";
-		Version.setBounds(((this.screenSize.width/2)-276),50,552,100);
+		Version.setBounds(((cambiarImg.screenSize.width/2)-276),50,552,100);
 		Version.setText(s);
 		Version.setForeground(Color.BLACK);
 		Version.setFont(new Font("Stika Text",Font.BOLD,100));
-		Version.setBackground(color);
-		Version.setBorder(borde);
+		Version.setBackground(cambiarImg.color1);
+		Version.setBorder(cambiarImg.bordeN);
 		Version.setOpaque(true);
 		Version.setVisible(true);
-		Atras.setBounds(0,(this.screenSize.height-((screenSize.width/20)+4)),this.screenSize.width,(screenSize.width/25));
+		Atras.setBounds(0,(cambiarImg.screenSize.height-((cambiarImg.screenSize.width/20)+4)),cambiarImg.screenSize.width,(cambiarImg.screenSize.width/25));
 		add(this.Atras);
 		
 		add(Version);

@@ -20,72 +20,69 @@ public class JF_PanelInicioSesion extends JPanel {
 	BotonRegistrarse BotonRegistrarse;
 	BotonSalir Salir;
 	JFrame marcoP;
-	Dimension screenSize;
 	JTextField JTFUsuario;
 	JTextField JTFContraseña;
 	JLabel error;
 
 	public JF_PanelInicioSesion() {
 
-		Color color =new Color(71, 161, 197);
-		Border borde = BorderFactory.createLineBorder(Color.BLACK,3);
-		screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+	
 		cambiarImg img = new cambiarImg();
 		setLayout(null);
 		
 		this.Salir = new BotonSalir();
-		this.Salir.setBounds(((this.screenSize.width / 2) - (this.screenSize.width / 10)),
-				(this.screenSize.height / 6 + ((this.screenSize.width / 18) * 6)), 
-				(this.screenSize.width / 5),
-				(this.screenSize.width / 20));
+		this.Salir.setBounds(((cambiarImg.screenSize.width / 2) - (cambiarImg.screenSize.width / 10)),
+				(cambiarImg.screenSize.height / 6 + ((cambiarImg.screenSize.width / 18) * 6)), 
+				(cambiarImg.screenSize.width / 5),
+				(cambiarImg.screenSize.width / 20));
 		//text fields//
 		JTFUsuario = new JTextField(1);
-		JTFUsuario.setBounds(((this.screenSize.width / 7)*3),
-				((this.screenSize.height / 7)*2),
-				(this.screenSize.width / 7),
-				(this.screenSize.width / 50));
-		JTFUsuario.setBorder(borde);
+		JTFUsuario.setBounds(((cambiarImg.screenSize.width / 7)*3),
+				((cambiarImg.screenSize.height / 7)*2),
+				(cambiarImg.screenSize.width / 7),
+				(cambiarImg.screenSize.width / 50));
+		JTFUsuario.setBorder(cambiarImg.bordeN);
 		
 		JTFContraseña = new JPasswordField(1);
-		JTFContraseña.setBounds(((this.screenSize.width / 7)*3),
-				((this.screenSize.height / 7)*3),
-				(this.screenSize.width / 7),
-				(this.screenSize.width / 50));
-		JTFContraseña.setBorder(borde);
+		JTFContraseña.setBounds(((cambiarImg.screenSize.width / 7)*3),
+				((cambiarImg.screenSize.height / 7)*3),
+				(cambiarImg.screenSize.width / 7),
+				(cambiarImg.screenSize.width / 50));
+		JTFContraseña.setBorder(cambiarImg.bordeN);
 		
 		//labels//
 		JLabel JLUsuario = new  JLabel();
-		JLUsuario.setBounds(((this.screenSize.width / 7)*3),
-				((this.screenSize.height / 7)*2 - (this.screenSize.width / 55)),
-				((this.screenSize.width / 7)/2),
-				(this.screenSize.width / 55));
+		JLUsuario.setBounds(((cambiarImg.screenSize.width / 7)*3),
+				((cambiarImg.screenSize.height / 7)*2 - (cambiarImg.screenSize.width / 55)),
+				((cambiarImg.screenSize.width / 7)/2),
+				(cambiarImg.screenSize.width / 55));
 		JLUsuario.setText("<html><center>Usuario");
 		JLUsuario.setForeground(Color.BLACK);
-		JLUsuario.setFont(new Font("Stika Text",Font.BOLD,(this.screenSize.height/80)));
-		JLUsuario.setBackground(color);
-		JLUsuario.setBorder(borde);
+		JLUsuario.setFont(new Font("Stika Text",Font.BOLD,(cambiarImg.screenSize.height/80)));
+		JLUsuario.setBackground(cambiarImg.color1);
+		JLUsuario.setBorder(cambiarImg.bordeN);
 		JLUsuario.setOpaque(true);
 		
 		
 		JLabel JLcontraseña = new  JLabel();
-		JLcontraseña.setBounds(((this.screenSize.width / 7)*3),
-				((this.screenSize.height / 7)*3 - (this.screenSize.width / 55)),
-				((this.screenSize.width / 7)/2),
-				(this.screenSize.width / 55));
+		JLcontraseña.setBounds(((cambiarImg.screenSize.width / 7)*3),
+				((cambiarImg.screenSize.height / 7)*3 - (cambiarImg.screenSize.width / 55)),
+				((cambiarImg.screenSize.width / 7)/2),
+				(cambiarImg.screenSize.width / 55));
 		JLcontraseña.setText("<html><center>Contraseña");
 		JLcontraseña.setForeground(Color.BLACK);
-		JLcontraseña.setFont(new Font("Stika Text",Font.BOLD,(this.screenSize.height/80)));
-		JLcontraseña.setBackground(color);
-		JLcontraseña.setBorder(borde);
+		JLcontraseña.setFont(new Font("Stika Text",Font.BOLD,(cambiarImg.screenSize.height/80)));
+		JLcontraseña.setBackground(cambiarImg.color1);
+		JLcontraseña.setBorder(cambiarImg.bordeN);
 		JLcontraseña.setOpaque(true);
 		
 		
 		error = new JLabel();
 		
-		error.setBounds(((this.screenSize.width / 7)*3),
-				((this.screenSize.height / 7)*3 + (this.screenSize.width / 55)),
-				((this.screenSize.width / 7)),
-				(this.screenSize.width / 55));
+		error.setBounds(((cambiarImg.screenSize.width / 7)*3),
+				((cambiarImg.screenSize.height / 7)*3 + (cambiarImg.screenSize.width / 55)),
+				((cambiarImg.screenSize.width / 7)),
+				(cambiarImg.screenSize.width / 55));
 	
 		//error.setBackground(color);
 		//error.setBorder(borde);
@@ -94,18 +91,18 @@ public class JF_PanelInicioSesion extends JPanel {
 		
 		//botones//
 		BotonIniciarSesion = new  BotonIniciarSesion(this);
-		BotonIniciarSesion.setBounds(((this.screenSize.width / 7)*3),
-				((this.screenSize.height / 7)*4 + (this.screenSize.width / 50)),
-				((this.screenSize.width / 7)/2),
-				(this.screenSize.width / 55));
+		BotonIniciarSesion.setBounds(((cambiarImg.screenSize.width / 7)*3),
+				((cambiarImg.screenSize.height / 7)*4 + (cambiarImg.screenSize.width / 50)),
+				((cambiarImg.screenSize.width / 7)/2),
+				(cambiarImg.screenSize.width / 55));
 		BotonIniciarSesion.setOpaque(true);
 		
 		
 		BotonRegistrarse = new  BotonRegistrarse(this);
-		BotonRegistrarse.setBounds(((this.screenSize.width / 7)*3+(this.screenSize.width / 7)/2),
-				((this.screenSize.height / 7)*4 + (this.screenSize.width / 50)),
-				((this.screenSize.width / 7)/2),
-				(this.screenSize.width / 55));
+		BotonRegistrarse.setBounds(((cambiarImg.screenSize.width / 7)*3+(cambiarImg.screenSize.width / 7)/2),
+				((cambiarImg.screenSize.height / 7)*4 + (cambiarImg.screenSize.width / 50)),
+				((cambiarImg.screenSize.width / 7)/2),
+				(cambiarImg.screenSize.width / 55));
 		BotonRegistrarse.setOpaque(true);
 		
 		
@@ -155,7 +152,7 @@ public class JF_PanelInicioSesion extends JPanel {
 	}
 	public void usuContError() {
 		
-		error.setFont(new Font("Stika Text",Font.BOLD,(this.screenSize.height/80)));
+		error.setFont(new Font("Stika Text",Font.BOLD,(cambiarImg.screenSize.height/80)));
 		
 		error.setText("Usuario/Contraseña erroneos");
 		error.setForeground(Color.RED);

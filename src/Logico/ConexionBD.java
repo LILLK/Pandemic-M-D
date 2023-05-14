@@ -169,7 +169,7 @@ public class ConexionBD {
 		
 		} 
 	public static void cargarPartidas(Connection con,int id_J) {
-		String sql ="select p.id_p, p.brotes, p.ronda, p.puntuacion,p.dificultad, p.acciones FROM PARTIDAS P, USUARIOS U WHERE p.jugador = u.id_u AND p.estado LIKE 'I' AND p.jugador ="+ id_J;
+		String sql ="select p.id_p, p.brotes, p.ronda, p.puntuacion,p.dificultad, p.acciones FROM PARTIDAS P, USUARIOS U WHERE p.jugador = u.id_u AND p.estado LIKE 'I' AND p.jugador ="+ id_J+"ORDER BY p.id_p DESC";
 
 		try {
 			Statement st = con.createStatement();

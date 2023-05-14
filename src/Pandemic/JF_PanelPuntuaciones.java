@@ -38,7 +38,7 @@ import Logico.Rankings;
 public class JF_PanelPuntuaciones extends JPanel {
 
 	BotonAtras Atras;
-	Dimension screenSize;
+
 	public static ArrayList<Rankings> rankings;
 	
 	public JF_PanelPuntuaciones() {
@@ -47,8 +47,7 @@ public class JF_PanelPuntuaciones extends JPanel {
 		setLayout(null);
 		
 		JScrollPane scroll = new JScrollPane();
-		Color color = new Color(71, 161, 197);
-		Border borde = BorderFactory.createLineBorder(Color.BLACK,6);
+
 		Border borde1 = BorderFactory.createLineBorder(Color.WHITE,2);
 		
 		JF_PanelPuntuaciones.rankings = new ArrayList<Rankings>();
@@ -62,10 +61,9 @@ public class JF_PanelPuntuaciones extends JPanel {
 		JLabel puntuacion = new JLabel();
 		
 		
-		this.screenSize=Toolkit.getDefaultToolkit().getScreenSize();
 		ConexionBD.cargarRanking(ConexionBD.con);
 		
-		scroll.setBounds((this.screenSize.width/2)-410,100,820,450);
+		scroll.setBounds((cambiarImg.screenSize.width/2)-410,100,820,450);
 		scroll.getVerticalScrollBar().setUI(new BasicScrollBarUI());
 		scroll.setViewportView(panel);
 		
@@ -75,7 +73,7 @@ public class JF_PanelPuntuaciones extends JPanel {
 		posicion.setForeground(Color.white);
 		posicion.setHorizontalAlignment(SwingConstants.CENTER);
 		posicion.setFont(new Font("Stika Text",Font.BOLD,20) );
-		posicion.setBounds((this.screenSize.width/2)-410,50,80,50);
+		posicion.setBounds((cambiarImg.screenSize.width/2)-410,50,80,50);
 		posicion.setOpaque(true);
 		posicion.setVisible(true);
 		
@@ -84,7 +82,7 @@ public class JF_PanelPuntuaciones extends JPanel {
 		nomUsu.setForeground(Color.white);
 		nomUsu.setHorizontalAlignment(SwingConstants.CENTER);
 		nomUsu.setFont(new Font("Stika Text",Font.BOLD,20) );
-		nomUsu.setBounds(((this.screenSize.width/2)-410)+80,50,240,50);
+		nomUsu.setBounds(((cambiarImg.screenSize.width/2)-410)+80,50,240,50);
 		nomUsu.setOpaque(true);
 		nomUsu.setVisible(true);
 		
@@ -93,7 +91,7 @@ public class JF_PanelPuntuaciones extends JPanel {
 		dificultad.setForeground(Color.white);
 		dificultad.setHorizontalAlignment(SwingConstants.CENTER);
 		dificultad.setFont(new Font("Stika Text",Font.BOLD,20) );
-		dificultad.setBounds(((this.screenSize.width/2)-410)+320,50,100,50);
+		dificultad.setBounds(((cambiarImg.screenSize.width/2)-410)+320,50,100,50);
 		dificultad.setOpaque(true);
 		dificultad.setVisible(true);
 		
@@ -102,7 +100,7 @@ public class JF_PanelPuntuaciones extends JPanel {
 		brotes.setForeground(Color.white);
 		brotes.setHorizontalAlignment(SwingConstants.CENTER);
 		brotes.setFont(new Font("Stika Text",Font.BOLD,20) );
-		brotes.setBounds(((this.screenSize.width/2)-410)+420,50,100,50);
+		brotes.setBounds(((cambiarImg.screenSize.width/2)-410)+420,50,100,50);
 		brotes.setOpaque(true);
 		brotes.setVisible(true);
 		
@@ -111,7 +109,7 @@ public class JF_PanelPuntuaciones extends JPanel {
 		ronda.setForeground(Color.white);
 		ronda.setHorizontalAlignment(SwingConstants.CENTER);
 		ronda.setFont(new Font("Stika Text",Font.BOLD,20) );
-		ronda.setBounds(((this.screenSize.width/2)-410)+520,50,100,50);
+		ronda.setBounds(((cambiarImg.screenSize.width/2)-410)+520,50,100,50);
 		ronda.setOpaque(true);
 		ronda.setVisible(true);
 		
@@ -120,7 +118,7 @@ public class JF_PanelPuntuaciones extends JPanel {
 		puntuacion.setForeground(Color.white);
 		puntuacion.setHorizontalAlignment(SwingConstants.CENTER);
 		puntuacion.setFont(new Font("Stika Text",Font.BOLD,20) );
-		puntuacion.setBounds(((this.screenSize.width/2)-410)+620,50,180,50);
+		puntuacion.setBounds(((cambiarImg.screenSize.width/2)-410)+620,50,180,50);
 		puntuacion.setOpaque(true);
 		puntuacion.setVisible(true);
 		
@@ -130,8 +128,8 @@ public class JF_PanelPuntuaciones extends JPanel {
 		for(Rankings ranking : JF_PanelPuntuaciones.rankings) {
 			JLabel label = new JLabel();
 			label.setBounds(0, 0+(100*i), 800,100 );
-			label.setBackground(color);
-			label.setBorder(borde);
+			label.setBackground(cambiarImg.color1);
+			label.setBorder(cambiarImg.bordeN);
 
 			JLabel pos = new JLabel();
 			String posS = "<html><center>"+(i+1);
@@ -157,10 +155,10 @@ public class JF_PanelPuntuaciones extends JPanel {
 			label.add(nom);
 			//////////////////
 			JLabel dificultadU = new JLabel();
-			String dificultadS ="<html><center>"+ranking.dificultad;
+			String dificultadS =" "+ranking.dificultad;
 			dificultadU.setText(dificultadS);
 			dificultadU.setHorizontalAlignment(SwingConstants.CENTER);
-			dificultadU.setBounds(365,32,30,35);
+			dificultadU.setBounds(365,32,40,35);
 			dificultadU.setFont(new Font("Stika Text",Font.BOLD,32));
 			dificultadU.setForeground(Color.white);
 			dificultadU.setBackground(Color.BLACK);
@@ -169,10 +167,10 @@ public class JF_PanelPuntuaciones extends JPanel {
 			label.add(dificultadU);
 			//////////////////
 			JLabel brotesU = new JLabel();
-			String brotesS ="<html><center>"+ranking.brotes;
+			String brotesS =" "+ranking.brotes;
 			brotesU.setText(brotesS);
 			brotesU.setHorizontalAlignment(SwingConstants.CENTER);
-			brotesU.setBounds(465,32,45,35);
+			brotesU.setBounds(465,32,50,35);
 			brotesU.setFont(new Font("Stika Text",Font.BOLD,32));
 			brotesU.setForeground(Color.white);
 			brotesU.setBackground(Color.BLACK);
@@ -182,10 +180,10 @@ public class JF_PanelPuntuaciones extends JPanel {
 			//////////////////
 			//////////////////
 			JLabel rondaU = new JLabel();
-			String rondaS ="<html><center>"+ranking.ronda;
+			String rondaS =" "+ranking.ronda;
 			rondaU.setText(rondaS);
 			rondaU.setHorizontalAlignment(SwingConstants.CENTER);
-			rondaU.setBounds(565,32,45,35);
+			rondaU.setBounds(565,32,55,35);
 			rondaU.setFont(new Font("Stika Text",Font.BOLD,32));
 			rondaU.setForeground(Color.white);
 			rondaU.setBackground(Color.BLACK);
@@ -195,7 +193,7 @@ public class JF_PanelPuntuaciones extends JPanel {
 			//////////////////
 			//////////////////
 			JLabel puntos = new JLabel();
-			String puntosS ="<html><center>"+ranking.puntuacion;
+			String puntosS =" "+ranking.puntuacion;
 			puntos.setText(puntosS);
 			puntos.setHorizontalAlignment(SwingConstants.CENTER);
 			puntos.setBounds(640,32,150,35);
@@ -228,7 +226,7 @@ public class JF_PanelPuntuaciones extends JPanel {
 		
 		
 		this.Atras = new BotonAtras(this);
-		Atras.setBounds(0,(this.screenSize.height-((screenSize.width/20)-3)),this.screenSize.width,(screenSize.width/25));
+		Atras.setBounds(0,(cambiarImg.screenSize.height-((cambiarImg.screenSize.width/20)-3)),cambiarImg.screenSize.width,(cambiarImg.screenSize.width/25));
 		add(this.Atras);
 	}
 	public void paint(Graphics g) {

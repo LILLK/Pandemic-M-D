@@ -1,5 +1,6 @@
 package Pandemic;
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -10,12 +11,18 @@ import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
+import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
+import javax.swing.border.Border;
 
 public class cambiarImg {
 	
+	public static final Border bordeN = BorderFactory.createLineBorder(Color.BLACK, 6);;
 	public static Dimension screenSize=Toolkit.getDefaultToolkit().getScreenSize();
+	public static Color color1 = new Color(71,161,197);
+
+
 	
 	public cambiarImg() {
 		

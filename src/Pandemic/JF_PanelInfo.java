@@ -15,12 +15,12 @@ import Botones.BotonAtras;
 public class JF_PanelInfo extends JPanel {
 	
 	BotonAtras Atras;
-	Dimension screenSize;
+
 	
 	public JF_PanelInfo() {
 	
 		setLayout(null);
-		this.screenSize=Toolkit.getDefaultToolkit().getScreenSize();
+
 		String s ="<html><center>Hace 48 días conseguimos hacer mutar el virus T, pero nada salió como teníamos planeado. El"
 				+ "<html><center>virus tras mutar genero cuatro nuevas variantes de esté, y se dividieron por todo el mundo de"
 				+ "<html><center>forma homogénea infectando ciudad a ciudad y tu objetivo es salvar el mundo de esta"
@@ -41,29 +41,27 @@ public class JF_PanelInfo extends JPanel {
 				+ "<html><center>salvando el mundo y volver en cualquier momento.";
 		this.Atras = new BotonAtras(this);
 		JLabel Info = new JLabel();
-		Border borde = BorderFactory.createLineBorder(Color.BLACK,6);
-		Color color =new Color(71, 161, 197);
 		JLabel TInfo = new JLabel();
 		
-		TInfo.setBounds(((this.screenSize.width/2)-(this.screenSize.width/6)),(this.screenSize.height/7),(this.screenSize.width/3),(this.screenSize.height/5));
+		TInfo.setBounds(((cambiarImg.screenSize.width/2)-(cambiarImg.screenSize.width/6)),(cambiarImg.screenSize.height/7),(cambiarImg.screenSize.width/3),(cambiarImg.screenSize.height/5));
 		TInfo.setText("<html><center>Informacion del Juego");
 		TInfo.setForeground(Color.BLACK);
-		TInfo.setFont(new Font("Stika Text",Font.BOLD,(this.screenSize.height/15)));
-		TInfo.setBackground(color);
-		TInfo.setBorder(borde);
+		TInfo.setFont(new Font("Stika Text",Font.BOLD,(cambiarImg.screenSize.height/15)));
+		TInfo.setBackground(cambiarImg.color1);
+		TInfo.setBorder(cambiarImg.bordeN);
 		TInfo.setVisible(true);
 		TInfo.setOpaque(true);
 		
-		Info.setBounds(((this.screenSize.width/2)-(this.screenSize.width/4)),((this.screenSize.height/7)+(this.screenSize.height/5)),((this.screenSize.width/2)),((this.screenSize.height/2)));
+		Info.setBounds(((cambiarImg.screenSize.width/2)-(cambiarImg.screenSize.width/4)),((cambiarImg.screenSize.height/7)+(cambiarImg.screenSize.height/5)),((cambiarImg.screenSize.width/2)),((cambiarImg.screenSize.height/2)));
 		Info.setText(s);
 		Info.setForeground(Color.BLACK);
-		Info.setFont(new Font("Stika Text",Font.BOLD,this.screenSize.height/53));
-		Info.setBackground(color);
-		Info.setBorder(borde);
+		Info.setFont(new Font("Stika Text",Font.BOLD,cambiarImg.screenSize.height/53));
+		Info.setBackground(cambiarImg.color1);
+		Info.setBorder(cambiarImg.bordeN);
 		Info.setVisible(true);
 		Info.setOpaque(true);
 		
-		Atras.setBounds(0,(this.screenSize.height-((this.screenSize.width/19))),this.screenSize.width,(screenSize.width/25));
+		Atras.setBounds(0,(cambiarImg.screenSize.height-((cambiarImg.screenSize.width/19))),cambiarImg.screenSize.width,(cambiarImg.screenSize.width/25));
 	   // Info.setHorizontalAlignment(Info.CENTER);
 	    //Info.setHorizontalAlignment(Info.LEFT);
 	

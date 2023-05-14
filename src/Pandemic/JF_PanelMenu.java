@@ -23,14 +23,14 @@ public class JF_PanelMenu extends JPanel {
 	BotonVersion Version;
 	BotonSalir Salir;
 	JFrame marcoP;
-	 Dimension screenSize;
+
 
 	
 	JF_PanelMenu(){
 		
 		
 		 //cambiarImg img = new cambiarImg();
-		 this.screenSize = new Dimension(Toolkit.getDefaultToolkit().getScreenSize());
+
 		 
 		
 		setLayout(null);
@@ -45,14 +45,14 @@ public class JF_PanelMenu extends JPanel {
 		
 		
 		
-		this.NuevaPartida.setBounds			(((this.screenSize.width/2)-(this.screenSize.width/10)),(this.screenSize.height/6),(this.screenSize.width/5),(this.screenSize.width/20));
-		this.CargarPartida.setBounds		(((this.screenSize.width/2)-(this.screenSize.width/10)),((this.screenSize.height/6)+(this.screenSize.width/18)),(this.screenSize.width/5),(this.screenSize.width/20));
-		this.Infromacion.setBounds			(((this.screenSize.width/2)-(this.screenSize.width/10)),(this.screenSize.height/6+((this.screenSize.width/18)*2)),(this.screenSize.width/5),(this.screenSize.width/20));
-		this.ResumenPuntuaciones.setBounds	(((this.screenSize.width/2)-(this.screenSize.width/10)),(this.screenSize.height/6+((this.screenSize.width/18)*3)),(this.screenSize.width/5),(this.screenSize.width/20));
-		this.Autores.setBounds				(((this.screenSize.width/2)-(this.screenSize.width/10)),(this.screenSize.height/6+((this.screenSize.width/18)*4)),(this.screenSize.width/5),(this.screenSize.width/20));
-		this.Version.setBounds				(((this.screenSize.width/2)-(this.screenSize.width/10)),(this.screenSize.height/6+((this.screenSize.width/18)*5)),(this.screenSize.width/5),(this.screenSize.width/20));
-		this.Salir.setBounds				(((this.screenSize.width/2)-(this.screenSize.width/10)),(this.screenSize.height/6+((this.screenSize.width/18)*6)),(this.screenSize.width/5),(this.screenSize.width/20));
-		this.BotonLogOut.setBounds((this.screenSize.width/10)*9, (this.screenSize.height/10), this.screenSize.height/10, this.screenSize.width/14);
+		this.NuevaPartida.setBounds			(((cambiarImg.screenSize.width/2)-(cambiarImg.screenSize.width/10)),(cambiarImg.screenSize.height/6),(cambiarImg.screenSize.width/5),(cambiarImg.screenSize.width/20));
+		this.CargarPartida.setBounds		(((cambiarImg.screenSize.width/2)-(cambiarImg.screenSize.width/10)),((cambiarImg.screenSize.height/6)+(cambiarImg.screenSize.width/18)),(cambiarImg.screenSize.width/5),(cambiarImg.screenSize.width/20));
+		this.Infromacion.setBounds			(((cambiarImg.screenSize.width/2)-(cambiarImg.screenSize.width/10)),(cambiarImg.screenSize.height/6+((cambiarImg.screenSize.width/18)*2)),(cambiarImg.screenSize.width/5),(cambiarImg.screenSize.width/20));
+		this.ResumenPuntuaciones.setBounds	(((cambiarImg.screenSize.width/2)-(cambiarImg.screenSize.width/10)),(cambiarImg.screenSize.height/6+((cambiarImg.screenSize.width/18)*3)),(cambiarImg.screenSize.width/5),(cambiarImg.screenSize.width/20));
+		this.Autores.setBounds				(((cambiarImg.screenSize.width/2)-(cambiarImg.screenSize.width/10)),(cambiarImg.screenSize.height/6+((cambiarImg.screenSize.width/18)*4)),(cambiarImg.screenSize.width/5),(cambiarImg.screenSize.width/20));
+		this.Version.setBounds				(((cambiarImg.screenSize.width/2)-(cambiarImg.screenSize.width/10)),(cambiarImg.screenSize.height/6+((cambiarImg.screenSize.width/18)*5)),(cambiarImg.screenSize.width/5),(cambiarImg.screenSize.width/20));
+		this.Salir.setBounds				(((cambiarImg.screenSize.width/2)-(cambiarImg.screenSize.width/10)),(cambiarImg.screenSize.height/6+((cambiarImg.screenSize.width/18)*6)),(cambiarImg.screenSize.width/5),(cambiarImg.screenSize.width/20));
+		this.BotonLogOut.setBounds((cambiarImg.screenSize.width/10)*9, (cambiarImg.screenSize.height/10), cambiarImg.screenSize.height/10, cambiarImg.screenSize.width/14);
 		
 		
 		

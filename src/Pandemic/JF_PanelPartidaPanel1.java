@@ -24,15 +24,15 @@ public class JF_PanelPartidaPanel1 extends JPanel {
 	static JLabel puntuacion;
 	static JLabel brotes;
 	static JLabel ronda;
-	Dimension screenSize;
+
 
 	public JF_PanelPartidaPanel1() {
 
 		cambiarImg img = new cambiarImg();
-		Border borde = BorderFactory.createLineBorder(Color.BLACK, 3);
-		screenSize = new Dimension(Toolkit.getDefaultToolkit().getScreenSize());
+
+
 		setLayout(null);
-		this.setBounds(1551, 1, (this.screenSize.width - 1550), this.screenSize.height / 2);
+		this.setBounds(1551, 1, (cambiarImg.screenSize.width - 1550), cambiarImg.screenSize.height / 2);
 		this.setOpaque(true);
 
 		puntuacion = new JLabel();
@@ -42,7 +42,7 @@ public class JF_PanelPartidaPanel1 extends JPanel {
 		puntuacion.setBounds((this.getWidth() / 10) *1, ((this.getHeight() / 12) * 3), (this.getWidth() / 10) *8, this.getHeight() / 7);
 		puntuacion.setBackground(Color.orange);
 		puntuacion.setVisible(true);
-		puntuacion.setBorder(borde);
+		puntuacion.setBorder(cambiarImg.bordeN);
 		puntuacion.setOpaque(true);
 		puntuacion.setHorizontalAlignment(SwingConstants.CENTER);
 		puntuacion.setFont(new Font("Stika Text",Font.BOLD,21) );
@@ -51,7 +51,7 @@ public class JF_PanelPartidaPanel1 extends JPanel {
 		brotes.setBounds((this.getWidth() / 10) *1, ((this.getHeight() / 12) * 5), (this.getWidth() / 10) *8, this.getHeight() / 7);
 		brotes.setBackground(Color.orange);
 		brotes.setVisible(true);
-		brotes.setBorder(borde);
+		brotes.setBorder(cambiarImg.bordeN);
 		brotes.setHorizontalAlignment(SwingConstants.CENTER);
 		brotes.setFont(new Font("Stika Text",Font.BOLD,23) );
 		brotes.setOpaque(true);
@@ -60,7 +60,7 @@ public class JF_PanelPartidaPanel1 extends JPanel {
 		ronda.setBounds((this.getWidth() / 10) *1, ((this.getHeight() / 12) * 7),  (this.getWidth() / 10) *8, this.getHeight() / 7);
 		ronda.setBackground(Color.orange);
 		ronda.setVisible(true);
-		ronda.setBorder(borde);
+		ronda.setBorder(cambiarImg.bordeN);
 		ronda.setHorizontalAlignment(SwingConstants.CENTER);
 		ronda.setFont(new Font("Stika Text",Font.BOLD,23) );
 		ronda.setOpaque(true);

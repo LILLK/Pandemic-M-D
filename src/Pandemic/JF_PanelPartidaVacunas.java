@@ -28,19 +28,16 @@ public class JF_PanelPartidaVacunas extends JPanel {
 	BotonVacunaRojo botonVacunaRojo;
 	BotonVacunaAzul botonVacunaAzul;
 	BotonVacunaAmarillo botonVacunaAmarillo;
-	Dimension screenSize;
+
 	cambiarImg img = new cambiarImg();
 
 	public JF_PanelPartidaVacunas(JF_PanelPartida panel) {
 		//tamaño de los componentes de este panel
 		int tamañoX = 80;
 		int tamañoY = 80;
-		Color color = new Color(71, 161, 197);
-		Border borde = BorderFactory.createLineBorder(Color.BLACK, 3);
-		screenSize = new Dimension(Toolkit.getDefaultToolkit().getScreenSize());
+
 		setLayout(null);
-		this.setBounds(1, 850, 1550, (this.screenSize.height - 850 - 23));
-		this.setBackground(color);
+		this.setBounds(1, 850, 1550, (cambiarImg.screenSize.height - 850 - 23));
 
 		barraVacunaAzul = new JLabel();
 		barraVacunaRojo = new JLabel();

@@ -35,7 +35,7 @@ import Logico.Rankings;
 public class JF_PanelCargarPartida extends JPanel {
 	
 	BotonAtras Atras;
-	Dimension screenSize;
+
 	public static ArrayList<PartidasGuardadas> partGuar;
 	private static final String USER = "DAW_PNDC22_23_DAME";
 	private static final String PWD = "DM123";
@@ -45,13 +45,13 @@ public class JF_PanelCargarPartida extends JPanel {
 	public JF_PanelCargarPartida(){
 		
 		setLayout(null);
-		this.screenSize = new Dimension(Toolkit.getDefaultToolkit().getScreenSize());
+
 		JScrollPane scroll = new JScrollPane();
 		JPanel panel = new JPanel();
 		this.partGuar = new ArrayList<PartidasGuardadas>();
 		Connection con = ConexionBD.conectarBaseDatos();
-		Color color = new Color(71, 161, 197);
-		Border borde = BorderFactory.createLineBorder(Color.BLACK,6);
+
+
 		Border borde1 = BorderFactory.createLineBorder(Color.WHITE,2);
 
 		JLabel posicion = new JLabel();
@@ -64,7 +64,7 @@ public class JF_PanelCargarPartida extends JPanel {
 		System.out.println(Jugador.id);
 		ConexionBD.cargarPartidas(con, Jugador.id);
 		
-		scroll.setBounds((this.screenSize.width/2)-410,100,820,450);
+		scroll.setBounds((cambiarImg.screenSize.width/2)-410,100,820,450);
 		scroll.getVerticalScrollBar().setUI(new BasicScrollBarUI());
 		scroll.setViewportView(panel);
 		
@@ -74,7 +74,7 @@ public class JF_PanelCargarPartida extends JPanel {
 		posicion.setForeground(Color.white);
 		posicion.setHorizontalAlignment(SwingConstants.CENTER);
 		posicion.setFont(new Font("Stika Text",Font.BOLD,20) );
-		posicion.setBounds((this.screenSize.width/2)-410,50,80,50);
+		posicion.setBounds((cambiarImg.screenSize.width/2)-410,50,80,50);
 		posicion.setOpaque(true);
 		posicion.setVisible(true);
 		
@@ -83,7 +83,7 @@ public class JF_PanelCargarPartida extends JPanel {
 		nomUsu.setForeground(Color.white);
 		nomUsu.setHorizontalAlignment(SwingConstants.CENTER);
 		nomUsu.setFont(new Font("Stika Text",Font.BOLD,20) );
-		nomUsu.setBounds(((this.screenSize.width/2)-410)+80,50,240,50);
+		nomUsu.setBounds(((cambiarImg.screenSize.width/2)-410)+80,50,240,50);
 		nomUsu.setOpaque(true);
 		nomUsu.setVisible(true);
 		
@@ -92,7 +92,7 @@ public class JF_PanelCargarPartida extends JPanel {
 		dificultad.setForeground(Color.white);
 		dificultad.setHorizontalAlignment(SwingConstants.CENTER);
 		dificultad.setFont(new Font("Stika Text",Font.BOLD,20) );
-		dificultad.setBounds(((this.screenSize.width/2)-410)+320,50,100,50);
+		dificultad.setBounds(((cambiarImg.screenSize.width/2)-410)+320,50,100,50);
 		dificultad.setOpaque(true);
 		dificultad.setVisible(true);
 		
@@ -101,7 +101,7 @@ public class JF_PanelCargarPartida extends JPanel {
 		brotes.setForeground(Color.white);
 		brotes.setHorizontalAlignment(SwingConstants.CENTER);
 		brotes.setFont(new Font("Stika Text",Font.BOLD,20) );
-		brotes.setBounds(((this.screenSize.width/2)-410)+420,50,100,50);
+		brotes.setBounds(((cambiarImg.screenSize.width/2)-410)+420,50,100,50);
 		brotes.setOpaque(true);
 		brotes.setVisible(true);
 		
@@ -110,7 +110,7 @@ public class JF_PanelCargarPartida extends JPanel {
 		ronda.setForeground(Color.white);
 		ronda.setHorizontalAlignment(SwingConstants.CENTER);
 		ronda.setFont(new Font("Stika Text",Font.BOLD,20) );
-		ronda.setBounds(((this.screenSize.width/2)-410)+520,50,100,50);
+		ronda.setBounds(((cambiarImg.screenSize.width/2)-410)+520,50,100,50);
 		ronda.setOpaque(true);
 		ronda.setVisible(true);
 		
@@ -119,7 +119,7 @@ public class JF_PanelCargarPartida extends JPanel {
 		puntuacion.setForeground(Color.white);
 		puntuacion.setHorizontalAlignment(SwingConstants.CENTER);
 		puntuacion.setFont(new Font("Stika Text",Font.BOLD,20) );
-		puntuacion.setBounds(((this.screenSize.width/2)-410)+620,50,180,50);
+		puntuacion.setBounds(((cambiarImg.screenSize.width/2)-410)+620,50,180,50);
 		puntuacion.setOpaque(true);
 		puntuacion.setVisible(true);
 		
@@ -130,8 +130,8 @@ public class JF_PanelCargarPartida extends JPanel {
 			System.out.println(partidasGuardadas.brotes+" "+ partidasGuardadas.puntuacion);
 			JLabel label = new JLabel();
 			label.setBounds(0, 0+(100*i), 800,100 );
-			label.setBackground(color);
-			label.setBorder(borde);
+			label.setBackground(cambiarImg.color1);
+			label.setBorder(cambiarImg.bordeN);
 			
 			BotonCargar cargar = new BotonCargar(partidasGuardadas.idPartida,this);
 			cargar.setBounds(0, 0, 100, 100);
@@ -214,7 +214,7 @@ public class JF_PanelCargarPartida extends JPanel {
 		add(puntuacion);
 		add(scroll);
 		this.Atras = new BotonAtras(this);
-		Atras.setBounds(0,(this.screenSize.height-((screenSize.width/20)+4)),this.screenSize.width,(screenSize.width/25));
+		Atras.setBounds(0,(cambiarImg.screenSize.height-((cambiarImg.screenSize.width/20)+4)),cambiarImg.screenSize.width,(cambiarImg.screenSize.width/25));
 		add(this.Atras);
 	}
 	public void paint(Graphics g) {
@@ -241,7 +241,7 @@ public class JF_PanelCargarPartida extends JPanel {
 		Parametros.establecerParametros(Partida.dificultad);
 		JFrame marcoP = (JFrame)SwingUtilities.getWindowAncestor(this);	
 		marcoP.remove(this);
-		if (screenSize.width<1920 && screenSize.height < 1080) {
+		if (cambiarImg.screenSize.width<1920 && cambiarImg.screenSize.height < 1080) {
 			JOptionPane.showMessageDialog(new JFrame(), "No se puede jugar con una resulucion menor a 1920x1080");
 			marcoP.add(new JF_PanelMenu());
 		}else {

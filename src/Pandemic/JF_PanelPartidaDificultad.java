@@ -22,14 +22,14 @@ import Logico.Partida;
 
 public class JF_PanelPartidaDificultad extends JPanel {
 
-	Dimension screenSize;
-	int dificultad;
+
+
 	BotonAtras Atras;
 
 
 	public JF_PanelPartidaDificultad() {
 		cambiarImg img = new cambiarImg();
-		screenSize = new Dimension(Toolkit.getDefaultToolkit().getScreenSize());
+
 		setLayout(null);
 		
 		JLabel normal = new JLabel();
@@ -38,18 +38,18 @@ public class JF_PanelPartidaDificultad extends JPanel {
 		Atras = new BotonAtras(this);
 
 
-		normal.setBounds(((this.screenSize.width/2)-(this.screenSize.width/10)),(this.screenSize.height/6),(this.screenSize.width/5),(this.screenSize.width/20));
-		normal.setIcon(img.tamaño(new ImageIcon("botones/BottonDif_normal-1.png"), ((int)(screenSize.getWidth()/5)), ((int)(screenSize.getWidth()/20))));
+		normal.setBounds(((cambiarImg.screenSize.width/2)-(cambiarImg.screenSize.width/10)),(cambiarImg.screenSize.height/6),(cambiarImg.screenSize.width/5),(cambiarImg.screenSize.width/20));
+		normal.setIcon(img.tamaño(new ImageIcon("botones/BottonDif_normal-1.png"), ((int)(cambiarImg.screenSize.getWidth()/5)), ((int)(cambiarImg.screenSize.getWidth()/20))));
 		normal.addMouseListener(new MouseListener() {	
 			public void mouseEntered(MouseEvent e) {
-				normal.setIcon(img.tamaño(new ImageIcon("botones/BottonDif_normal-2.png"), ((int)(screenSize.getWidth()/5)), ((int)(screenSize.getWidth()/20))));
+				normal.setIcon(img.tamaño(new ImageIcon("botones/BottonDif_normal-2.png"), ((int)(cambiarImg.screenSize.getWidth()/5)), ((int)(cambiarImg.screenSize.getWidth()/20))));
 			}
 			public void mouseExited(MouseEvent a) {
-				normal.setIcon(img.tamaño(new ImageIcon("botones/BottonDif_normal-1.png"), ((int)(screenSize.getWidth()/5)), ((int)(screenSize.getWidth()/20))));
+				normal.setIcon(img.tamaño(new ImageIcon("botones/BottonDif_normal-1.png"), ((int)(cambiarImg.screenSize.getWidth()/5)), ((int)(cambiarImg.screenSize.getWidth()/20))));
 			}
 			public void mousePressed(MouseEvent i) {}
 			public void mouseClicked(MouseEvent e) {
-				dificultad = 1;
+				Partida.dificultad = 1;
 				irPanelPartida();
 
 			}
@@ -58,18 +58,18 @@ public class JF_PanelPartidaDificultad extends JPanel {
 		
 		
 		facil.setText("facil");
-		facil.setBounds(((this.screenSize.width/2)-(this.screenSize.width/10)),((this.screenSize.height/6)+(this.screenSize.width/18)),(this.screenSize.width/5),(this.screenSize.width/20));
-		facil.setIcon(img.tamaño(new ImageIcon("botones/BottonDif_facil-1.png"), ((int)(screenSize.getWidth()/5)), ((int)(screenSize.getWidth()/20))));
+		facil.setBounds(((cambiarImg.screenSize.width/2)-(cambiarImg.screenSize.width/10)),((cambiarImg.screenSize.height/6)+(cambiarImg.screenSize.width/18)),(cambiarImg.screenSize.width/5),(cambiarImg.screenSize.width/20));
+		facil.setIcon(img.tamaño(new ImageIcon("botones/BottonDif_facil-1.png"), ((int)(cambiarImg.screenSize.getWidth()/5)), ((int)(cambiarImg.screenSize.getWidth()/20))));
 		facil.addMouseListener(new MouseListener() {	
 			public void mouseEntered(MouseEvent e) {
-				facil.setIcon(img.tamaño(new ImageIcon("botones/BottonDif_facil-2.png"), ((int)(screenSize.getWidth()/5)), ((int)(screenSize.getWidth()/20))));
+				facil.setIcon(img.tamaño(new ImageIcon("botones/BottonDif_facil-2.png"), ((int)(cambiarImg.screenSize.getWidth()/5)), ((int)(cambiarImg.screenSize.getWidth()/20))));
 			}
 			public void mouseExited(MouseEvent a) {
-				facil.setIcon(img.tamaño(new ImageIcon("botones/BottonDif_facil-1.png"), ((int)(screenSize.getWidth()/5)), ((int)(screenSize.getWidth()/20))));
+				facil.setIcon(img.tamaño(new ImageIcon("botones/BottonDif_facil-1.png"), ((int)(cambiarImg.screenSize.getWidth()/5)), ((int)(cambiarImg.screenSize.getWidth()/20))));
 			}
 			public void mousePressed(MouseEvent i) {}
 			public void mouseClicked(MouseEvent e) {
-				dificultad = 0;
+				Partida.dificultad = 0;
 				irPanelPartida();
 
 			}
@@ -77,25 +77,25 @@ public class JF_PanelPartidaDificultad extends JPanel {
 		});
 		
 		
-		dificil.setIcon(img.tamaño(new ImageIcon("botones/BottonDif_dificil-1.png"), ((int)(screenSize.getWidth()/5)), ((int)(screenSize.getWidth()/20))));
+		dificil.setIcon(img.tamaño(new ImageIcon("botones/BottonDif_dificil-1.png"), ((int)(cambiarImg.screenSize.getWidth()/5)), ((int)(cambiarImg.screenSize.getWidth()/20))));
 		dificil.setText("dificil");
-		dificil.setBounds(((this.screenSize.width/2)-(this.screenSize.width/10)),(this.screenSize.height/6+((this.screenSize.width/18)*2)),(this.screenSize.width/5),(this.screenSize.width/20));
+		dificil.setBounds(((cambiarImg.screenSize.width/2)-(cambiarImg.screenSize.width/10)),(cambiarImg.screenSize.height/6+((cambiarImg.screenSize.width/18)*2)),(cambiarImg.screenSize.width/5),(cambiarImg.screenSize.width/20));
 		dificil.addMouseListener(new MouseListener() {	
 			public void mouseEntered(MouseEvent e) {
-				dificil.setIcon(img.tamaño(new ImageIcon("botones/BottonDif_dificil-2.png"), ((int)(screenSize.getWidth()/5)), ((int)(screenSize.getWidth()/20))));
+				dificil.setIcon(img.tamaño(new ImageIcon("botones/BottonDif_dificil-2.png"), ((int)(cambiarImg.screenSize.getWidth()/5)), ((int)(cambiarImg.screenSize.getWidth()/20))));
 			}
 			public void mouseExited(MouseEvent a) {
-				dificil.setIcon(img.tamaño(new ImageIcon("botones/BottonDif_dificil-1.png"), ((int)(screenSize.getWidth()/5)), ((int)(screenSize.getWidth()/20))));
+				dificil.setIcon(img.tamaño(new ImageIcon("botones/BottonDif_dificil-1.png"), ((int)(cambiarImg.screenSize.getWidth()/5)), ((int)(cambiarImg.screenSize.getWidth()/20))));
 			}
 			public void mousePressed(MouseEvent i) {}
 			public void mouseClicked(MouseEvent e) {
-				dificultad = 2;
+				Partida.dificultad = 2;
 				irPanelPartida();
 			}
 			public void mouseReleased(MouseEvent e) {}
 		});
 		
-		Atras.setBounds(0,(this.screenSize.height-((screenSize.width/20)-3)),this.screenSize.width,(screenSize.width/25));
+		Atras.setBounds(0,(cambiarImg.screenSize.height-((cambiarImg.screenSize.width/20)-3)),cambiarImg.screenSize.width,(cambiarImg.screenSize.width/25));
 		
 		add(this.Atras);
 		add(dificil);
@@ -118,10 +118,10 @@ public class JF_PanelPartidaDificultad extends JPanel {
 	}
 	
 	public void irPanelPartida() {
-		Partida.iniciarNuevaPartida(dificultad);
+		Partida.iniciarNuevaPartida(Partida.dificultad);
 		JFrame marcoP = (JFrame)SwingUtilities.getWindowAncestor(this);	
 		marcoP.remove(this);
-		if (screenSize.width<1920 && screenSize.height < 1080) {
+		if (cambiarImg.screenSize.width<1920 && cambiarImg.screenSize.height < 1080) {
 			JOptionPane.showMessageDialog(new JFrame(), "No se puede jugar con una resulucion menor a 1920x1080");
 			marcoP.add(new JF_PanelMenu());
 		}else {

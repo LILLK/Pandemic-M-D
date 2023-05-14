@@ -23,17 +23,15 @@ public class JF_PanelPartidaPanel2 extends JPanel {
 	static  JLabel log = new JLabel();
 	static String logText ;
 	static JLabel acciones = new JLabel();
-	Dimension screenSize;
+
 	BotonGuardarPartida BotonGuardarPartida;
 	public JF_PanelPartidaPanel2() {
 
 
 
-		Color color = new Color(71, 161, 197);
-		Border borde = BorderFactory.createLineBorder(Color.BLACK, 3);
-		screenSize = new Dimension(Toolkit.getDefaultToolkit().getScreenSize());
+
 		setLayout(null);
-		this.setBounds(1551, this.screenSize.height / 2 + 1, (this.screenSize.width - 1550), (this.screenSize.height / 2) - 23);
+		this.setBounds(1551, cambiarImg.screenSize.height / 2 + 1, (cambiarImg.screenSize.width - 1550), (cambiarImg.screenSize.height / 2) - 23);
 		this.setOpaque(true);
 		
 		
@@ -44,7 +42,7 @@ public class JF_PanelPartidaPanel2 extends JPanel {
 		acciones.setBounds(20, this.getHeight()/100, this.getWidth()-40, this.getHeight()/100*15);
 		acciones.setBackground(Color.orange);
 		acciones.setVisible(true);
-		acciones.setBorder(borde);
+		acciones.setBorder(cambiarImg.bordeN);
 		acciones.setOpaque(true);
 		acciones.setHorizontalAlignment(SwingConstants.CENTER);
 		acciones.setFont(new Font("Stika Text",Font.BOLD,21) );
@@ -53,7 +51,7 @@ public class JF_PanelPartidaPanel2 extends JPanel {
 		log.setBounds(20, this.getHeight()/100*15, this.getWidth()-40, this.getHeight()/100*75);
 		log.setBackground(Color.WHITE);
 		log.setVisible(true);
-		log.setBorder(borde);
+		log.setBorder(cambiarImg.bordeN);
 		log.setOpaque(true);
 		log.setText(logText=" ");
 		
