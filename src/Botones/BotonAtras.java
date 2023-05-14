@@ -200,7 +200,34 @@ import Pandemic.*;
 		}
 
 
+		public BotonAtras(JF_PanelPartida panel) {
+			this.screenSize=Toolkit.getDefaultToolkit().getScreenSize();
+			
+
+			
+			addMouseListener(new MouseListener() {	
+				public void mouseEntered(MouseEvent e) {
+					setIcon(img.tamaño(new ImageIcon("botones/salir_partida_entered.png"), 50, 50) );
+				}
+				public void mouseExited(MouseEvent a) {
+					setIcon(img.tamaño(new ImageIcon("botones/salir_partida.png"), 50, 50) );
+				}
+
+				public void mousePressed(MouseEvent i) {
+				}
+				public void mouseClicked(MouseEvent e) {
+					
+					panel.irMenu();
+				}
+				public void mouseReleased(MouseEvent e) {
+					// TODO Apéndice de método generado automáticamente
+					
+				}
+			});
 		
+			
+		}
+
 		
 
 

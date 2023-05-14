@@ -39,6 +39,7 @@ public class JF_PanelPartida extends JPanel {
 
 		// labels//
 		JLabel mapa = new JLabel();
+		BotonAtras botonAtras = new BotonAtras(this);
 		btnNombres = new BotonMostrarNombres();
 		panel1 = new JF_PanelPartidaPanel1();
 		panel2 = new JF_PanelPartidaPanel2();
@@ -46,6 +47,9 @@ public class JF_PanelPartida extends JPanel {
 		
 		mapa.setIcon(img.tamaño(new ImageIcon("imagenes/mapa_2.png"), 1550, 850));
 		mapa.setBounds(1, 1, 1550, 850);
+		botonAtras.setIcon(img.tamaño(new ImageIcon("botones/salir_partida.png"), 50, 50) );
+		botonAtras.setBounds(1450, 50, 50, 50);
+		botonAtras.setOpaque(false);
 		
 		
 		
@@ -58,6 +62,7 @@ public class JF_PanelPartida extends JPanel {
 			botonCiudad.setBounds(botonCiudad.ciudad.posicionX - (botonCiudad.tamañoX / 2), botonCiudad.ciudad.posicionY - (botonCiudad.tamañoY / 2), botonCiudad.tamañoX,botonCiudad.tamañoY);
 			add(botonCiudad);	
 		}
+		add(botonAtras);
 		add(btnNombres);
 		add(panel1);
 		add(panel2);
@@ -78,6 +83,12 @@ public class JF_PanelPartida extends JPanel {
 		return array;
 	}
 	
+	public void irMenu() {
+		JFrame marcoP = (JFrame)SwingUtilities.getWindowAncestor(this);	
+		marcoP.remove(this);
+		marcoP.add(new JF_PanelMenu());
+		marcoP.setVisible(true);
+	}
 	
 	public void acabarParida(int estado) {
 		JFrame marcoP = (JFrame)SwingUtilities.getWindowAncestor(this);	

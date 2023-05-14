@@ -48,6 +48,7 @@ public class BotonGuardarPartida extends JLabel {
 			}
 			public void mouseClicked(MouseEvent e) {
 				ConexionBD.guardarPartida(ConexionBD.con,false);
+				JOptionPane.showMessageDialog(new JFrame(), "Partida Guardada !");
 			}
 			public void mouseReleased(MouseEvent e) {
 				// TODO Apéndice de método generado automáticamente
