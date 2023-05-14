@@ -21,19 +21,19 @@ public class BotonRegistrarse extends JLabel {
 	public BotonRegistrarse(JF_PanelInicioSesion JF_PanelInicioSesion) {
 		
 
-		setIcon(img.tamaño(new ImageIcon("botones/registrar.png"),(cambiarImg.screenSize.width / 7)/2, (cambiarImg.screenSize.width / 55)) );
+		setIcon(img.tamaño(new ImageIcon("botones/registrar.png"),((cambiarImg.screenSize.width / 12)), (cambiarImg.screenSize.width / 45)) );
 		
 		addMouseListener((MouseListener) new MouseListener() {	
 			public void mouseEntered(MouseEvent e) {
-				setIcon(img.tamaño(new ImageIcon("botones/registrar-1.png"),(cambiarImg.screenSize.width / 7)/2, (cambiarImg.screenSize.width / 55)) );
+				setIcon(img.tamaño(new ImageIcon("botones/registrar-1.png"),((cambiarImg.screenSize.width / 12)), (cambiarImg.screenSize.width / 45)) );
 			}
 			public void mouseExited(MouseEvent a) {
-				setIcon(img.tamaño(new ImageIcon("botones/registrar.png"),(cambiarImg.screenSize.width / 7)/2, (cambiarImg.screenSize.width / 55)) );
+				setIcon(img.tamaño(new ImageIcon("botones/registrar.png"),((cambiarImg.screenSize.width / 12)), (cambiarImg.screenSize.width / 45)) );
 
 			}
 
 			public void mousePressed(MouseEvent i) {
-				setIcon(img.tamaño(new ImageIcon("botones/registrar-2.png"),(cambiarImg.screenSize.width / 7)/2, (cambiarImg.screenSize.width / 55)) );
+				setIcon(img.tamaño(new ImageIcon("botones/registrar-2.png"),((cambiarImg.screenSize.width / 12)), (cambiarImg.screenSize.width / 45)) );
 				
 			}
 			public void mouseClicked(MouseEvent e) {
@@ -52,18 +52,18 @@ public class BotonRegistrarse extends JLabel {
 
 		
 
-		setIcon(img.tamaño(new ImageIcon("botones/registrar.png"),(cambiarImg.screenSize.width / 7)/2, (cambiarImg.screenSize.width / 55)) );
+		setIcon(img.tamaño(new ImageIcon("botones/registrar.png"),((cambiarImg.screenSize.width / 12)), (cambiarImg.screenSize.width / 45)) );
 		
 		addMouseListener((MouseListener) new MouseListener() {	
 			public void mouseEntered(MouseEvent e) {
-				setIcon(img.tamaño(new ImageIcon("botones/registrar-1.png"),(cambiarImg.screenSize.width / 7)/2, (cambiarImg.screenSize.width / 55)) );
+				setIcon(img.tamaño(new ImageIcon("botones/registrar-1.png"),((cambiarImg.screenSize.width / 12)), (cambiarImg.screenSize.width / 45)) );
 			}
 			public void mouseExited(MouseEvent a) {
-				setIcon(img.tamaño(new ImageIcon("botones/registrar.png"),(cambiarImg.screenSize.width / 7)/2, (cambiarImg.screenSize.width / 55)) );
+				setIcon(img.tamaño(new ImageIcon("botones/registrar.png"),((cambiarImg.screenSize.width / 12)), (cambiarImg.screenSize.width / 45)) );
 			}
 
 			public void mousePressed(MouseEvent i) {
-				setIcon(img.tamaño(new ImageIcon("botones/registrar-2.png"),(cambiarImg.screenSize.width / 7)/2, (cambiarImg.screenSize.width / 55)) );
+				setIcon(img.tamaño(new ImageIcon("botones/registrar-2.png"),((cambiarImg.screenSize.width / 12)), (cambiarImg.screenSize.width / 45)) );
 			}
 			public void mouseClicked(MouseEvent e) {
 				

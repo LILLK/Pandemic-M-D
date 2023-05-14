@@ -22,19 +22,19 @@ public class BotonIniciarSesion extends JLabel {
 		
 		
 
-		setIcon(img.tamaño(new ImageIcon("botones/iniciar sesion.png"),(cambiarImg.screenSize.width / 7)/2, (cambiarImg.screenSize.width / 55)) );
+		setIcon(img.tamaño(new ImageIcon("botones/iniciar sesion.png"),((cambiarImg.screenSize.width / 12)), (cambiarImg.screenSize.width / 45)) );
 		
 		addMouseListener((MouseListener) new MouseListener() {	
 			public void mouseEntered(MouseEvent e) {
-				setIcon(img.tamaño(new ImageIcon("botones/iniciar sesion-1.png"),(cambiarImg.screenSize.width / 7)/2, (cambiarImg.screenSize.width / 55)) );
+				setIcon(img.tamaño(new ImageIcon("botones/iniciar sesion-1.png"),((cambiarImg.screenSize.width / 12)), (cambiarImg.screenSize.width / 45)) );
 
 			}
 			public void mouseExited(MouseEvent a) {
-				setIcon(img.tamaño(new ImageIcon("botones/iniciar sesion.png"),(cambiarImg.screenSize.width / 7)/2, (cambiarImg.screenSize.width / 55)) );
+				setIcon(img.tamaño(new ImageIcon("botones/iniciar sesion.png"),((cambiarImg.screenSize.width / 12)), (cambiarImg.screenSize.width / 45)) );
 			}
 
 			public void mousePressed(MouseEvent i) {
-				setIcon(img.tamaño(new ImageIcon("botones/iniciar sesion-2.png"),(cambiarImg.screenSize.width / 7)/2, (cambiarImg.screenSize.width / 55)) );
+				setIcon(img.tamaño(new ImageIcon("botones/iniciar sesion-2.png"),((cambiarImg.screenSize.width / 12)), (cambiarImg.screenSize.width / 45)) );
 
 			}
 			public void mouseClicked(MouseEvent e) {
@@ -57,16 +57,20 @@ public class BotonIniciarSesion extends JLabel {
 	public BotonIniciarSesion(JF_PanelRegistrarse JF_PanelRegistrarse) {
 		
 
-		setIcon(img.tamaño(new ImageIcon("botones/iniciar sesion.png"),(cambiarImg.screenSize.width / 7)/2, (cambiarImg.screenSize.width / 55)) );
+		setIcon(img.tamaño(new ImageIcon("botones/iniciar sesion.png"),((cambiarImg.screenSize.width / 12)), (cambiarImg.screenSize.width / 45)) );
 		
 		addMouseListener((MouseListener) new MouseListener() {	
 			public void mouseEntered(MouseEvent e) {
+				setIcon(img.tamaño(new ImageIcon("botones/iniciar sesion-1.png"),((cambiarImg.screenSize.width / 12)), (cambiarImg.screenSize.width / 45)) );
+
 			}
 			public void mouseExited(MouseEvent a) {
+				setIcon(img.tamaño(new ImageIcon("botones/iniciar sesion.png"),((cambiarImg.screenSize.width / 12)), (cambiarImg.screenSize.width / 45)) );
+
 			}
 
 			public void mousePressed(MouseEvent i) {
-				
+				setIcon(img.tamaño(new ImageIcon("botones/iniciar sesion-2.png"),((cambiarImg.screenSize.width / 12)), (cambiarImg.screenSize.width / 45)) );
 			}
 			public void mouseClicked(MouseEvent e) {
 

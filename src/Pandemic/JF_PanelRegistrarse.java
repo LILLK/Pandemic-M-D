@@ -40,32 +40,34 @@ public class JF_PanelRegistrarse extends JPanel {
 				(cambiarImg.screenSize.width / 20));
 		//text fields//
 		JTFUsuario = new JTextField(1);
-		JTFUsuario.setBounds(((cambiarImg.screenSize.width / 7)*3),
-				((cambiarImg.screenSize.height / 7)*2),
-				(cambiarImg.screenSize.width / 7),
-				(cambiarImg.screenSize.width / 50));
+		JTFUsuario.setBounds(((cambiarImg.screenSize.width / 12)*5),
+		((cambiarImg.screenSize.height / 7)*2),
+		(cambiarImg.screenSize.width / 12)*2,
+		(cambiarImg.screenSize.width / 35));
+
 		JTFUsuario.setBorder(cambiarImg.bordeN);
 		
 		JTFContraseña = new JPasswordField(1);
-		JTFContraseña.setBounds(((cambiarImg.screenSize.width / 7)*3),
-				((cambiarImg.screenSize.height / 7)*3),
-				(cambiarImg.screenSize.width / 7),
-				(cambiarImg.screenSize.width / 50));
+		JTFContraseña.setBounds(((cambiarImg.screenSize.width / 12)*5),
+		((cambiarImg.screenSize.height / 7)*3),
+		(cambiarImg.screenSize.width / 12)*2,
+		(cambiarImg.screenSize.width / 35));
+;
 		JTFContraseña.setBorder(cambiarImg.bordeN);
 		
 		JTFRepContraseña = new JPasswordField(1);
-		JTFRepContraseña.setBounds(((cambiarImg.screenSize.width / 7)*3),
+		JTFRepContraseña.setBounds(((cambiarImg.screenSize.width / 12)*5),
 				((cambiarImg.screenSize.height / 7)*4),
-				(cambiarImg.screenSize.width / 7),
-				(cambiarImg.screenSize.width / 50));
+				(cambiarImg.screenSize.width / 12)*2,
+				(cambiarImg.screenSize.width / 35));
 		JTFRepContraseña.setBorder(cambiarImg.bordeN);
 		
 		//labels//
 		JLabel JLUsuario = new  JLabel();
-		JLUsuario.setBounds(((cambiarImg.screenSize.width / 7)*3),
-				((cambiarImg.screenSize.height / 7)*2 - (cambiarImg.screenSize.width / 55)),
-				((cambiarImg.screenSize.width / 7)/2),
-				(cambiarImg.screenSize.width / 55));
+		JLUsuario.setBounds(((cambiarImg.screenSize.width / 12)*5),
+				((cambiarImg.screenSize.height / 7)*2 - (cambiarImg.screenSize.width / 45)),
+				((cambiarImg.screenSize.width / 12)),
+				(cambiarImg.screenSize.width / 45));
 		JLUsuario.setText("<html><center>Usuario");
 		JLUsuario.setForeground(Color.BLACK);
 		JLUsuario.setFont(new Font("Stika Text",Font.BOLD,(cambiarImg.screenSize.height/80)));
@@ -75,10 +77,10 @@ public class JF_PanelRegistrarse extends JPanel {
 		
 		
 		JLabel JLcontraseña = new  JLabel();
-		JLcontraseña.setBounds(((cambiarImg.screenSize.width / 7)*3),
-				((cambiarImg.screenSize.height / 7)*3 - (cambiarImg.screenSize.width / 55)),
-				((cambiarImg.screenSize.width / 7)/2),
-				(cambiarImg.screenSize.width / 55));
+		JLcontraseña.setBounds(((cambiarImg.screenSize.width / 12)*5),
+				((cambiarImg.screenSize.height / 7)*3 - (cambiarImg.screenSize.width / 45)),
+				((cambiarImg.screenSize.width / 12)),
+				(cambiarImg.screenSize.width / 45));
 		JLcontraseña.setText("<html><center>Contraseña");
 		JLcontraseña.setForeground(Color.BLACK);
 		JLcontraseña.setFont(new Font("Stika Text",Font.BOLD,(cambiarImg.screenSize.height/80)));
@@ -87,10 +89,10 @@ public class JF_PanelRegistrarse extends JPanel {
 		JLcontraseña.setOpaque(true);
 		
 		JLabel JLRepContraseña = new  JLabel();
-		JLRepContraseña.setBounds(((cambiarImg.screenSize.width / 7)*3),
-				((cambiarImg.screenSize.height / 7)*4 - (cambiarImg.screenSize.width / 55)),
-				((cambiarImg.screenSize.width / 7)/2),
-				(cambiarImg.screenSize.width / 55));
+		JLRepContraseña.setBounds(((cambiarImg.screenSize.width / 12)*5),
+				((cambiarImg.screenSize.height / 7)*4 - (cambiarImg.screenSize.width / 45)),
+				((cambiarImg.screenSize.width / 12)),
+				(cambiarImg.screenSize.width / 45));
 		JLRepContraseña.setText("<html><center>Repetir Conrtraseña");
 		JLRepContraseña.setForeground(Color.BLACK);
 		JLRepContraseña.setFont(new Font("Stika Text",Font.BOLD,(cambiarImg.screenSize.height/80)));
@@ -100,19 +102,19 @@ public class JF_PanelRegistrarse extends JPanel {
 		
 		//botones//
 		BotonIniciarSesion = new  BotonIniciarSesion(this);
-		BotonIniciarSesion.setBounds(((cambiarImg.screenSize.width / 7)*3+(cambiarImg.screenSize.width / 7)/2),
-				((cambiarImg.screenSize.height / 7)*4 + (cambiarImg.screenSize.width / 50)),
-				((cambiarImg.screenSize.width / 7)/2),
-				(cambiarImg.screenSize.width / 55));
+		BotonIniciarSesion.setBounds(((cambiarImg.screenSize.width / 2)-((cambiarImg.screenSize.width / 12))),
+				((cambiarImg.screenSize.height / 7)*4 + (cambiarImg.screenSize.width / 30)),
+				((cambiarImg.screenSize.width / 12)),
+				(cambiarImg.screenSize.width / 45));
 		BotonIniciarSesion.setOpaque(true);
 
 		
 		
 		BotonRegistrarse = new  BotonRegistrarse(this);
-		BotonRegistrarse.setBounds(((cambiarImg.screenSize.width / 7)*3),
-				((cambiarImg.screenSize.height / 7)*4 + (cambiarImg.screenSize.width / 50)),
-				((cambiarImg.screenSize.width / 7)/2),
-				(cambiarImg.screenSize.width / 55));
+		BotonRegistrarse.setBounds((cambiarImg.screenSize.width / 2),
+				((cambiarImg.screenSize.height / 7)*4 + (cambiarImg.screenSize.width / 30)),
+				((cambiarImg.screenSize.width / 12)),
+				(cambiarImg.screenSize.width / 45));
 		BotonRegistrarse.setOpaque(true);
 
 		
