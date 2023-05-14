@@ -37,11 +37,7 @@ public class JF_PanelCargarPartida extends JPanel {
 	BotonAtras Atras;
 
 	public static ArrayList<PartidasGuardadas> partGuar;
-	private static final String USER = "DAW_PNDC22_23_DAME";
-	private static final String PWD = "DM123";
-	// Si estáis desde casa, la url será oracle.ilerna.com y no 192.168.3.26
-	private static final String URL = "jdbc:oracle:thin:@192.168.3.26:1521:xe";
-	
+
 	public JF_PanelCargarPartida(){
 		
 		setLayout(null);
@@ -114,7 +110,7 @@ public class JF_PanelCargarPartida extends JPanel {
 		ronda.setOpaque(true);
 		ronda.setVisible(true);
 		
-		puntuacion.setText("Puntuacion");
+		puntuacion.setText("Puntuación");
 		puntuacion.setBackground(Color.black);
 		puntuacion.setForeground(Color.white);
 		puntuacion.setHorizontalAlignment(SwingConstants.CENTER);

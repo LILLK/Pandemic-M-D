@@ -113,7 +113,7 @@ public class JF_PanelPuntuaciones extends JPanel {
 		ronda.setOpaque(true);
 		ronda.setVisible(true);
 		
-		puntuacion.setText("Puntuacion");
+		puntuacion.setText("Puntuación");
 		puntuacion.setBackground(Color.black);
 		puntuacion.setForeground(Color.white);
 		puntuacion.setHorizontalAlignment(SwingConstants.CENTER);

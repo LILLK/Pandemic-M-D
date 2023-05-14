@@ -38,9 +38,9 @@ public class BotonIniciarSesion extends JLabel {
 
 			}
 			public void mouseClicked(MouseEvent e) {
-				Connection con = ConexionBD.conectarBaseDatos();
+
 				
-				if(ConexionBD.existeUsuario(con, JF_PanelInicioSesion.getJTFUsuario(), JF_PanelInicioSesion.getJTFContraseña())) {
+				if(ConexionBD.existeUsuario(ConexionBD.con, JF_PanelInicioSesion.getJTFUsuario(), JF_PanelInicioSesion.getJTFContraseña())) {
 					JF_PanelInicioSesion.irMenu();
 				}else {
 					JF_PanelInicioSesion.usuContError();
