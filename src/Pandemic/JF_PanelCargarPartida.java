@@ -27,39 +27,47 @@ import Logico.ConexionBD;
 import Logico.Parametros;
 import Logico.Partida;
 import Logico.PartidasGuardadas;
-
+/**
+ * Esta classe es el panel de Cargar  Partida.
+ * En esta se encotrara una lista de partidas que se podran cargar para seguir jugando.
+ * @author DAME
+ */
 public class JF_PanelCargarPartida extends JPanel {
-	
+	/**
+	 * Este boton vuelve al menu.
+	 * {@link BotonAtras}
+	 */
 	BotonAtras Atras;
-
+	/**
+	 * Lista de partidas guardadas
+	 */
 	public static ArrayList<PartidasGuardadas> partGuar;
-
+	/**
+	 * Constructor del panel cargar partida
+	 * Este panel contiene un panel principal en el centro 
+	 * con el listado de partidas guardadas disponibles al usuario.
+	 */
 	public JF_PanelCargarPartida(){
-		
 		setLayout(null);
-
 		JScrollPane scroll = new JScrollPane();
 		JPanel panel = new JPanel();
 		this.partGuar = new ArrayList<PartidasGuardadas>();
-
-
 		Border borde1 = BorderFactory.createLineBorder(Color.WHITE,2);
-
 		JLabel posicion = new JLabel();
 		JLabel nomUsu = new JLabel();
 		JLabel dificultad = new JLabel();
 		JLabel brotes = new JLabel();
 		JLabel ronda = new JLabel();
 		JLabel puntuacion = new JLabel();
-		
-
+		//carga los datos y las variables del programa
 		ConexionBD.cargarPartidas();
 		
+		//JScrollPane scroll
 		scroll.setBounds((cambiarImg.screenSize.width/2)-410,330,820,450);
 		scroll.getVerticalScrollBar().setUI(new BasicScrollBarUI());
 		scroll.setViewportView(panel);
 		
-		
+		//JLabel posicion 
 		posicion.setText("Cargar");
 		posicion.setBackground(Color.black);
 		posicion.setForeground(Color.white);
@@ -68,7 +76,7 @@ public class JF_PanelCargarPartida extends JPanel {
 		posicion.setBounds((cambiarImg.screenSize.width/2)-410,280,80,50);
 		posicion.setOpaque(true);
 		posicion.setVisible(true);
-		
+		//JLabel nomUsu 
 		nomUsu.setText("Acciones");
 		nomUsu.setBackground(Color.black);
 		nomUsu.setForeground(Color.white);
@@ -77,7 +85,7 @@ public class JF_PanelCargarPartida extends JPanel {
 		nomUsu.setBounds(((cambiarImg.screenSize.width/2)-410)+80,280,240,50);
 		nomUsu.setOpaque(true);
 		nomUsu.setVisible(true);
-		
+		//JLabel dificultad
 		dificultad.setText("Dificultad");
 		dificultad.setBackground(Color.black);
 		dificultad.setForeground(Color.white);
@@ -86,7 +94,7 @@ public class JF_PanelCargarPartida extends JPanel {
 		dificultad.setBounds(((cambiarImg.screenSize.width/2)-410)+320,280,100,50);
 		dificultad.setOpaque(true);
 		dificultad.setVisible(true);
-		
+		//JLabel brotes
 		brotes.setText("Brotes");
 		brotes.setBackground(Color.black);
 		brotes.setForeground(Color.white);
@@ -95,7 +103,7 @@ public class JF_PanelCargarPartida extends JPanel {
 		brotes.setBounds(((cambiarImg.screenSize.width/2)-410)+420,280,100,50);
 		brotes.setOpaque(true);
 		brotes.setVisible(true);
-		
+		//JLabel ronda
 		ronda.setText("Ronda");
 		ronda.setBackground(Color.black);
 		ronda.setForeground(Color.white);
@@ -104,7 +112,7 @@ public class JF_PanelCargarPartida extends JPanel {
 		ronda.setBounds(((cambiarImg.screenSize.width/2)-410)+520,280,100,50);
 		ronda.setOpaque(true);
 		ronda.setVisible(true);
-		
+		//JLabel puntuacion
 		puntuacion.setText("Puntuación");
 		puntuacion.setBackground(Color.black);
 		puntuacion.setForeground(Color.white);
@@ -116,7 +124,6 @@ public class JF_PanelCargarPartida extends JPanel {
 		
 		panel.setLayout(null);
 		int i =0;
-		
 		for(PartidasGuardadas partidasGuardadas : JF_PanelCargarPartida.partGuar) {
 			System.out.println(partidasGuardadas.brotes+" "+ partidasGuardadas.puntuacion);
 			JLabel label = new JLabel();
@@ -137,7 +144,8 @@ public class JF_PanelCargarPartida extends JPanel {
 				accion.setBorder(borde1);
 				label.add(accion);
 			}
-			//
+			//Contenido del label dentro del label.
+			//Registro partida a partida
 			JLabel dificultadU = new JLabel();
 			String dificultadS ="<html><center>"+ partidasGuardadas.dificultadPartida;
 			dificultadU.setText(dificultadS);
@@ -191,12 +199,9 @@ public class JF_PanelCargarPartida extends JPanel {
 			label.setVisible(true);
 			label.setOpaque(true);
 			panel.add(label);
-			//p.updateUI();
 			i++;
 		}
-	
 		panel.setPreferredSize(new Dimension(800,100*i));
-		
 		add(posicion);
 		add(nomUsu);
 		add(dificultad);
@@ -208,6 +213,9 @@ public class JF_PanelCargarPartida extends JPanel {
 		Atras.setBounds(0,(cambiarImg.screenSize.height-((cambiarImg.screenSize.width/20)+4)),cambiarImg.screenSize.width,(cambiarImg.screenSize.width/25));
 		add(this.Atras);
 	}
+	/**
+	 * Este metodo pinta el fondo de la pantalla
+	 */
 	public void paint(Graphics g) {
 		BufferedImage imgFondo;
 		try {
@@ -220,13 +228,20 @@ public class JF_PanelCargarPartida extends JPanel {
 			System.out.print("Error IMGfondo JF_PanelMenuMenu");
 		}
 		
-		
+		/**
+		 * Este metodo cambia el panel {@link JF_PanelCargarPartida } por el panel {@link JF_PanelMenu}
+		 */
 	} 	public void irMenu() {
 		JFrame marcoP = (JFrame)SwingUtilities.getWindowAncestor(this);	
 		marcoP.remove(this);
 		marcoP.add(new JF_PanelMenu());
 		marcoP.setVisible(true);
 	}
+	/**
+	 * Este metodo cambia el panel {@link JF_PanelCargarPartida} por el panel {@link JF_PanelPartida}
+	 * si la resulocion de la pantalla es menor a 1920x1080.
+	 * Sino cargara el panel {@link JF_PanelMenu} despues de un mensaje
+	 */
 	public void irPanelPartida(int idP) {
 		ConexionBD.cargarPartida( idP);
 		Parametros.establecerParametros(Partida.dificultad);

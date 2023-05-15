@@ -247,5 +247,12 @@ public class JF_PanelPartidaVacunas extends JPanel {
 			break;
 		}
 	}
-
+	
+	
+	public void update() {
+		updateBarraVacunaAzul();
+		updateBarraVacunaAmarillo();
+		updateBarraVacunaRojo();
+		updateBarraVacunaVerde();
+	}
 }

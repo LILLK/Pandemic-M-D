@@ -137,7 +137,9 @@ public class Partida {
 		ConexionBD.iniciarPartida();
 		ConexionBD.idPartida();
 	}
-
+	/**
+	 * Esta funcion actualiza los datos de la partida
+	 */
 	public static void update() {
 		JF_PanelPartidaPanel2.updateAcciones();
 		JF_PanelPartidaPanel1.updateBrotes();

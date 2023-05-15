@@ -9,7 +9,11 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import Botones.*;
-
+/**
+ * Esta classe es el pan
+ * @author DAME
+ *
+ */
 public class JF_PanelInicioSesion extends JPanel {
 
 	BotonIniciarSesion BotonIniciarSesion;
