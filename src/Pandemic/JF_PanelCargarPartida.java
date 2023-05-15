@@ -26,7 +26,6 @@ import javax.swing.plaf.basic.BasicScrollBarUI;
 import Botones.BotonAtras;
 import Botones.BotonCargar;
 import Logico.ConexionBD;
-import Logico.Jugador;
 import Logico.Parametros;
 import Logico.Partida;
 import Logico.PartidasGuardadas;
@@ -45,7 +44,6 @@ public class JF_PanelCargarPartida extends JPanel {
 		JScrollPane scroll = new JScrollPane();
 		JPanel panel = new JPanel();
 		this.partGuar = new ArrayList<PartidasGuardadas>();
-		Connection con = ConexionBD.conectarBaseDatos();
 
 
 		Border borde1 = BorderFactory.createLineBorder(Color.WHITE,2);
@@ -57,10 +55,10 @@ public class JF_PanelCargarPartida extends JPanel {
 		JLabel ronda = new JLabel();
 		JLabel puntuacion = new JLabel();
 		
-		System.out.println(Jugador.id);
-		ConexionBD.cargarPartidas(con, Jugador.id);
+		System.out.println(Partida.idP);
+		ConexionBD.cargarPartidas(Partida.idP);
 		
-		scroll.setBounds((cambiarImg.screenSize.width/2)-410,100,820,450);
+		scroll.setBounds((cambiarImg.screenSize.width/2)-410,330,820,450);
 		scroll.getVerticalScrollBar().setUI(new BasicScrollBarUI());
 		scroll.setViewportView(panel);
 		
@@ -70,7 +68,7 @@ public class JF_PanelCargarPartida extends JPanel {
 		posicion.setForeground(Color.white);
 		posicion.setHorizontalAlignment(SwingConstants.CENTER);
 		posicion.setFont(new Font("Stika Text",Font.BOLD,20) );
-		posicion.setBounds((cambiarImg.screenSize.width/2)-410,50,80,50);
+		posicion.setBounds((cambiarImg.screenSize.width/2)-410,280,80,50);
 		posicion.setOpaque(true);
 		posicion.setVisible(true);
 		
@@ -79,7 +77,7 @@ public class JF_PanelCargarPartida extends JPanel {
 		nomUsu.setForeground(Color.white);
 		nomUsu.setHorizontalAlignment(SwingConstants.CENTER);
 		nomUsu.setFont(new Font("Stika Text",Font.BOLD,20) );
-		nomUsu.setBounds(((cambiarImg.screenSize.width/2)-410)+80,50,240,50);
+		nomUsu.setBounds(((cambiarImg.screenSize.width/2)-410)+80,280,240,50);
 		nomUsu.setOpaque(true);
 		nomUsu.setVisible(true);
 		
@@ -88,7 +86,7 @@ public class JF_PanelCargarPartida extends JPanel {
 		dificultad.setForeground(Color.white);
 		dificultad.setHorizontalAlignment(SwingConstants.CENTER);
 		dificultad.setFont(new Font("Stika Text",Font.BOLD,20) );
-		dificultad.setBounds(((cambiarImg.screenSize.width/2)-410)+320,50,100,50);
+		dificultad.setBounds(((cambiarImg.screenSize.width/2)-410)+320,280,100,50);
 		dificultad.setOpaque(true);
 		dificultad.setVisible(true);
 		
@@ -97,7 +95,7 @@ public class JF_PanelCargarPartida extends JPanel {
 		brotes.setForeground(Color.white);
 		brotes.setHorizontalAlignment(SwingConstants.CENTER);
 		brotes.setFont(new Font("Stika Text",Font.BOLD,20) );
-		brotes.setBounds(((cambiarImg.screenSize.width/2)-410)+420,50,100,50);
+		brotes.setBounds(((cambiarImg.screenSize.width/2)-410)+420,280,100,50);
 		brotes.setOpaque(true);
 		brotes.setVisible(true);
 		
@@ -106,7 +104,7 @@ public class JF_PanelCargarPartida extends JPanel {
 		ronda.setForeground(Color.white);
 		ronda.setHorizontalAlignment(SwingConstants.CENTER);
 		ronda.setFont(new Font("Stika Text",Font.BOLD,20) );
-		ronda.setBounds(((cambiarImg.screenSize.width/2)-410)+520,50,100,50);
+		ronda.setBounds(((cambiarImg.screenSize.width/2)-410)+520,280,100,50);
 		ronda.setOpaque(true);
 		ronda.setVisible(true);
 		
@@ -115,7 +113,7 @@ public class JF_PanelCargarPartida extends JPanel {
 		puntuacion.setForeground(Color.white);
 		puntuacion.setHorizontalAlignment(SwingConstants.CENTER);
 		puntuacion.setFont(new Font("Stika Text",Font.BOLD,20) );
-		puntuacion.setBounds(((cambiarImg.screenSize.width/2)-410)+620,50,180,50);
+		puntuacion.setBounds(((cambiarImg.screenSize.width/2)-410)+620,280,180,50);
 		puntuacion.setOpaque(true);
 		puntuacion.setVisible(true);
 		
@@ -142,7 +140,7 @@ public class JF_PanelCargarPartida extends JPanel {
 				accion.setBorder(borde1);
 				label.add(accion);
 			}
-			//////////////////
+			//
 			JLabel dificultadU = new JLabel();
 			String dificultadS ="<html><center>"+ partidasGuardadas.dificultadPartida;
 			dificultadU.setText(dificultadS);
@@ -233,7 +231,7 @@ public class JF_PanelCargarPartida extends JPanel {
 		marcoP.setVisible(true);
 	}
 	public void irPanelPartida(int idP) {
-		ConexionBD.cargarPartida(ConexionBD.con, Jugador.id, idP);
+		ConexionBD.cargarPartida( Partida.idP, idP);
 		Parametros.establecerParametros(Partida.dificultad);
 		JFrame marcoP = (JFrame)SwingUtilities.getWindowAncestor(this);	
 		marcoP.remove(this);

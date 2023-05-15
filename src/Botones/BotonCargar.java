@@ -8,8 +8,7 @@ import java.awt.event.MouseListener;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
-import Logico.ConexionBD;
-import Logico.Jugador;
+import Logico.*;
 import Logico.Parametros;
 import Logico.Partida;
 import Pandemic.JF_PanelCargarPartida;

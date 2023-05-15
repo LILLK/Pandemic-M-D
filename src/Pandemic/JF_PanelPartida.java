@@ -88,7 +88,7 @@ public class JF_PanelPartida extends JPanel {
 		marcoP.remove(this);
 		marcoP.add(new JF_PanelMenu());
 		marcoP.setVisible(true);
-		ConexionBD.guardarPartida(ConexionBD.con, false);
+		ConexionBD.guardarPartida(false);
 	}
 	
 	public void acabarParida(int estado) {

@@ -21,12 +21,7 @@ public class cambiarImg {
 	public static final Border bordeN = BorderFactory.createLineBorder(Color.BLACK, 6);;
 	public static Dimension screenSize=Toolkit.getDefaultToolkit().getScreenSize();
 	public static Color color1 = new Color(71,161,197);
-
-
 	
-	public cambiarImg() {
-		
-	}
 	public static ImageIcon tamaño(ImageIcon im, int w, int h) {
 		BufferedImage bi = new BufferedImage(w,h, BufferedImage.TRANSLUCENT);
 		Graphics2D gd=(Graphics2D)bi.createGraphics();

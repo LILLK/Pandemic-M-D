@@ -40,7 +40,7 @@ public class BotonGuardarPartida extends JLabel {
 			public void mousePressed(MouseEvent i) {
 			}
 			public void mouseClicked(MouseEvent e) {
-				ConexionBD.guardarPartida(ConexionBD.con,false);
+				ConexionBD.guardarPartida(false);
 				JOptionPane.showMessageDialog(new JFrame(), "Partida Guardada !");
 			}
 			public void mouseReleased(MouseEvent e) {				

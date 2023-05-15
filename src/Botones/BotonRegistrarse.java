@@ -81,9 +81,9 @@ public class BotonRegistrarse extends JLabel {
 				
 
 				if(JF_PanelRegistrarse.getJTFContraseña().equals(JF_PanelRegistrarse.getJTFRepContraseña())) {
-					if((ConexionBD.crearUsuario(ConexionBD.con, JF_PanelRegistrarse.getJTFUsuario(), JF_PanelRegistrarse.getJTFContraseña()))){
+					if((ConexionBD.crearUsuario( JF_PanelRegistrarse.getJTFUsuario(), JF_PanelRegistrarse.getJTFContraseña()))){
+						JF_PanelInfo.NombreJ=JF_PanelRegistrarse.getJTFUsuario();
 						JF_PanelRegistrarse.irMenu();
-						
 					}else {
 						JOptionPane.showMessageDialog(new JFrame(), "El usuario ya existe" );
 					}

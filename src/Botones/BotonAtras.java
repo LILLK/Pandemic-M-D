@@ -24,8 +24,8 @@ import Pandemic.*;
 	public class BotonAtras extends JLabel {
 			
 		/**
-			 * Contructor del boton atras en {@linkplain JF_PanelAutores}
-			 * @param {@linkplain JF_PanelAutores} 
+			 * Contructor del boton atras en {@link JF_PanelAutores}
+			 * @param {@link JF_PanelAutores} 
 			 * @author DAME
 			 * 
 			 */

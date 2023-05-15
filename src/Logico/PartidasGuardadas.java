@@ -1,5 +1,15 @@
 package Logico;
-
+/**
+ * Esta classe crea el aloja este objeto, que sirve para cargar los datos de la partida 
+ * @author DAME
+ * 	+ int idPartida
+*	+ int brotes
+*	+ int ronda
+*	+ int puntuacion
+*	+ int dificultadPartida
+*	+ int acciones
+ *
+ */
 public class PartidasGuardadas {
 	public int idPartida;
 	public int brotes;
@@ -7,7 +17,15 @@ public class PartidasGuardadas {
 	public int puntuacion;
 	public int dificultadPartida;
 	public int acciones;
-	
+	/**
+	 * Constructror del objeto {@linkPartidasGuardadas}
+	 * @param int idP
+	 * @param int brotes
+	 * @param int ronda
+	 * @param int puntuacion
+	 * @param int dificultad
+	 * @param int acciones
+	 */
 	public PartidasGuardadas(int idP,int brotes, int ronda,  int puntuacion, int dificultad,int acciones) {
 		this.idPartida = idP;
 		this.brotes = brotes;
@@ -16,35 +34,4 @@ public class PartidasGuardadas {
 		this.dificultadPartida = dificultad;
 		this.acciones = acciones;
 	}
-	public int getBrotes() {
-		return brotes;
-	}
-	public void setBrotes(int brotes) {
-		this.brotes = brotes;
-	}
-	public int getAcciones() {
-		return acciones;
-	}
-	public void setAcciones(int acciones) {
-		this.acciones = acciones;
-	}
-	public int getRonda() {
-		return ronda;
-	}
-	public void setRonda(int ronda) {
-		this.ronda = ronda;
-	}	
-	public int getPuntuacion() {
-		return puntuacion;
-	}
-	public void setPuntuacion(int puntuacion) {
-		this.puntuacion = puntuacion;
-	}	
-	public int getDificultad() {
-		return dificultadPartida;
-	}
-	public void setDificultad(int dificultad) {
-		this.dificultadPartida = dificultad;
-	}
-
 }

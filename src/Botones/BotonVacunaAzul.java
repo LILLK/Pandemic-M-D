@@ -3,12 +3,9 @@ package Botones;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.util.ArrayList;
 
 import javax.swing.*;
 
-import Logico.Ciudades;
-import Logico.Jugador;
 import Logico.Partida;
 import Logico.Vacunas;
 import Pandemic.*;

@@ -15,36 +15,26 @@ import Botones.BotonAtras;
 public class JF_PanelInfo extends JPanel {
 	
 	BotonAtras Atras;
+	public static String NombreJ;
 
 	
 	public JF_PanelInfo() {
 	
 		setLayout(null);
 
-		String s ="<html><center>Hace 48 días conseguimos hacer mutar el virus T, pero nada salió como teníamos planeado. El"
-				+ "<html><center>virus tras mutar genero cuatro nuevas variantes de esté, y se dividieron por todo el mundo de"
-				+ "<html><center>forma homogénea infectando ciudad a ciudad y tu objetivo es salvar el mundo de esta"
-				+ "<html><center>pandemia."
-				+ "<html><center>Para ello tendrás que moverte de ciudad en ciudad para desinfectar todas las ciudades o"
-				+ "<html><center>desarrollar las vacunas de los cuatro virus. Por la contraparte si una ciudad se infecta y se le"
-				+ "<html><center>acumulan con un total de 3 enfermedades, las ciudades colindantes se les añadirá una"
-				+ "<html><center>enfermedad y se genera 1 brote. Así que ten cuidado, porque al llegar a cierto número de"
-				+ "<html><center>brotes o que todas las ciudades se hayan infectado, significara el fin del mundo y de la partida."
-				+ "<html><center>Por cada ronda tendrás 4 puntos de acción y estas son las acciones que puedes hacer"
-				+ "<html><center>Moverte: -1pa (“dev; No sé qué limites hay para moverse ni como se moverá”)"
-				+ "<html><center>Desarrollar vacuna: -1pa (Depende de la ciudad donde estés, desarrollaras un porcentaje de la"
-				+ "<html><center>vacuna)"
-				+ "<html><center>Quitar enfermedad: -1pa (Si tienes una ciudad colindante a ti infectada puedes bajar en 1 sus"
-				+ "<html><center>enfermedades)"
-				+ "<html><center>Habrá un sistema de puntuación que conistira en (“dev: falta por decidir”). Y tranquilo, el"
-				+ "<html><center>mundo puede esperar por ti “nombre del usuario”, por eso podrás guardar tus avances"
-				+ "<html><center>salvando el mundo y volver en cualquier momento.";
+		String s ="Hace 48 días conseguimos hacer mutar el virus T, pero nada salió como teníamos planeado. "
+				+ "El virus tras mutar genero cuatro nuevas variantes de esté, y se dividieron por todo el mundo de forma homogénea infectando ciudad a ciudad, y tu objetivo es salvar el mundo de esta pandemia.\r\n"
+				+ "Para ello tendrás que elejir las ciudades que curar y tendras que desarollar las vacunas de cada virs."
+				+ "Por la contraparte si una ciudad se infecta y tiene 3 enfermedades,se genera un brote y las ciudades colindantes se les añadirá una enfermedad. "
+				+ "Así que ten cuidado, porque al llegar a cierto número de brotessignificara el fin del mundo y de la partida.\r\n"
+				+ "Por cada ronda tendrás 4 puntos de acción y estas son las acciones que puedes hacer: \r\nDsarrollar vacuna:-1pa \r\n Quitar enfermedad: -1pa (si la vacuna esta desarollada se curara por copleto)\r\n"
+				+ "Y tranquilo, el mundo puede esperar por ti"+NombreJ +", por eso podrás guardar tus avances salvando el mundo y volver en cualquier momento.";
 		this.Atras = new BotonAtras(this);
 		JLabel Info = new JLabel();
 		JLabel TInfo = new JLabel();
 		
 		TInfo.setBounds(((cambiarImg.screenSize.width/2)-(cambiarImg.screenSize.width/6)),(cambiarImg.screenSize.height/7),(cambiarImg.screenSize.width/3),(cambiarImg.screenSize.height/5));
-		TInfo.setText("<html><center>Informacion del Juego");
+		TInfo.setText("Informacion del Juego");
 		TInfo.setForeground(Color.BLACK);
 		TInfo.setFont(new Font("Stika Text",Font.BOLD,(cambiarImg.screenSize.height/15)));
 		TInfo.setBackground(cambiarImg.color1);
@@ -62,13 +52,7 @@ public class JF_PanelInfo extends JPanel {
 		Info.setOpaque(true);
 		
 		Atras.setBounds(0,(cambiarImg.screenSize.height-((cambiarImg.screenSize.width/19))),cambiarImg.screenSize.width,(cambiarImg.screenSize.width/25));
-	   // Info.setHorizontalAlignment(Info.CENTER);
-	    //Info.setHorizontalAlignment(Info.LEFT);
-	
-	    //Info.setHorizontalAlignment(Info.LEFT);
-		
-		
-		
+
 		add(this.Atras);
 		add(Info);
 		add(TInfo);

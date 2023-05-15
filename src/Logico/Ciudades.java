@@ -1,18 +1,31 @@
+//Mehdi Tahrat && David hola
 package Logico;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
-
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-
 import Botones.BotonCiudad;
 import Pandemic.JF_PanelPartida;
 import Pandemic.JF_PanelPartidaPanel2;
 
-//Mehdi Tahrat && David hola
-
+/**
+ * Esta classe contiene el objeto ciudades.
+ * Esta tiene los metodos de generaccion y 
+ * las acciones de estas.
+ * +String nombre - nombre de la ciudad
+ * +int idVirus - id de virus de la ciudad
+ * +int posicionX - posision x de la ciudad
+ * +int posicionY - posision y de la ciudad 
+ * +ArrayList<String> colindantes - lista de nombres de las ciudades colindantes
+ * +boolean brote - estado de brote
+ * +int nEnfermedades - numero de enfermedades de la ciudad
+ * +boolean infeccionRonda - cuando se tiene que infectar a las ciudades, 
+ * se marca esta flag para no infectarla otra vez
+ * @author DAME
+ *
+ */
 public class Ciudades {
 	public String nombre;
 	public int idVirus;
@@ -22,13 +35,18 @@ public class Ciudades {
 	public boolean brote;
 	public int nEnfermedades;
 
-	// cuando se tiene que infectar a las ciudades, se marca esta flag para no
-	// infectarla otra vez
-	boolean infeccionRonda;
+	public boolean infeccionRonda;
 
 	////////////////////////////////////
 	/////////// constructores //////////
 	////////////////////////////////////
+	/**
+	 * Este constructor genera la ciudad con todos sus atributos desde los archivos locales
+	 * @param String nombre
+	 * @param int posicionX
+	 * @param int posicionY
+	 * @param int idVirus
+	 */
 	public Ciudades(String nombre, int posicionX, int posicionY, int idVirus) {
 		this.nombre = nombre;
 		this.posicionX = posicionX;
@@ -39,9 +57,14 @@ public class Ciudades {
 		this.brote = false;
 		this.colindantes = generarColindantes(this.nombre);
 		this.infeccionRonda = false;
-		// this.boton = new BotonCiudad(new JF_PanelPartida(), idVirus, nombre);
 	}
-
+	/**
+	 * Este constructor genera la ciudad con todos sus atributos desde la BD
+	 * @param String nombre
+	 * @param int posicionX
+	 * @param int posicionY
+	 * @param int idVirus
+	 */
 	public Ciudades(String nombre, int infeccion, int idVirus, boolean brote) {
 		int[] xy = new int[2];
 		xy = posicionxy(nombre);
@@ -54,17 +77,19 @@ public class Ciudades {
 		this.brote = brote;
 		this.colindantes = generarColindantes(this.nombre);
 		this.infeccionRonda = false;
-		// this.boton = new BotonCiudad(new JF_PanelPartida(), idVirus, nombre);
 	}
 	////////////////////////////////////
 	////////////// metodos /////////////
 	////////////////////////////////////
 
-	////////////////////////////////////
-	// -Infectar
-	//
-	////////////////////////////////////
+	/**
+	 * Este metodo infecta a la ciudad y genera un brote si es necesario,
+	 * infectando a todas las colindantes.
+	 * Si ocurre un brote se restara 500 de puntuacion.
+	 * Si ocurre una infeccion se restara 100 de puntuacion.
+	 */
 	public void infectar() {
+		JF_PanelPartidaPanel2.updateLog("-----------------");
 		JF_PanelPartidaPanel2.updateLog("Se a infectado la ciudad: " + this.nombre);
 		if (this.nEnfermedades < 3) {// si es mas pequeño de 3
 			this.nEnfermedades++;
@@ -100,14 +125,13 @@ public class Ciudades {
 		JF_PanelPartida.botonesCiudad.get(getIdXnombre(this.nombre)).establecerIcono(
 				JF_PanelPartida.botonesCiudad.get(getIdXnombre(this.nombre)).tamañoX,
 				JF_PanelPartida.botonesCiudad.get(getIdXnombre(this.nombre)).tamañoY);
-		;
+		JF_PanelPartidaPanel2.updateLog("-----------------");
 
 	}
 
-	////////////////////////////////////
-	// -curar
-	// resta 1 enefrmedad a la ciudad elejida
-	////////////////////////////////////
+	/**
+	 * Este metodo cura a la ciudad x enfermedades dependiendo del estado de las vacunas.
+	 */
 	public void curar() {
 		//si las enfermedades son 0 o menos 
 		if (this.nEnfermedades <= 0) {
@@ -144,10 +168,11 @@ public class Ciudades {
 	///////////// Funciones ////////////
 	////////////////////////////////////
 
-	//////////////////////////////////////////////////////////////////////////////////////
-	// - getIdXnombre
-	// devuelve la posicion en la lista segun el nombre
-	/////////////////////////////////////////////////////////////////////////////////////
+	/**
+	 * Esta funcion busca la id(posicion) de la ciudad segun su nombre
+	 * @param String nombre
+	 * @return int
+	 */
 	public static int getIdXnombre(String nombre) {
 		int aux = 0;
 		// recorre todas las ciudades
@@ -161,8 +186,12 @@ public class Ciudades {
 
 	//////////////////////////////////////////////////////////////////////////////////////
 	// - generarCiudades
-	// rellena la lista de Partida.ciudades
+	// 
 	/////////////////////////////////////////////////////////////////////////////////////
+	
+	/**
+	 * Esta funcion rellena la lista de Partida.ciudades con ciudades generadas con los archivos.
+	 */
 	public static void generarCiudades() {
 		String nombre;
 		int idVirus;
@@ -193,34 +222,40 @@ public class Ciudades {
 				for (int i = 0; i < 3; i++) {
 					Partida.ciudades.get(random).nEnfermedades++;
 				}
-				Partida.ciudades.get(random).setBrote(true);
+				Partida.ciudades.get(random).brote=true;
 				Partida.brotes++;
 			}
 
 		}
 
 	}
-
+/**+
+ * Esta funcion devuelve la posicion(x,y) de la ciudad segun el nombre
+ * @param String nombreC
+ * @return int[]
+ */
 	public static int[] posicionxy(String nombreC) {
 		int[] xy = new int[2];
 		ArrayList<String> listaCiudades = ArchivosIO.leerCiudades();
 		// por cada linea se recogen los datos y pasan a ser los constructores de
 		// ciudades
 		for (String lin : listaCiudades) {
-
 			if (nombreC.equals(lin.split(";")[0])) {
 				xy[0] = Integer.parseInt(lin.split(";")[2].split(",")[0]);
 				xy[1] = Integer.parseInt(lin.split(";")[2].split(",")[1]);
 			}
 		}
-
 		return xy;
 	}
 
 	//////////////////////////////////////////////////////////////////////////////////////
 	// - generarColindantes
-	// devuelve una lista con las colindandtes
-	/////////////////////////////////////////////////////////////////////////////////////
+	// 	/////////////////////////////////////////////////////////////////////////////////////
+	/**
+	 * Esta funcion devuelve una lista con las ciudades colindandtes
+	 * @param String nombre
+	 * @return ArrayList<String>
+	 */
 	public static ArrayList<String> generarColindantes(String nombre) {
 		ArrayList<String> colindantes = null;
 		ArrayList<String> listaCiudades = ArchivosIO.leerCiudades();
@@ -236,54 +271,17 @@ public class Ciudades {
 	////////////////////////////////////
 	/////////// setters&getters//////////
 	////////////////////////////////////
-	public String getNombre() {
-		return nombre;
-	}
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
-	public boolean isBrote() {
-		return brote;
-	}
-
-	public void setBrote(boolean brote) {
-		this.brote = brote;
-	}
-
-	public int getIdVirus() {
-		return idVirus;
-	}
-
-	public void setIdVirus(int idVirus) {
-		this.idVirus = idVirus;
-	}
-
-	public int getnBrotes() {
-		return nEnfermedades;
-	}
-
-	public void setnBrotes(int nBrotes) {
-		this.nEnfermedades = nBrotes;
-	}
-
-	public int getnEnfermedades() {
-		return nEnfermedades;
-	}
-
-	public void setnEnfermedades(int nEnfermedades) {
-		this.nEnfermedades = nEnfermedades;
-	}
-
-	public boolean isInfeccionRonda() {
-		return infeccionRonda;
-	}
-
+/**
+ * Setter infeccionRonda
+ * @param boolean infeccionRonda
+ */
 	public void setInfeccionRonda(boolean infeccionRonda) {
 		this.infeccionRonda = infeccionRonda;
 	}
-
+/*
+ * Esta funcion establece todas las ciudas con estado falso en el atributo infeccionRonda
+ */
 	public static void setInfeccionRondaFalse() {
 		for (BotonCiudad btnCiudad : JF_PanelPartida.botonesCiudad) {
 			btnCiudad.ciudad.setInfeccionRonda(false);
