@@ -14,17 +14,27 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 import Botones.BotonAtras;
-
+/**
+ * Esta classe es el panel de autores.
+ * En el se encuentran 2 imagenes de los autores con un pequeño texto de estos.
+ * @author DAME
+ *
+ */
 public class JF_PanelAutores extends JPanel  {
+	/**
+	 * Este boton vuelve al menu.
+	 * {@link BotonAtras}
+	 */
 	BotonAtras Atras;
-
+	/**
+	 * Panel del menu 
+	 * {@link JF_PanelMenu}
+	 */
 	JF_PanelMenu JF_PanelMenu;
 	
 	public JF_PanelAutores()  {
 	
 		setLayout(null);
-
-		
 		//Importar Objetos
 		this.Atras = new BotonAtras(this);
 		cambiarImg img = new cambiarImg();
@@ -32,8 +42,6 @@ public class JF_PanelAutores extends JPanel  {
 		JLabel imgDavidDesc = new JLabel();
 		JLabel imagenMehdi = new JLabel();
 		JLabel imgMehdiDesc = new JLabel();
-
-
 		
 		//Contenido JLabels
 		//IMAGENES//
@@ -82,13 +90,18 @@ public class JF_PanelAutores extends JPanel  {
 		add(this.Atras);
 		
 	}
+	/**
+	 * Este metodo cambia el panel {@link JF_PanelAutores} por el panel {@link JF_PanelMenu}
+	 */
 	public void irMenu() {
 		JFrame marcoP = (JFrame)SwingUtilities.getWindowAncestor(this);	
 		marcoP.remove(this);
 		marcoP.add(new JF_PanelMenu());
 		marcoP.setVisible(true);
 	}
-	
+/**
+ * Este metodo pinta el fondo de la pantalla
+ */
 	public void paint(Graphics g) {
 		BufferedImage imgFondo;
 		try {
@@ -100,10 +113,5 @@ public class JF_PanelAutores extends JPanel  {
 		} catch (IOException e) {
 			System.out.print("Error IMGfondo JF_PanelMenuMenu");
 		}
-		
-		
 	} 
-	
-
-
 }

@@ -228,7 +228,7 @@ public class JF_PanelCargarPartida extends JPanel {
 		marcoP.setVisible(true);
 	}
 	public void irPanelPartida(int idP) {
-		ConexionBD.cargarPartida( Partida.idP);
+		ConexionBD.cargarPartida( idP);
 		Parametros.establecerParametros(Partida.dificultad);
 		JFrame marcoP = (JFrame)SwingUtilities.getWindowAncestor(this);	
 		marcoP.remove(this);

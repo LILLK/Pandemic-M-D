@@ -34,6 +34,9 @@ public class ConexionBD {
 	 *  Si estáis desde casa, la url será oracle.ilerna.com y no 192.168.3.26
 	 */
 	private static final String URL = "jdbc:oracle:thin:@192.168.3.26:1521:xe";
+	/**
+	 * conexion con la base de datos
+	 */
 	public static final Connection con = conectarBaseDatos();
 
 	/**
@@ -229,6 +232,7 @@ public class ConexionBD {
 		try {
 			
 			Statement st = con.createStatement();
+			System.out.println(sql);
 			ResultSet rs = st.executeQuery(sql);
 			if (rs.isBeforeFirst()) {//si hay un registro
 				while (rs.next()) {
