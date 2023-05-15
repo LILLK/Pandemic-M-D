@@ -10,6 +10,7 @@ import java.sql.SQLException;
 import javax.swing.*;
 
 import Logico.ConexionBD;
+import Logico.Partida;
 import Pandemic.*;
 /**
  * Esta classe define los contructores del Boton registrarse
@@ -84,6 +85,7 @@ public class BotonRegistrarse extends JLabel {
 					if((ConexionBD.crearUsuario( JF_PanelRegistrarse.getJTFUsuario(), JF_PanelRegistrarse.getJTFContraseña()))){
 						JF_PanelInfo.NombreJ=JF_PanelRegistrarse.getJTFUsuario();
 						JF_PanelRegistrarse.irMenu();
+						ConexionBD.idJugador();
 					}else {
 						JOptionPane.showMessageDialog(new JFrame(), "El usuario ya existe" );
 					}

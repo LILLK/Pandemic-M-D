@@ -55,8 +55,8 @@ public class JF_PanelCargarPartida extends JPanel {
 		JLabel ronda = new JLabel();
 		JLabel puntuacion = new JLabel();
 		
-		System.out.println(Partida.idP);
-		ConexionBD.cargarPartidas(Partida.idP);
+
+		ConexionBD.cargarPartidas();
 		
 		scroll.setBounds((cambiarImg.screenSize.width/2)-410,330,820,450);
 		scroll.getVerticalScrollBar().setUI(new BasicScrollBarUI());

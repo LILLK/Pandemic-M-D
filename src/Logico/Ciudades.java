@@ -126,7 +126,6 @@ public class Ciudades {
 				JF_PanelPartida.botonesCiudad.get(getIdXnombre(this.nombre)).tamañoX,
 				JF_PanelPartida.botonesCiudad.get(getIdXnombre(this.nombre)).tamañoY);
 		JF_PanelPartidaPanel2.updateLog("-----------------");
-
 	}
 
 	/**
@@ -248,9 +247,6 @@ public class Ciudades {
 		return xy;
 	}
 
-	//////////////////////////////////////////////////////////////////////////////////////
-	// - generarColindantes
-	// 	/////////////////////////////////////////////////////////////////////////////////////
 	/**
 	 * Esta funcion devuelve una lista con las ciudades colindandtes
 	 * @param String nombre
