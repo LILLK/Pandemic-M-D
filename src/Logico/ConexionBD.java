@@ -13,6 +13,9 @@ import java.sql.Struct;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
 import Pandemic.JF_PanelCargarPartida;
 import Pandemic.JF_PanelPuntuaciones;
 
@@ -360,8 +363,10 @@ public class ConexionBD {
 			System.out.println("Conectados a la base de datos");
 		} catch (ClassNotFoundException e) {
 			System.out.println("No se ha encontrado el driver " + e);
+			JOptionPane.showMessageDialog(new JFrame(), " Error en la base de datos, pruebe mas tarde.");
 		} catch (SQLException e) {
 			System.out.println("Error en las credenciales o en la URL " + e);
+			JOptionPane.showMessageDialog(new JFrame(), " Error en la base de datos, pruebe mas tarde.");
 		}
 		
 
