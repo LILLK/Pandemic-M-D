@@ -1,7 +1,5 @@
 package Botones;
 
-import java.awt.Dimension;
-import java.awt.Toolkit;
 import java.awt.event.*;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;

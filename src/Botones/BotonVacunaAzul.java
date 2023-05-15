@@ -1,6 +1,5 @@
 package Botones;
 
-import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
@@ -13,9 +12,6 @@ import Pandemic.*;
 /**
  * Esta calsse define los contructores del boton vacuna azul
  * Amuenta el desarollo de la vacuna
- * + int tamañoX
- * + int tamañoY
- * + int idVirus
  * @author DAME
  */
 public class BotonVacunaAzul extends JLabel {

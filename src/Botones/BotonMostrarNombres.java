@@ -1,21 +1,17 @@
 package Botones;
 
-import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
-import javax.swing.plaf.basic.BasicOptionPaneUI.ButtonActionListener;
-
 import Pandemic.cambiarImg;
 
 
 /**
  * Esta classe define los contructores del boton mostrar nombres
  * muestra la etiqueta de todas las ciudades
- * + int tamañoX 
- * + int tamañoY 
+ 
  * @author DAME
  *
  */

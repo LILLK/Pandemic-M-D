@@ -1,7 +1,5 @@
 package Botones;
 
-import java.awt.Dimension;
-import java.awt.Toolkit;
 import java.awt.event.*;
 
 import javax.swing.ImageIcon;
@@ -18,7 +16,8 @@ public class BotonCargarPartida extends JLabel {
 /**
  * Constructor del Boton CargarPartida en {@link JF_PanelMenu}
  * @param {@link JF_PanelMenu}
- */
+ */	
+
 	public BotonCargarPartida(JF_PanelMenu JF_PanelMenu) {
 		
 		

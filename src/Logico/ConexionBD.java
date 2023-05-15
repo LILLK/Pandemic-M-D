@@ -5,14 +5,10 @@ import java.sql.Array;
 import java.sql.Connection;
 
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Struct;
-import java.util.ArrayList;
-import java.util.Scanner;
-
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -20,18 +16,23 @@ import Pandemic.JF_PanelCargarPartida;
 import Pandemic.JF_PanelPuntuaciones;
 
 /**
- * Esta classe se ocupa de las conexiones con la base de datos. + static final
- * String USER + static final String PWD + static final String URL + static
- * final Connection con
- * 
+ * Esta classe se ocupa de las conexiones con la base de datos. + static final 
  * @author DAME
  *
  */
 public class ConexionBD {
-
+	/**
+	 * Usuario de Oracle.
+	 */
 	private static final String USER = "DAW_PNDC22_23_DAME";
+	/**
+	 * 
+	 */
 	private static final String PWD = "DM123";
-	// Si estáis desde casa, la url será oracle.ilerna.com y no 192.168.3.26
+	/**
+	 * 	Enlace para la conexion en Oracle.
+	 *  Si estáis desde casa, la url será oracle.ilerna.com y no 192.168.3.26
+	 */
 	private static final String URL = "jdbc:oracle:thin:@192.168.3.26:1521:xe";
 	public static final Connection con = conectarBaseDatos();
 
@@ -221,9 +222,10 @@ public class ConexionBD {
  * @param int idU - id usuario 
  * @param int idP - id partida
  */
-	public static void cargarPartida(int idU, int idP) {
+	public static void cargarPartida(int idP) {
 		//sentecia sql 
-		String sql = "SELECT * FROM PARTIDAS P WHERE P.id_p = " + idP + " AND P.jugador = " + idU + "";
+		System.out.println(idP);
+		String sql = "SELECT * FROM PARTIDAS P WHERE P.id_p = " + idP + " AND P.jugador = " + Partida.idJ + "";
 		try {
 			
 			Statement st = con.createStatement();

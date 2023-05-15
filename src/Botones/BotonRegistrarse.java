@@ -1,16 +1,10 @@
 package Botones;
 
-import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-
 import javax.swing.*;
 
 import Logico.ConexionBD;
-import Logico.Partida;
 import Pandemic.*;
 /**
  * Esta classe define los contructores del Boton registrarse

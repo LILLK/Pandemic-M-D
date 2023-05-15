@@ -1,6 +1,5 @@
 package Logico;
 import java.util.ArrayList;
-import java.util.Scanner;
 /**
  * Esta classe establece los paramaetros en una partida
  * public static int brotesTotal -  determina la cantidad de brotes necesarios para perder
@@ -11,13 +10,21 @@ import java.util.Scanner;
  *
  */
 public class Parametros {
-	// determina la cantidad de brotes necesarios para perder
+	/**
+	 *  determina la cantidad de brotes necesarios para perder
+	 */
 	public static int brotesTotal;
-	// determina cuantas ciudades se infectan en una ronda
+	/**
+	 *  determina cuantas ciudades se infectan en una ronda
+	 */
 	public static int infeccionRonda;
-	// determina el porcentaje que se aumenta para obtener la cura
+	/**
+	 *  determina el porcentaje que se aumenta para obtener la cura
+	 */
 	public static int porcentajeCura;
-	// determina el numero de brotes al empezar la partida Inicio
+	/**
+	 *  determina el numero de brotes al empezar la partida Inicio
+	 */
 	static int brotesInicio;
 
 	/**

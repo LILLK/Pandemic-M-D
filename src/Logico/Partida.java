@@ -4,7 +4,6 @@ package Logico;
 //Mehdi Tahrat && David hola
 import java.util.ArrayList;
 
-import Botones.BotonCiudad;
 import Pandemic.JF_PanelPartida;
 import Pandemic.JF_PanelPartidaPanel1;
 import Pandemic.JF_PanelPartidaPanel2;
@@ -13,7 +12,6 @@ import Pandemic.JF_PanelPartidaPanel2;
  * 	+ static int idP - id de la Partida
  * 	+ 	 static int idJ - id del jugador
  * 	+ 	 static int brotes - Brotes de la partida
- * 	+ 	 static int enfermedades - Enfermedades en la partida
  * 	+ 	 static int ronda - rondas de la partida
  * 	+ 	 static int accionesRonda - acciones de la ronda 
  * 	+ 	 static int dificultad - Dificultad de la partida
@@ -23,29 +21,42 @@ import Pandemic.JF_PanelPartidaPanel2;
  *
  */
 public class Partida {
-	//id de la Partida
+	/**
+	 * id de la Partida
+	 */
 	public static int idP;
-	//id del jugador
+	/**
+	 * id del jugador
+	 */
 	public static int idJ;
-	// Puntuacion de la partida
+	/**
+	 *  Puntuacion de la partida
+	 */
 	public static int Puntuacion;
-	// Brotes de la partida
+	/**
+	 *  Brotes de la partida
+	 */
 	public static int brotes;
-	// Enfermedades en la partida
-	public static int enfermedades;
-	// rondas de la partida
+	/**
+	 *  Numero de rondas de la partida
+	 */
 	public static int ronda;
-	// acciones de la ronda 
+	/**
+	 *  numero de acciones de la ronda 
+	 */
 	public static int accionesRonda;
-	//Dificultad de la partida
+	/**
+	 *  Dificultad de la partida
+	 */
 	public static int dificultad;
-	// Lista de todas las ciudades con sus atributos
+	/**
+	 *  Lista de todas las ciudades con sus atributos
+	 */
 	public static ArrayList<Ciudades> ciudades= new ArrayList<Ciudades>();
-	// Lista de todas las Vacunas con sus atributos
+	/**
+	 *  Lista de todas las Vacunas con sus atributos
+	 */
 	public static ArrayList<Vacunas> vacunas = new ArrayList<Vacunas>();;
-
-
-	
 
 	/**
 	 * Esta funcion es donde se ejecuta el juego.
@@ -116,7 +127,6 @@ public class Partida {
 	public static void iniciarNuevaPartida(int dificultad) {
 		Partida.brotes = 0;
 		Partida.Puntuacion = 0;
-		Partida.enfermedades = 0;
 		Partida.ronda = 0;
 		Partida.accionesRonda = 4;
 		Parametros.establecerParametros(dificultad);

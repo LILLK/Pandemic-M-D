@@ -4,11 +4,9 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
-import java.awt.Toolkit;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.sql.Connection;
 import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
@@ -29,7 +27,6 @@ import Logico.ConexionBD;
 import Logico.Parametros;
 import Logico.Partida;
 import Logico.PartidasGuardadas;
-import Logico.Rankings;
 
 public class JF_PanelCargarPartida extends JPanel {
 	
@@ -231,7 +228,7 @@ public class JF_PanelCargarPartida extends JPanel {
 		marcoP.setVisible(true);
 	}
 	public void irPanelPartida(int idP) {
-		ConexionBD.cargarPartida( Partida.idP, idP);
+		ConexionBD.cargarPartida( Partida.idP);
 		Parametros.establecerParametros(Partida.dificultad);
 		JFrame marcoP = (JFrame)SwingUtilities.getWindowAncestor(this);	
 		marcoP.remove(this);

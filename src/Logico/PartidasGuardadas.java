@@ -1,24 +1,36 @@
 package Logico;
 /**
  * Esta classe crea el aloja este objeto, que sirve para cargar los datos de la partida 
- * @author DAME
- * 	+ int idPartida
-*	+ int brotes
-*	+ int ronda
-*	+ int puntuacion
-*	+ int dificultadPartida
-*	+ int acciones
+* @author DAME
  *
  */
 public class PartidasGuardadas {
+	/**
+	 * Id de partida 
+	 */
 	public int idPartida;
+	/**
+	 * Brotes de la partida
+	 */
 	public int brotes;
+	/**
+	 * Ronda de la partida
+	 */
 	public int ronda;
+	/**
+	 * Puntuacion de la partida
+	 */
 	public int puntuacion;
+	/**
+	 * Dificultad de la partida
+	 */
 	public int dificultadPartida;
+	/**
+	 * numero de acciones en la partida
+	 */
 	public int acciones;
 	/**
-	 * Constructror del objeto {@linkPartidasGuardadas}
+	 * Constructror del objeto {@link PartidasGuardadas}
 	 * @param int idP
 	 * @param int brotes
 	 * @param int ronda

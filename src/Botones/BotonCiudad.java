@@ -1,12 +1,8 @@
 package Botones;
 
 import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Toolkit;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.util.ArrayList;
-
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -14,19 +10,12 @@ import javax.swing.border.Border;
 
 import Logico.Ciudades;
 import Logico.Partida;
-import Pandemic.JF_PanelMenu;
 import Pandemic.JF_PanelPartida;
-import Pandemic.JF_PanelPartidaPanel2;
 import Pandemic.cambiarImg;
 /**
  * Esta classe define los constructores de  los botones Ciudad
  * Estos botones componen un tercio del juego , ya que 
- * no solo son las ciudades sino que tambien tienen la funcion
- * de curar
- * + Ciudades ciudad - ciudad del boton
- * + JLabel JLNombreCiudad - etiqueta con el nombre 
- * + int tamañoX - tamaño x
- * + int tamañoY - tamaño y
+ * no solo son las ciudades sino que tambien tienen la funcion de curar
  * @author DAME
  *
  */
