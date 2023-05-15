@@ -8,27 +8,36 @@ import java.awt.event.*;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import Pandemic.*;
-
+/**
+ * Esta classe define los constructores del boton version
+ * Este cambia del panel {@link JF_PanelMenu} al panel {@link JF_PanelVersion}
+ * @author DAME
+ *
+ */
 public class BotonVersion extends JLabel {
 	
-
+/**
+ * Constructor del boton Virus
+ * Este cambia del panel {@link JF_PanelMenu} al panel {@link JF_PanelVersion}
+ * @param {@link JF_PanelMenu}
+ */
 	public BotonVersion(JF_PanelMenu JF_PanelMenu) {
 		
-		cambiarImg img = new cambiarImg();
 
-		setIcon(img.tamaño(new ImageIcon("botones/bottonVersion-1.png"), ((int)(cambiarImg.screenSize.getWidth()/5)), ((int)(cambiarImg.screenSize.getWidth()/20))) );
+		setIcon(cambiarImg.tamaño(new ImageIcon("botones/bottonVersion-1.png"), ((int)(cambiarImg.screenSize.getWidth()/5)), ((int)(cambiarImg.screenSize.getWidth()/20))) );
 		addMouseListener(new MouseListener() {	
 			public void mouseEntered(MouseEvent e) {
-				setIcon(img.tamaño(new ImageIcon("botones/bottonVersion-2.png"), ((int)(cambiarImg.screenSize.getWidth()/5)), ((int)(cambiarImg.screenSize.getWidth()/20))) );
+				setIcon(cambiarImg.tamaño(new ImageIcon("botones/bottonVersion-2.png"), ((int)(cambiarImg.screenSize.getWidth()/5)), ((int)(cambiarImg.screenSize.getWidth()/20))) );
 			}
 			public void mouseExited(MouseEvent a) {
-				setIcon(img.tamaño(new ImageIcon("botones/bottonVersion-1.png"), ((int)(cambiarImg.screenSize.getWidth()/5)), ((int)(cambiarImg.screenSize.getWidth()/20))) );
+				setIcon(cambiarImg.tamaño(new ImageIcon("botones/bottonVersion-1.png"), ((int)(cambiarImg.screenSize.getWidth()/5)), ((int)(cambiarImg.screenSize.getWidth()/20))) );
 			}
 
 			public void mousePressed(MouseEvent i) {
-				setIcon(img.tamaño(new ImageIcon("botones/bottonVersion-3.png"), ((int)(cambiarImg.screenSize.getWidth()/5)), ((int)(cambiarImg.screenSize.getWidth()/20))) );
+				setIcon(cambiarImg.tamaño(new ImageIcon("botones/bottonVersion-3.png"), ((int)(cambiarImg.screenSize.getWidth()/5)), ((int)(cambiarImg.screenSize.getWidth()/20))) );
 			}
 			public void mouseClicked(MouseEvent e) {
+				//Cambia al panel version
 				JF_PanelMenu.irPanelVersion();
 			}
 			@Override
