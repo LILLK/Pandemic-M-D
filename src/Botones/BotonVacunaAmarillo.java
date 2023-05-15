@@ -20,9 +20,17 @@ import Pandemic.*;
  * @author DAME
  */
 public class BotonVacunaAmarillo extends JLabel {
-	
+	/**
+	 * tamañoX = 80
+	 */
 	int tamañoX = 80;
+	/**
+	 * tamañoY = 80;
+	 */
 	int tamañoY = 80;
+	/**
+	 * idVirus = 3;
+	 */
 	int  idVirus = 3;
 /**
  * Constructor del boton vacuna amarillo

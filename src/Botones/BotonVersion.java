@@ -40,9 +40,7 @@ public class BotonVersion extends JLabel {
 				//Cambia al panel version
 				JF_PanelMenu.irPanelVersion();
 			}
-			@Override
 			public void mouseReleased(MouseEvent e) {
-				// TODO Auto-generated method stub
 				
 			}
 			

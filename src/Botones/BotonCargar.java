@@ -23,7 +23,9 @@ import Pandemic.cambiarImg;
  *
  */
 public class BotonCargar extends JLabel {
-	//Es el id de partida
+	/**
+	 * Es el id de partida
+	 */
 	public int idP;
 	/**
 	 * Constructor del boton Cargar en {@link JF_PanelCargarPartida }

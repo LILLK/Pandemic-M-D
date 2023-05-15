@@ -21,9 +21,18 @@ import Pandemic.*;
 public class BotonVacunaAzul extends JLabel {
 	
 
-	int idVirus = 0;
+	/**
+	 * tamañoX = 80
+	 */
 	int tamañoX = 80;
+	/**
+	 * tamañoY = 80;
+	 */
 	int tamañoY = 80;
+	/**
+	 * idVirus = 0;
+	 */
+	int  idVirus = 0;
 	/**
 	 * Constructor del boton vacuna azul
 	 * Amuenta el desarollo de la vacuna

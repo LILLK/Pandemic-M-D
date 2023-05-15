@@ -23,19 +23,30 @@ import Pandemic.cambiarImg;
  * Estos botones componen un tercio del juego , ya que 
  * no solo son las ciudades sino que tambien tienen la funcion
  * de curar
- * + Ciudades ciudad
- * + JLabel JLNombreCiudad
- * + int tamañoX
- * + int tamañoY
+ * + Ciudades ciudad - ciudad del boton
+ * + JLabel JLNombreCiudad - etiqueta con el nombre 
+ * + int tamañoX - tamaño x
+ * + int tamañoY - tamaño y
  * @author DAME
  *
  */
 public class BotonCiudad extends JLabel {
 	
-
+	/**
+	 * + Ciudades ciudad - ciudad del boton
+	 */
 	public Ciudades ciudad;
+	/**
+	 * + JLabel JLNombreCiudad - etiqueta con el nombre 
+	 */
 	public JLabel JLNombreCiudad;
+	/**
+	 * + int tamañoX - tamaño x
+	 */
 	public int tamañoX = 45;
+	/**
+	 * + int tamañoY - tamaño y
+	 */
 	public int tamañoY = 30;
 
 /**
@@ -278,14 +289,14 @@ public class BotonCiudad extends JLabel {
 	}
 	
 	/**
-	 * Este metodo mostra todos los labels creados
+	 * Este metodo muestra por pantalla todos los nombres de ciudades
 	 */
 	public static void mostrarNombres() {
 		for (BotonCiudad boton : JF_PanelPartida.botonesCiudad) 
 			boton.JLNombreCiudad.setVisible(true);
 	}
 	/**
-	 * Este metodo oculta todos los labels creados
+	 * Este metodo oculta todos los nombres de ciudades
 	 */
 	public static void ocultarNombres() {
 		for (BotonCiudad boton : JF_PanelPartida.botonesCiudad) 

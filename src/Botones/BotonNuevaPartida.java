@@ -39,7 +39,6 @@ public class BotonNuevaPartida extends JLabel {
 				JF_PanelMenu.irPanelPartidaDificultad();
 			}
 			public void mouseReleased(MouseEvent e) {
-				// TODO Apéndice de método generado automáticamente
 				
 			}
 		});

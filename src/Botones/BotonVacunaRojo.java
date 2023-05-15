@@ -21,9 +21,18 @@ import Pandemic.*;
 public class BotonVacunaRojo extends JLabel {
 	
 
-	int idVirus = 1;
+	/**
+	 * tamañoX = 80
+	 */
 	int tamañoX = 80;
+	/**
+	 * tamañoY = 80;
+	 */
 	int tamañoY = 80;
+	/**
+	 * idVirus = 1;
+	 */
+	int  idVirus = 1;
 	/**
 	 * Constructor del boton vacuna Rojo
 	 * Amuenta el desarollo de la vacuna

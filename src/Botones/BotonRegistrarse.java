@@ -27,30 +27,23 @@ public class BotonRegistrarse extends JLabel {
 	 * @param {@link JF_PanelInicioSesion }
 	 */
 	public BotonRegistrarse(JF_PanelInicioSesion JF_PanelInicioSesion) {
-		
-
-		setIcon(cambiarImg.tamaño(new ImageIcon("botones/registrar.png"),((cambiarImg.screenSize.width / 12)), (cambiarImg.screenSize.width / 45)) );
-		
+	
+		setIcon(cambiarImg.tamaño(new ImageIcon("botones/registrar.png"),((cambiarImg.screenSize.width / 12)), (cambiarImg.screenSize.width / 45)) );		
 		addMouseListener((MouseListener) new MouseListener() {	
 			public void mouseEntered(MouseEvent e) {
 				setIcon(cambiarImg.tamaño(new ImageIcon("botones/registrar-1.png"),((cambiarImg.screenSize.width / 12)), (cambiarImg.screenSize.width / 45)) );
 			}
 			public void mouseExited(MouseEvent a) {
 				setIcon(cambiarImg.tamaño(new ImageIcon("botones/registrar.png"),((cambiarImg.screenSize.width / 12)), (cambiarImg.screenSize.width / 45)) );
-
 			}
-
 			public void mousePressed(MouseEvent i) {
-				setIcon(cambiarImg.tamaño(new ImageIcon("botones/registrar-2.png"),((cambiarImg.screenSize.width / 12)), (cambiarImg.screenSize.width / 45)) );
-				
+				setIcon(cambiarImg.tamaño(new ImageIcon("botones/registrar-2.png"),((cambiarImg.screenSize.width / 12)), (cambiarImg.screenSize.width / 45)) );				
 			}
 			public void mouseClicked(MouseEvent e) {
 				
 				JF_PanelInicioSesion.irPanelRegistrarse();
 			}
-			public void mouseReleased(MouseEvent e) {
-				// TODO Apéndice de método generado automáticamente
-				
+			public void mouseReleased(MouseEvent e) {				
 			}
 		});
 	
