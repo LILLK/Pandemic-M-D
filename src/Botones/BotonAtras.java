@@ -14,38 +14,37 @@ import javax.swing.SwingUtilities;
 import Logico.ConexionBD;
 import Pandemic.*;
 
+/**
+ * Esta classe define los contructores del Boton Atras
+ * El boton atras sirve para vuelver al ultimo panel
+ * @author DAME
+ *
+ */
 
 	public class BotonAtras extends JLabel {
-		
-		cambiarImg img;
-		
-		static JF_PanelMenu JF_PanelMenu;
-		
+			
+		/**
+			 * Contructor del boton atras en {@linkplain JF_PanelAutores}
+			 * @param {@linkplain JF_PanelAutores} 
+			 * @author DAME
+			 * 
+			 */
 		public BotonAtras(JF_PanelAutores JF_PanelAutores) {
-			
-			
-		
-		
-			
 
-			setIcon(img.tamaño(new ImageIcon("botones/bottonAtras-1.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
-			
-			
-			
-			
+			setIcon(cambiarImg.tamaño(new ImageIcon("botones/bottonAtras-1.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );		
+					
 			addMouseListener(new MouseListener() {	
 				public void mouseEntered(MouseEvent e) {
-					setIcon(img.tamaño(new ImageIcon("botones/bottonAtras-2.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
+					setIcon(cambiarImg.tamaño(new ImageIcon("botones/bottonAtras-2.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
 				}
 				public void mouseExited(MouseEvent a) {
-					setIcon(img.tamaño(new ImageIcon("botones/bottonAtras-1.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
+					setIcon(cambiarImg.tamaño(new ImageIcon("botones/bottonAtras-1.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
 				}
 
 				public void mousePressed(MouseEvent i) {
-					setIcon(img.tamaño(new ImageIcon("botones/bottonAtras-3.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
+					setIcon(cambiarImg.tamaño(new ImageIcon("botones/bottonAtras-3.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
 				}
 				public void mouseClicked(MouseEvent e) {
-					
 					JF_PanelAutores.irMenu();
 				}
 				public void mouseReleased(MouseEvent e) {
@@ -55,22 +54,27 @@ import Pandemic.*;
 			});
 		}
 
+		/**
+		 * Contructor del boton atras en {@link JF_PanelInfo }
+		 * @param {@link JF_PanelInfo }
+		 * @author DAME
+		 */
 		public BotonAtras(JF_PanelInfo JF_PanelInfo) {
 			
 			
 
-			setIcon(img.tamaño(new ImageIcon("botones/bottonAtras-1.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
+			setIcon(cambiarImg.tamaño(new ImageIcon("botones/bottonAtras-1.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
 			
 			addMouseListener(new MouseListener() {	
 				public void mouseEntered(MouseEvent e) {
-					setIcon(img.tamaño(new ImageIcon("botones/bottonAtras-2.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
+					setIcon(cambiarImg.tamaño(new ImageIcon("botones/bottonAtras-2.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
 				}
 				public void mouseExited(MouseEvent a) {
-					setIcon(img.tamaño(new ImageIcon("botones/bottonAtras-1.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
+					setIcon(cambiarImg.tamaño(new ImageIcon("botones/bottonAtras-1.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
 				}
 
 				public void mousePressed(MouseEvent i) {
-					setIcon(img.tamaño(new ImageIcon("botones/bottonAtras-3.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
+					setIcon(cambiarImg.tamaño(new ImageIcon("botones/bottonAtras-3.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
 				}
 				public void mouseClicked(MouseEvent e) {
 					JF_PanelInfo.irMenu();					
@@ -82,22 +86,27 @@ import Pandemic.*;
 			});
 		}
 
+		/**
+		 * Contructor del boton atras en {@link JF_PanelVersion }
+		 * @param {@link JF_PanelVersion }
+		 * @author DAME
+		 */
 		public BotonAtras(JF_PanelVersion JF_PanelVersion) {
 		
 			
 
-			setIcon(img.tamaño(new ImageIcon("botones/bottonAtras-1.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
+			setIcon(cambiarImg.tamaño(new ImageIcon("botones/bottonAtras-1.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
 			
 			addMouseListener(new MouseListener() {	
 				public void mouseEntered(MouseEvent e) {
-					setIcon(img.tamaño(new ImageIcon("botones/bottonAtras-2.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
+					setIcon(cambiarImg.tamaño(new ImageIcon("botones/bottonAtras-2.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
 				}
 				public void mouseExited(MouseEvent a) {
-					setIcon(img.tamaño(new ImageIcon("botones/bottonAtras-1.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
+					setIcon(cambiarImg.tamaño(new ImageIcon("botones/bottonAtras-1.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
 				}
 
 				public void mousePressed(MouseEvent i) {
-					setIcon(img.tamaño(new ImageIcon("botones/bottonAtras-3.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
+					setIcon(cambiarImg.tamaño(new ImageIcon("botones/bottonAtras-3.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
 				}
 				public void mouseClicked(MouseEvent e) {
 					
@@ -109,22 +118,25 @@ import Pandemic.*;
 				}
 			});
 		}
+		
+		/**
+		 * Contructor del boton atras en {@link JF_PanelPuntuaciones }
+		 * @param {@link JF_PanelPuntuaciones }
+		 * @author DAME
+		 */
 		public BotonAtras(JF_PanelPuntuaciones JF_PanelPuntuaciones) {
-			
-			
-
-			setIcon(img.tamaño(new ImageIcon("botones/bottonAtras-1.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
+		setIcon(cambiarImg.tamaño(new ImageIcon("botones/bottonAtras-1.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
 			
 			addMouseListener(new MouseListener() {	
 				public void mouseEntered(MouseEvent e) {
-					setIcon(img.tamaño(new ImageIcon("botones/bottonAtras-2.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
+					setIcon(cambiarImg.tamaño(new ImageIcon("botones/bottonAtras-2.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
 				}
 				public void mouseExited(MouseEvent a) {
-					setIcon(img.tamaño(new ImageIcon("botones/bottonAtras-1.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
+					setIcon(cambiarImg.tamaño(new ImageIcon("botones/bottonAtras-1.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
 				}
 
 				public void mousePressed(MouseEvent i) {
-					setIcon(img.tamaño(new ImageIcon("botones/bottonAtras-3.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
+					setIcon(cambiarImg.tamaño(new ImageIcon("botones/bottonAtras-3.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
 				}
 				public void mouseClicked(MouseEvent e) {
 					
@@ -137,21 +149,26 @@ import Pandemic.*;
 			});
 		}
 
+		/**
+		 * Contructor del boton atras en {@link JF_PanelCargarPartida }
+		 * @param {@link JF_PanelCargarPartida }
+		 * @author DAME
+		 */
 		public BotonAtras(JF_PanelCargarPartida JF_PanelCargarPartida) {
 			
 
-			setIcon(img.tamaño(new ImageIcon("botones/bottonAtras-1.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
+			setIcon(cambiarImg.tamaño(new ImageIcon("botones/bottonAtras-1.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
 			
 			addMouseListener(new MouseListener() {	
 				public void mouseEntered(MouseEvent e) {
-					setIcon(img.tamaño(new ImageIcon("botones/bottonAtras-2.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
+					setIcon(cambiarImg.tamaño(new ImageIcon("botones/bottonAtras-2.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
 				}
 				public void mouseExited(MouseEvent a) {
-					setIcon(img.tamaño(new ImageIcon("botones/bottonAtras-1.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
+					setIcon(cambiarImg.tamaño(new ImageIcon("botones/bottonAtras-1.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
 				}
 
 				public void mousePressed(MouseEvent i) {
-					setIcon(img.tamaño(new ImageIcon("botones/bottonAtras-3.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
+					setIcon(cambiarImg.tamaño(new ImageIcon("botones/bottonAtras-3.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
 				}
 				public void mouseClicked(MouseEvent e) {
 					
@@ -164,21 +181,26 @@ import Pandemic.*;
 			});
 		}
 		
+		/**
+		 * Contructor del boton atras en {@link JF_PanelPartidaDificultad }
+		 * @param {@link JF_PanelPartidaDificultad }
+		 * @author DAME
+		 */
 		public BotonAtras(JF_PanelPartidaDificultad panel) {
 			
 
-			setIcon(img.tamaño(new ImageIcon("botones/bottonAtras-1.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
+			setIcon(cambiarImg.tamaño(new ImageIcon("botones/bottonAtras-1.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
 			
 			addMouseListener(new MouseListener() {	
 				public void mouseEntered(MouseEvent e) {
-					setIcon(img.tamaño(new ImageIcon("botones/bottonAtras-2.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
+					setIcon(cambiarImg.tamaño(new ImageIcon("botones/bottonAtras-2.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
 				}
 				public void mouseExited(MouseEvent a) {
-					setIcon(img.tamaño(new ImageIcon("botones/bottonAtras-1.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
+					setIcon(cambiarImg.tamaño(new ImageIcon("botones/bottonAtras-1.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
 				}
 
 				public void mousePressed(MouseEvent i) {
-					setIcon(img.tamaño(new ImageIcon("botones/bottonAtras-3.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
+					setIcon(cambiarImg.tamaño(new ImageIcon("botones/bottonAtras-3.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
 				}
 				public void mouseClicked(MouseEvent e) {
 					
@@ -193,17 +215,21 @@ import Pandemic.*;
 			
 		}
 
-
+		/**
+		 * Contructor del boton atras en {@link JF_PanelPartida }
+		 * @param {@link JF_PanelPartida }
+		 * @author DAME
+		 */
 		public BotonAtras(JF_PanelPartida panel) {
 			
 
 			
 			addMouseListener(new MouseListener() {	
 				public void mouseEntered(MouseEvent e) {
-					setIcon(img.tamaño(new ImageIcon("botones/salir_partida_entered.png"), 50, 50) );
+					setIcon(cambiarImg.tamaño(new ImageIcon("botones/salir_partida_entered.png"), 50, 50) );
 				}
 				public void mouseExited(MouseEvent a) {
-					setIcon(img.tamaño(new ImageIcon("botones/salir_partida.png"), 50, 50) );
+					setIcon(cambiarImg.tamaño(new ImageIcon("botones/salir_partida.png"), 50, 50) );
 				}
 
 				public void mousePressed(MouseEvent i) {

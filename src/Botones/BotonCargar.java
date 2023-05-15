@@ -13,17 +13,28 @@ import Logico.Jugador;
 import Logico.Parametros;
 import Logico.Partida;
 import Pandemic.JF_PanelCargarPartida;
+import Pandemic.JF_PanelMenu;
 import Pandemic.cambiarImg;
-
+/**
+ * Esta classe define los contructores del Boton Cargar
+ * El boton Cargar sirve para cargar los datos de la partida
+ * elejida y continuarla
+ * + int idp - Id de partida
+ * @author DAME
+ *
+ */
 public class BotonCargar extends JLabel {
-	
+	//Es el id de partida
 	public int idP;
-	Dimension screenSize = new Dimension(Toolkit.getDefaultToolkit().getScreenSize());
-	
+	/**
+	 * Constructor del boton Cargar en {@link JF_PanelCargarPartida }
+	 * @param {@link JF_PanelCargarPartida }
+	 * @param idP - ID de partida
+	 * @author DAME
+	 * 
+	 */
 	public BotonCargar(int idP, JF_PanelCargarPartida jf_PanelCargarPartida) {
-		
 		this.idP= idP;
-		
 		setIcon(cambiarImg.tamaño(new ImageIcon("botones/cargarPartida.png"), 100, 100));
 
 		addMouseListener(new MouseListener() {	
@@ -38,19 +49,12 @@ public class BotonCargar extends JLabel {
 				setIcon(cambiarImg.tamaño(new ImageIcon("botones/cargarPartida-2.png"), 100, 100 ));
 			}
 			public void mouseClicked(MouseEvent e) {
-
+				//construlle la partida con el id partida enviado 
 				jf_PanelCargarPartida.irPanelPartida(idP);
 			}
-			public void mouseReleased(MouseEvent e) {
-				// TODO Apéndice de método generado automáticamente
-				
+			public void mouseReleased(MouseEvent e) {				
 			}
 		});
 	}
-	public int getBrotes() {
-		return idP;
-	}
-	public void setBrotes(int idP) {
-		this.idP = idP;
-	}
+	
 }

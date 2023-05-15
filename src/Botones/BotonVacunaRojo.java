@@ -12,26 +12,37 @@ import Logico.Jugador;
 import Logico.Partida;
 import Logico.Vacunas;
 import Pandemic.*;
-
+/**
+ * Esta calsse define los contructores del boton vacuna rojo
+ * Amuenta el desarollo de la vacuna
+ * + int tamañoX
+ * + int tamañoY
+ * + int idVirus
+ * @author DAME
+ */
 public class BotonVacunaRojo extends JLabel {
 	
-	cambiarImg img;
 
-
+	int idVirus = 1;
+	int tamañoX = 80;
+	int tamañoY = 80;
+	/**
+	 * Constructor del boton vacuna Rojo
+	 * Amuenta el desarollo de la vacuna
+	 * @param {@link JF_PanelPartidaVacunas }
+	 * @param {@link JF_PanelPartida }
+	 */
 	public BotonVacunaRojo(JF_PanelPartidaVacunas panel,JF_PanelPartida pPartida) {
-		int idVirus = 1;
-		int tamañoX = 80;
-		int tamañoY = 80;
-		setIcon(img.tamaño(new ImageIcon("botones/virus_rojo_0.png"), tamañoX, tamañoY));
+		setIcon(cambiarImg.tamaño(new ImageIcon("botones/virus_rojo_0.png"), tamañoX, tamañoY));
 		
 		
 		addMouseListener((MouseListener) new MouseListener() {
 			public void mouseEntered(MouseEvent e) {
-				setIcon(img.tamaño(new ImageIcon("botones/virus_rojo_0_entered.png"), tamañoX, tamañoY));
+				setIcon(cambiarImg.tamaño(new ImageIcon("botones/virus_rojo_0_entered.png"), tamañoX, tamañoY));
 			}
 
 			public void mouseExited(MouseEvent a) {
-				setIcon(img.tamaño(new ImageIcon("botones/virus_rojo_0.png"), tamañoX, tamañoY));
+				setIcon(cambiarImg.tamaño(new ImageIcon("botones/virus_rojo_0.png"), tamañoX, tamañoY));
 			}
 
 			public void mousePressed(MouseEvent i) {}

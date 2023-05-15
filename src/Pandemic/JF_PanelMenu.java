@@ -12,27 +12,43 @@ import javax.swing.*;
 
 import Botones.*;
 
+
+/**
+ * Esta classe es donde se construye el Panel Menu
+ * @author DAME
+ *
+ */
 public class JF_PanelMenu extends JPanel {
-	
+	//boton que vuelve al panel de inicio sesion
 	BotonLogOut BotonLogOut;
+	//boton para crear una nueva partida
 	BotonNuevaPartida NuevaPartida;
+	//boton para cargar una nueva partida
 	BotonCargarPartida CargarPartida;
+	//boton para ir al panel informacion
 	BotonInformacion Infromacion;
+	//boton para inr al panel puntuaciones
 	BotonPuntuaciones ResumenPuntuaciones;
+	//boton para ir al panel autores
 	BotonAutores Autores;
+	//boton para ir al boton version
 	BotonVersion Version;
+	//boton para salir del programa
 	BotonSalir Salir;
-	JFrame marcoP;
-
-
 	
+	/**
+	 * Constructor del Panel Menu.
+	 * - BotonNuevaPartida
+	 * - BotonCargarPartida
+	 * - BotonInformacion
+	 * - BotonPuntuaciones
+	 * - BotonAutores
+	 * - BotonVersion
+	 * - BotonSalir
+	 * - BotonLogOut
+	 * @author DAME
+	 */
 	JF_PanelMenu(){
-		
-		
-		 //cambiarImg img = new cambiarImg();
-
-		 
-		
 		setLayout(null);
 		this.NuevaPartida = new BotonNuevaPartida(this);
 		this.CargarPartida = new BotonCargarPartida(this);
@@ -43,8 +59,7 @@ public class JF_PanelMenu extends JPanel {
 		this.Salir = new BotonSalir();
 		this.BotonLogOut = new BotonLogOut(this);
 		
-		
-		
+		//se establece la posicion y el tamaño de los componentes dependiendo del tamaño de la pantalla 
 		this.NuevaPartida.setBounds			(((cambiarImg.screenSize.width/2)-(cambiarImg.screenSize.width/10)),(cambiarImg.screenSize.height/6),(cambiarImg.screenSize.width/5),(cambiarImg.screenSize.width/20));
 		this.CargarPartida.setBounds		(((cambiarImg.screenSize.width/2)-(cambiarImg.screenSize.width/10)),((cambiarImg.screenSize.height/6)+(cambiarImg.screenSize.width/18)),(cambiarImg.screenSize.width/5),(cambiarImg.screenSize.width/20));
 		this.Infromacion.setBounds			(((cambiarImg.screenSize.width/2)-(cambiarImg.screenSize.width/10)),(cambiarImg.screenSize.height/6+((cambiarImg.screenSize.width/18)*2)),(cambiarImg.screenSize.width/5),(cambiarImg.screenSize.width/20));
@@ -53,11 +68,7 @@ public class JF_PanelMenu extends JPanel {
 		this.Version.setBounds				(((cambiarImg.screenSize.width/2)-(cambiarImg.screenSize.width/10)),(cambiarImg.screenSize.height/6+((cambiarImg.screenSize.width/18)*5)),(cambiarImg.screenSize.width/5),(cambiarImg.screenSize.width/20));
 		this.Salir.setBounds				(((cambiarImg.screenSize.width/2)-(cambiarImg.screenSize.width/10)),(cambiarImg.screenSize.height/6+((cambiarImg.screenSize.width/18)*6)),(cambiarImg.screenSize.width/5),(cambiarImg.screenSize.width/20));
 		this.BotonLogOut.setBounds((cambiarImg.screenSize.width/10)*9, (cambiarImg.screenSize.height/10), cambiarImg.screenSize.height/10, cambiarImg.screenSize.width/14);
-		
-		
-		
-		
-		
+	
 		add(this.BotonLogOut);
 		add(this.NuevaPartida);
 		add(this.CargarPartida);
@@ -66,10 +77,13 @@ public class JF_PanelMenu extends JPanel {
 		add(this.Autores);
 		add(this.Version);
 		add(this.Salir);
-
 		
 	}
-
+	/**
+	 * Este metodo se usa para dibujar una imagen de fondo en un JPanel 
+	 * y configurar la opacidad del JPanel para mostrar la imagen de fondo.
+	 *@author DAME
+	 */
 	public void paint(Graphics g) {
 		BufferedImage imgFondo;
 		try {
@@ -81,59 +95,76 @@ public class JF_PanelMenu extends JPanel {
 		} catch (IOException e) {
 			System.out.print("Error IMGfondo JF_PanelMenuMenu");
 		}
-		
-		
 	} 
+	
+	/**
+	 * Metodo que cambia este por el panel JF_PanelAutores
+	 * @author DAME
+	 */
 	public void irPanelAutores() {
 		JFrame marcoP = (JFrame)SwingUtilities.getWindowAncestor(this);	
 		marcoP.remove(this);
 		marcoP.add(new JF_PanelAutores());
 		marcoP.setVisible(true);
 	}
+	/**
+	 * Metodo que cambia este por el panel JF_PanelInfo
+	 * @author DAME
+	 */
 	public void irPanelInformacion() {
 		JFrame marcoP = (JFrame)SwingUtilities.getWindowAncestor(this);	
 		marcoP.remove(this);
 		marcoP.add(new JF_PanelInfo());
 		marcoP.setVisible(true);
 	}
+	/**
+	 * Metodo que cambia este por el panel JF_PanelVersion
+	 * @author DAME
+	 */
 	public void irPanelVersion() {
 		JFrame marcoP = (JFrame)SwingUtilities.getWindowAncestor(this);	
 		marcoP.remove(this);
 		marcoP.add(new JF_PanelVersion());
 		marcoP.setVisible(true);
 	}
+	/**
+	 * Metodo que cambia este por el panel JF_PanelPuntuaciones
+	 * @author DAME
+	 */
 	public void irPanelPuntuacion() {
 		JFrame marcoP = (JFrame)SwingUtilities.getWindowAncestor(this);	
 		marcoP.remove(this);
 		marcoP.add(new JF_PanelPuntuaciones());
 		marcoP.setVisible(true); 
 	}
+	/**
+	 * Metodo que cambia este por el panel JF_PanelPartidaDificultad
+	 * @author DAME
+	 */
 	public void irPanelPartidaDificultad() {
 		JFrame marcoP = (JFrame)SwingUtilities.getWindowAncestor(this);	
 		marcoP.remove(this);
 		marcoP.add(new JF_PanelPartidaDificultad());
 		marcoP.setVisible(true); 
 	}
+	/**
+	 * Metodo que cambia este por el panel JF_PanelInicioSesion
+	 * @author DAME
+	 */
 	public void irPanelIniciarSesion() {
 		JFrame marcoP = (JFrame) SwingUtilities.getWindowAncestor(this);
 		marcoP.remove(this);
 		marcoP.add(new JF_PanelInicioSesion());
 		marcoP.setVisible(true);
 	}
+	/**
+	 * Metodo que cambia este por el panel JF_PanelCargarPartida
+	 * @author DAME
+	 */
 	public void irPanelCargarPartida() {
 		JFrame marcoP = (JFrame) SwingUtilities.getWindowAncestor(this);
 		marcoP.remove(this);
 		marcoP.add(new JF_PanelCargarPartida());
 		marcoP.setVisible(true);
 	}
-	/*
-	public void irMenu(JPanel JPanel) {
-		JFrame marcoP = (JFrame)SwingUtilities.getWindowAncestor(JPanel);	
-		marcoP.remove(JPanel);
-		marcoP.add(this);
-		marcoP.setVisible(true);
-	}*/
-
-	
-
 }

@@ -6,30 +6,34 @@ import java.awt.event.*;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import Pandemic.*;
-
+/**
+ * Esta classe define los constructores del boton Nueva partida.
+ * Este cambia el panel, donde se podra elejir la dificultad de la nueva partida
+ * @author DAME
+ */
 public class BotonNuevaPartida extends JLabel {
-	
+	/**
+	 * Este es el constructor de boton Nueva partida en {@link JF_PanelMenu} .
+	 * Este cambia el panel, donde se podra elejir la dificultad de la nueva partida
+	 * @param {@link JF_PanelMenu}
+	 */
 	public BotonNuevaPartida(JF_PanelMenu JF_PanelMenu) {
 		
-		cambiarImg img = new cambiarImg();
 		
-		//JF_PanelMenu.screenSize.getWidth();
-		//screenSize=Toolkit.getDefaultToolkit().getScreenSize();
-		
-		setIcon(img.tamaño(new ImageIcon("botones/bottonNuevaPartida-1.png"), ((int)(cambiarImg.screenSize.getWidth()/5)), ((int)(cambiarImg.screenSize.getWidth()/20))));
+		setIcon(cambiarImg.tamaño(new ImageIcon("botones/bottonNuevaPartida-1.png"), ((int)(cambiarImg.screenSize.getWidth()/5)), ((int)(cambiarImg.screenSize.getWidth()/20))));
 		
 		addMouseListener(new MouseListener() {	
 			
 			
 			public void mouseEntered(MouseEvent e) {
-				setIcon(img.tamaño(new ImageIcon("botones/bottonNuevaPartida-2.png"),((int)(cambiarImg.screenSize.getWidth()/5)) , ((int)(cambiarImg.screenSize.getWidth()/20))));
+				setIcon(cambiarImg.tamaño(new ImageIcon("botones/bottonNuevaPartida-2.png"),((int)(cambiarImg.screenSize.getWidth()/5)) , ((int)(cambiarImg.screenSize.getWidth()/20))));
 			}
 			public void mouseExited(MouseEvent a) {
-				setIcon(img.tamaño(new ImageIcon("botones/bottonNuevaPartida-1.png"),((int)(cambiarImg.screenSize.getWidth()/5)), ((int)(cambiarImg.screenSize.getWidth()/20))));
+				setIcon(cambiarImg.tamaño(new ImageIcon("botones/bottonNuevaPartida-1.png"),((int)(cambiarImg.screenSize.getWidth()/5)), ((int)(cambiarImg.screenSize.getWidth()/20))));
 			}
 
 			public void mousePressed(MouseEvent i) {
-				setIcon(img.tamaño(new ImageIcon("botones/bottonNuevaPartida-3.png"),((int)(cambiarImg.screenSize.getWidth()/5)), ((int)(cambiarImg.screenSize.getWidth()/20))));
+				setIcon(cambiarImg.tamaño(new ImageIcon("botones/bottonNuevaPartida-3.png"),((int)(cambiarImg.screenSize.getWidth()/5)), ((int)(cambiarImg.screenSize.getWidth()/20))));
 			}
 			public void mouseClicked(MouseEvent e) {
 				JF_PanelMenu.irPanelPartidaDificultad();

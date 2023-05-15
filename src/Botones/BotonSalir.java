@@ -7,10 +7,18 @@ import java.awt.event.*;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import Pandemic.*;
-
+/**
+ * Esta classe define los constructores del boton salir
+ * este sirve para cerrar el programa
+ * @author LIL_LK
+ *
+ */
 public class BotonSalir extends JLabel {
 	
-
+/**
+ * Este es el contructor del boton salir,
+ * sale del programa.
+ */
 	public BotonSalir() {
 		
 		cambiarImg img = new cambiarImg();

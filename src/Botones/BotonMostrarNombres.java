@@ -9,12 +9,20 @@ import javax.swing.JLabel;
 import javax.swing.plaf.basic.BasicOptionPaneUI.ButtonActionListener;
 
 import Pandemic.cambiarImg;
-
+/**
+ * Esta classe define los contructores del boton mostrar nombres
+ * muestra la etiqueta de todas las ciudades
+ * @author LIL_LK
+ *
+ */
 public class BotonMostrarNombres extends JLabel  {
 		int tamañoX=150;
 		int tamañoY=100;
 		cambiarImg img;
-
+	/**
+	 * Constructor del boton mostrar nombres
+	 * muestra la etiqueta de todas las ciudades
+	 */
 	public BotonMostrarNombres(){
 		
 		setIcon(img.tamaño(new ImageIcon("botones/ojo_cerrado.png"), tamañoX, tamañoY));

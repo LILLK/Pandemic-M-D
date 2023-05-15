@@ -14,19 +14,36 @@ import javax.swing.border.Border;
 
 import Logico.Ciudades;
 import Logico.Partida;
+import Pandemic.JF_PanelMenu;
 import Pandemic.JF_PanelPartida;
 import Pandemic.JF_PanelPartidaPanel2;
 import Pandemic.cambiarImg;
-
+/**
+ * Esta classe define los constructores de  los botones Ciudad
+ * Estos botones componen un tercio del juego , ya que 
+ * no solo son las ciudades sino que tambien tienen la funcion
+ * de curar
+ * + Ciudades ciudad
+ * + JLabel JLNombreCiudad
+ * + int tamañoX
+ * + int tamañoY
+ * @author DAME
+ *
+ */
 public class BotonCiudad extends JLabel {
+	
 
 	public Ciudades ciudad;
 	public JLabel JLNombreCiudad;
 	public int tamañoX = 45;
 	public int tamañoY = 30;
 
-	cambiarImg img;
-
+/**
+ * Contructor del boton Ciudad en la partida
+ * Se guarda la ciudad y se construye con estos datos
+ * @param {@link JF_PanelPartida}
+ * @param {@link Ciudades}
+ */
 	public BotonCiudad(JF_PanelPartida JF_PanelPartida, Ciudades ciudad) {
 		Border borde = BorderFactory.createLineBorder(Color.BLACK, 3);
 		this.ciudad = ciudad;
@@ -53,9 +70,11 @@ public class BotonCiudad extends JLabel {
 			public void mousePressed(MouseEvent i) {
 			}
 			public void mouseClicked(MouseEvent e) {
-
+				//se cura la cidad
 				BotonCiudad.this.ciudad.curar();
+				//sigue el juego
 				Partida.jugarPartida(JF_PanelPartida);
+				//se actualiza el icono
 				establecerIcono(tamañoX, tamañoY);
 			}
 			public void mouseReleased(MouseEvent e) {
@@ -63,7 +82,11 @@ public class BotonCiudad extends JLabel {
 		});
 
 	}
-
+/**
+ * Este metodo actualiza el icono de la ciudad
+ * @param tamañoX
+ * @param tamañoY
+ */
 	public void establecerIcono(int tamañoX, int tamañoY) {
 		//depende de el virus id se establecera un color diferente
 		switch (BotonCiudad.this.ciudad.idVirus) {
@@ -73,20 +96,20 @@ public class BotonCiudad extends JLabel {
 				//segun el numero de engermedades de la ciudad
 				switch (BotonCiudad.this.ciudad.nEnfermedades) {
 				case 0:
-					setIcon(img.tamaño(new ImageIcon("botones/ciudad_azul_0_sano.png"), tamañoX, tamañoY));
+					setIcon(cambiarImg.tamaño(new ImageIcon("botones/ciudad_azul_0_sano.png"), tamañoX, tamañoY));
 					break;
 				case 1:
-					setIcon(img.tamaño(new ImageIcon("botones/ciudad_azul_1_sano.png"), tamañoX, tamañoY));
+					setIcon(cambiarImg.tamaño(new ImageIcon("botones/ciudad_azul_1_sano.png"), tamañoX, tamañoY));
 					break;
 				case 2:
-					setIcon(img.tamaño(new ImageIcon("botones/ciudad_azul_2_sano.png"), tamañoX, tamañoY));
+					setIcon(cambiarImg.tamaño(new ImageIcon("botones/ciudad_azul_2_sano.png"), tamañoX, tamañoY));
 					break;
 				case 3:
-					setIcon(img.tamaño(new ImageIcon("botones/ciudad_azul_3_sano.png"), tamañoX, tamañoY));
+					setIcon(cambiarImg.tamaño(new ImageIcon("botones/ciudad_azul_3_sano.png"), tamañoX, tamañoY));
 					break;	
 				}
 			else
-				setIcon(img.tamaño(new ImageIcon("botones/ciudad_azul_0_brote.png"), tamañoX, tamañoY));				
+				setIcon(cambiarImg.tamaño(new ImageIcon("botones/ciudad_azul_0_brote.png"), tamañoX, tamañoY));				
 			break;	
 
 		case 1://rojo
@@ -95,20 +118,20 @@ public class BotonCiudad extends JLabel {
 				//segun el numero de engermedades de la ciudad
 				switch (BotonCiudad.this.ciudad.nEnfermedades) {
 				case 0:
-					setIcon(img.tamaño(new ImageIcon("botones/ciudad_rojo_0_sano.png"), tamañoX, tamañoY));
+					setIcon(cambiarImg.tamaño(new ImageIcon("botones/ciudad_rojo_0_sano.png"), tamañoX, tamañoY));
 					break;
 				case 1:
-					setIcon(img.tamaño(new ImageIcon("botones/ciudad_rojo_1_sano.png"), tamañoX, tamañoY));
+					setIcon(cambiarImg.tamaño(new ImageIcon("botones/ciudad_rojo_1_sano.png"), tamañoX, tamañoY));
 					break;
 				case 2:
-					setIcon(img.tamaño(new ImageIcon("botones/ciudad_rojo_2_sano.png"), tamañoX, tamañoY));
+					setIcon(cambiarImg.tamaño(new ImageIcon("botones/ciudad_rojo_2_sano.png"), tamañoX, tamañoY));
 					break;
 				case 3:
-					setIcon(img.tamaño(new ImageIcon("botones/ciudad_rojo_3_sano.png"), tamañoX, tamañoY));
+					setIcon(cambiarImg.tamaño(new ImageIcon("botones/ciudad_rojo_3_sano.png"), tamañoX, tamañoY));
 					break;	
 				}
 			else
-				setIcon(img.tamaño(new ImageIcon("botones/ciudad_rojo_0_brote.png"), tamañoX, tamañoY));				
+				setIcon(cambiarImg.tamaño(new ImageIcon("botones/ciudad_rojo_0_brote.png"), tamañoX, tamañoY));				
 			break;
 		case 2://verde
 			//si no tiene brote
@@ -116,20 +139,20 @@ public class BotonCiudad extends JLabel {
 				//segun el numero de engermedades de la ciudad
 				switch (BotonCiudad.this.ciudad.nEnfermedades) {
 				case 0:
-					setIcon(img.tamaño(new ImageIcon("botones/ciudad_verde_0_sano.png"), tamañoX, tamañoY));
+					setIcon(cambiarImg.tamaño(new ImageIcon("botones/ciudad_verde_0_sano.png"), tamañoX, tamañoY));
 					break;
 				case 1:
-					setIcon(img.tamaño(new ImageIcon("botones/ciudad_verde_1_sano.png"), tamañoX, tamañoY));
+					setIcon(cambiarImg.tamaño(new ImageIcon("botones/ciudad_verde_1_sano.png"), tamañoX, tamañoY));
 					break;
 				case 2:
-					setIcon(img.tamaño(new ImageIcon("botones/ciudad_verde_2_sano.png"), tamañoX, tamañoY));
+					setIcon(cambiarImg.tamaño(new ImageIcon("botones/ciudad_verde_2_sano.png"), tamañoX, tamañoY));
 					break;
 				case 3:
-					setIcon(img.tamaño(new ImageIcon("botones/ciudad_verde_3_sano.png"), tamañoX, tamañoY));
+					setIcon(cambiarImg.tamaño(new ImageIcon("botones/ciudad_verde_3_sano.png"), tamañoX, tamañoY));
 					break;	
 				}
 			else
-				setIcon(img.tamaño(new ImageIcon("botones/ciudad_verde_0_brote.png"), tamañoX, tamañoY));				
+				setIcon(cambiarImg.tamaño(new ImageIcon("botones/ciudad_verde_0_brote.png"), tamañoX, tamañoY));				
 			break;
 		case 3://amarillo
 			//si no tiene brote
@@ -137,25 +160,30 @@ public class BotonCiudad extends JLabel {
 				//segun el numero de engermedades de la ciudad
 				switch (BotonCiudad.this.ciudad.nEnfermedades) {
 				case 0:
-					setIcon(img.tamaño(new ImageIcon("botones/ciudad_amarillo_0_sano.png"), tamañoX, tamañoY));
+					setIcon(cambiarImg.tamaño(new ImageIcon("botones/ciudad_amarillo_0_sano.png"), tamañoX, tamañoY));
 					break;
 				case 1:
-					setIcon(img.tamaño(new ImageIcon("botones/ciudad_amarillo_1_sano.png"), tamañoX, tamañoY));
+					setIcon(cambiarImg.tamaño(new ImageIcon("botones/ciudad_amarillo_1_sano.png"), tamañoX, tamañoY));
 					break;
 				case 2:
-					setIcon(img.tamaño(new ImageIcon("botones/ciudad_amarillo_2_sano.png"), tamañoX, tamañoY));
+					setIcon(cambiarImg.tamaño(new ImageIcon("botones/ciudad_amarillo_2_sano.png"), tamañoX, tamañoY));
 					break;
 				case 3:
-					setIcon(img.tamaño(new ImageIcon("botones/ciudad_amarillo_3_sano.png"), tamañoX, tamañoY));
+					setIcon(cambiarImg.tamaño(new ImageIcon("botones/ciudad_amarillo_3_sano.png"), tamañoX, tamañoY));
 					break;	
 				}
 			else
-				setIcon(img.tamaño(new ImageIcon("botones/ciudad_amarillo_0_brote.png"), tamañoX, tamañoY));				
+				setIcon(cambiarImg.tamaño(new ImageIcon("botones/ciudad_amarillo_0_brote.png"), tamañoX, tamañoY));				
 			break;
 
 		}
 
 	}
+/**
+ * Este metodo actualiza el icono de la ciudad cuando esta en "hoover"
+ * @param tamañoX
+ * @param tamañoY
+ */
 	public void establecerIconoEntered(int tamañoX, int tamañoY) {
 		//depende de el virus id se establecera un color diferente
 		switch (BotonCiudad.this.ciudad.idVirus) {
@@ -165,20 +193,20 @@ public class BotonCiudad extends JLabel {
 				//segun el numero de engermedades de la ciudad
 				switch (BotonCiudad.this.ciudad.nEnfermedades) {
 				case 0:
-					setIcon(img.tamaño(new ImageIcon("botones/ciudad_azul_0_sano_entered.png"), tamañoX, tamañoY));
+					setIcon(cambiarImg.tamaño(new ImageIcon("botones/ciudad_azul_0_sano_entered.png"), tamañoX, tamañoY));
 					break;
 				case 1:
-					setIcon(img.tamaño(new ImageIcon("botones/ciudad_azul_1_sano_entered.png"), tamañoX, tamañoY));
+					setIcon(cambiarImg.tamaño(new ImageIcon("botones/ciudad_azul_1_sano_entered.png"), tamañoX, tamañoY));
 					break;
 				case 2:
-					setIcon(img.tamaño(new ImageIcon("botones/ciudad_azul_2_sano_entered.png"), tamañoX, tamañoY));
+					setIcon(cambiarImg.tamaño(new ImageIcon("botones/ciudad_azul_2_sano_entered.png"), tamañoX, tamañoY));
 					break;
 				case 3:
-					setIcon(img.tamaño(new ImageIcon("botones/ciudad_azul_3_sano_entered.png"), tamañoX, tamañoY));
+					setIcon(cambiarImg.tamaño(new ImageIcon("botones/ciudad_azul_3_sano_entered.png"), tamañoX, tamañoY));
 					break;	
 				}
 			else
-				setIcon(img.tamaño(new ImageIcon("botones/ciudad_azul_0_brote_entered.png"), tamañoX, tamañoY));				
+				setIcon(cambiarImg.tamaño(new ImageIcon("botones/ciudad_azul_0_brote_entered.png"), tamañoX, tamañoY));				
 			break;	
 
 		case 1://rojo
@@ -187,20 +215,20 @@ public class BotonCiudad extends JLabel {
 				//segun el numero de engermedades de la ciudad
 				switch (BotonCiudad.this.ciudad.nEnfermedades) {
 				case 0:
-					setIcon(img.tamaño(new ImageIcon("botones/ciudad_rojo_0_sano_entered.png"), tamañoX, tamañoY));
+					setIcon(cambiarImg.tamaño(new ImageIcon("botones/ciudad_rojo_0_sano_entered.png"), tamañoX, tamañoY));
 					break;
 				case 1:
-					setIcon(img.tamaño(new ImageIcon("botones/ciudad_rojo_1_sano_entered.png"), tamañoX, tamañoY));
+					setIcon(cambiarImg.tamaño(new ImageIcon("botones/ciudad_rojo_1_sano_entered.png"), tamañoX, tamañoY));
 					break;
 				case 2:
-					setIcon(img.tamaño(new ImageIcon("botones/ciudad_rojo_2_sano_entered.png"), tamañoX, tamañoY));
+					setIcon(cambiarImg.tamaño(new ImageIcon("botones/ciudad_rojo_2_sano_entered.png"), tamañoX, tamañoY));
 					break;
 				case 3:
-					setIcon(img.tamaño(new ImageIcon("botones/ciudad_rojo_3_sano_entered.png"), tamañoX, tamañoY));
+					setIcon(cambiarImg.tamaño(new ImageIcon("botones/ciudad_rojo_3_sano_entered.png"), tamañoX, tamañoY));
 					break;	
 				}
 			else
-				setIcon(img.tamaño(new ImageIcon("botones/ciudad_rojo_0_brote_entered.png"), tamañoX, tamañoY));				
+				setIcon(cambiarImg.tamaño(new ImageIcon("botones/ciudad_rojo_0_brote_entered.png"), tamañoX, tamañoY));				
 			break;
 		case 2://verde
 			//si no tiene brote
@@ -208,20 +236,20 @@ public class BotonCiudad extends JLabel {
 				//segun el numero de engermedades de la ciudad
 				switch (BotonCiudad.this.ciudad.nEnfermedades) {
 				case 0:
-					setIcon(img.tamaño(new ImageIcon("botones/ciudad_verde_0_sano_entered.png"), tamañoX, tamañoY));
+					setIcon(cambiarImg.tamaño(new ImageIcon("botones/ciudad_verde_0_sano_entered.png"), tamañoX, tamañoY));
 					break;
 				case 1:
-					setIcon(img.tamaño(new ImageIcon("botones/ciudad_verde_1_sano_entered.png"), tamañoX, tamañoY));
+					setIcon(cambiarImg.tamaño(new ImageIcon("botones/ciudad_verde_1_sano_entered.png"), tamañoX, tamañoY));
 					break;
 				case 2:
-					setIcon(img.tamaño(new ImageIcon("botones/ciudad_verde_2_sano_entered.png"), tamañoX, tamañoY));
+					setIcon(cambiarImg.tamaño(new ImageIcon("botones/ciudad_verde_2_sano_entered.png"), tamañoX, tamañoY));
 					break;
 				case 3:
-					setIcon(img.tamaño(new ImageIcon("botones/ciudad_verde_3_sano_entered.png"), tamañoX, tamañoY));
+					setIcon(cambiarImg.tamaño(new ImageIcon("botones/ciudad_verde_3_sano_entered.png"), tamañoX, tamañoY));
 					break;	
 				}
 			else
-				setIcon(img.tamaño(new ImageIcon("botones/ciudad_verde_0_brote_entered.png"), tamañoX, tamañoY));				
+				setIcon(cambiarImg.tamaño(new ImageIcon("botones/ciudad_verde_0_brote_entered.png"), tamañoX, tamañoY));				
 			break;
 		case 3://amarillo
 			//si no tiene brote
@@ -229,30 +257,36 @@ public class BotonCiudad extends JLabel {
 				//segun el numero de engermedades de la ciudad
 				switch (BotonCiudad.this.ciudad.nEnfermedades) {
 				case 0:
-					setIcon(img.tamaño(new ImageIcon("botones/ciudad_amarillo_0_sano_entered.png"), tamañoX, tamañoY));
+					setIcon(cambiarImg.tamaño(new ImageIcon("botones/ciudad_amarillo_0_sano_entered.png"), tamañoX, tamañoY));
 					break;
 				case 1:
-					setIcon(img.tamaño(new ImageIcon("botones/ciudad_amarillo_1_sano_entered.png"), tamañoX, tamañoY));
+					setIcon(cambiarImg.tamaño(new ImageIcon("botones/ciudad_amarillo_1_sano_entered.png"), tamañoX, tamañoY));
 					break;
 				case 2:
-					setIcon(img.tamaño(new ImageIcon("botones/ciudad_amarillo_2_sano_entered.png"), tamañoX, tamañoY));
+					setIcon(cambiarImg.tamaño(new ImageIcon("botones/ciudad_amarillo_2_sano_entered.png"), tamañoX, tamañoY));
 					break;
 				case 3:
-					setIcon(img.tamaño(new ImageIcon("botones/ciudad_amarillo_3_sano_entered.png"), tamañoX, tamañoY));
+					setIcon(cambiarImg.tamaño(new ImageIcon("botones/ciudad_amarillo_3_sano_entered.png"), tamañoX, tamañoY));
 					break;	
 				}
 			else
-				setIcon(img.tamaño(new ImageIcon("botones/ciudad_amarillo_0_brote_entered.png"), tamañoX, tamañoY));				
+				setIcon(cambiarImg.tamaño(new ImageIcon("botones/ciudad_amarillo_0_brote_entered.png"), tamañoX, tamañoY));				
 			break;
 
 		}
 
 	}
+	
+	/**
+	 * Este metodo mostra todos los labels creados
+	 */
 	public static void mostrarNombres() {
 		for (BotonCiudad boton : JF_PanelPartida.botonesCiudad) 
 			boton.JLNombreCiudad.setVisible(true);
 	}
-	
+	/**
+	 * Este metodo oculta todos los labels creados
+	 */
 	public static void ocultarNombres() {
 		for (BotonCiudad boton : JF_PanelPartida.botonesCiudad) 
 			boton.JLNombreCiudad.setVisible(false);
