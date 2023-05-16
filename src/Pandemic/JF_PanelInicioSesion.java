@@ -29,13 +29,13 @@ public class JF_PanelInicioSesion extends JPanel {
 	 */
 	JTextField JTFUsuario;
 	/**
-	 * Este es el campo de texto donde se introduce la contraseña
+	 * Este es el campo de texto donde se introduce la contrasenya
 	 */
-	JTextField JTFContraseña;
+	JTextField JTFContrasenya;
 	
 	/**
  	*Este es el contructor del panel inicio sesion.
- 	*Aqui hay 2 labels titulo , 2 botones para registrarse y para iniciar sesion, y dos campos de texto para el usuario y contraseña  
+ 	*Aqui hay 2 labels titulo , 2 botones para registrarse y para iniciar sesion, y dos campos de texto para el usuario y contrasenya  
  	*/
 	public JF_PanelInicioSesion() {
 
@@ -45,9 +45,9 @@ public class JF_PanelInicioSesion extends JPanel {
 		JTFUsuario.setBounds(((cambiarImg.screenSize.width / 12)*5),((cambiarImg.screenSize.height / 7)*2),	(cambiarImg.screenSize.width / 12)*2,(cambiarImg.screenSize.width / 35));
 		JTFUsuario.setBorder(cambiarImg.bordeN);
 		
-		JTFContraseña = new JPasswordField(1);
-		JTFContraseña.setBounds(((cambiarImg.screenSize.width / 12)*5),((cambiarImg.screenSize.height / 7)*3),(cambiarImg.screenSize.width / 12)*2,(cambiarImg.screenSize.width / 35));
-		JTFContraseña.setBorder(cambiarImg.bordeN);
+		JTFContrasenya = new JPasswordField(1);
+		JTFContrasenya.setBounds(((cambiarImg.screenSize.width / 12)*5),((cambiarImg.screenSize.height / 7)*3),(cambiarImg.screenSize.width / 12)*2,(cambiarImg.screenSize.width / 35));
+		JTFContrasenya.setBorder(cambiarImg.bordeN);
 		
 		//labels//
 		JLabel JLUsuario = new  JLabel();
@@ -60,14 +60,14 @@ public class JF_PanelInicioSesion extends JPanel {
 		JLUsuario.setOpaque(true);
 		
 		
-		JLabel JLcontraseña = new  JLabel();
-		JLcontraseña.setBounds(((cambiarImg.screenSize.width / 12)*5),((cambiarImg.screenSize.height / 7)*3 - (cambiarImg.screenSize.width / 45)),((cambiarImg.screenSize.width / 12)),(cambiarImg.screenSize.width / 45));
-		JLcontraseña.setText("<html><center>Contraseña");
-		JLcontraseña.setForeground(Color.BLACK);
-		JLcontraseña.setFont(new Font("Stika Text",Font.BOLD,(cambiarImg.screenSize.height/70)));
-		JLcontraseña.setBackground(cambiarImg.color1);
-		JLcontraseña.setBorder(cambiarImg.bordeN);
-		JLcontraseña.setOpaque(true);
+		JLabel JLcontrasenya = new  JLabel();
+		JLcontrasenya.setBounds(((cambiarImg.screenSize.width / 12)*5),((cambiarImg.screenSize.height / 7)*3 - (cambiarImg.screenSize.width / 45)),((cambiarImg.screenSize.width / 12)),(cambiarImg.screenSize.width / 45));
+		JLcontrasenya.setText("<html><center>Contrasenya");
+		JLcontrasenya.setForeground(Color.BLACK);
+		JLcontrasenya.setFont(new Font("Stika Text",Font.BOLD,(cambiarImg.screenSize.height/70)));
+		JLcontrasenya.setBackground(cambiarImg.color1);
+		JLcontrasenya.setBorder(cambiarImg.bordeN);
+		JLcontrasenya.setOpaque(true);
 		
 		//botones//
 		BotonIniciarSesion = new  BotonIniciarSesion(this);
@@ -82,8 +82,8 @@ public class JF_PanelInicioSesion extends JPanel {
 		add(BotonRegistrarse);
 		add(JLUsuario);
 		add(JTFUsuario);
-		add(JLcontraseña);
-		add(JTFContraseña);
+		add(JLcontrasenya);
+		add(JTFContrasenya);
 		
 	}
 	/**
@@ -94,11 +94,11 @@ public class JF_PanelInicioSesion extends JPanel {
 		return JTFUsuario.getText();
 	}
 	/**
-	 * Este metodo devuelve el contenido del campo contraseña 
+	 * Este metodo devuelve el contenido del campo contrasenya 
 	 * @return String
 	 */
-	public String getJTFContraseña() {
-		return JTFContraseña.getText();
+	public String getJTFContrasenya() {
+		return JTFContrasenya.getText();
 	}
 
 	/**

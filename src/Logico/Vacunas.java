@@ -47,7 +47,7 @@ public class Vacunas {
 	}
 
 /**
- * Esta funcion crea las vacunas y las añade a la lista 
+ * Esta funcion crea las vacunas y las anyade a la lista 
  */
 	public static void generarVacunas() {
 		for (int i = 0; i < 4 ; i++) {

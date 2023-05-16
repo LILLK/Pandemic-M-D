@@ -67,7 +67,7 @@ public class JF_PanelMenu extends JPanel {
 		this.Salir = new BotonSalir();
 		this.BotonLogOut = new BotonLogOut(this);
 		
-		//se establece la posicion y el tamaño de los componentes dependiendo del tamaño de la pantalla 
+		//se establece la posicion y el tamanyo de los componentes dependiendo del tamanyo de la pantalla 
 		this.NuevaPartida.setBounds			(((cambiarImg.screenSize.width/2)-(cambiarImg.screenSize.width/10)),(cambiarImg.screenSize.height/6),(cambiarImg.screenSize.width/5),(cambiarImg.screenSize.width/20));
 		this.CargarPartida.setBounds		(((cambiarImg.screenSize.width/2)-(cambiarImg.screenSize.width/10)),((cambiarImg.screenSize.height/6)+(cambiarImg.screenSize.width/18)),(cambiarImg.screenSize.width/5),(cambiarImg.screenSize.width/20));
 		this.Infromacion.setBounds			(((cambiarImg.screenSize.width/2)-(cambiarImg.screenSize.width/10)),(cambiarImg.screenSize.height/6+((cambiarImg.screenSize.width/18)*2)),(cambiarImg.screenSize.width/5),(cambiarImg.screenSize.width/20));

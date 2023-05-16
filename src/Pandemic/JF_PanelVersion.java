@@ -14,16 +14,22 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 import Botones.BotonAtras;
-
+/**
+ * Esta classe guarda el panel Version 
+ * En este panel se podra ver la version del programa
+ * @author DAME
+ *
+ */
 public class JF_PanelVersion extends JPanel {
+	/**
+	 * Este boton vuelve al menu.
+	 * {@link BotonAtras}
+	 */
 	BotonAtras Atras;
 
-
-	
 	JF_PanelVersion() {
 	
 		setLayout(null);
-
 		
 		this.Atras = new BotonAtras(this);
 		JLabel Version = new JLabel();
@@ -43,12 +49,18 @@ public class JF_PanelVersion extends JPanel {
 		add(Version);
 		
 	}
+	/**
+	 * Este metodo cambia el panel {@link JF_PanelVersion} por el panel {@link JF_PanelMenu}
+	 */
 	public void irMenu() {
 		JFrame marcoP = (JFrame)SwingUtilities.getWindowAncestor(this);	
 		marcoP.remove(this);
 		marcoP.add(new JF_PanelMenu());
 		marcoP.setVisible(true);
 	}
+	/**
+	 * Este metodo pinta el fondo de la pantalla
+	 */
 	public void paint(Graphics g) {
 		BufferedImage imgFondo;
 		try {

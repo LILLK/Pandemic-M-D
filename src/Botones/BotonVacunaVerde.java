@@ -18,13 +18,13 @@ public class BotonVacunaVerde extends JLabel {
 	
 
 	/**
-	 * tamañoX = 80
+	 * tamanyoX = 80
 	 */
-	int tamañoX = 80;
+	int tamanyoX = 80;
 	/**
-	 * tamañoY = 80;
+	 * tamanyoY = 80;
 	 */
-	int tamañoY = 80;
+	int tamanyoY = 80;
 	/**
 	 * idVirus = 2;
 	 */
@@ -36,16 +36,16 @@ public class BotonVacunaVerde extends JLabel {
 	 * @param {@link JF_PanelPartida }
 	 */
 	public BotonVacunaVerde(JF_PanelPartidaVacunas panel,JF_PanelPartida pPartida) {
-		setIcon(cambiarImg.tamanyo(new ImageIcon("botones/virus_verde_0.png"), tamañoX, tamañoY));
+		setIcon(cambiarImg.tamanyo(new ImageIcon("botones/virus_verde_0.png"), tamanyoX, tamanyoY));
 		
 		
 		addMouseListener((MouseListener) new MouseListener() {
 			public void mouseEntered(MouseEvent e) {
-				setIcon(cambiarImg.tamanyo(new ImageIcon("botones/virus_verde_0_entered.png"), tamañoX, tamañoY));
+				setIcon(cambiarImg.tamanyo(new ImageIcon("botones/virus_verde_0_entered.png"), tamanyoX, tamanyoY));
 			}
 
 			public void mouseExited(MouseEvent a) {
-				setIcon(cambiarImg.tamanyo(new ImageIcon("botones/virus_verde_0.png"), tamañoX, tamañoY));
+				setIcon(cambiarImg.tamanyo(new ImageIcon("botones/virus_verde_0.png"), tamanyoX, tamanyoY));
 			}
 
 			public void mousePressed(MouseEvent i) {}

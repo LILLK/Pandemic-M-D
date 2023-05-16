@@ -11,7 +11,7 @@ import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.border.Border;
 /**
- * Esta calsse sirve a rescalar el tamaño de las imagenes
+ * Esta calsse sirve a rescalar el tamanyo de las imagenes
  * @author DAME
  *
  */
@@ -21,7 +21,7 @@ public class cambiarImg {
 	 */
 	public static final Border bordeN = BorderFactory.createLineBorder(Color.BLACK, 6);
 	/**
-	 * Tamaño de la pantalla
+	 * Tamanyo de la pantalla
 	 */
 	public static Dimension screenSize=Toolkit.getDefaultToolkit().getScreenSize();
 	/**
@@ -29,7 +29,7 @@ public class cambiarImg {
 	 */
 	public static Color color1 = new Color(71,161,197);
 	/**
-	 * Esta funcion devuelve una imagen rescalada al tamaño deseado
+	 * Esta funcion devuelve una imagen rescalada al tamanyo deseado
 	 * @param ImageIcon 
 	 * @param int w
 	 * @param int h

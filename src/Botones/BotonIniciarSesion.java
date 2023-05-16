@@ -44,11 +44,11 @@ public class BotonIniciarSesion extends JLabel {
 			public void mouseClicked(MouseEvent e) {
 
 				
-				if(ConexionBD.existeUsuario( JF_PanelInicioSesion.getJTFUsuario(), JF_PanelInicioSesion.getJTFContraseña())) {
+				if(ConexionBD.existeUsuario( JF_PanelInicioSesion.getJTFUsuario(), JF_PanelInicioSesion.getJTFContrasenya())) {
 					JF_PanelInicioSesion.irMenu();
 					JF_PanelInfo.NombreJ=JF_PanelInicioSesion.getJTFUsuario();
 				}else {
-					JOptionPane.showMessageDialog(new JFrame(), "Nombre o constraseña erroneos " );
+					JOptionPane.showMessageDialog(new JFrame(), "Nombre o constrasenya erroneos " );
 				}
 			}
 			public void mouseReleased(MouseEvent e) {

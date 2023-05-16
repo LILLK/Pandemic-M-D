@@ -1,6 +1,5 @@
 //Mehdi Tahrat && David hola
 package Pandemic;
-
 import java.awt.*;
 
 import java.awt.image.BufferedImage;
@@ -10,61 +9,62 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import Botones.*;
+/**
+ * Esta classe es del panel registrase.
+ * En este panel el usuario puede crear un nuevo usuario en la base de datos 
+ * @author DAME
+ *
+ */
 
 public class JF_PanelRegistrarse extends JPanel {
-
+	/**
+	 * Este boton cambia al panel {@link JF_PanelInicioSesion} 
+	 */
 	BotonIniciarSesion BotonIniciarSesion;
+	/**
+	 * Este boton compureva las credenciales y se registra si es possible
+	 */
 	BotonRegistrarse BotonRegistrarse;
-	BotonSalir Salir;
-	JFrame marcoP;
-
+	/**
+	 * Este es el campo de texto donde se introduce el usuario
+	 */
 	JTextField JTFUsuario;
-	JTextField JTFContraseña;
-	JTextField JTFRepContraseña;
+	/**
+	 * Este es el campo de texto donde se introduce la contrasenya
+	 */
+	JTextField JTFContrasenya;
+	/**
+	 * Este es el campo de texto donde se confirma la contrasenya introducida
+	 */
+	JTextField JTFRepContrasenya;
 
-
+	/**
+	 * Este es el constructor del panel registrarse 
+	 * En este panel el usuario puede crear un nuevo usuario en la base de datos 
+	 */
 	JF_PanelRegistrarse() {
-
-
 
 		cambiarImg img = new cambiarImg();
 		setLayout(null);
-		
-		this.Salir = new BotonSalir();
-		this.Salir.setBounds(((cambiarImg.screenSize.width / 2) - (cambiarImg.screenSize.width / 10)),
-				(cambiarImg.screenSize.height / 6 + ((cambiarImg.screenSize.width / 18) * 6)), 
-				(cambiarImg.screenSize.width / 5),
-				(cambiarImg.screenSize.width / 20));
+
 		//text fields//
 		JTFUsuario = new JTextField(1);
-		JTFUsuario.setBounds(((cambiarImg.screenSize.width / 12)*5),
-		((cambiarImg.screenSize.height / 7)*2),
-		(cambiarImg.screenSize.width / 12)*2,
+		JTFUsuario.setBounds(((cambiarImg.screenSize.width / 12)*5),((cambiarImg.screenSize.height / 7)*2),(cambiarImg.screenSize.width / 12)*2,
 		(cambiarImg.screenSize.width / 35));
-
 		JTFUsuario.setBorder(cambiarImg.bordeN);
 		
-		JTFContraseña = new JPasswordField(1);
-		JTFContraseña.setBounds(((cambiarImg.screenSize.width / 12)*5),
-		((cambiarImg.screenSize.height / 7)*3),
-		(cambiarImg.screenSize.width / 12)*2,
-		(cambiarImg.screenSize.width / 35));
+		JTFContrasenya = new JPasswordField(1);
+		JTFContrasenya.setBounds(((cambiarImg.screenSize.width / 12)*5),((cambiarImg.screenSize.height / 7)*3),(cambiarImg.screenSize.width / 12)*2,(cambiarImg.screenSize.width / 35));
 ;
-		JTFContraseña.setBorder(cambiarImg.bordeN);
+		JTFContrasenya.setBorder(cambiarImg.bordeN);
 		
-		JTFRepContraseña = new JPasswordField(1);
-		JTFRepContraseña.setBounds(((cambiarImg.screenSize.width / 12)*5),
-				((cambiarImg.screenSize.height / 7)*4),
-				(cambiarImg.screenSize.width / 12)*2,
-				(cambiarImg.screenSize.width / 35));
-		JTFRepContraseña.setBorder(cambiarImg.bordeN);
+		JTFRepContrasenya = new JPasswordField(1);
+		JTFRepContrasenya.setBounds(((cambiarImg.screenSize.width / 12)*5),((cambiarImg.screenSize.height / 7)*4),(cambiarImg.screenSize.width / 12)*2,(cambiarImg.screenSize.width / 35));
+		JTFRepContrasenya.setBorder(cambiarImg.bordeN);
 		
 		//labels//
 		JLabel JLUsuario = new  JLabel();
-		JLUsuario.setBounds(((cambiarImg.screenSize.width / 12)*5),
-				((cambiarImg.screenSize.height / 7)*2 - (cambiarImg.screenSize.width / 45)),
-				((cambiarImg.screenSize.width / 12)),
-				(cambiarImg.screenSize.width / 45));
+		JLUsuario.setBounds(((cambiarImg.screenSize.width / 12)*5),((cambiarImg.screenSize.height / 7)*2 - (cambiarImg.screenSize.width / 45)),((cambiarImg.screenSize.width / 12)),(cambiarImg.screenSize.width / 45));
 		JLUsuario.setText("<html><center>Usuario");
 		JLUsuario.setForeground(Color.BLACK);
 		JLUsuario.setFont(new Font("Stika Text",Font.BOLD,(cambiarImg.screenSize.height/80)));
@@ -73,75 +73,70 @@ public class JF_PanelRegistrarse extends JPanel {
 		JLUsuario.setOpaque(true);
 		
 		
-		JLabel JLcontraseña = new  JLabel();
-		JLcontraseña.setBounds(((cambiarImg.screenSize.width / 12)*5),
-				((cambiarImg.screenSize.height / 7)*3 - (cambiarImg.screenSize.width / 45)),
-				((cambiarImg.screenSize.width / 12)),
-				(cambiarImg.screenSize.width / 45));
-		JLcontraseña.setText("<html><center>Contraseña");
-		JLcontraseña.setForeground(Color.BLACK);
-		JLcontraseña.setFont(new Font("Stika Text",Font.BOLD,(cambiarImg.screenSize.height/80)));
-		JLcontraseña.setBackground(cambiarImg.color1);
-		JLcontraseña.setBorder(cambiarImg.bordeN);
-		JLcontraseña.setOpaque(true);
+		JLabel JLcontrasenya = new  JLabel();
+		JLcontrasenya.setBounds(((cambiarImg.screenSize.width / 12)*5),((cambiarImg.screenSize.height / 7)*3 - (cambiarImg.screenSize.width / 45)),((cambiarImg.screenSize.width / 12)), (cambiarImg.screenSize.width / 45));
+		JLcontrasenya.setText("<html><center>Contrasenya");
+		JLcontrasenya.setForeground(Color.BLACK);
+		JLcontrasenya.setFont(new Font("Stika Text",Font.BOLD,(cambiarImg.screenSize.height/80)));
+		JLcontrasenya.setBackground(cambiarImg.color1);
+		JLcontrasenya.setBorder(cambiarImg.bordeN);
+		JLcontrasenya.setOpaque(true);
 		
-		JLabel JLRepContraseña = new  JLabel();
-		JLRepContraseña.setBounds(((cambiarImg.screenSize.width / 12)*5),
-				((cambiarImg.screenSize.height / 7)*4 - (cambiarImg.screenSize.width / 45)),
-				((cambiarImg.screenSize.width / 12)),
-				(cambiarImg.screenSize.width / 45));
-		JLRepContraseña.setText("<html><center>Repetir Conrtraseña");
-		JLRepContraseña.setForeground(Color.BLACK);
-		JLRepContraseña.setFont(new Font("Stika Text",Font.BOLD,(cambiarImg.screenSize.height/80)));
-		JLRepContraseña.setBackground(cambiarImg.color1);
-		JLRepContraseña.setBorder(cambiarImg.bordeN);
-		JLRepContraseña.setOpaque(true);
+		JLabel JLRepContrasenya = new  JLabel();
+		JLRepContrasenya.setBounds(((cambiarImg.screenSize.width / 12)*5), ((cambiarImg.screenSize.height / 7)*4 - (cambiarImg.screenSize.width / 45)), ((cambiarImg.screenSize.width / 12)),(cambiarImg.screenSize.width / 45));
+		JLRepContrasenya.setText("<html><center>Repetir Conrtrasenya");
+		JLRepContrasenya.setForeground(Color.BLACK);
+		JLRepContrasenya.setFont(new Font("Stika Text",Font.BOLD,(cambiarImg.screenSize.height/80)));
+		JLRepContrasenya.setBackground(cambiarImg.color1);
+		JLRepContrasenya.setBorder(cambiarImg.bordeN);
+		JLRepContrasenya.setOpaque(true);
 		
 		//botones//
 		BotonIniciarSesion = new  BotonIniciarSesion(this);
-		BotonIniciarSesion.setBounds(((cambiarImg.screenSize.width / 2)-((cambiarImg.screenSize.width / 12))),
-				((cambiarImg.screenSize.height / 7)*4 + (cambiarImg.screenSize.width / 30)),
-				((cambiarImg.screenSize.width / 12)),
-				(cambiarImg.screenSize.width / 45));
+		BotonIniciarSesion.setBounds(((cambiarImg.screenSize.width / 2)-((cambiarImg.screenSize.width / 12))),((cambiarImg.screenSize.height / 7)*4 + (cambiarImg.screenSize.width / 30)),((cambiarImg.screenSize.width / 12)),(cambiarImg.screenSize.width / 45));
 		BotonIniciarSesion.setOpaque(true);
-
-		
 		
 		BotonRegistrarse = new  BotonRegistrarse(this);
 		BotonRegistrarse.setBounds((cambiarImg.screenSize.width / 2),
-				((cambiarImg.screenSize.height / 7)*4 + (cambiarImg.screenSize.width / 30)),
-				((cambiarImg.screenSize.width / 12)),
-				(cambiarImg.screenSize.width / 45));
+				((cambiarImg.screenSize.height / 7)*4 + (cambiarImg.screenSize.width / 30)),((cambiarImg.screenSize.width / 12)),(cambiarImg.screenSize.width / 45));
 		BotonRegistrarse.setOpaque(true);
 
-		
-		
-		
 		add(BotonIniciarSesion);
 		add(BotonRegistrarse);
 		add(JLUsuario);
 		add(JTFUsuario);
-		add(JLcontraseña);
-		add(JTFContraseña);
-		add(JLRepContraseña);
-		add(JTFRepContraseña);
+		add(JLcontrasenya);
+		add(JTFContrasenya);
+		add(JLRepContrasenya);
+		add(JTFRepContrasenya);
 		
 	}
-	//////////////////////////////////////////////////////////////////
-	//-getJTFUsuario-getJTFContraseña-getJTFRepContraseña
-	//devuelve el contenido del text field
-	/////////////////////////////////////////////////////////////////
+
+	/**
+	 * Este metodo devuelve el contenido del campo unusario 
+	 * @return String
+	 */
 	public String getJTFUsuario() {
 		return JTFUsuario.getText();
 	}
-	public String getJTFContraseña() {
-		return JTFContraseña.getText();
+	/**
+	 * Este metodo devuelve el contenido del campo contrasenya 
+	 * @return String
+	 */
+	public String getJTFContrasenya() {
+		return JTFContrasenya.getText();
 	}
-	public String getJTFRepContraseña() {
-		return JTFRepContraseña.getText();
+	/**
+	 * Este metodo devuelve el contenido del campo Repcontrasenya 
+	 * @return String
+	 */
+	public String getJTFRepContrasenya() {
+		return JTFRepContrasenya.getText();
 	}
 
-
+	/**
+	 * Este metodo pinta el fondo de la pantalla
+	 */
 	public void paint(Graphics g) {
 		BufferedImage imgFondo;
 		try {
@@ -155,13 +150,18 @@ public class JF_PanelRegistrarse extends JPanel {
 		}
 
 	}
-
+	/**
+	 * Este metodo cambia el panel {@link JF_PanelRegistrarse } por el panel {@link JF_PanelInicioSesion}
+	 */
 	public void irPanelIniciarSesion() {
 		JFrame marcoP = (JFrame) SwingUtilities.getWindowAncestor(this);
 		marcoP.remove(this);
 		marcoP.add(new JF_PanelInicioSesion());
 		marcoP.setVisible(true);
 	}
+	/**
+	 * Este metodo cambia el panel {@link JF_PanelRegistrarse } por el panel {@link JF_PanelMenu}
+	 */
 	public void irMenu() {
 		JFrame marcoP = (JFrame)SwingUtilities.getWindowAncestor(this);	
 		marcoP.remove(this);

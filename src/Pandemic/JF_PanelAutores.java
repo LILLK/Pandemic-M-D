@@ -17,7 +17,7 @@ import javax.swing.SwingUtilities;
 import Botones.BotonAtras;
 /**
  * Esta classe es el panel de autores.
- * En el se encuentran 2 imagenes de los autores con un pequeño texto de estos.
+ * En el se encuentran 2 imagenes de los autores con un pequenyo texto de estos.
  * @author DAME
  *
  */
@@ -48,13 +48,13 @@ public class JF_PanelAutores extends JPanel  {
 		//IMAGENES//
 		imagenDavid.setIcon(img.tamanyo(new ImageIcon("imagenes/fotoDavid.png"),(cambiarImg.screenSize.height/3),(cambiarImg.screenSize.height/4)));
 		imagenMehdi.setIcon(img.tamanyo(new ImageIcon("imagenes/imagenMehdi.png"), (cambiarImg.screenSize.height/3), (cambiarImg.screenSize.height/4)));
-		imgDavidDesc.setText("<html><center>DAVID CALIN HOLA<p>Tengo 18 años y estudio programación web. Me apasiona todo lo relacionado con la tecnologia "
+		imgDavidDesc.setText("<html><center>DAVID CALIN HOLA<p>Tengo 18 anyos y estudio programación web. Me apasiona todo lo relacionado con la tecnologia "
 				+ "							y la informática, especialmente los videojuegos. Me encanta aprender sobre nuevos lenguajes de programacion y "
-				+ "							diseñar mis propios juegos en mi tiempo libre. Espero poder seguir creciendo en esta carrera y convertirme en un"
+				+ "							disenyar mis propios juegos en mi tiempo libre. Espero poder seguir creciendo en esta carrera y convertirme en un"
 				+ "							desarrollador web exitoso.");
 		//TEXTO//
-		imgMehdiDesc.setText("<html><center>Mehdi Tharat<p>Soy un estudiante de 20 años apasionado por la informatica y la programcación. Me encanta trabajar"
-				+ "							con números y desentrañar problemas matemáticos complejos. Estoy en constante búsqueda de nuevas tecnologías y lenguajes "
+		imgMehdiDesc.setText("<html><center>Mehdi Tharat<p>Soy un estudiante de 20 anyos apasionado por la informatica y la programcación. Me encanta trabajar"
+				+ "							con números y desentranyar problemas matemáticos complejos. Estoy en constante búsqueda de nuevas tecnologías y lenguajes "
 				+ "							programación que me permitan mejorar mia habitidades y conocimientos.Mi objetivo es convertirme en un experto en"
 				+ "							programación.");
 		
@@ -76,14 +76,14 @@ public class JF_PanelAutores extends JPanel  {
 		imagenMehdi.setBorder(cambiarImg.bordeN);
 		imagenDavid.setBorder(cambiarImg.bordeN);
 		
-		//Tamaño Objetos//
+		//Tamanyo Objetos//
 		imagenDavid.setBounds	((cambiarImg.screenSize.width/2)-(cambiarImg.screenSize.height/5)-(cambiarImg.screenSize.height/3),(cambiarImg.screenSize.height/8), (cambiarImg.screenSize.height/3),(cambiarImg.screenSize.height/4));
 		imgDavidDesc.setBounds	((cambiarImg.screenSize.width/2)-(cambiarImg.screenSize.height/5)-(cambiarImg.screenSize.height/3),(cambiarImg.screenSize.height/8)+(cambiarImg.screenSize.height/4), (cambiarImg.screenSize.height/3),(cambiarImg.screenSize.height/3));
 		imagenMehdi.setBounds	((cambiarImg.screenSize.width/2)+(cambiarImg.screenSize.height/5),(cambiarImg.screenSize.height/8), (cambiarImg.screenSize.height/3),(cambiarImg.screenSize.height/4));
 		imgMehdiDesc.setBounds	((cambiarImg.screenSize.width/2)+(cambiarImg.screenSize.height/5),(cambiarImg.screenSize.height/8)+(cambiarImg.screenSize.height/4),(cambiarImg.screenSize.height/3),(cambiarImg.screenSize.height/3));
 		Atras.setBounds(0,(cambiarImg.screenSize.height-((cambiarImg.screenSize.width/20)-3)),cambiarImg.screenSize.width,(cambiarImg.screenSize.width/25));
 		
-		//Añadir Objetos
+		//Anyadir Objetos
 		add(imgDavidDesc);
 		add(imagenDavid);
 		add(imagenMehdi);

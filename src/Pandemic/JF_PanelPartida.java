@@ -61,7 +61,7 @@ public class JF_PanelPartida extends JPanel {
 		}
 		
 		for (BotonCiudad botonCiudad : botonesCiudad) {
-			botonCiudad.setBounds(botonCiudad.ciudad.posicionX - (botonCiudad.tamañoX / 2), botonCiudad.ciudad.posicionY - (botonCiudad.tamañoY / 2), botonCiudad.tamañoX,botonCiudad.tamañoY);
+			botonCiudad.setBounds(botonCiudad.ciudad.posicionX - (botonCiudad.tamanyoX / 2), botonCiudad.ciudad.posicionY - (botonCiudad.tamanyoY / 2), botonCiudad.tamanyoX,botonCiudad.tamanyoY);
 			add(botonCiudad);	
 		}
 		add(botonAtras);

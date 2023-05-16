@@ -101,7 +101,7 @@ public class Ciudades {
 	public void infectar() {
 		JF_PanelPartidaPanel2.updateLog("-----------------");
 		JF_PanelPartidaPanel2.updateLog("Se a infectado la ciudad: " + this.nombre);
-		if (this.nEnfermedades < 3) {// si es mas pequeño de 3
+		if (this.nEnfermedades < 3) {// si es mas pequenyo de 3
 			this.nEnfermedades++;
 			Partida.Puntuacion-=100;
 			// si tiene 3 enfermedades y no tiene un brote, se generara uno
@@ -133,8 +133,8 @@ public class Ciudades {
 		}
 
 		JF_PanelPartida.botonesCiudad.get(getIdXnombre(this.nombre)).establecerIcono(
-				JF_PanelPartida.botonesCiudad.get(getIdXnombre(this.nombre)).tamañoX,
-				JF_PanelPartida.botonesCiudad.get(getIdXnombre(this.nombre)).tamañoY);
+				JF_PanelPartida.botonesCiudad.get(getIdXnombre(this.nombre)).tamanyoX,
+				JF_PanelPartida.botonesCiudad.get(getIdXnombre(this.nombre)).tamanyoY);
 		JF_PanelPartidaPanel2.updateLog("-----------------");
 	}
 
@@ -206,7 +206,7 @@ public class Ciudades {
 			posicion[1] = Integer.parseInt(lin.split(";")[2].split(",")[1]);
 			// Construccion de todas las ciudades
 			Ciudades ciudad = new Ciudades(nombre, posicion[0], posicion[1], idVirus);
-			// Se añade en la lista global Partida.ciudades
+			// Se anyade en la lista global Partida.ciudades
 			Partida.ciudades.add(ciudad);
 		}
 		// Mientras haya menos brotes que los necesarios para empezar

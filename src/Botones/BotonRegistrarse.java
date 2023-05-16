@@ -69,8 +69,8 @@ public class BotonRegistrarse extends JLabel {
 			public void mouseClicked(MouseEvent e) {
 				
 
-				if(JF_PanelRegistrarse.getJTFContraseña().equals(JF_PanelRegistrarse.getJTFRepContraseña())) {
-					if((ConexionBD.crearUsuario( JF_PanelRegistrarse.getJTFUsuario(), JF_PanelRegistrarse.getJTFContraseña()))){
+				if(JF_PanelRegistrarse.getJTFContrasenya().equals(JF_PanelRegistrarse.getJTFRepContrasenya())) {
+					if((ConexionBD.crearUsuario( JF_PanelRegistrarse.getJTFUsuario(), JF_PanelRegistrarse.getJTFContrasenya()))){
 						JF_PanelInfo.NombreJ=JF_PanelRegistrarse.getJTFUsuario();
 						JF_PanelRegistrarse.irMenu();
 						ConexionBD.idJugador();
@@ -78,7 +78,7 @@ public class BotonRegistrarse extends JLabel {
 						JOptionPane.showMessageDialog(new JFrame(), "El usuario ya existe" );
 					}
 				}else {
-					JOptionPane.showMessageDialog(new JFrame(), "Contraseñas Diferentes " );
+					JOptionPane.showMessageDialog(new JFrame(), "Contrasenyas Diferentes " );
 				}
 				
 				

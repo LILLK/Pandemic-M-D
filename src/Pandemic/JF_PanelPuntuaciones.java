@@ -25,13 +25,26 @@ import Botones.BotonAtras;
 import Logico.ConexionBD;
 import Logico.Rankings;
 
-
+/**
+ * Esta classe Crea el panel de puntuacion
+ * Este panel contiene un label al cetro donde se muestran todas las partidas acabadas con puntuacion superior a 0
+ * @author DAME
+ *
+ */
 public class JF_PanelPuntuaciones extends JPanel {
-
+	/**
+	 * Este boton vuelve al menu.
+	 * {@link BotonAtras}
+	 */
 	BotonAtras Atras;
-
+	/**
+	 * Lista de objetos ranking, donde se guardan los rankings de las partidas 
+	 */
 	public static ArrayList<Rankings> rankings;
-	
+	/**
+	 * Este es el constructor del panel Puntacion
+	 * Este panel contiene un label al cetro donde se muestran todas las partidas acabadas con puntuacion superior a 0
+	 */
 	public JF_PanelPuntuaciones() {
 		
 		
@@ -53,12 +66,12 @@ public class JF_PanelPuntuaciones extends JPanel {
 		
 		
 		ConexionBD.cargarRanking();
-		
+		//creacion del panel contendor 
+		//Scroll del panel 
 		scroll.setBounds((cambiarImg.screenSize.width/2)-410,330,820,450);
 		scroll.getVerticalScrollBar().setUI(new BasicScrollBarUI());
 		scroll.setViewportView(panel);
-		
-		
+		//posicion  
 		posicion.setText("Pos.");
 		posicion.setBackground(Color.black);
 		posicion.setForeground(Color.white);
@@ -67,7 +80,7 @@ public class JF_PanelPuntuaciones extends JPanel {
 		posicion.setBounds((cambiarImg.screenSize.width/2)-410,280,80,50);
 		posicion.setOpaque(true);
 		posicion.setVisible(true);
-		
+		//nombre del usuario 
 		nomUsu.setText("Nombre Usuario");
 		nomUsu.setBackground(Color.black);
 		nomUsu.setForeground(Color.white);
@@ -76,7 +89,7 @@ public class JF_PanelPuntuaciones extends JPanel {
 		nomUsu.setBounds(((cambiarImg.screenSize.width/2)-410)+80,280,240,50);
 		nomUsu.setOpaque(true);
 		nomUsu.setVisible(true);
-		
+		//dificultad 
 		dificultad.setText("Dificultad");
 		dificultad.setBackground(Color.black);
 		dificultad.setForeground(Color.white);
@@ -85,7 +98,7 @@ public class JF_PanelPuntuaciones extends JPanel {
 		dificultad.setBounds(((cambiarImg.screenSize.width/2)-410)+320,280,100,50);
 		dificultad.setOpaque(true);
 		dificultad.setVisible(true);
-		
+		//brotes
 		brotes.setText("Brotes");
 		brotes.setBackground(Color.black);
 		brotes.setForeground(Color.white);
@@ -94,7 +107,7 @@ public class JF_PanelPuntuaciones extends JPanel {
 		brotes.setBounds(((cambiarImg.screenSize.width/2)-410)+420,280,100,50);
 		brotes.setOpaque(true);
 		brotes.setVisible(true);
-		
+		//ronda
 		ronda.setText("Ronda");
 		ronda.setBackground(Color.black);
 		ronda.setForeground(Color.white);
@@ -103,7 +116,7 @@ public class JF_PanelPuntuaciones extends JPanel {
 		ronda.setBounds(((cambiarImg.screenSize.width/2)-410)+520,280,100,50);
 		ronda.setOpaque(true);
 		ronda.setVisible(true);
-		
+		//puntuacion 
 		puntuacion.setText("Puntuación");
 		puntuacion.setBackground(Color.black);
 		puntuacion.setForeground(Color.white);
@@ -116,12 +129,13 @@ public class JF_PanelPuntuaciones extends JPanel {
 		panel.setLayout(null);
 		
 		int i =0;
+		//por cada partida encontrada las anyadimos al panel creado antes
 		for(Rankings ranking : JF_PanelPuntuaciones.rankings) {
 			JLabel label = new JLabel();
 			label.setBounds(0, 0+(100*i), 800,100 );
 			label.setBackground(cambiarImg.color1);
 			label.setBorder(cambiarImg.bordeN);
-
+			//posicion de la partida en el ranking
 			JLabel pos = new JLabel();
 			String posS = "<html><center>"+(i+1);
 			pos.setText(posS);
@@ -133,7 +147,7 @@ public class JF_PanelPuntuaciones extends JPanel {
 			pos.setBorder(borde1);
 			pos.setOpaque(true);
 			label.add(pos);
-			///////////////////
+			//nombre del usuario de esta partida
 			JLabel nom = new JLabel();
 			nom.setText(ranking.nomb_us);
 			nom.setHorizontalAlignment(SwingConstants.CENTER);
@@ -144,7 +158,7 @@ public class JF_PanelPuntuaciones extends JPanel {
 			nom.setBorder(borde1);
 			nom.setOpaque(true);
 			label.add(nom);
-			//////////////////
+			//dificultad de de esta partida
 			JLabel dificultadU = new JLabel();
 			String dificultadS =" "+ranking.dificultad;
 			dificultadU.setText(dificultadS);
@@ -156,7 +170,7 @@ public class JF_PanelPuntuaciones extends JPanel {
 			dificultadU.setBorder(borde1);
 			dificultadU.setOpaque(true);
 			label.add(dificultadU);
-			//////////////////
+			//brotes de de esta partida
 			JLabel brotesU = new JLabel();
 			String brotesS =" "+ranking.brotes;
 			brotesU.setText(brotesS);
@@ -168,8 +182,7 @@ public class JF_PanelPuntuaciones extends JPanel {
 			brotesU.setBorder(borde1);
 			brotesU.setOpaque(true);
 			label.add(brotesU);
-			//////////////////
-			//////////////////
+			//rondas de de esta partida
 			JLabel rondaU = new JLabel();
 			String rondaS =" "+ranking.ronda;
 			rondaU.setText(rondaS);
@@ -181,8 +194,7 @@ public class JF_PanelPuntuaciones extends JPanel {
 			rondaU.setBorder(borde1);
 			rondaU.setOpaque(true);
 			label.add(rondaU);
-			//////////////////
-			//////////////////
+			//dificultad de de esta partida
 			JLabel puntos = new JLabel();
 			String puntosS =" "+ranking.puntuacion;
 			puntos.setText(puntosS);
@@ -198,7 +210,6 @@ public class JF_PanelPuntuaciones extends JPanel {
 			label.setVisible(true);
 			label.setOpaque(true);
 			panel.add(label);
-			//p.updateUI();
 			i++;
 		}
 	
@@ -211,15 +222,14 @@ public class JF_PanelPuntuaciones extends JPanel {
 		add(brotes);
 		add(puntuacion);
 		add(scroll);
-		int x = 0; 
-		int y = 0;
-		
-		
-		
+
 		this.Atras = new BotonAtras(this);
 		Atras.setBounds(0,(cambiarImg.screenSize.height-((cambiarImg.screenSize.width/20)-3)),cambiarImg.screenSize.width,(cambiarImg.screenSize.width/25));
 		add(this.Atras);
 	}
+	/**
+	 * Este metodo pinta el fondo de la pantalla
+	 */
 	public void paint(Graphics g) {
 		BufferedImage imgFondo;
 		try {
@@ -233,7 +243,10 @@ public class JF_PanelPuntuaciones extends JPanel {
 		}
 		
 		
-	} 
+	}
+	/**
+	 * Este metodo cambia el panel {@link JF_PanelPuntuaciones } por el panel {@link JF_PanelMenu}
+	 */
 	public void irMenu() {
 		JFrame marcoP = (JFrame)SwingUtilities.getWindowAncestor(this);	
 		marcoP.remove(this);

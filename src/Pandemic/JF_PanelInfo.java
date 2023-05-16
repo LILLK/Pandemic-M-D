@@ -35,7 +35,7 @@ public class JF_PanelInfo extends JPanel {
 		String s ="<html><p><center>Hace 48 días conseguimos hacer mutar el virus T, pero nada salió como teníamos planeado. "
 				+ "El virus tras mutar genero cuatro nuevas variantes de esté, y se dividieron por todo el mundo de forma homogénea infectando ciudad a ciudad, y tu objetivo es salvar el mundo de esta pandemia."
 				+ "Para ello tendrás que elejir las ciudades que curar y tendras que desarollar las vacunas de cada virs."
-				+ "Por la contraparte si una ciudad se infecta y tiene 3 enfermedades,se genera un brote y las ciudades colindantes se les añadirá una enfermedad. "
+				+ "Por la contraparte si una ciudad se infecta y tiene 3 enfermedades,se genera un brote y las ciudades colindantes se les anyadirá una enfermedad. "
 				+ "Así que ten cuidado, porque al llegar a cierto número de brotessignificara el fin del mundo y de la partida."
 				+ "Por cada ronda tendrás 4 puntos de acción y estas son las acciones que puedes hacer: "
 				+ "<p>Dsarrollar vacuna:-1pa </p> <p>Quitar enfermedad: -1pa (si la vacuna esta desarollada se curara por copleto) </p>"
