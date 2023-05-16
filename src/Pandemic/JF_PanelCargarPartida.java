@@ -1,3 +1,4 @@
+//Mehdi Tahrat && David hola
 package Pandemic;
 
 import java.awt.Color;
@@ -123,6 +124,7 @@ public class JF_PanelCargarPartida extends JPanel {
 		puntuacion.setVisible(true);
 		
 		panel.setLayout(null);
+		//Por cada partida guardada crea un registro en el label del cual se podra extraer datos
 		int i =0;
 		for(PartidasGuardadas partidasGuardadas : JF_PanelCargarPartida.partGuar) {
 			System.out.println(partidasGuardadas.brotes+" "+ partidasGuardadas.puntuacion);

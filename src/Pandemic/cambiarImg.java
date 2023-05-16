@@ -1,3 +1,4 @@
+//Mehdi Tahrat && David hola
 package Pandemic;
 
 import java.awt.Color;
@@ -34,7 +35,7 @@ public class cambiarImg {
 	 * @param int h
 	 * @return ImageIcon
 	 */
-	public static ImageIcon tamaño(ImageIcon im, int w, int h) {
+	public static ImageIcon tamanyo(ImageIcon im, int w, int h) {
 		BufferedImage bi = new BufferedImage(w,h, BufferedImage.TRANSLUCENT);
 		Graphics2D gd=(Graphics2D)bi.createGraphics();
 		gd.addRenderingHints(new RenderingHints(RenderingHints.KEY_RENDERING,RenderingHints.VALUE_RENDER_QUALITY));

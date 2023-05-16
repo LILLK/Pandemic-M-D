@@ -1,3 +1,4 @@
+//Mehdi Tahrat && David hola
 package Botones;
 
 import java.awt.*;
@@ -23,19 +24,21 @@ public class BotonGuardarPartida extends JLabel {
 	public BotonGuardarPartida(JF_PanelPartidaPanel2 panel) {
 		Border borde = BorderFactory.createLineBorder(Color.BLACK, 3);
 		this.setBounds((panel.getWidth()/2)-((panel.getWidth()-50)/2),((panel.getHeight()/16)*14),panel.getWidth()-50,panel.getHeight()/10);
-		setIcon(cambiarImg.tamaño(new ImageIcon("botones/guardar_partida.png"),panel.getWidth()-50, panel.getHeight()/10));
+		setIcon(cambiarImg.tamanyo(new ImageIcon("botones/guardar_partida.png"),panel.getWidth()-50, panel.getHeight()/10));
 		this.setBackground(Color.WHITE);
 		this.setVisible(true);
 		this.setBorder(borde);
 		this.setOpaque(true);
 		this.setText("guardar");
-		
+		/**
+		 * Listener con funcion de cambiar icono al hacer hoover, y guardar partida
+		 */
 		addMouseListener((MouseListener) new MouseListener() {	
 			public void mouseEntered(MouseEvent e) {
-				setIcon(cambiarImg.tamaño(new ImageIcon("botones/guardar_partida_entered.png"),panel.getWidth()-50, panel.getHeight()/10));
+				setIcon(cambiarImg.tamanyo(new ImageIcon("botones/guardar_partida_entered.png"),panel.getWidth()-50, panel.getHeight()/10));
 			}
 			public void mouseExited(MouseEvent a) {
-				setIcon(cambiarImg.tamaño(new ImageIcon("botones/guardar_partida.png"),panel.getWidth()-50, panel.getHeight()/10));
+				setIcon(cambiarImg.tamanyo(new ImageIcon("botones/guardar_partida.png"),panel.getWidth()-50, panel.getHeight()/10));
 			}
 			public void mousePressed(MouseEvent i) {
 			}

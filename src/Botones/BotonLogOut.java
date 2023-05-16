@@ -23,15 +23,15 @@ public class BotonLogOut extends JLabel {
 	public BotonLogOut(JF_PanelMenu JF_PanelMenu) {
 		
 
-		setIcon(cambiarImg.tamaño(new ImageIcon("botones/log-out.png"),cambiarImg.screenSize.height/10, cambiarImg.screenSize.width/14));
+		setIcon(cambiarImg.tamanyo(new ImageIcon("botones/log-out.png"),cambiarImg.screenSize.height/10, cambiarImg.screenSize.width/14));
 		
 		addMouseListener((MouseListener) new MouseListener() {	
 			public void mouseEntered(MouseEvent e) {
-				setIcon(cambiarImg.tamaño(new ImageIcon("botones/log-out-2.png"),cambiarImg.screenSize.height/10, cambiarImg.screenSize.width/14));
+				setIcon(cambiarImg.tamanyo(new ImageIcon("botones/log-out-2.png"),cambiarImg.screenSize.height/10, cambiarImg.screenSize.width/14));
 
 			}
 			public void mouseExited(MouseEvent a) {
-				setIcon(cambiarImg.tamaño(new ImageIcon("botones/log-out.png"),cambiarImg.screenSize.height/10, cambiarImg.screenSize.width/14));
+				setIcon(cambiarImg.tamanyo(new ImageIcon("botones/log-out.png"),cambiarImg.screenSize.height/10, cambiarImg.screenSize.width/14));
 
 			}
 

@@ -1,5 +1,10 @@
+//Mehdi Tahrat && David hola
 package Pandemic;
-
+/**
+ * Esta classe es del panel que se situa arriba a la derecha en {@link JF_PanelPartida} y muestra algunos datos de la partida.
+ * Esta panel contiene los labels de puntuacion, brotes y partida.
+ * @author DAME
+ */
 import java.awt.*;
 
 import java.awt.image.BufferedImage;
@@ -11,16 +16,23 @@ import Logico.Parametros;
 import Logico.Partida;
 
 public class JF_PanelPartidaPanel1 extends JPanel {
-
+	/**
+	 * En este label se muestra la puntuacion de la partida
+	 */
 	static JLabel puntuacion;
+	/**
+	 * En este label se muestran los brotes
+	 */
 	static JLabel brotes;
+	/**
+	 * En este label se muestran las ronda
+	 */
 	static JLabel ronda;
 
-
+	/**
+	 * Este es el constructor del panel 1 y los labels brotes , puntuacion y ronda
+	 */
 	public JF_PanelPartidaPanel1() {
-
-		cambiarImg img = new cambiarImg();
-
 
 		setLayout(null);
 		this.setBounds(1551, 1, (cambiarImg.screenSize.width - 1550), cambiarImg.screenSize.height / 2);
@@ -64,7 +76,9 @@ public class JF_PanelPartidaPanel1 extends JPanel {
 		add(puntuacion);
 	}
 	
-	
+	/**
+	 * Este metodo pinta el fondo de la pantalla
+	 */
 	public void paint(Graphics g) {
 		BufferedImage imgFondo;
 		try {
@@ -77,21 +91,23 @@ public class JF_PanelPartidaPanel1 extends JPanel {
 			System.out.print("Error IMGfondo JF_PanelPartidaPanel1");
 		}
 	} 
-	
+	/**
+	 * Esta funcion actualiza el panel puntuacion
+	 */
 	public static void updatePuntuacion() {
 		puntuacion.setText("La puntuación es de: " + Partida.Puntuacion);
 	}
+	/**
+	 * Esta funcion actualiza el panel ronda
+	 */
 	public static void updateRonda() {
 		ronda.setText("Ronda :" + Partida.ronda);
 	}
+	/**
+	 * Esta funcion actualiza el panel 
+	 */
 	public static void updateBrotes() {
 		brotes.setText("Brotes: " + Partida.brotes + "/" + Parametros.brotesTotal);
 	}
 	
-	public void irMenu() {
-		JFrame marcoP = (JFrame)SwingUtilities.getWindowAncestor(this);	
-		marcoP.remove(this);
-		marcoP.add(new JF_PanelMenu());
-		marcoP.setVisible(true);
-	}
 }

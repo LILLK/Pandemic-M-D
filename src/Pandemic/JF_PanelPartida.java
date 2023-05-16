@@ -1,3 +1,4 @@
+//Mehdi Tahrat && David hola
 package Pandemic;
 
 import java.util.ArrayList;
@@ -7,20 +8,33 @@ import Botones.*;
 import Logico.Ciudades;
 import Logico.ConexionBD;
 import Logico.Partida;
-
+/**
+ * Esta es la classe del panel que se encarga de gestionar la partida
+ * @author DAME
+ *
+ */
 public class JF_PanelPartida extends JPanel {
 
 	public static ArrayList<BotonCiudad> botonesCiudad;
 	public BotonMostrarNombres btnNombres;
 
-	//Label debajo del mapa
+	/**
+	 * Label debajo del mapa
+	 */
 	JF_PanelPartidaVacunas panelVacunas;
-	//Label derecha arriba
+	/**
+	 * Label derecha arriba
+	 */
 	JF_PanelPartidaPanel1 panel1 ;
-	//Label derecha abajo
+	/**
+	 * Label derecha abajo
+	 */
 	JF_PanelPartidaPanel2 panel2 ;
 	
-
+	/**
+	 * Este es constructor del panel partida.
+	 * Contiene otros 3 paneles que se encargar de divir la informacion de la partida y gestionar las vacunas
+	 */
 	public JF_PanelPartida() {
 		cambiarImg img = new cambiarImg();
 		setLayout(null);
@@ -35,13 +49,11 @@ public class JF_PanelPartida extends JPanel {
 		panel2 = new JF_PanelPartidaPanel2();
 		panelVacunas = new JF_PanelPartidaVacunas(this);
 		
-		mapa.setIcon(img.tamaño(new ImageIcon("imagenes/mapa_2.png"), 1550, 850));
+		mapa.setIcon(img.tamanyo(new ImageIcon("imagenes/mapa_2.png"), 1550, 850));
 		mapa.setBounds(1, 1, 1550, 850);
-		botonAtras.setIcon(img.tamaño(new ImageIcon("botones/salir_partida.png"), 50, 50) );
+		botonAtras.setIcon(img.tamanyo(new ImageIcon("botones/salir_partida.png"), 50, 50) );
 		botonAtras.setBounds(1450, 50, 50, 50);
 		botonAtras.setOpaque(false);
-		
-		
 		
 		for (BotonCiudad botonCiudad : botonesCiudad) {
 			botonCiudad.JLNombreCiudad.setBounds(botonCiudad.ciudad.posicionX - (50), botonCiudad.ciudad.posicionY + (20), 100, 20);
@@ -63,7 +75,10 @@ public class JF_PanelPartida extends JPanel {
 
 	}
 
-	
+	/**
+	 * Este metodo devuelve una lista con todos los botones de ciudad generados
+	 * @return ArrayList<BotonCiudad>
+	 */
 	public ArrayList<BotonCiudad> genrarBotonesCiudad() {
 		ArrayList<BotonCiudad> array = new ArrayList<>();
 		for (Ciudades ciudad : Partida.ciudades) {
@@ -72,7 +87,9 @@ public class JF_PanelPartida extends JPanel {
 		}
 		return array;
 	}
-	
+	/**
+	 * Este metodo cambia el panel {@link JF_PanelPartida } por el panel {@link JF_PanelMenu} y guarda el estado de la partida
+	 */
 	public void irMenu() {
 		JFrame marcoP = (JFrame)SwingUtilities.getWindowAncestor(this);	
 		marcoP.remove(this);
@@ -80,7 +97,10 @@ public class JF_PanelPartida extends JPanel {
 		marcoP.setVisible(true);
 		ConexionBD.guardarPartida(false);
 	}
-	
+	/**
+	 * Esta funcion acaba la partida dependiendo del estado de esta, y muestra e mensaje final.
+	 * @param int estado
+	 */
 	public void acabarParida(int estado) {
 		JFrame marcoP = (JFrame)SwingUtilities.getWindowAncestor(this);	
 		marcoP.remove(this);

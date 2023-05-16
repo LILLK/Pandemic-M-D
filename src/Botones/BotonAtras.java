@@ -1,3 +1,4 @@
+//Mehdi Tahrat && David hola
 package Botones;
 
 import java.awt.event.MouseEvent;
@@ -23,19 +24,20 @@ import Pandemic.*;
 			 * 
 			 */
 		public BotonAtras(JF_PanelAutores JF_PanelAutores) {
-
-			setIcon(cambiarImg.tamaño(new ImageIcon("botones/bottonAtras-1.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );		
-					
+			setIcon(cambiarImg.tamanyo(new ImageIcon("botones/bottonAtras-1.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );			
+			/**
+			 * Listener con funcion de cambiar icono al hacer hoover, y ir al menu
+			 */
 			addMouseListener(new MouseListener() {	
 				public void mouseEntered(MouseEvent e) {
-					setIcon(cambiarImg.tamaño(new ImageIcon("botones/bottonAtras-2.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
+					setIcon(cambiarImg.tamanyo(new ImageIcon("botones/bottonAtras-2.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
 				}
 				public void mouseExited(MouseEvent a) {
-					setIcon(cambiarImg.tamaño(new ImageIcon("botones/bottonAtras-1.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
+					setIcon(cambiarImg.tamanyo(new ImageIcon("botones/bottonAtras-1.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
 				}
 
 				public void mousePressed(MouseEvent i) {
-					setIcon(cambiarImg.tamaño(new ImageIcon("botones/bottonAtras-3.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
+					setIcon(cambiarImg.tamanyo(new ImageIcon("botones/bottonAtras-3.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
 				}
 				public void mouseClicked(MouseEvent e) {
 					JF_PanelAutores.irMenu();
@@ -56,18 +58,18 @@ import Pandemic.*;
 			
 			
 
-			setIcon(cambiarImg.tamaño(new ImageIcon("botones/bottonAtras-1.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
+			setIcon(cambiarImg.tamanyo(new ImageIcon("botones/bottonAtras-1.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
 			
 			addMouseListener(new MouseListener() {	
 				public void mouseEntered(MouseEvent e) {
-					setIcon(cambiarImg.tamaño(new ImageIcon("botones/bottonAtras-2.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
+					setIcon(cambiarImg.tamanyo(new ImageIcon("botones/bottonAtras-2.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
 				}
 				public void mouseExited(MouseEvent a) {
-					setIcon(cambiarImg.tamaño(new ImageIcon("botones/bottonAtras-1.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
+					setIcon(cambiarImg.tamanyo(new ImageIcon("botones/bottonAtras-1.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
 				}
 
 				public void mousePressed(MouseEvent i) {
-					setIcon(cambiarImg.tamaño(new ImageIcon("botones/bottonAtras-3.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
+					setIcon(cambiarImg.tamanyo(new ImageIcon("botones/bottonAtras-3.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
 				}
 				public void mouseClicked(MouseEvent e) {
 					JF_PanelInfo.irMenu();					
@@ -88,18 +90,18 @@ import Pandemic.*;
 		
 			
 
-			setIcon(cambiarImg.tamaño(new ImageIcon("botones/bottonAtras-1.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
+			setIcon(cambiarImg.tamanyo(new ImageIcon("botones/bottonAtras-1.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
 			
 			addMouseListener(new MouseListener() {	
 				public void mouseEntered(MouseEvent e) {
-					setIcon(cambiarImg.tamaño(new ImageIcon("botones/bottonAtras-2.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
+					setIcon(cambiarImg.tamanyo(new ImageIcon("botones/bottonAtras-2.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
 				}
 				public void mouseExited(MouseEvent a) {
-					setIcon(cambiarImg.tamaño(new ImageIcon("botones/bottonAtras-1.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
+					setIcon(cambiarImg.tamanyo(new ImageIcon("botones/bottonAtras-1.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
 				}
 
 				public void mousePressed(MouseEvent i) {
-					setIcon(cambiarImg.tamaño(new ImageIcon("botones/bottonAtras-3.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
+					setIcon(cambiarImg.tamanyo(new ImageIcon("botones/bottonAtras-3.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
 				}
 				public void mouseClicked(MouseEvent e) {
 					
@@ -118,18 +120,18 @@ import Pandemic.*;
 		 * @author DAME
 		 */
 		public BotonAtras(JF_PanelPuntuaciones JF_PanelPuntuaciones) {
-		setIcon(cambiarImg.tamaño(new ImageIcon("botones/bottonAtras-1.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
+		setIcon(cambiarImg.tamanyo(new ImageIcon("botones/bottonAtras-1.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
 			
 			addMouseListener(new MouseListener() {	
 				public void mouseEntered(MouseEvent e) {
-					setIcon(cambiarImg.tamaño(new ImageIcon("botones/bottonAtras-2.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
+					setIcon(cambiarImg.tamanyo(new ImageIcon("botones/bottonAtras-2.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
 				}
 				public void mouseExited(MouseEvent a) {
-					setIcon(cambiarImg.tamaño(new ImageIcon("botones/bottonAtras-1.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
+					setIcon(cambiarImg.tamanyo(new ImageIcon("botones/bottonAtras-1.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
 				}
 
 				public void mousePressed(MouseEvent i) {
-					setIcon(cambiarImg.tamaño(new ImageIcon("botones/bottonAtras-3.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
+					setIcon(cambiarImg.tamanyo(new ImageIcon("botones/bottonAtras-3.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
 				}
 				public void mouseClicked(MouseEvent e) {
 					
@@ -150,18 +152,18 @@ import Pandemic.*;
 		public BotonAtras(JF_PanelCargarPartida JF_PanelCargarPartida) {
 			
 
-			setIcon(cambiarImg.tamaño(new ImageIcon("botones/bottonAtras-1.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
+			setIcon(cambiarImg.tamanyo(new ImageIcon("botones/bottonAtras-1.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
 			
 			addMouseListener(new MouseListener() {	
 				public void mouseEntered(MouseEvent e) {
-					setIcon(cambiarImg.tamaño(new ImageIcon("botones/bottonAtras-2.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
+					setIcon(cambiarImg.tamanyo(new ImageIcon("botones/bottonAtras-2.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
 				}
 				public void mouseExited(MouseEvent a) {
-					setIcon(cambiarImg.tamaño(new ImageIcon("botones/bottonAtras-1.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
+					setIcon(cambiarImg.tamanyo(new ImageIcon("botones/bottonAtras-1.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
 				}
 
 				public void mousePressed(MouseEvent i) {
-					setIcon(cambiarImg.tamaño(new ImageIcon("botones/bottonAtras-3.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
+					setIcon(cambiarImg.tamanyo(new ImageIcon("botones/bottonAtras-3.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
 				}
 				public void mouseClicked(MouseEvent e) {
 					
@@ -182,18 +184,18 @@ import Pandemic.*;
 		public BotonAtras(JF_PanelPartidaDificultad panel) {
 			
 
-			setIcon(cambiarImg.tamaño(new ImageIcon("botones/bottonAtras-1.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
+			setIcon(cambiarImg.tamanyo(new ImageIcon("botones/bottonAtras-1.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
 			
 			addMouseListener(new MouseListener() {	
 				public void mouseEntered(MouseEvent e) {
-					setIcon(cambiarImg.tamaño(new ImageIcon("botones/bottonAtras-2.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
+					setIcon(cambiarImg.tamanyo(new ImageIcon("botones/bottonAtras-2.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
 				}
 				public void mouseExited(MouseEvent a) {
-					setIcon(cambiarImg.tamaño(new ImageIcon("botones/bottonAtras-1.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
+					setIcon(cambiarImg.tamanyo(new ImageIcon("botones/bottonAtras-1.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
 				}
 
 				public void mousePressed(MouseEvent i) {
-					setIcon(cambiarImg.tamaño(new ImageIcon("botones/bottonAtras-3.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
+					setIcon(cambiarImg.tamanyo(new ImageIcon("botones/bottonAtras-3.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
 				}
 				public void mouseClicked(MouseEvent e) {
 					
@@ -219,10 +221,10 @@ import Pandemic.*;
 			
 			addMouseListener(new MouseListener() {	
 				public void mouseEntered(MouseEvent e) {
-					setIcon(cambiarImg.tamaño(new ImageIcon("botones/salir_partida_entered.png"), 50, 50) );
+					setIcon(cambiarImg.tamanyo(new ImageIcon("botones/salir_partida_entered.png"), 50, 50) );
 				}
 				public void mouseExited(MouseEvent a) {
-					setIcon(cambiarImg.tamaño(new ImageIcon("botones/salir_partida.png"), 50, 50) );
+					setIcon(cambiarImg.tamanyo(new ImageIcon("botones/salir_partida.png"), 50, 50) );
 				}
 
 				public void mousePressed(MouseEvent i) {

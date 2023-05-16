@@ -1,3 +1,4 @@
+//Mehdi Tahrat && David hola
 package Botones;
 
 import java.awt.event.*;
@@ -20,16 +21,16 @@ public class BotonInformacion extends JLabel {
 	 */
 	public BotonInformacion(JF_PanelMenu JF_PanelMenu) {
 		//establece el icono
-		setIcon(cambiarImg.tamaño(new ImageIcon("botones/bottonInformacion-1.png"), ((int)(cambiarImg.screenSize.getWidth()/5)), ((int)(cambiarImg.screenSize.getWidth()/20))) );
+		setIcon(cambiarImg.tamanyo(new ImageIcon("botones/bottonInformacion-1.png"), ((int)(cambiarImg.screenSize.getWidth()/5)), ((int)(cambiarImg.screenSize.getWidth()/20))) );
 		addMouseListener(new MouseListener() {	
 			public void mouseEntered(MouseEvent e) {
-				setIcon(cambiarImg.tamaño(new ImageIcon("botones/bottonInformacion-2.png"), ((int)(cambiarImg.screenSize.getWidth()/5)), ((int)(cambiarImg.screenSize.getWidth()/20))) );
+				setIcon(cambiarImg.tamanyo(new ImageIcon("botones/bottonInformacion-2.png"), ((int)(cambiarImg.screenSize.getWidth()/5)), ((int)(cambiarImg.screenSize.getWidth()/20))) );
 			}
 			public void mouseExited(MouseEvent a) {
-				setIcon(cambiarImg.tamaño(new ImageIcon("botones/bottonInformacion-1.png"), ((int)(cambiarImg.screenSize.getWidth()/5)), ((int)(cambiarImg.screenSize.getWidth()/20))) );
+				setIcon(cambiarImg.tamanyo(new ImageIcon("botones/bottonInformacion-1.png"), ((int)(cambiarImg.screenSize.getWidth()/5)), ((int)(cambiarImg.screenSize.getWidth()/20))) );
 			}
 			public void mousePressed(MouseEvent i) {
-				setIcon(cambiarImg.tamaño(new ImageIcon("botones/bottonInformacion-3.png"), ((int)(cambiarImg.screenSize.getWidth()/5)), ((int)(cambiarImg.screenSize.getWidth()/20))) );
+				setIcon(cambiarImg.tamanyo(new ImageIcon("botones/bottonInformacion-3.png"), ((int)(cambiarImg.screenSize.getWidth()/5)), ((int)(cambiarImg.screenSize.getWidth()/20))) );
 			}
 			public void mouseClicked(MouseEvent e) {
 				//cambiar al panel informacion

@@ -1,3 +1,4 @@
+//Mehdi Tahrat && David hola
 package Logico;
 
 import java.sql.Array;
@@ -84,6 +85,7 @@ public class ConexionBD {
 		try {
 			// con la conexion establecida se manda e ejecuta la secuencia sql
 			Statement st = con.createStatement();
+			System.out.println("Ranking");
 			System.out.println(sql);
 			st.execute(sql);
 		} catch (SQLException e) {
@@ -248,7 +250,7 @@ public class ConexionBD {
 						//limpiar lista vacunas
 						Partida.vacunas.clear();
 						for (Object tmpV : dataV) {//por cada objeto del registro anterior
-							//Se crea una estructura donde se pasaran los datos dentro del objeto para cargar las bacunas
+							//Se crea una estructura donde se pasaran los datos dentro del objeto para cargar las vacunas
 							Struct rowV = (Struct) tmpV;
 							Object[] valuesV = rowV.getAttributes();
 							Vacunas vacuna = new Vacunas(i, Integer.parseInt(valuesV[1].toString()),

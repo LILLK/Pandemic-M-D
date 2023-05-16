@@ -1,3 +1,4 @@
+//Mehdi Tahrat && David hola
 package Botones;
 
 import java.awt.event.MouseEvent;
@@ -10,7 +11,7 @@ import Logico.Vacunas;
 import Pandemic.*;
 
 /**
- * Esta calsse define los contructores del boton vacuna azul
+ * Esta calsse define los contructores del boton vacuna azul.
  * Amuenta el desarollo de la vacuna
  * @author DAME
  */
@@ -36,16 +37,16 @@ public class BotonVacunaAzul extends JLabel {
 	 * @param {@link JF_PanelPartida }
 	 */
 	public BotonVacunaAzul(JF_PanelPartidaVacunas panel,JF_PanelPartida pPartida) {
-		setIcon(cambiarImg.tamaño(new ImageIcon("botones/virus_azul_0.png"), tamañoX, tamañoY));
+		setIcon(cambiarImg.tamanyo(new ImageIcon("botones/virus_azul_0.png"), tamañoX, tamañoY));
 		
 		
 		addMouseListener((MouseListener) new MouseListener() {
 			public void mouseEntered(MouseEvent e) {
-				setIcon(cambiarImg.tamaño(new ImageIcon("botones/virus_azul_0_entered.png"), tamañoX, tamañoY));
+				setIcon(cambiarImg.tamanyo(new ImageIcon("botones/virus_azul_0_entered.png"), tamañoX, tamañoY));
 			}
 
 			public void mouseExited(MouseEvent a) {
-				setIcon(cambiarImg.tamaño(new ImageIcon("botones/virus_azul_0.png"), tamañoX, tamañoY));
+				setIcon(cambiarImg.tamanyo(new ImageIcon("botones/virus_azul_0.png"), tamañoX, tamañoY));
 			}
 
 			public void mousePressed(MouseEvent i) {}

@@ -1,3 +1,4 @@
+//Mehdi Tahrat && David hola
 package Pandemic;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -45,8 +46,8 @@ public class JF_PanelAutores extends JPanel  {
 		
 		//Contenido JLabels
 		//IMAGENES//
-		imagenDavid.setIcon(img.tamaño(new ImageIcon("imagenes/fotoDavid.png"),(cambiarImg.screenSize.height/3),(cambiarImg.screenSize.height/4)));
-		imagenMehdi.setIcon(img.tamaño(new ImageIcon("imagenes/imagenMehdi.png"), (cambiarImg.screenSize.height/3), (cambiarImg.screenSize.height/4)));
+		imagenDavid.setIcon(img.tamanyo(new ImageIcon("imagenes/fotoDavid.png"),(cambiarImg.screenSize.height/3),(cambiarImg.screenSize.height/4)));
+		imagenMehdi.setIcon(img.tamanyo(new ImageIcon("imagenes/imagenMehdi.png"), (cambiarImg.screenSize.height/3), (cambiarImg.screenSize.height/4)));
 		imgDavidDesc.setText("<html><center>DAVID CALIN HOLA<p>Tengo 18 años y estudio programación web. Me apasiona todo lo relacionado con la tecnologia "
 				+ "							y la informática, especialmente los videojuegos. Me encanta aprender sobre nuevos lenguajes de programacion y "
 				+ "							diseñar mis propios juegos en mi tiempo libre. Espero poder seguir creciendo en esta carrera y convertirme en un"

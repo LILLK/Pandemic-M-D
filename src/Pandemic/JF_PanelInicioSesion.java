@@ -1,3 +1,4 @@
+//Mehdi Tahrat && David hola
 package Pandemic;
 
 import java.awt.*;
@@ -10,50 +11,47 @@ import javax.imageio.ImageIO;
 import javax.swing.*;
 import Botones.*;
 /**
- * Esta classe es el pan
+ * Esta classe es el panel que sale solo ejecutar el programa.
+ * Este panel es donde el usuario inicia sesion con sus credenciales
  * @author DAME
- *
  */
 public class JF_PanelInicioSesion extends JPanel {
-
+	/**
+	 * Este boton compureva las credenciales y logea si es possible 
+	 */
 	BotonIniciarSesion BotonIniciarSesion;
+	/**
+	 * Este boton cambia al panel {@link JF_PanelRegistrarse} 
+	 */
 	BotonRegistrarse BotonRegistrarse;
-	BotonSalir Salir;
-	JFrame marcoP;
+	/**
+	 * Este es el campo de texto donde se introduce el usuario
+	 */
 	JTextField JTFUsuario;
+	/**
+	 * Este es el campo de texto donde se introduce la contraseña
+	 */
 	JTextField JTFContraseña;
-	JLabel error;
-
+	
+	/**
+ 	*Este es el contructor del panel inicio sesion.
+ 	*Aqui hay 2 labels titulo , 2 botones para registrarse y para iniciar sesion, y dos campos de texto para el usuario y contraseña  
+ 	*/
 	public JF_PanelInicioSesion() {
 
 		setLayout(null);
-		
-		this.Salir = new BotonSalir();
-		this.Salir.setBounds(((cambiarImg.screenSize.width / 2) - (cambiarImg.screenSize.width / 10)),
-				(cambiarImg.screenSize.height / 6 + ((cambiarImg.screenSize.width / 18) * 6)), 
-				(cambiarImg.screenSize.width / 5),
-				(cambiarImg.screenSize.width / 20));
 		//text fields//
 		JTFUsuario = new JTextField(1);
-		JTFUsuario.setBounds(((cambiarImg.screenSize.width / 12)*5),
-				((cambiarImg.screenSize.height / 7)*2),
-				(cambiarImg.screenSize.width / 12)*2,
-				(cambiarImg.screenSize.width / 35));
+		JTFUsuario.setBounds(((cambiarImg.screenSize.width / 12)*5),((cambiarImg.screenSize.height / 7)*2),	(cambiarImg.screenSize.width / 12)*2,(cambiarImg.screenSize.width / 35));
 		JTFUsuario.setBorder(cambiarImg.bordeN);
 		
 		JTFContraseña = new JPasswordField(1);
-		JTFContraseña.setBounds(((cambiarImg.screenSize.width / 12)*5),
-				((cambiarImg.screenSize.height / 7)*3),
-				(cambiarImg.screenSize.width / 12)*2,
-				(cambiarImg.screenSize.width / 35));
+		JTFContraseña.setBounds(((cambiarImg.screenSize.width / 12)*5),((cambiarImg.screenSize.height / 7)*3),(cambiarImg.screenSize.width / 12)*2,(cambiarImg.screenSize.width / 35));
 		JTFContraseña.setBorder(cambiarImg.bordeN);
 		
 		//labels//
 		JLabel JLUsuario = new  JLabel();
-		JLUsuario.setBounds(((cambiarImg.screenSize.width / 12)*5),
-				((cambiarImg.screenSize.height / 7)*2 - (cambiarImg.screenSize.width / 45)),
-				((cambiarImg.screenSize.width / 12)),
-				(cambiarImg.screenSize.width / 45));
+		JLUsuario.setBounds(((cambiarImg.screenSize.width / 12)*5),((cambiarImg.screenSize.height / 7)*2 - (cambiarImg.screenSize.width / 45)),	((cambiarImg.screenSize.width / 12)),(cambiarImg.screenSize.width / 45));
 		JLUsuario.setText("<html><center>Usuario");
 		JLUsuario.setForeground(Color.BLACK);
 		JLUsuario.setFont(new Font("Stika Text",Font.BOLD,(cambiarImg.screenSize.height/70)));
@@ -63,10 +61,7 @@ public class JF_PanelInicioSesion extends JPanel {
 		
 		
 		JLabel JLcontraseña = new  JLabel();
-		JLcontraseña.setBounds(((cambiarImg.screenSize.width / 12)*5),
-				((cambiarImg.screenSize.height / 7)*3 - (cambiarImg.screenSize.width / 45)),
-				((cambiarImg.screenSize.width / 12)),
-				(cambiarImg.screenSize.width / 45));
+		JLcontraseña.setBounds(((cambiarImg.screenSize.width / 12)*5),((cambiarImg.screenSize.height / 7)*3 - (cambiarImg.screenSize.width / 45)),((cambiarImg.screenSize.width / 12)),(cambiarImg.screenSize.width / 45));
 		JLcontraseña.setText("<html><center>Contraseña");
 		JLcontraseña.setForeground(Color.BLACK);
 		JLcontraseña.setFont(new Font("Stika Text",Font.BOLD,(cambiarImg.screenSize.height/70)));
@@ -74,36 +69,14 @@ public class JF_PanelInicioSesion extends JPanel {
 		JLcontraseña.setBorder(cambiarImg.bordeN);
 		JLcontraseña.setOpaque(true);
 		
-		
-		error = new JLabel();
-		
-		error.setBounds(((cambiarImg.screenSize.width / 7)*3),
-				((cambiarImg.screenSize.height / 7)*3 + (cambiarImg.screenSize.width / 55)),
-				((cambiarImg.screenSize.width / 7)),
-				(cambiarImg.screenSize.width / 55));
-	
-		//error.setBackground(color);
-		//error.setBorder(borde);
-		
-		
-		
 		//botones//
 		BotonIniciarSesion = new  BotonIniciarSesion(this);
-		BotonIniciarSesion.setBounds(((cambiarImg.screenSize.width / 2)-((cambiarImg.screenSize.width / 12))),
-				((cambiarImg.screenSize.height / 7)*4 - (cambiarImg.screenSize.width / 50)),
-				((cambiarImg.screenSize.width / 12)),
-				(cambiarImg.screenSize.width / 45));
+		BotonIniciarSesion.setBounds(((cambiarImg.screenSize.width / 2)-((cambiarImg.screenSize.width / 12))),((cambiarImg.screenSize.height / 7)*4 - (cambiarImg.screenSize.width / 50)),((cambiarImg.screenSize.width / 12)), (cambiarImg.screenSize.width / 45));
 		BotonIniciarSesion.setOpaque(true);
 		
-		
 		BotonRegistrarse = new  BotonRegistrarse(this);
-		BotonRegistrarse.setBounds((cambiarImg.screenSize.width / 2),
-				((cambiarImg.screenSize.height / 7)*4 - (cambiarImg.screenSize.width / 50)),
-				((cambiarImg.screenSize.width / 12)),
-				(cambiarImg.screenSize.width / 45));
+		BotonRegistrarse.setBounds((cambiarImg.screenSize.width / 2),((cambiarImg.screenSize.height / 7)*4 - (cambiarImg.screenSize.width / 50)),((cambiarImg.screenSize.width / 12)),(cambiarImg.screenSize.width / 45));
 		BotonRegistrarse.setOpaque(true);
-		
-		
 		
 		add(BotonIniciarSesion);
 		add(BotonRegistrarse);
@@ -111,17 +84,26 @@ public class JF_PanelInicioSesion extends JPanel {
 		add(JTFUsuario);
 		add(JLcontraseña);
 		add(JTFContraseña);
-		add(error);
 		
 	}
+	/**
+	 * Este metodo devuelve el contenido del campo usuario 
+	 * @return String
+	 */
 	public String getJTFUsuario() {
 		return JTFUsuario.getText();
 	}
+	/**
+	 * Este metodo devuelve el contenido del campo contraseña 
+	 * @return String
+	 */
 	public String getJTFContraseña() {
 		return JTFContraseña.getText();
 	}
 
-
+	/**
+	 * Este metodo pinta el fondo de la pantalla
+	 */
 	public void paint(Graphics g) {
 		BufferedImage imgFondo;
 		try {
@@ -135,18 +117,22 @@ public class JF_PanelInicioSesion extends JPanel {
 		}
 
 	}
-
+	/**
+	 * Este metodo cambia el panel {@link JF_PanelInicioSesion } por el panel {@link JF_PanelRegistrarse}
+	 */
 	public void irPanelRegistrarse() {
 		JFrame marcoP = (JFrame) SwingUtilities.getWindowAncestor(this);
 		marcoP.remove(this);
 		marcoP.add(new JF_PanelRegistrarse());
 		marcoP.setVisible(true);
 	}
+	/**
+	 * Este metodo cambia el panel {@link JF_PanelInicioSesion } por el panel {@link JF_PanelMenu}
+	 */
 	public void irMenu() {
 		JFrame marcoP = (JFrame)SwingUtilities.getWindowAncestor(this);	
 		marcoP.remove(this);
 		marcoP.add(new JF_PanelMenu());
 		marcoP.setVisible(true);
 	}
-	
 }

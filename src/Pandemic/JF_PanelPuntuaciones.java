@@ -1,3 +1,4 @@
+//Mehdi Tahrat && David hola
 package Pandemic;
 
 import java.awt.Color;

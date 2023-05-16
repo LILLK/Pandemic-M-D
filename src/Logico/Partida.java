@@ -1,22 +1,15 @@
 
+//Mehdi Tahrat && David hola
 package Logico;
 
-//Mehdi Tahrat && David hola
 import java.util.ArrayList;
 
 import Pandemic.JF_PanelPartida;
 import Pandemic.JF_PanelPartidaPanel1;
 import Pandemic.JF_PanelPartidaPanel2;
+import Pandemic.JF_PanelPartidaVacunas;
 /**
- * Esta classe se encarga del apartado logico en una partida.
- * 	+ static int idP - id de la Partida
- * 	+ 	 static int idJ - id del jugador
- * 	+ 	 static int brotes - Brotes de la partida
- * 	+ 	 static int ronda - rondas de la partida
- * 	+ 	 static int accionesRonda - acciones de la ronda 
- * 	+ 	 static int dificultad - Dificultad de la partida
- * 	+ 	 static ArrayList<Ciudades> ciudades= new ArrayList<Ciudades>() - Lista de todas las ciudades con sus atributos
- * 	+ 	 static ArrayList<Vacunas> vacunas = new ArrayList<Vacunas>() - Lista de todas las Vacunas con sus atributos
+ * Esta classe se encarga del apartado logico en una partida, entre otras cosas
  * @author DAME
  *
  */

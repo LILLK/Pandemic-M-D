@@ -1,3 +1,4 @@
+//Mehdi Tahrat && David hola
 package Pandemic;
 
 import java.awt.*;
@@ -9,25 +10,60 @@ import javax.imageio.ImageIO;
 import javax.swing.*;
 import Botones.*;
 import Logico.Partida;
-
+/**
+ * Esta classe crea el panel Partida vacunas
+ * En este panel se alojan las barras que indican el estado de la bacuna y botones para desarollarla
+ * @author DAME
+ *
+ */
 public class JF_PanelPartidaVacunas extends JPanel {
-
+	/**
+	 * Label de la barra de estado de la vacuna azul
+	 */
 	JLabel barraVacunaAzul;
+	/**
+	 * Label de la barra de estado de la vacuna rojo
+	 */
 	JLabel barraVacunaRojo;
+	/**
+	 * Label de la barra de estado de la vacuna verde
+	 */
 	JLabel barraVacunaVerde;
+	/**
+	 * Label de la barra de estado de la vacuna amarillo
+	 */
 	JLabel barraVacunaAmarillo;
-	BotonCiudad BotonCiudad;
+	/**
+	 * {@link BotonVacunaAzul}
+	 */
 	BotonVacunaVerde botonVacunaVerde;
+	/**
+	 * {@link BotonVacunaRojo}
+	 */
 	BotonVacunaRojo botonVacunaRojo;
+	/**
+	 * {@link BotonVacunaAzul}
+	 */
 	BotonVacunaAzul botonVacunaAzul;
+	/**
+	 * {@link BotonVacunaAmarillo}
+	 */
 	BotonVacunaAmarillo botonVacunaAmarillo;
-
-	cambiarImg img = new cambiarImg();
-
+	/**
+	 * tamaño de los componentes de este panel
+	 */
+	int tamañoX = 80;
+	/**
+	 * tamaño de los componentes de este panel
+	 */
+	int tamañoY = 80;
+/**
+ * Este constructor genera el panel Partida Vacuna 
+ * En este panel se alojan las barras que indican el estado de la bacuna y botones para desarollarla
+ * @param a {@link JF_PanelPartida}
+ */
 	public JF_PanelPartidaVacunas(JF_PanelPartida panel) {
-		//tamaño de los componentes de este panel
-		int tamañoX = 80;
-		int tamañoY = 80;
+
 
 		setLayout(null);
 		this.setBounds(1, 850, 1550, (cambiarImg.screenSize.height - 850 - 23));
@@ -74,11 +110,11 @@ public class JF_PanelPartidaVacunas extends JPanel {
 	}
 
 	public void paint(Graphics g) {
-		BufferedImage imgFondo;
+		BufferedImage cambiarImgFondo;
 		try {
 			Dimension size =getSize();
-			imgFondo = ImageIO.read(new File("imagenes/fondo_3.png"));
-			g.drawImage(imgFondo, 0, 0, size.width, size.height,null);
+			cambiarImgFondo = ImageIO.read(new File("imagenes/fondo_3.png"));
+			g.drawImage(cambiarImgFondo, 0, 0, size.width, size.height,null);
 			setOpaque(false);
 			super.paint(g);
 		} catch (IOException e) {
@@ -92,167 +128,156 @@ public class JF_PanelPartidaVacunas extends JPanel {
 	//Actualiza la imagen de las barras vacuna de cada color
 	///////////////////////////////////
 	public void updateBarraVacunaAzul() {
-		int tamañoX = 40;
-		int tamañoY = 80;
+	
 		switch (Partida.vacunas.get(0).desarollo/10) {
 		case 0:
-			barraVacunaAzul.setIcon(img.tamaño(new ImageIcon("botones/barras_vacunas_0_azul.png"), (this.getWidth() / 5) * 2, tamañoY));
+			barraVacunaAzul.setIcon(cambiarImg.tamanyo(new ImageIcon("botones/barras_vacunas_0_azul.png"), (this.getWidth() / 5) * 2, tamañoY));
 			break;
 		case 1:
-			barraVacunaAzul.setIcon(img.tamaño(new ImageIcon("botones/barras_vacunas_1_azul.png"), (this.getWidth() / 5) * 2, tamañoY));	
+			barraVacunaAzul.setIcon(cambiarImg.tamanyo(new ImageIcon("botones/barras_vacunas_1_azul.png"), (this.getWidth() / 5) * 2, tamañoY));	
 			break;
 		case 2:
-			barraVacunaAzul.setIcon(img.tamaño(new ImageIcon("botones/barras_vacunas_2_azul.png"), (this.getWidth() / 5) * 2, tamañoY));
+			barraVacunaAzul.setIcon(cambiarImg.tamanyo(new ImageIcon("botones/barras_vacunas_2_azul.png"), (this.getWidth() / 5) * 2, tamañoY));
 			break;
 		case 3:
-			barraVacunaAzul.setIcon(img.tamaño(new ImageIcon("botones/barras_vacunas_3_azul.png"), (this.getWidth() / 5) * 2, tamañoY));
+			barraVacunaAzul.setIcon(cambiarImg.tamanyo(new ImageIcon("botones/barras_vacunas_3_azul.png"), (this.getWidth() / 5) * 2, tamañoY));
 			break;
 		case 4:
-			barraVacunaAzul.setIcon(img.tamaño(new ImageIcon("botones/barras_vacunas_4_azul.png"), (this.getWidth() / 5) * 2, tamañoY));
+			barraVacunaAzul.setIcon(cambiarImg.tamanyo(new ImageIcon("botones/barras_vacunas_4_azul.png"), (this.getWidth() / 5) * 2, tamañoY));
 			break;
 		case 5:
-			barraVacunaAzul.setIcon(img.tamaño(new ImageIcon("botones/barras_vacunas_5_azul.png"), (this.getWidth() / 5) * 2, tamañoY));
+			barraVacunaAzul.setIcon(cambiarImg.tamanyo(new ImageIcon("botones/barras_vacunas_5_azul.png"), (this.getWidth() / 5) * 2, tamañoY));
 			break;
 		case 6:
-			barraVacunaAzul.setIcon(img.tamaño(new ImageIcon("botones/barras_vacunas_6_azul.png"), (this.getWidth() / 5) * 2, tamañoY));
+			barraVacunaAzul.setIcon(cambiarImg.tamanyo(new ImageIcon("botones/barras_vacunas_6_azul.png"), (this.getWidth() / 5) * 2, tamañoY));
 			break;
 		case 7:
-			barraVacunaAzul.setIcon(img.tamaño(new ImageIcon("botones/barras_vacunas_7_azul.png"), (this.getWidth() / 5) * 2, tamañoY));
+			barraVacunaAzul.setIcon(cambiarImg.tamanyo(new ImageIcon("botones/barras_vacunas_7_azul.png"), (this.getWidth() / 5) * 2, tamañoY));
 			break;
 		case 8:
-			barraVacunaAzul.setIcon(img.tamaño(new ImageIcon("botones/barras_vacunas_8_azul.png"), (this.getWidth() / 5) * 2, tamañoY));
+			barraVacunaAzul.setIcon(cambiarImg.tamanyo(new ImageIcon("botones/barras_vacunas_8_azul.png"), (this.getWidth() / 5) * 2, tamañoY));
 			break;
 		case 9:
-			barraVacunaAzul.setIcon(img.tamaño(new ImageIcon("botones/barras_vacunas_9_azul.png"), (this.getWidth() / 5) * 2, tamañoY));
+			barraVacunaAzul.setIcon(cambiarImg.tamanyo(new ImageIcon("botones/barras_vacunas_9_azul.png"), (this.getWidth() / 5) * 2, tamañoY));
 			break;
 		case 10:
-			barraVacunaAzul.setIcon(img.tamaño(new ImageIcon("botones/barras_vacunas_10_azul.png"), (this.getWidth() / 5) * 2, tamañoY));
+			barraVacunaAzul.setIcon(cambiarImg.tamanyo(new ImageIcon("botones/barras_vacunas_10_azul.png"), (this.getWidth() / 5) * 2, tamañoY));
 			break;
 		}
 	}
 	public void updateBarraVacunaRojo() {
-		int tamañoX = 40;
-		int tamañoY = 80;
+	
 		switch (Partida.vacunas.get(1).desarollo/10) {
 		case 0:
-			barraVacunaRojo.setIcon(img.tamaño(new ImageIcon("botones/barras_vacunas_0_rojo.png"), (this.getWidth() / 5) * 2, tamañoY));
+			barraVacunaRojo.setIcon(cambiarImg.tamanyo(new ImageIcon("botones/barras_vacunas_0_rojo.png"), (this.getWidth() / 5) * 2, tamañoY));
 			break;
 		case 1:
-			barraVacunaRojo.setIcon(img.tamaño(new ImageIcon("botones/barras_vacunas_1_rojo.png"), (this.getWidth() / 5) * 2, tamañoY));
+			barraVacunaRojo.setIcon(cambiarImg.tamanyo(new ImageIcon("botones/barras_vacunas_1_rojo.png"), (this.getWidth() / 5) * 2, tamañoY));
 			break;
 		case 2:
-			barraVacunaRojo.setIcon(img.tamaño(new ImageIcon("botones/barras_vacunas_2_rojo.png"), (this.getWidth() / 5) * 2, tamañoY));
+			barraVacunaRojo.setIcon(cambiarImg.tamanyo(new ImageIcon("botones/barras_vacunas_2_rojo.png"), (this.getWidth() / 5) * 2, tamañoY));
 			break;
 		case 3:
-			barraVacunaRojo.setIcon(img.tamaño(new ImageIcon("botones/barras_vacunas_3_rojo.png"), (this.getWidth() / 5) * 2, tamañoY));
+			barraVacunaRojo.setIcon(cambiarImg.tamanyo(new ImageIcon("botones/barras_vacunas_3_rojo.png"), (this.getWidth() / 5) * 2, tamañoY));
 			break;
 		case 4:
-			barraVacunaRojo.setIcon(img.tamaño(new ImageIcon("botones/barras_vacunas_4_rojo.png"), (this.getWidth() / 5) * 2, tamañoY));
+			barraVacunaRojo.setIcon(cambiarImg.tamanyo(new ImageIcon("botones/barras_vacunas_4_rojo.png"), (this.getWidth() / 5) * 2, tamañoY));
 			break;
 		case 5:
-			barraVacunaRojo.setIcon(img.tamaño(new ImageIcon("botones/barras_vacunas_5_rojo.png"), (this.getWidth() / 5) * 2, tamañoY));
+			barraVacunaRojo.setIcon(cambiarImg.tamanyo(new ImageIcon("botones/barras_vacunas_5_rojo.png"), (this.getWidth() / 5) * 2, tamañoY));
 			break;
 		case 6:
-			barraVacunaRojo.setIcon(img.tamaño(new ImageIcon("botones/barras_vacunas_6_rojo.png"), (this.getWidth() / 5) * 2, tamañoY));
+			barraVacunaRojo.setIcon(cambiarImg.tamanyo(new ImageIcon("botones/barras_vacunas_6_rojo.png"), (this.getWidth() / 5) * 2, tamañoY));
 			break;
 		case 7:
-			barraVacunaRojo.setIcon(img.tamaño(new ImageIcon("botones/barras_vacunas_7_rojo.png"), (this.getWidth() / 5) * 2, tamañoY));
+			barraVacunaRojo.setIcon(cambiarImg.tamanyo(new ImageIcon("botones/barras_vacunas_7_rojo.png"), (this.getWidth() / 5) * 2, tamañoY));
 			break;
 		case 8:
-			barraVacunaRojo.setIcon(img.tamaño(new ImageIcon("botones/barras_vacunas_8_rojo.png"), (this.getWidth() / 5) * 2, tamañoY));
+			barraVacunaRojo.setIcon(cambiarImg.tamanyo(new ImageIcon("botones/barras_vacunas_8_rojo.png"), (this.getWidth() / 5) * 2, tamañoY));
 			break;
 		case 9:
-			barraVacunaRojo.setIcon(img.tamaño(new ImageIcon("botones/barras_vacunas_9_rojo.png"), (this.getWidth() / 5) * 2, tamañoY));
+			barraVacunaRojo.setIcon(cambiarImg.tamanyo(new ImageIcon("botones/barras_vacunas_9_rojo.png"), (this.getWidth() / 5) * 2, tamañoY));
 			break;
 		case 10:
-			barraVacunaRojo.setIcon(img.tamaño(new ImageIcon("botones/barras_vacunas_10_rojo.png"), (this.getWidth() / 5) * 2, tamañoY));
+			barraVacunaRojo.setIcon(cambiarImg.tamanyo(new ImageIcon("botones/barras_vacunas_10_rojo.png"), (this.getWidth() / 5) * 2, tamañoY));
 			break;
 		}
 	}
 	public void updateBarraVacunaVerde() {
-		int tamañoX = 40;
-		int tamañoY = 80;
+	
 		switch (Partida.vacunas.get(2).desarollo/10) {
 		case 0:
-			barraVacunaVerde.setIcon(img.tamaño(new ImageIcon("botones/barras_vacunas_0_verde.png"), (this.getWidth() / 5) * 2, tamañoY));
+			barraVacunaVerde.setIcon(cambiarImg.tamanyo(new ImageIcon("botones/barras_vacunas_0_verde.png"), (this.getWidth() / 5) * 2, tamañoY));
 			break;
 		case 1:
-			barraVacunaVerde.setIcon(img.tamaño(new ImageIcon("botones/barras_vacunas_1_verde.png"), (this.getWidth() / 5) * 2, tamañoY));
+			barraVacunaVerde.setIcon(cambiarImg.tamanyo(new ImageIcon("botones/barras_vacunas_1_verde.png"), (this.getWidth() / 5) * 2, tamañoY));
 			break;
 		case 2:
-			barraVacunaVerde.setIcon(img.tamaño(new ImageIcon("botones/barras_vacunas_2_verde.png"), (this.getWidth() / 5) * 2, tamañoY));
+			barraVacunaVerde.setIcon(cambiarImg.tamanyo(new ImageIcon("botones/barras_vacunas_2_verde.png"), (this.getWidth() / 5) * 2, tamañoY));
 			break;
 		case 3:
-			barraVacunaVerde.setIcon(img.tamaño(new ImageIcon("botones/barras_vacunas_3_verde.png"), (this.getWidth() / 5) * 2, tamañoY));
+			barraVacunaVerde.setIcon(cambiarImg.tamanyo(new ImageIcon("botones/barras_vacunas_3_verde.png"), (this.getWidth() / 5) * 2, tamañoY));
 			break;
 		case 4:
-			barraVacunaVerde.setIcon(img.tamaño(new ImageIcon("botones/barras_vacunas_4_verde.png"), (this.getWidth() / 5) * 2, tamañoY));
+			barraVacunaVerde.setIcon(cambiarImg.tamanyo(new ImageIcon("botones/barras_vacunas_4_verde.png"), (this.getWidth() / 5) * 2, tamañoY));
 			break;
 		case 5:
-			barraVacunaVerde.setIcon(img.tamaño(new ImageIcon("botones/barras_vacunas_5_verde.png"), (this.getWidth() / 5) * 2, tamañoY));
+			barraVacunaVerde.setIcon(cambiarImg.tamanyo(new ImageIcon("botones/barras_vacunas_5_verde.png"), (this.getWidth() / 5) * 2, tamañoY));
 			break;
 		case 6:
-			barraVacunaVerde.setIcon(img.tamaño(new ImageIcon("botones/barras_vacunas_6_verde.png"), (this.getWidth() / 5) * 2, tamañoY));
+			barraVacunaVerde.setIcon(cambiarImg.tamanyo(new ImageIcon("botones/barras_vacunas_6_verde.png"), (this.getWidth() / 5) * 2, tamañoY));
 			break;
 		case 7:
-			barraVacunaVerde.setIcon(img.tamaño(new ImageIcon("botones/barras_vacunas_7_verde.png"), (this.getWidth() / 5) * 2, tamañoY));
+			barraVacunaVerde.setIcon(cambiarImg.tamanyo(new ImageIcon("botones/barras_vacunas_7_verde.png"), (this.getWidth() / 5) * 2, tamañoY));
 			break;
 		case 8:
-			barraVacunaVerde.setIcon(img.tamaño(new ImageIcon("botones/barras_vacunas_8_verde.png"), (this.getWidth() / 5) * 2, tamañoY));
+			barraVacunaVerde.setIcon(cambiarImg.tamanyo(new ImageIcon("botones/barras_vacunas_8_verde.png"), (this.getWidth() / 5) * 2, tamañoY));
 			break;
 		case 9:
-			barraVacunaVerde.setIcon(img.tamaño(new ImageIcon("botones/barras_vacunas_9_verde.png"), (this.getWidth() / 5) * 2, tamañoY));
+			barraVacunaVerde.setIcon(cambiarImg.tamanyo(new ImageIcon("botones/barras_vacunas_9_verde.png"), (this.getWidth() / 5) * 2, tamañoY));
 			break;
 		case 10:
-			barraVacunaVerde.setIcon(img.tamaño(new ImageIcon("botones/barras_vacunas_10_verde.png"), (this.getWidth() / 5) * 2, tamañoY));
+			barraVacunaVerde.setIcon(cambiarImg.tamanyo(new ImageIcon("botones/barras_vacunas_10_verde.png"), (this.getWidth() / 5) * 2, tamañoY));
 			break;
 		}
 	}
 	public void updateBarraVacunaAmarillo() {
-		int tamañoX = 40;
-		int tamañoY = 80;
+	
 		switch (Partida.vacunas.get(3).desarollo/10) {
 		case 0:
-			barraVacunaAmarillo.setIcon(img.tamaño(new ImageIcon("botones/barras_vacunas_0_amarillo.png"),(this.getWidth() / 5) * 2, tamañoY));
+			barraVacunaAmarillo.setIcon(cambiarImg.tamanyo(new ImageIcon("botones/barras_vacunas_0_amarillo.png"),(this.getWidth() / 5) * 2, tamañoY));
 			break;
 		case 1:
-			barraVacunaAmarillo.setIcon(img.tamaño(new ImageIcon("botones/barras_vacunas_1_amarillo.png"),(this.getWidth() / 5) * 2, tamañoY));
+			barraVacunaAmarillo.setIcon(cambiarImg.tamanyo(new ImageIcon("botones/barras_vacunas_1_amarillo.png"),(this.getWidth() / 5) * 2, tamañoY));
 			break;
 		case 2:
-			barraVacunaAmarillo.setIcon(img.tamaño(new ImageIcon("botones/barras_vacunas_2_amarillo.png"),(this.getWidth() / 5) * 2, tamañoY));
+			barraVacunaAmarillo.setIcon(cambiarImg.tamanyo(new ImageIcon("botones/barras_vacunas_2_amarillo.png"),(this.getWidth() / 5) * 2, tamañoY));
 			break;
 		case 3:
-			barraVacunaAmarillo.setIcon(img.tamaño(new ImageIcon("botones/barras_vacunas_3_amarillo.png"),(this.getWidth() / 5) * 2, tamañoY));
+			barraVacunaAmarillo.setIcon(cambiarImg.tamanyo(new ImageIcon("botones/barras_vacunas_3_amarillo.png"),(this.getWidth() / 5) * 2, tamañoY));
 			break;
 		case 4:
-			barraVacunaAmarillo.setIcon(img.tamaño(new ImageIcon("botones/barras_vacunas_4_amarillo.png"),(this.getWidth() / 5) * 2, tamañoY));
+			barraVacunaAmarillo.setIcon(cambiarImg.tamanyo(new ImageIcon("botones/barras_vacunas_4_amarillo.png"),(this.getWidth() / 5) * 2, tamañoY));
 			break;
 		case 5:
-			barraVacunaAmarillo.setIcon(img.tamaño(new ImageIcon("botones/barras_vacunas_5_amarillo.png"),(this.getWidth() / 5) * 2, tamañoY));
+			barraVacunaAmarillo.setIcon(cambiarImg.tamanyo(new ImageIcon("botones/barras_vacunas_5_amarillo.png"),(this.getWidth() / 5) * 2, tamañoY));
 			break;
 		case 6:
-			barraVacunaAmarillo.setIcon(img.tamaño(new ImageIcon("botones/barras_vacunas_6_amarillo.png"),(this.getWidth() / 5) * 2, tamañoY));
+			barraVacunaAmarillo.setIcon(cambiarImg.tamanyo(new ImageIcon("botones/barras_vacunas_6_amarillo.png"),(this.getWidth() / 5) * 2, tamañoY));
 			break;
 		case 7:
-			barraVacunaAmarillo.setIcon(img.tamaño(new ImageIcon("botones/barras_vacunas_7_amarillo.png"),(this.getWidth() / 5) * 2, tamañoY));
+			barraVacunaAmarillo.setIcon(cambiarImg.tamanyo(new ImageIcon("botones/barras_vacunas_7_amarillo.png"),(this.getWidth() / 5) * 2, tamañoY));
 			break;
 		case 8:
-			barraVacunaAmarillo.setIcon(img.tamaño(new ImageIcon("botones/barras_vacunas_8_amarillo.png"),(this.getWidth() / 5) * 2, tamañoY));
+			barraVacunaAmarillo.setIcon(cambiarImg.tamanyo(new ImageIcon("botones/barras_vacunas_8_amarillo.png"),(this.getWidth() / 5) * 2, tamañoY));
 			break;
 		case 9:
-			barraVacunaAmarillo.setIcon(img.tamaño(new ImageIcon("botones/barras_vacunas_9_amarillo.png"),(this.getWidth() / 5) * 2, tamañoY));
+			barraVacunaAmarillo.setIcon(cambiarImg.tamanyo(new ImageIcon("botones/barras_vacunas_9_amarillo.png"),(this.getWidth() / 5) * 2, tamañoY));
 			break;
 		case 10:
-			barraVacunaAmarillo.setIcon(img.tamaño(new ImageIcon("botones/barras_vacunas_10_amarillo.png"),(this.getWidth() / 5) * 2, tamañoY));
+			barraVacunaAmarillo.setIcon(cambiarImg.tamanyo(new ImageIcon("botones/barras_vacunas_10_amarillo.png"),(this.getWidth() / 5) * 2, tamañoY));
 			break;
 		}
 	}
-	
-	
-	public void update() {
-		updateBarraVacunaAzul();
-		updateBarraVacunaAmarillo();
-		updateBarraVacunaRojo();
-		updateBarraVacunaVerde();
-	}
+
 }

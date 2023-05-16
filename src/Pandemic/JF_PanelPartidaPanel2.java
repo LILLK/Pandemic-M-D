@@ -1,5 +1,5 @@
+//Mehdi Tahrat && David hola
 package Pandemic;
-
 import java.awt.*;
 
 import java.awt.image.BufferedImage;
@@ -9,14 +9,33 @@ import javax.imageio.ImageIO;
 import javax.swing.*;
 import Botones.*;
 import Logico.Partida;
-
+/**
+ * Esta classe es del panel que se situa abajo a la derecha en {@link JF_PanelPartida}
+ * Este panel guarda el log, el boton de guardar , y las acciones restantes
+ * @author DAME
+ *
+ */
 public class JF_PanelPartidaPanel2 extends JPanel {
-
+/**
+ * En este label se mostrara en texto lo que va ocurriendo en partida
+ */
 	static  JLabel log = new JLabel();
+	/**
+	 * El texto del panel log
+	 */
 	static String logText ;
+	/**
+	 * panel de acciones restatnes
+	 */
 	static JLabel acciones = new JLabel();
-
+/**
+ * Boton de guardar partida
+ */
 	BotonGuardarPartida BotonGuardarPartida;
+	/**
+	 * Este es el constructor del panel.
+	 * Este esta compuesto por 2 paneles(log y acciones restantes) y un boton de guardar partida
+	 */
 	public JF_PanelPartidaPanel2() {
 
 
@@ -52,7 +71,9 @@ public class JF_PanelPartidaPanel2 extends JPanel {
 
 
 	}
-	
+	/**
+	 * Este metodo pinta el fondo de la pantalla
+	 */
 	public void paint(Graphics g) {
 		BufferedImage imgFondo;
 		try {
@@ -65,16 +86,24 @@ public class JF_PanelPartidaPanel2 extends JPanel {
 			System.out.print("Error IMGfondo JF_PanelPartidaPanel2");
 		}
 	} 
+	/**
+	 * Actualiza el texto del log 
+	 * @param String newTexto - el nuevo texto que mostrar por el log
+	 */
 	public static void updateLog(String newTexto) {
 		String resultado="<p>"+newTexto+"</p>";
 		logText += resultado;
 		log.setText("<html>"+logText+"</html>");
 	}
-	
+	/**
+	 * Esta funcion actualiza el panel de acciones restantes
+	 */
 	public static void updateAcciones() {
 		acciones.setText("acciones restantes: "+Partida.accionesRonda);
 	}
-	
+	/**
+	 * Esta funcion resta acciones en la ronda
+	 */
 	public static void restarAcciones() {
 		Partida.accionesRonda--;
 		acciones.setText("acciones restantes: "+Partida.accionesRonda);

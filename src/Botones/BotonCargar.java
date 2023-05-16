@@ -1,3 +1,4 @@
+//Mehdi Tahrat && David hola
 package Botones;
 
 import java.awt.event.MouseEvent;
@@ -30,18 +31,21 @@ public class BotonCargar extends JLabel {
 	 */
 	public BotonCargar(int idP, JF_PanelCargarPartida jf_PanelCargarPartida) {
 		this.idP= idP;
-		setIcon(cambiarImg.tamaño(new ImageIcon("botones/cargarPartida.png"), 100, 100));
+		setIcon(cambiarImg.tamanyo(new ImageIcon("botones/cargarPartida.png"), 100, 100));
 
+		/**
+		 * Listener con funcion de cambiar icono al hacer hoover, y carga la partida deseada
+		 */
 		addMouseListener(new MouseListener() {	
 			public void mouseEntered(MouseEvent e) {
-				setIcon(cambiarImg.tamaño(new ImageIcon("botones/cargarPartida-1.png"),100,100 ));
+				setIcon(cambiarImg.tamanyo(new ImageIcon("botones/cargarPartida-1.png"),100,100 ));
 			}
 			public void mouseExited(MouseEvent a) {
-				setIcon(cambiarImg.tamaño(new ImageIcon("botones/cargarPartida.png"),100, 100));
+				setIcon(cambiarImg.tamanyo(new ImageIcon("botones/cargarPartida.png"),100, 100));
 			}
 
 			public void mousePressed(MouseEvent i) {
-				setIcon(cambiarImg.tamaño(new ImageIcon("botones/cargarPartida-2.png"), 100, 100 ));
+				setIcon(cambiarImg.tamanyo(new ImageIcon("botones/cargarPartida-2.png"), 100, 100 ));
 			}
 			public void mouseClicked(MouseEvent e) {
 				//construlle la partida con el id partida enviado 

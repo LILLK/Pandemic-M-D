@@ -1,3 +1,4 @@
+//Mehdi Tahrat && David hola
 package Logico;
 /**
  * Esta classe crea el aloja este objeto, que sirve para cargar los datos de la partida 

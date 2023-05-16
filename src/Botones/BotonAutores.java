@@ -1,3 +1,4 @@
+//Mehdi Tahrat && David hola
 package Botones;
 
 import java.awt.event.*;
@@ -26,18 +27,20 @@ public class BotonAutores extends JLabel {
 		
 
 		
-		setIcon(cambiarImg.tamaño(new ImageIcon("botones/bottonAutores-1.png"), ((int)(cambiarImg.screenSize.getWidth()/5)), ((int)(cambiarImg.screenSize.getWidth()/20))) );
-		
+		setIcon(cambiarImg.tamanyo(new ImageIcon("botones/bottonAutores-1.png"), ((int)(cambiarImg.screenSize.getWidth()/5)), ((int)(cambiarImg.screenSize.getWidth()/20))) );
+		/**
+		 * Listener con funcion de cambiar icono al hacer hoover, y ir al panel autores
+		 */
 		addMouseListener(new MouseListener() {	
 			public void mouseEntered(MouseEvent e) {
-				setIcon(cambiarImg.tamaño(new ImageIcon("botones/bottonAutores-2.png"), ((int)(cambiarImg.screenSize.getWidth()/5)), ((int)(cambiarImg.screenSize.getWidth()/20))) );
+				setIcon(cambiarImg.tamanyo(new ImageIcon("botones/bottonAutores-2.png"), ((int)(cambiarImg.screenSize.getWidth()/5)), ((int)(cambiarImg.screenSize.getWidth()/20))) );
 			}
 			public void mouseExited(MouseEvent a) {
-				setIcon(cambiarImg.tamaño(new ImageIcon("botones/bottonAutores-1.png"), ((int)(cambiarImg.screenSize.getWidth()/5)), ((int)(cambiarImg.screenSize.getWidth()/20))) );
+				setIcon(cambiarImg.tamanyo(new ImageIcon("botones/bottonAutores-1.png"), ((int)(cambiarImg.screenSize.getWidth()/5)), ((int)(cambiarImg.screenSize.getWidth()/20))) );
 			}
 
 			public void mousePressed(MouseEvent i) {
-				setIcon(cambiarImg.tamaño(new ImageIcon("botones/bottonAutores-3.png"), ((int)(cambiarImg.screenSize.getWidth()/5)), ((int)(cambiarImg.screenSize.getWidth()/20))) );
+				setIcon(cambiarImg.tamanyo(new ImageIcon("botones/bottonAutores-3.png"), ((int)(cambiarImg.screenSize.getWidth()/5)), ((int)(cambiarImg.screenSize.getWidth()/20))) );
 			}
 			public void mouseClicked(MouseEvent e) {
 				JF_PanelMenu.irPanelAutores();

@@ -30,7 +30,7 @@ public class BotonMostrarNombres extends JLabel  {
 	 */
 	public BotonMostrarNombres(){
 		
-		setIcon(cambiarImg.tamaño(new ImageIcon("botones/ojo_cerrado.png"), tamañoX, tamañoY));
+		setIcon(cambiarImg.tamanyo(new ImageIcon("botones/ojo_cerrado.png"), tamañoX, tamañoY));
 		this.setOpaque(false);
 		this.setBounds(40, 650, tamañoX, tamañoY);
 		
@@ -38,11 +38,11 @@ public class BotonMostrarNombres extends JLabel  {
 			public void mouseReleased(MouseEvent e) {}
 			public void mousePressed(MouseEvent e) {}			
 			public void mouseExited(MouseEvent e) {
-				setIcon(cambiarImg.tamaño(new ImageIcon("botones/ojo_cerrado.png"), tamañoX, tamañoY));
+				setIcon(cambiarImg.tamanyo(new ImageIcon("botones/ojo_cerrado.png"), tamañoX, tamañoY));
 				BotonCiudad.ocultarNombres();
 			}			
 			public void mouseEntered(MouseEvent e) {
-				setIcon(cambiarImg.tamaño(new ImageIcon("botones/ojo_abierto.png"), tamañoX, tamañoY));
+				setIcon(cambiarImg.tamanyo(new ImageIcon("botones/ojo_abierto.png"), tamañoX, tamañoY));
 				BotonCiudad.mostrarNombres();
 
 			}			
