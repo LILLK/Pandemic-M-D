@@ -5,14 +5,10 @@ import java.sql.Array;
 import java.sql.Connection;
 
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Struct;
-import java.util.ArrayList;
-import java.util.Scanner;
-
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -20,19 +16,27 @@ import Pandemic.JF_PanelCargarPartida;
 import Pandemic.JF_PanelPuntuaciones;
 
 /**
- * Esta classe se ocupa de las conexiones con la base de datos. + static final
- * String USER + static final String PWD + static final String URL + static
- * final Connection con
- * 
+ * Esta classe se ocupa de las conexiones con la base de datos. + static final 
  * @author DAME
  *
  */
 public class ConexionBD {
-
+	/**
+	 * Usuario de Oracle.
+	 */
 	private static final String USER = "DAW_PNDC22_23_DAME";
+	/**
+	 * 
+	 */
 	private static final String PWD = "DM123";
-	// Si estáis desde casa, la url será oracle.ilerna.com y no 192.168.3.26
-	private static final String URL = "jdbc:oracle:thin:@oracle.ilerna.com:1521:xe";
+	/**
+	 * 	Enlace para la conexion en Oracle.
+	 *  Si estáis desde casa, la url será oracle.ilerna.com y no 192.168.3.26
+	 */
+	private static final String URL = "jdbc:oracle:thin:@192.168.3.26:1521:xe";
+	/**
+	 * conexion con la base de datos
+	 */
 	public static final Connection con = conectarBaseDatos();
 
 	/**
@@ -89,7 +93,7 @@ public class ConexionBD {
 	}
 
 	/**
-	 * Esta funcion busca la id de la ultima partida guardada.
+	 * Esta funcion guardar en Pardida.idP la id de la ultima partida creada .
 	 */
 	public static void idPartida() {
 		String sql = "SELECT p.id_p FROM PARTIDAS P WHERE rownum = 1 ORDER BY p.id_p DESC";
@@ -118,7 +122,7 @@ public class ConexionBD {
 	 */
 	public static void iniciarPartida() {
 		// la sentenccia que se escribira en la bd para guardar partida
-		String sql = "INSERT INTO PARTIDAS VALUES(idP_sequ.nextval," + Partida.idP + ",'I', vacunaspartida(";
+		String sql = "INSERT INTO PARTIDAS VALUES(idP_sequ.nextval," + Partida.idJ + ",'I', vacunaspartida(";
 
 		int i = 0;
 		for (Vacunas vacuna : Partida.vacunas) {// por cada vacuna
@@ -191,9 +195,10 @@ public class ConexionBD {
  * Los datos de esta acabaran en la lista JF_PanelCargarPartida.partGuar.
  * @param int id_J - ID jugador
  */
-	public static void cargarPartidas(int id_J) {
+	public static void cargarPartidas() {
 		// la sequencia sql
-		String sql = "select p.id_p, p.brotes, p.ronda, p.puntuacion,p.dificultad, p.acciones FROM PARTIDAS P, USUARIOS U WHERE p.jugador = u.id_u AND p.estado LIKE 'I' AND p.jugador ="+ id_J + " ORDER BY p.id_p DESC";
+		System.out.println(Partida.idJ);
+		String sql = "select p.id_p, p.brotes, p.ronda, p.puntuacion,p.dificultad, p.acciones FROM PARTIDAS P, USUARIOS U WHERE p.jugador = u.id_u AND p.estado LIKE 'I' AND p.jugador ="+ Partida.idJ + " ORDER BY p.id_p DESC";
 		try {
 			Statement st = con.createStatement();
 			ResultSet rs = st.executeQuery(sql);
@@ -220,12 +225,14 @@ public class ConexionBD {
  * @param int idU - id usuario 
  * @param int idP - id partida
  */
-	public static void cargarPartida(int idU, int idP) {
+	public static void cargarPartida(int idP) {
 		//sentecia sql 
-		String sql = "SELECT * FROM PARTIDAS P WHERE P.id_p = " + idP + " AND P.jugador = " + idU + "";
+		System.out.println(idP);
+		String sql = "SELECT * FROM PARTIDAS P WHERE P.id_p = " + idP + " AND P.jugador = " + Partida.idJ + "";
 		try {
 			
 			Statement st = con.createStatement();
+			System.out.println(sql);
 			ResultSet rs = st.executeQuery(sql);
 			if (rs.isBeforeFirst()) {//si hay un registro
 				while (rs.next()) {
@@ -313,6 +320,30 @@ public class ConexionBD {
 		}
 		return usuCorr;
 	}
+	/**
+	 * Esta funcion busca guarda el id del jugador creado en Partida.idJ .
+	 */
+	public static void idJugador() {
+
+		String sql = "SELECT u.id_u FROM Usuarios U WHERE rownum = 1 ORDER BY u.id_u DESC";
+
+		try {
+			Statement st = con.createStatement();
+			ResultSet rs = st.executeQuery(sql);
+			if (rs.isBeforeFirst()) {
+				while (rs.next()) {
+					Partida.idJ = rs.getInt(1);
+				}
+			} else {
+				System.out.println("No he encontrado nada");
+			}
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			// System.out.println(e);
+		}
+
+	}
 /**
  * Esta funcion devuelve true si el usuario existete en la base de datos 
  * @param String nomUsu
@@ -334,7 +365,7 @@ public class ConexionBD {
 					String nombre = rs.getString("nom_Us");
 					String passw = rs.getString("passwd_J");
 					existe = true;
-					Partida.idP = dni;
+					Partida.idJ = dni;
 				}
 			} else {//no se a encontrado
 				existe = false;

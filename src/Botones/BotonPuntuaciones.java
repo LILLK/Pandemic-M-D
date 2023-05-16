@@ -1,6 +1,4 @@
 package Botones;
-import java.awt.Dimension;
-import java.awt.Toolkit;
 import java.awt.event.*;
 
 import javax.swing.ImageIcon;
@@ -17,7 +15,6 @@ public class BotonPuntuaciones extends JLabel {
  * Este es el contructor del boton
  * Este boton cambia del {@link JF_PanelMenu} al {@index JF_PanelPuntuaciones} 
  * @param {@link JF_PanelMenu}
- 	*@author DAME
  */
 	public BotonPuntuaciones(JF_PanelMenu JF_PanelMenu) {
 		
@@ -38,9 +35,7 @@ public class BotonPuntuaciones extends JLabel {
 			public void mouseClicked(MouseEvent e) {
 				JF_PanelMenu.irPanelPuntuacion();
 			}
-			public void mouseReleased(MouseEvent e) {
-				// TODO Apéndice de método generado automáticamente
-				
+			public void mouseReleased(MouseEvent e) {				
 			}
 		});
 	}

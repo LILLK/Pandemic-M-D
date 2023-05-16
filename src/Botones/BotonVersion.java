@@ -1,8 +1,6 @@
 package Botones;
 
 
-import java.awt.Dimension;
-import java.awt.Toolkit;
 import java.awt.event.*;
 
 import javax.swing.ImageIcon;
@@ -40,9 +38,7 @@ public class BotonVersion extends JLabel {
 				//Cambia al panel version
 				JF_PanelMenu.irPanelVersion();
 			}
-			@Override
 			public void mouseReleased(MouseEvent e) {
-				// TODO Auto-generated method stub
 				
 			}
 			

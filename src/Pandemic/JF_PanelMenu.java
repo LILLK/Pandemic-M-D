@@ -1,8 +1,6 @@
 package Pandemic;
 import java.awt.*;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -16,36 +14,45 @@ import Botones.*;
 /**
  * Esta classe es donde se construye el Panel Menu
  * @author DAME
- *
  */
 public class JF_PanelMenu extends JPanel {
-	//boton que vuelve al panel de inicio sesion
+	/**
+	 * boton que vuelve al panel de inicio sesion
+	 */
 	BotonLogOut BotonLogOut;
-	//boton para crear una nueva partida
+	/**
+	 * boton para crear una nueva partida
+	 */
 	BotonNuevaPartida NuevaPartida;
-	//boton para cargar una nueva partida
+	/**
+	 * boton para cargar una nueva partida
+	 */
 	BotonCargarPartida CargarPartida;
-	//boton para ir al panel informacion
+	/**
+	 * boton para ir al panel informacion
+	 */
 	BotonInformacion Infromacion;
-	//boton para inr al panel puntuaciones
+	/**
+	 * boton para inr al panel puntuaciones
+	 */
 	BotonPuntuaciones ResumenPuntuaciones;
-	//boton para ir al panel autores
+	/**
+	 * boton para ir al panel autores
+	 */
+
 	BotonAutores Autores;
-	//boton para ir al boton version
+	/**
+	 * boton para ir al boton version
+	 */
 	BotonVersion Version;
-	//boton para salir del programa
+	/**
+	 * boton para salir del programa
+	 */
 	BotonSalir Salir;
 	
 	/**
 	 * Constructor del Panel Menu.
-	 * - BotonNuevaPartida
-	 * - BotonCargarPartida
-	 * - BotonInformacion
-	 * - BotonPuntuaciones
-	 * - BotonAutores
-	 * - BotonVersion
-	 * - BotonSalir
-	 * - BotonLogOut
+	 * Aqui hay varios botones que dirijen al usuario por el programa
 	 * @author DAME
 	 */
 	JF_PanelMenu(){

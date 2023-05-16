@@ -1,17 +1,10 @@
 package Botones;
 
-import java.awt.Dimension;
-import java.awt.Toolkit;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 import javax.swing.ImageIcon;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.SwingUtilities;
-
-import Logico.ConexionBD;
 import Pandemic.*;
 
 /**

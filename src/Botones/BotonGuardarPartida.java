@@ -11,7 +11,7 @@ import Pandemic.*;
 /**
  * Esta classe define los constructores del boton GuardarPartida
  * Este boton guarda la partida en medio de esta
- * @author LIL_LK
+ * @author DAME
  *
  */
 public class BotonGuardarPartida extends JLabel {

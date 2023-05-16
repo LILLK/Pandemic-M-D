@@ -1,28 +1,29 @@
 package Botones;
 
-import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.util.ArrayList;
-
 import javax.swing.*;
 
-import Logico.Ciudades;
 import Logico.Partida;
 import Logico.Vacunas;
 import Pandemic.*;
 /**
  * Esta calsse define los contructores del boton vacuna amarillo
  * Amuenta el desarollo de la vacuna
- * + int tamañoX
- * + int tamañoY
- * + int idVirus
  * @author DAME
  */
 public class BotonVacunaAmarillo extends JLabel {
-	
+	/**
+	 * tamañoX = 80
+	 */
 	int tamañoX = 80;
+	/**
+	 * tamañoY = 80;
+	 */
 	int tamañoY = 80;
+	/**
+	 * idVirus = 3;
+	 */
 	int  idVirus = 3;
 /**
  * Constructor del boton vacuna amarillo

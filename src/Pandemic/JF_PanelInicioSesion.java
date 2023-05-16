@@ -2,18 +2,18 @@ package Pandemic;
 
 import java.awt.*;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
-import javax.swing.border.Border;
-
 import Botones.*;
-
+/**
+ * Esta classe es el pan
+ * @author DAME
+ *
+ */
 public class JF_PanelInicioSesion extends JPanel {
 
 	BotonIniciarSesion BotonIniciarSesion;
@@ -26,8 +26,6 @@ public class JF_PanelInicioSesion extends JPanel {
 
 	public JF_PanelInicioSesion() {
 
-	
-		cambiarImg img = new cambiarImg();
 		setLayout(null);
 		
 		this.Salir = new BotonSalir();

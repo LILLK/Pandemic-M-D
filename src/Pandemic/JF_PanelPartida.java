@@ -1,18 +1,8 @@
 package Pandemic;
 
-import java.awt.*;
-
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
-import javax.swing.border.Border;
-
 import Botones.*;
 import Logico.Ciudades;
 import Logico.ConexionBD;

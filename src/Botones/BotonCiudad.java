@@ -1,12 +1,8 @@
 package Botones;
 
 import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Toolkit;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.util.ArrayList;
-
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -14,28 +10,32 @@ import javax.swing.border.Border;
 
 import Logico.Ciudades;
 import Logico.Partida;
-import Pandemic.JF_PanelMenu;
 import Pandemic.JF_PanelPartida;
-import Pandemic.JF_PanelPartidaPanel2;
 import Pandemic.cambiarImg;
 /**
  * Esta classe define los constructores de  los botones Ciudad
  * Estos botones componen un tercio del juego , ya que 
- * no solo son las ciudades sino que tambien tienen la funcion
- * de curar
- * + Ciudades ciudad
- * + JLabel JLNombreCiudad
- * + int tamañoX
- * + int tamañoY
+ * no solo son las ciudades sino que tambien tienen la funcion de curar
  * @author DAME
  *
  */
 public class BotonCiudad extends JLabel {
 	
-
+	/**
+	 * + Ciudades ciudad - ciudad del boton
+	 */
 	public Ciudades ciudad;
+	/**
+	 * + JLabel JLNombreCiudad - etiqueta con el nombre 
+	 */
 	public JLabel JLNombreCiudad;
+	/**
+	 * + int tamañoX - tamaño x
+	 */
 	public int tamañoX = 45;
+	/**
+	 * + int tamañoY - tamaño y
+	 */
 	public int tamañoY = 30;
 
 /**
@@ -278,14 +278,14 @@ public class BotonCiudad extends JLabel {
 	}
 	
 	/**
-	 * Este metodo mostra todos los labels creados
+	 * Este metodo muestra por pantalla todos los nombres de ciudades
 	 */
 	public static void mostrarNombres() {
 		for (BotonCiudad boton : JF_PanelPartida.botonesCiudad) 
 			boton.JLNombreCiudad.setVisible(true);
 	}
 	/**
-	 * Este metodo oculta todos los labels creados
+	 * Este metodo oculta todos los nombres de ciudades
 	 */
 	public static void ocultarNombres() {
 		for (BotonCiudad boton : JF_PanelPartida.botonesCiudad) 

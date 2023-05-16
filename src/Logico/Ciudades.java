@@ -3,7 +3,6 @@ package Logico;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Scanner;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import Botones.BotonCiudad;
@@ -14,27 +13,42 @@ import Pandemic.JF_PanelPartidaPanel2;
  * Esta classe contiene el objeto ciudades.
  * Esta tiene los metodos de generaccion y 
  * las acciones de estas.
- * +String nombre - nombre de la ciudad
- * +int idVirus - id de virus de la ciudad
- * +int posicionX - posision x de la ciudad
- * +int posicionY - posision y de la ciudad 
- * +ArrayList<String> colindantes - lista de nombres de las ciudades colindantes
- * +boolean brote - estado de brote
- * +int nEnfermedades - numero de enfermedades de la ciudad
- * +boolean infeccionRonda - cuando se tiene que infectar a las ciudades, 
- * se marca esta flag para no infectarla otra vez
  * @author DAME
  *
  */
 public class Ciudades {
+	/**
+	 * nombre de la ciudad
+	 */
 	public String nombre;
+	/**
+	 * id de virus de la ciudad
+	 */
 	public int idVirus;
+	/**
+	 * posision x de la ciudad
+	 */
 	public int posicionX;
+	/**
+	 * posision y de la ciudad
+	 */
 	public int posicionY;
+	/**
+	 * lista de nombres de las ciudades colindantes
+	 */
 	public ArrayList<String> colindantes;
+	/**
+	 * estado de brote
+	 */
 	public boolean brote;
+	/**
+	 * numero de enfermedades de la ciudad
+	 */
 	public int nEnfermedades;
-
+	/**
+	 * Cuando se tiene que infectar a las ciudades, 
+	 * se marca esta flag para no infectarla otra vez
+	 */
 	public boolean infeccionRonda;
 
 	////////////////////////////////////
@@ -78,10 +92,6 @@ public class Ciudades {
 		this.colindantes = generarColindantes(this.nombre);
 		this.infeccionRonda = false;
 	}
-	////////////////////////////////////
-	////////////// metodos /////////////
-	////////////////////////////////////
-
 	/**
 	 * Este metodo infecta a la ciudad y genera un brote si es necesario,
 	 * infectando a todas las colindantes.
@@ -126,7 +136,6 @@ public class Ciudades {
 				JF_PanelPartida.botonesCiudad.get(getIdXnombre(this.nombre)).tamañoX,
 				JF_PanelPartida.botonesCiudad.get(getIdXnombre(this.nombre)).tamañoY);
 		JF_PanelPartidaPanel2.updateLog("-----------------");
-
 	}
 
 	/**
@@ -163,11 +172,6 @@ public class Ciudades {
 			JF_PanelPartidaPanel2.updateLog("-----------------");
 		}
 	}
-
-	/////////////////////////////////////
-	///////////// Funciones ////////////
-	////////////////////////////////////
-
 	/**
 	 * Esta funcion busca la id(posicion) de la ciudad segun su nombre
 	 * @param String nombre
@@ -183,12 +187,6 @@ public class Ciudades {
 		}
 		return aux;// devuelve su posicion en la lista
 	}
-
-	//////////////////////////////////////////////////////////////////////////////////////
-	// - generarCiudades
-	// 
-	/////////////////////////////////////////////////////////////////////////////////////
-	
 	/**
 	 * Esta funcion rellena la lista de Partida.ciudades con ciudades generadas con los archivos.
 	 */
@@ -211,7 +209,6 @@ public class Ciudades {
 			// Se añade en la lista global Partida.ciudades
 			Partida.ciudades.add(ciudad);
 		}
-
 		// Mientras haya menos brotes que los necesarios para empezar
 		while (Partida.brotes < Parametros.brotesInicio) {
 			// busca una ciudad aleatoria y la infecta 3 veces para generar un brote
@@ -248,9 +245,6 @@ public class Ciudades {
 		return xy;
 	}
 
-	//////////////////////////////////////////////////////////////////////////////////////
-	// - generarColindantes
-	// 	/////////////////////////////////////////////////////////////////////////////////////
 	/**
 	 * Esta funcion devuelve una lista con las ciudades colindandtes
 	 * @param String nombre
@@ -267,11 +261,6 @@ public class Ciudades {
 		}
 		return colindantes;
 	}
-
-	////////////////////////////////////
-	/////////// setters&getters//////////
-	////////////////////////////////////
-
 /**
  * Setter infeccionRonda
  * @param boolean infeccionRonda

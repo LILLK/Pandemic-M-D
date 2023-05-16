@@ -1,6 +1,4 @@
 package Botones;
-import java.awt.Dimension;
-import java.awt.Toolkit;
 import java.awt.event.*;
 
 import javax.swing.ImageIcon;
@@ -39,7 +37,6 @@ public class BotonNuevaPartida extends JLabel {
 				JF_PanelMenu.irPanelPartidaDificultad();
 			}
 			public void mouseReleased(MouseEvent e) {
-				// TODO Apéndice de método generado automáticamente
 				
 			}
 		});

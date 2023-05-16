@@ -1,18 +1,12 @@
 package Botones;
 
-import java.awt.Dimension;
-import java.awt.Toolkit;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
-import Logico.*;
-import Logico.Parametros;
-import Logico.Partida;
 import Pandemic.JF_PanelCargarPartida;
-import Pandemic.JF_PanelMenu;
 import Pandemic.cambiarImg;
 /**
  * Esta classe define los contructores del Boton Cargar
@@ -23,7 +17,9 @@ import Pandemic.cambiarImg;
  *
  */
 public class BotonCargar extends JLabel {
-	//Es el id de partida
+	/**
+	 * Es el id de partida
+	 */
 	public int idP;
 	/**
 	 * Constructor del boton Cargar en {@link JF_PanelCargarPartida }
@@ -49,7 +45,7 @@ public class BotonCargar extends JLabel {
 			}
 			public void mouseClicked(MouseEvent e) {
 				//construlle la partida con el id partida enviado 
-				jf_PanelCargarPartida.irPanelPartida(idP);
+				jf_PanelCargarPartida.irPanelPartida(BotonCargar.this.idP);
 			}
 			public void mouseReleased(MouseEvent e) {				
 			}
