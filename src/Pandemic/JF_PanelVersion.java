@@ -36,7 +36,7 @@ public class JF_PanelVersion extends JPanel {
 		this.Atras = new BotonAtras(this);
 		JLabel Version = new JLabel();
 
-		String s= "Version 1.5";
+		String s= "Version 1.8";
 		Version.setBounds(((cambiarImg.screenSize.width/2)-276),50,552,100);
 		Version.setText(s);
 		Version.setForeground(Color.BLACK);
