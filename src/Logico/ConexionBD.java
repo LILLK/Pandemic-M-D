@@ -363,11 +363,11 @@ public class ConexionBD {
 			if (rs.isBeforeFirst()) {//si hay un registro 
 				while (rs.next()) {//por cada registro
 					//se busca la id de usuario 
-					int dni = rs.getInt("id_U");
+					Partida.idJ =  rs.getInt("id_U");
 					String nombre = rs.getString("nom_Us");
 					String passw = rs.getString("passwd_J");
 					existe = true;
-					Partida.idJ = dni;
+					
 				}
 			} else {//no se a encontrado
 				existe = false;
