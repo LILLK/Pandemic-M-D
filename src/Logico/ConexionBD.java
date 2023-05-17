@@ -261,6 +261,7 @@ public class ConexionBD {
 						}
 						//lee los datos de brotes 
 						Partida.brotes = rs.getInt("brotes");
+						//lee los datos de cada ciudad
 						Object[] dataC = rs.getObject(6) != null ? (Object[]) ((Array) rs.getObject(6)).getArray()
 								: null;
 						// si nos devuelve datos, mostramos en consola
