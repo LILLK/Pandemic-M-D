@@ -19,8 +19,8 @@ import org.xml.sax.SAXException;
 
 public class ArchivosIO {
 	/**
-	 * Funcion que obtiene y devuelve el tamaño del mapa (x,y)
-	 * 	Lee el archivo CCP.bin , y devuelve el tamaño del mapa
+	 * Funcion que obtiene y devuelve el tamanyo del mapa (x,y)
+	 * 	Lee el archivo CCP.bin , y devuelve el tamanyo del mapa
 	 * @return int[] 
 	 */
 	public static int[] leerTamanioMapa() {
@@ -31,17 +31,17 @@ public class ArchivosIO {
 	/**
 	 * Funcion que  lee el archivo CCP.bin , y si el ultimo parametro es verdadero imprime el archivo por consola
 	 * @param ArrayList<String> viruses_op
-	 * @param int[] tamañoMapa_op
+	 * @param int[] tamanyoMapa_op
 	 * @param boolean imprimir
 	 */
-	public static void leerCCP(ArrayList<String> viruses_op, int[] tamañoMapa_op, boolean imprimir) {
+	public static void leerCCP(ArrayList<String> viruses_op, int[] tamanyoMapa_op, boolean imprimir) {
 		//Esta declaracion nos permitira ejecutar esta funcion teniendo parametros nullos
 		Optional<ArrayList<String> > op_v = Optional.ofNullable(viruses_op);
 	
 		ArrayList<String>  viruses = op_v.isPresent() ? op_v.get() : new ArrayList<String>();
 		
-		Optional<int[]> op_p = Optional.ofNullable(tamañoMapa_op);
-		int[]  tamañoMapa = op_p.isPresent() ? op_p.get() : new int[2];
+		Optional<int[]> op_p = Optional.ofNullable(tamanyoMapa_op);
+		int[]  tamanyoMapa = op_p.isPresent() ? op_p.get() : new int[2];
 		
 		
 		String linea = "";
@@ -60,11 +60,11 @@ public class ArchivosIO {
 			}
 			if (imprimir) {
 				System.out.println("\nCords");
-				System.out.println(tamañoMapa[0] = leeCCP.readInt());
-				System.out.println(tamañoMapa[1] = leeCCP.readInt());
+				System.out.println(tamanyoMapa[0] = leeCCP.readInt());
+				System.out.println(tamanyoMapa[1] = leeCCP.readInt());
 			} else {
-				tamañoMapa[0] = leeCCP.readInt();
-				tamañoMapa[1] = leeCCP.readInt();
+				tamanyoMapa[0] = leeCCP.readInt();
+				tamanyoMapa[1] = leeCCP.readInt();
 			}
 			
 			leeCCP.close();

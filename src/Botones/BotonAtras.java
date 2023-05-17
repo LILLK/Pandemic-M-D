@@ -20,7 +20,6 @@ import Pandemic.*;
 		/**
 			 * Contructor del boton atras en {@link JF_PanelAutores}
 			 * @param {@link JF_PanelAutores} 
-			 * @author DAME
 			 * 
 			 */
 		public BotonAtras(JF_PanelAutores JF_PanelAutores) {
@@ -52,7 +51,6 @@ import Pandemic.*;
 		/**
 		 * Contructor del boton atras en {@link JF_PanelInfo }
 		 * @param {@link JF_PanelInfo }
-		 * @author DAME
 		 */
 		public BotonAtras(JF_PanelInfo JF_PanelInfo) {
 			
@@ -84,7 +82,6 @@ import Pandemic.*;
 		/**
 		 * Contructor del boton atras en {@link JF_PanelVersion }
 		 * @param {@link JF_PanelVersion }
-		 * @author DAME
 		 */
 		public BotonAtras(JF_PanelVersion JF_PanelVersion) {
 		
@@ -117,7 +114,6 @@ import Pandemic.*;
 		/**
 		 * Contructor del boton atras en {@link JF_PanelPuntuaciones }
 		 * @param {@link JF_PanelPuntuaciones }
-		 * @author DAME
 		 */
 		public BotonAtras(JF_PanelPuntuaciones JF_PanelPuntuaciones) {
 		setIcon(cambiarImg.tamanyo(new ImageIcon("botones/bottonAtras-1.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
@@ -147,7 +143,6 @@ import Pandemic.*;
 		/**
 		 * Contructor del boton atras en {@link JF_PanelCargarPartida }
 		 * @param {@link JF_PanelCargarPartida }
-		 * @author DAME
 		 */
 		public BotonAtras(JF_PanelCargarPartida JF_PanelCargarPartida) {
 			
@@ -179,7 +174,6 @@ import Pandemic.*;
 		/**
 		 * Contructor del boton atras en {@link JF_PanelPartidaDificultad }
 		 * @param {@link JF_PanelPartidaDificultad }
-		 * @author DAME
 		 */
 		public BotonAtras(JF_PanelPartidaDificultad panel) {
 			
@@ -213,7 +207,6 @@ import Pandemic.*;
 		/**
 		 * Contructor del boton atras en {@link JF_PanelPartida }
 		 * @param {@link JF_PanelPartida }
-		 * @author DAME
 		 */
 		public BotonAtras(JF_PanelPartida panel) {
 			
