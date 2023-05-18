@@ -32,8 +32,8 @@ public class BotonVacunaVerde extends JLabel {
 	/**
 	 * Constructor del boton vacuna Rojo
 	 * Amuenta el desarollo de la vacuna
-	 * @param {@link JF_PanelPartidaVacunas }
-	 * @param {@link JF_PanelPartida }
+	 * @param panel {@link JF_PanelPartidaVacunas }
+	 * @param pPartida {@link JF_PanelPartida }
 	 */
 	public BotonVacunaVerde(JF_PanelPartidaVacunas panel,JF_PanelPartida pPartida) {
 		setIcon(cambiarImg.tamanyo(new ImageIcon("botones/virus_verde_0.png"), tamanyoX, tamanyoY));

@@ -18,7 +18,7 @@ public class BotonVersion extends JLabel {
 /**
  * Constructor del boton Virus
  * Este cambia del panel {@link JF_PanelMenu} al panel {@link JF_PanelVersion}
- * @param {@link JF_PanelMenu}
+ * @param JF_PanelMenu {@link JF_PanelMenu}
  */
 	public BotonVersion(JF_PanelMenu JF_PanelMenu) {
 		

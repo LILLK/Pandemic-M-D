@@ -15,7 +15,7 @@ public class BotonPuntuaciones extends JLabel {
 /**
  * Este es el contructor del boton
  * Este boton cambia del {@link JF_PanelMenu} al {@index JF_PanelPuntuaciones} 
- * @param {@link JF_PanelMenu}
+ * @param JF_PanelMenu {@link JF_PanelMenu}
  */
 	public BotonPuntuaciones(JF_PanelMenu JF_PanelMenu) {
 		

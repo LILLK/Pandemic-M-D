@@ -16,7 +16,7 @@ public class BotonInformacion extends JLabel {
 	/**
 	 *Constructor del boton en el panel menu, {@link JF_PanelMenu}
 	 *Al ser pulsado, cambia al panel {@link JF_PanelInfo}
-	 * @param {@link JF_PanelMenu}
+	 * @param JF_PanelMenu {@link JF_PanelMenu}
 	 *
 	 */
 	public BotonInformacion(JF_PanelMenu JF_PanelMenu) {

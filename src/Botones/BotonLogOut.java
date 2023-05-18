@@ -18,7 +18,7 @@ public class BotonLogOut extends JLabel {
 		/**
 		 * Constructor del boton log out
 		 * Regresa desde el menu a iniciar sesion
-		 * @param {@link  JF_PanelMenu}
+		 * @param JF_PanelMenu {@link  JF_PanelMenu}
 		 */
 	public BotonLogOut(JF_PanelMenu JF_PanelMenu) {
 		

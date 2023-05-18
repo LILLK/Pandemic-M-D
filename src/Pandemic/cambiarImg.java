@@ -30,9 +30,9 @@ public class cambiarImg {
 	public static Color color1 = new Color(71,161,197);
 	/**
 	 * Esta funcion devuelve una imagen rescalada al tamanyo deseado
-	 * @param ImageIcon 
-	 * @param int w
-	 * @param int h
+	 * @param im ImageIcon - imagen a escalar
+	 * @param w int - anchura de la imgan
+	 * @param h int - alzada de la imagen
 	 * @return ImageIcon
 	 */
 	public static ImageIcon tamanyo(ImageIcon im, int w, int h) {

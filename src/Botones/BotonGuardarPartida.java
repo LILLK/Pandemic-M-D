@@ -19,7 +19,7 @@ public class BotonGuardarPartida extends JLabel {
 /**
  * Este es el constructor del boton Guardar en {@link JF_PanelPartidaPanel2 }
  * Guarda el estado de la partida en la BD
- * @param {@link JF_PanelPartidaPanel2 }
+ * @param panel {@link JF_PanelPartidaPanel2 }
  */
 	public BotonGuardarPartida(JF_PanelPartidaPanel2 panel) {
 		Border borde = BorderFactory.createLineBorder(Color.BLACK, 3);

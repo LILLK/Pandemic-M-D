@@ -10,7 +10,7 @@ import Pandemic.JF_Marco;
 public class ejecutar {
 	/**
 	 * Esta es la classe principal, donde se ejecuta el programa.
-	 * @param args
+	 * @param args - void
 	 */
 	public static void main(String[] args) {
 		//se crea la interfaz.

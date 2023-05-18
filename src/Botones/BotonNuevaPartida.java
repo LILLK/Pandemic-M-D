@@ -14,7 +14,7 @@ public class BotonNuevaPartida extends JLabel {
 	/**
 	 * Este es el constructor de boton Nueva partida en {@link JF_PanelMenu} .
 	 * Este cambia el panel, donde se podra elejir la dificultad de la nueva partida
-	 * @param {@link JF_PanelMenu}
+	 * @param JF_PanelMenu {@link JF_PanelMenu}
 	 */
 	public BotonNuevaPartida(JF_PanelMenu JF_PanelMenu) {
 		

@@ -22,27 +22,27 @@ import Pandemic.cambiarImg;
 public class BotonCiudad extends JLabel {
 	
 	/**
-	 * + Ciudades ciudad - ciudad del boton
+	 * ciudad del boton
 	 */
 	public Ciudades ciudad;
 	/**
-	 * + JLabel JLNombreCiudad - etiqueta con el nombre 
+	 * etiqueta con el nombre 
 	 */
 	public JLabel JLNombreCiudad;
 	/**
-	 * + int tamanyoX - tamanyo x
+	 * tamanyo x
 	 */
 	public int tamanyoX = 45;
 	/**
-	 * + int tamanyoY - tamanyo y
+	 *  tamanyo y
 	 */
 	public int tamanyoY = 30;
 
 /**
  * Contructor del boton Ciudad en la partida
  * Se guarda la ciudad y se construye con estos datos
- * @param {@link JF_PanelPartida}
- * @param {@link Ciudades}
+ * @param JF_PanelPartida {@link JF_PanelPartida}
+ * @param ciudad {@link Ciudades}
  */
 	public BotonCiudad(JF_PanelPartida JF_PanelPartida, Ciudades ciudad) {
 		Border borde = BorderFactory.createLineBorder(Color.BLACK, 3);
@@ -84,8 +84,8 @@ public class BotonCiudad extends JLabel {
 	}
 /**
  * Este metodo actualiza el icono de la ciudad
- * @param tamanyoX
- * @param tamanyoY
+ * @param tamanyoX - tamaño horizontal
+ * @param tamanyoY - tamaño vertical
  */
 	public void establecerIcono(int tamanyoX, int tamanyoY) {
 		//depende de el virus id se establecera un color diferente
@@ -181,8 +181,8 @@ public class BotonCiudad extends JLabel {
 	}
 /**
  * Este metodo actualiza el icono de la ciudad cuando esta en "hoover"
- * @param tamanyoX
- * @param tamanyoY
+ * @param tamanyoX - tamaño horizontal
+ * @param tamanyoY - tamaño vertical
  */
 	public void establecerIconoEntered(int tamanyoX, int tamanyoY) {
 		//depende de el virus id se establecera un color diferente

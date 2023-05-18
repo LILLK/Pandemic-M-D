@@ -19,7 +19,7 @@ public class BotonRegistrarse extends JLabel {
 	/**
 	 * Este es el cotructor del boton Registrarse desde {@link JF_PanelInicioSesion }
 	 * Cambia al panel {@link JF_PanelRegistrarse}
-	 * @param {@link JF_PanelInicioSesion }
+	 * @param JF_PanelInicioSesion {@link JF_PanelInicioSesion }
 	 */
 	public BotonRegistrarse(JF_PanelInicioSesion JF_PanelInicioSesion) {
 	
@@ -47,7 +47,7 @@ public class BotonRegistrarse extends JLabel {
 	/**
 	 * Este es el cotructor del boton Registrarse desde {@link JF_PanelRegistrarse }
 	 * Este registra una nueva cuenta si puede a la BD
-	 * @param {@link JF_PanelRegistrarse }
+	 * @param JF_PanelRegistrarse {@link JF_PanelRegistrarse }
 	 */
 	public BotonRegistrarse(JF_PanelRegistrarse JF_PanelRegistrarse) {
 

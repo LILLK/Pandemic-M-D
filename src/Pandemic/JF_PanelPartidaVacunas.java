@@ -60,7 +60,7 @@ public class JF_PanelPartidaVacunas extends JPanel {
 /**
  * Este constructor genera el panel Partida Vacuna 
  * En este panel se alojan las barras que indican el estado de la bacuna y botones para desarollarla
- * @param a {@link JF_PanelPartida}
+ * @param panel {@link JF_PanelPartida}
  */
 	public JF_PanelPartidaVacunas(JF_PanelPartida panel) {
 

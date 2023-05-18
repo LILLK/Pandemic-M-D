@@ -195,7 +195,7 @@ public class ConexionBD {
 /**
  * Esta funcion carga el listado de partidas no acabadas echas por el jugador para cargarlas.
  * Los datos de esta acabaran en la lista JF_PanelCargarPartida.partGuar.
- * @param int id_J - ID jugador
+ * @param id_J - int  - ID jugador
  */
 	public static void cargarPartidas() {
 		// la sequencia sql
@@ -224,8 +224,8 @@ public class ConexionBD {
 	}
 /**
  * Esta funcion recoge los datos de la BD de la partida que queremos cargar.
- * @param int idU - id usuario 
- * @param int idP - id partida
+ * @param idU - int  - id usuario 
+ * @param idP - int  - id partida
  */
 	public static void cargarPartida(int idP) {
 		//sentecia sql 
@@ -303,8 +303,8 @@ public class ConexionBD {
 	}
 	/**
 	 * Esta funcion crea un nuevo usuario en la BD
-	 * @param String nomUsu
-	 * @param String passUsu
+	 * @param nomUsu - String 
+	 * @param passUsu - String 
 	 * @return
 	 */
 	public static boolean crearUsuario(String nomUsu, String passUsu) {
@@ -349,8 +349,8 @@ public class ConexionBD {
 	}
 /**
  * Esta funcion devuelve true si el usuario existete en la base de datos 
- * @param String nomUsu
- * @param String passUsu
+ * @param nomUsu - String - nombre usuario
+ * @param passUsu - String - contraseña usuario
  * @return boolean
  */
 	public static boolean existeUsuario(String nomUsu, String passUsu) {

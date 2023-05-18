@@ -24,8 +24,8 @@ public class BotonCargar extends JLabel {
 	public int idP;
 	/**
 	 * Constructor del boton Cargar en {@link JF_PanelCargarPartida }
-	 * @param {@link JF_PanelCargarPartida }
-	 * @param idP - ID de partida
+	 * @param idP - int -ID de partida
+	 * @param jf_PanelCargarPartida {@link JF_PanelCargarPartida }
 	 * 
 	 */
 	public BotonCargar(int idP, JF_PanelCargarPartida jf_PanelCargarPartida) {

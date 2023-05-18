@@ -77,7 +77,7 @@ public class JF_PanelPartida extends JPanel {
 
 	/**
 	 * Este metodo devuelve una lista con todos los botones de ciudad generados
-	 * @return ArrayList<BotonCiudad>
+	 * @return ArrayList de BotonCiudad
 	 */
 	public ArrayList<BotonCiudad> genrarBotonesCiudad() {
 		ArrayList<BotonCiudad> array = new ArrayList<>();
@@ -99,7 +99,7 @@ public class JF_PanelPartida extends JPanel {
 	}
 	/**
 	 * Esta funcion acaba la partida dependiendo del estado de esta, y muestra e mensaje final.
-	 * @param int estado
+	 * @param  estado - int - 0 sigue la partida , 1 vicotria , 2 derrota
 	 */
 	public void acabarParida(int estado) {
 		JFrame marcoP = (JFrame)SwingUtilities.getWindowAncestor(this);	

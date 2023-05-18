@@ -20,7 +20,7 @@ public class BotonIniciarSesion extends JLabel {
 
 	/**
 	 * Este es el constructor del Boton Iniciar sesion en {@link JF_PanelInicioSesion}
-	 * @param {@link JF_PanelInicioSesion}
+	 * @param JF_PanelInicioSesion {@link JF_PanelInicioSesion}
 	 */
 	public BotonIniciarSesion(JF_PanelInicioSesion JF_PanelInicioSesion) {
 		
@@ -60,7 +60,7 @@ public class BotonIniciarSesion extends JLabel {
 	}
 	/**
 	 * Este es el constructor del Boton Iniciar sesion en {@link JF_PanelRegistrarse}
-	 * @param {@link JF_PanelRegistrarse}
+	 * @param JF_PanelRegistrarse {@link JF_PanelRegistrarse}
 	 */
 	public BotonIniciarSesion(JF_PanelRegistrarse JF_PanelRegistrarse) {
 		

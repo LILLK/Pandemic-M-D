@@ -30,9 +30,9 @@ public class ArchivosIO {
 	} 
 	/**
 	 * Funcion que  lee el archivo CCP.bin , y si el ultimo parametro es verdadero imprime el archivo por consola
-	 * @param ArrayList<String> viruses_op
-	 * @param int[] tamanyoMapa_op
-	 * @param boolean imprimir
+	 * @param viruses_op - String[]  - lee los datos de viruses
+	 * @param tamanyoMapa_op - int[]  - lee el tamaño del mapa (x,y)
+	 * @param imprimir boolean - true = imprimir por consola -
 	 */
 	public static void leerCCP(ArrayList<String> viruses_op, int[] tamanyoMapa_op, boolean imprimir) {
 		//Esta declaracion nos permitira ejecutar esta funcion teniendo parametros nullos
@@ -77,7 +77,7 @@ public class ArchivosIO {
 	}	
 	/**
 	 * Funcion que lee el archivo Ciudades.txt y lo guarda en el ArrayList ciudades
-	 * @return ArrayList<String>
+	 * @return String
 	 */
 	public static ArrayList<String> leerCiudades() {
 		ArrayList<String> ciudades = new ArrayList<>();
@@ -100,7 +100,7 @@ public class ArchivosIO {
 	}
 	/**
 	 * Esta funcion lee el archivo "parametros.xml" y devuelve una lista con los componentes de este
-	 * @return ArrayList<Integer>
+	 * @return Integer
 	 */
 	public static ArrayList<Integer> leerParametros() {
 		ArrayList<Integer> parametros = new ArrayList<Integer>();
@@ -109,8 +109,8 @@ public class ArchivosIO {
 	}
 	/**
 	 * Lee los datos de "parametros.xml"
-	 * @param String xml
-	 * @param ArrayList<Integer> parametros
+	 * @param xml - String 
+	 * @param parametros - Integer
 	 */
 	public static void leerXML(String xml, ArrayList<Integer> parametros) {
 		Integer aux = null;
@@ -150,9 +150,9 @@ public class ArchivosIO {
 
 	/**
 	 * lee los datos que hay en el elemento deseado
-	 * @param Element doc
-	 * @param String tag
-	 * @return String
+	 * @param doc - Element - documento del cual se extraen los paramertos  
+	 * @param tag - String - parametro a extraer
+	 * @return String - contenido de la etiqueta 
 	 */
 	public static String getTextValue(Element doc, String tag) {
 		String value = null;

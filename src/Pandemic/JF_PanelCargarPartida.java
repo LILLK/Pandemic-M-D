@@ -243,6 +243,7 @@ public class JF_PanelCargarPartida extends JPanel {
 	 * Este metodo cambia el panel {@link JF_PanelCargarPartida} por el panel {@link JF_PanelPartida}
 	 * si la resulocion de la pantalla es menor a 1920x1080.
 	 * Sino cargara el panel {@link JF_PanelMenu} despues de un mensaje
+	 * @param idP - int - id de partida
 	 */
 	public void irPanelPartida(int idP) {
 		ConexionBD.cargarPartida( idP);

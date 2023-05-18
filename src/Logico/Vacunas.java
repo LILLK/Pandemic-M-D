@@ -11,19 +11,24 @@ import Pandemic.JF_PanelPartidaPanel2;
 /**
  * Esta classe se encarga de crear los objeto vacuna.
  * @author DAME
- * + String nombre - nombre de la vacuna
- * + String color - color de la vacuna
- * + int desarollo - porcentaje desarollado de la vacuna
  */
 public class Vacunas {
-
+	/**
+	 * nombre de la vacuna
+	 */
 	public String nombre;
+	/**
+	 * color de la vacuna
+	 */
 	public String color;
+	/**
+	 * desarollo de la vacuna
+	 */
 	public int desarollo;
 
 /**
  * Este constructor genera las vacunas desde los archivos locales 
- * @param int idVirus
+ * @param  idVirus - int  - id de vacuna
  */
 	public Vacunas(int idVirus) {
 		ArrayList<String> datos = new ArrayList<>();
@@ -35,7 +40,9 @@ public class Vacunas {
 	}
 	/**
 	 * Este constructor genera las vacunas desde la BD
-	 * @param int idVirus
+	 * @param  idVirus - int  - id de vacuna
+	 * @param desarrollo - int - dessarollo de la vacuna
+	 * @param color - String - color de la vacuna 
 	 */
 	public Vacunas(int idVirus,int desarrollo,String color) {
 		ArrayList<String> datos = new ArrayList<>();
@@ -69,7 +76,7 @@ public class Vacunas {
 	}
 /**
  * Esta funcion desarolla la vacuna un 10% mas si se puede desarollar.
- * @param int id
+ * @param  id - int - id de vacuna a desarollar
  */
 	public static void desarollar(int id) {
 		

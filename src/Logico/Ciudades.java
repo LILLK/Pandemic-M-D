@@ -51,15 +51,13 @@ public class Ciudades {
 	 */
 	public boolean infeccionRonda;
 
-	////////////////////////////////////
-	/////////// constructores //////////
-	////////////////////////////////////
+
 	/**
 	 * Este constructor genera la ciudad con todos sus atributos desde los archivos locales
-	 * @param String nombre
-	 * @param int posicionX
-	 * @param int posicionY
-	 * @param int idVirus
+	 * @param nombre - String 
+	 * @param posicionX - int 
+	 * @param posicionY - int 
+	 * @param idVirus - int 
 	 */
 	public Ciudades(String nombre, int posicionX, int posicionY, int idVirus) {
 		this.nombre = nombre;
@@ -74,10 +72,10 @@ public class Ciudades {
 	}
 	/**
 	 * Este constructor genera la ciudad con todos sus atributos desde la BD
-	 * @param String nombre
-	 * @param int posicionX
-	 * @param int posicionY
-	 * @param int idVirus
+	 * @param nombre - String
+	 * @param posicionX - int
+	 * @param posicionY - int
+	 * @param idVirus - int
 	 */
 	public Ciudades(String nombre, int infeccion, int idVirus, boolean brote) {
 		int[] xy = new int[2];
@@ -174,8 +172,8 @@ public class Ciudades {
 	}
 	/**
 	 * Esta funcion busca la id(posicion) de la ciudad segun su nombre
-	 * @param String nombre
-	 * @return int
+	 * @param nombre -  String  - nombre de la ciudad
+	 * @return int - posicion de la ciudad
 	 */
 	public static int getIdXnombre(String nombre) {
 		int aux = 0;
@@ -226,9 +224,9 @@ public class Ciudades {
 		}
 
 	}
-/**+
+/**
  * Esta funcion devuelve la posicion(x,y) de la ciudad segun el nombre
- * @param String nombreC
+ * @param nombreC String nombre de la ciudad
  * @return int[]
  */
 	public static int[] posicionxy(String nombreC) {
@@ -248,7 +246,7 @@ public class Ciudades {
 	/**
 	 * Esta funcion devuelve una lista con las ciudades colindandtes
 	 * @param String nombre
-	 * @return ArrayList<String>
+	 * @return ArrayList de String
 	 */
 	public static ArrayList<String> generarColindantes(String nombre) {
 		ArrayList<String> colindantes = null;
@@ -263,14 +261,14 @@ public class Ciudades {
 	}
 /**
  * Setter infeccionRonda
- * @param boolean infeccionRonda
+ * @param infeccionRonda - boolean 
  */
 	public void setInfeccionRonda(boolean infeccionRonda) {
 		this.infeccionRonda = infeccionRonda;
 	}
-/*
- * Esta funcion establece todas las ciudas con estado falso en el atributo infeccionRonda
- */
+ /**
+  *  Esta funcion establece todas las ciudas con estado falso en el atributo infeccionRonda
+  */
 	public static void setInfeccionRondaFalse() {
 		for (BotonCiudad btnCiudad : JF_PanelPartida.botonesCiudad) {
 			btnCiudad.ciudad.setInfeccionRonda(false);

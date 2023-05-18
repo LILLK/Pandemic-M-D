@@ -19,7 +19,7 @@ public class BotonAutores extends JLabel {
 	
 	/**
 		 * Contructor del Boton Autores en {@link JF_PanelMenu }
-		 * @param {@link JF_PanelMenu }
+		 * @param JF_PanelMenu {@link JF_PanelMenu }
 		 */
 	public BotonAutores(JF_PanelMenu JF_PanelMenu) {
 		

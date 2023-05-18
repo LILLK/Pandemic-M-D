@@ -16,7 +16,7 @@ public class BotonCargarPartida extends JLabel {
 	
 /**
  * Constructor del Boton CargarPartida en {@link JF_PanelMenu}
- * @param {@link JF_PanelMenu}
+ * @param JF_PanelMenu {@link JF_PanelMenu}
  */	
 
 	public BotonCargarPartida(JF_PanelMenu JF_PanelMenu) {

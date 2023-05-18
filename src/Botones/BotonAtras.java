@@ -19,7 +19,7 @@ import Pandemic.*;
 			
 		/**
 			 * Contructor del boton atras en {@link JF_PanelAutores}
-			 * @param {@link JF_PanelAutores} 
+			 * @param JF_PanelAutores {@link JF_PanelAutores} 
 			 * 
 			 */
 		public BotonAtras(JF_PanelAutores JF_PanelAutores) {
@@ -50,7 +50,7 @@ import Pandemic.*;
 
 		/**
 		 * Contructor del boton atras en {@link JF_PanelInfo }
-		 * @param {@link JF_PanelInfo }
+		 * @param JF_PanelInfo {@link JF_PanelInfo }
 		 */
 		public BotonAtras(JF_PanelInfo JF_PanelInfo) {
 			
@@ -81,7 +81,7 @@ import Pandemic.*;
 
 		/**
 		 * Contructor del boton atras en {@link JF_PanelVersion }
-		 * @param {@link JF_PanelVersion }
+		 * @param  JF_PanelVersion {@link JF_PanelVersion }
 		 */
 		public BotonAtras(JF_PanelVersion JF_PanelVersion) {
 		
@@ -113,7 +113,7 @@ import Pandemic.*;
 		
 		/**
 		 * Contructor del boton atras en {@link JF_PanelPuntuaciones }
-		 * @param {@link JF_PanelPuntuaciones }
+		 * @param JF_PanelPuntuaciones {@link JF_PanelPuntuaciones }
 		 */
 		public BotonAtras(JF_PanelPuntuaciones JF_PanelPuntuaciones) {
 		setIcon(cambiarImg.tamanyo(new ImageIcon("botones/bottonAtras-1.png"), cambiarImg.screenSize.width, (cambiarImg.screenSize.width/30)) );
@@ -142,7 +142,7 @@ import Pandemic.*;
 
 		/**
 		 * Contructor del boton atras en {@link JF_PanelCargarPartida }
-		 * @param {@link JF_PanelCargarPartida }
+		 * @param JF_PanelCargarPartida {@link JF_PanelCargarPartida }
 		 */
 		public BotonAtras(JF_PanelCargarPartida JF_PanelCargarPartida) {
 			
@@ -173,7 +173,7 @@ import Pandemic.*;
 		
 		/**
 		 * Contructor del boton atras en {@link JF_PanelPartidaDificultad }
-		 * @param {@link JF_PanelPartidaDificultad }
+		 * @param panel {@link JF_PanelPartidaDificultad }
 		 */
 		public BotonAtras(JF_PanelPartidaDificultad panel) {
 			
@@ -206,7 +206,7 @@ import Pandemic.*;
 
 		/**
 		 * Contructor del boton atras en {@link JF_PanelPartida }
-		 * @param {@link JF_PanelPartida }
+		 * @param panel {@link JF_PanelPartida }
 		 */
 		public BotonAtras(JF_PanelPartida panel) {
 			

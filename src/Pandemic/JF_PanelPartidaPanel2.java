@@ -88,7 +88,7 @@ public class JF_PanelPartidaPanel2 extends JPanel {
 	} 
 	/**
 	 * Actualiza el texto del log 
-	 * @param String newTexto - el nuevo texto que mostrar por el log
+	 * @param  newTexto - String-  el nuevo texto que mostrar por el log
 	 */
 	public static void updateLog(String newTexto) {
 		String resultado="<p>"+newTexto+"</p>";
