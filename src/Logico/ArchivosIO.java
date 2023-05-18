@@ -46,7 +46,7 @@ public class ArchivosIO {
 		
 		String linea = "";
 		try {
-			DataInputStream leeCCP = new DataInputStream(new FileInputStream("CCP.bin"));
+			DataInputStream leeCCP = new DataInputStream(new FileInputStream("Archivos/CCP.bin"));
 			for (String c : leeCCP.readUTF().split(":")) {
 				if (imprimir)
 					System.out.println("txt: " + c);
@@ -83,7 +83,7 @@ public class ArchivosIO {
 		ArrayList<String> ciudades = new ArrayList<>();
 		try {
 
-			BufferedReader leer = new BufferedReader(new FileReader("Ciudades.txt"));
+			BufferedReader leer = new BufferedReader(new FileReader("Archivos/Ciudades.txt"));
 			String ln=" ";
 			// Leemos el archivo linea a linea y guardamos cada linia en la siuiente
 			// posicion del ArrayList ciudades
@@ -104,7 +104,7 @@ public class ArchivosIO {
 	 */
 	public static ArrayList<Integer> leerParametros() {
 		ArrayList<Integer> parametros = new ArrayList<Integer>();
-		leerXML("parametros.xml", parametros);
+		leerXML("Archivos/parametros.xml", parametros);
 		return parametros;
 	}
 	/**

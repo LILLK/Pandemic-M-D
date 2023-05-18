@@ -34,7 +34,7 @@ public class ConexionBD {
 	 * 	Enlace para la conexion en Oracle.
 	 *  Si estáis desde casa, la url será oracle.ilerna.com y no 192.168.3.26
 	 */
-	private static final String URL = "jdbc:oracle:thin:@192.168.3.26:1521:xe";
+	private static final String URL = "jdbc:oracle:thin:@oracle.ilerna.com:1521:xe";
 	/**
 	 * conexion con la base de datos
 	 */

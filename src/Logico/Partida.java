@@ -58,9 +58,12 @@ public class Partida {
 	 */
 	public static void jugarPartida(JF_PanelPartida pPartida) {
 		if (Partida.accionesRonda<=0) {
-			Partida.accionesRonda=4;
 			Partida.ronda++;
+			JF_PanelPartidaPanel2.updateLog("-------------");
+			JF_PanelPartidaPanel2.updateLog("Ronda: "+Partida.ronda);
+			JF_PanelPartidaPanel2.updateLog("-------------");
 			Partida.Puntuacion-=10;
+			Partida.accionesRonda=4;
 			Partida.infectar();
 		}
 		update();

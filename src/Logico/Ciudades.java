@@ -120,7 +120,7 @@ public class Ciudades {
 		} else if (this.brote) {
 			this.infeccionRonda = true;
 			Partida.Puntuacion-=500;
-			JF_PanelPartidaPanel2.updateLog("BROTE GENERADO EN: " + this.nombre + "!!!!!!!!!!!");
+			JF_PanelPartidaPanel2.updateLog("BROTE GENERADO EN : " + this.nombre + "!!!!!!!!!!!");
 			// recorremos las ciudades colindantes a esta
 			for (String ciudadColindante : this.colindantes) {
 				// si no a sido infectada en esta ronda
@@ -161,7 +161,7 @@ public class Ciudades {
 			if (this.brote) {
 				Partida.Puntuacion+=750;
 				this.brote = false;
-				JF_PanelPartidaPanel2.updateLog("brote curado en :" + this.nombre);
+				JF_PanelPartidaPanel2.updateLog("Brote curado en: " + this.nombre);
 
 			}
 			JF_PanelPartidaPanel2.restarAcciones();

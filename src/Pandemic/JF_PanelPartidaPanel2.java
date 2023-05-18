@@ -91,6 +91,9 @@ public class JF_PanelPartidaPanel2 extends JPanel {
 	 * @param  newTexto - String-  el nuevo texto que mostrar por el log
 	 */
 	public static void updateLog(String newTexto) {
+		if (Partida.accionesRonda==0) {
+			logText = "";
+		}
 		String resultado="<p>"+newTexto+"</p>";
 		logText += resultado;
 		log.setText("<html>"+logText+"</html>");
